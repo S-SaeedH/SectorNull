@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 00000000000000000000000000000000
+  productGUID: 17995a84d92b881499ee35d2e17b394f
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -799,7 +799,7 @@ PlayerSettings:
   cloudProjectId: f28886fd-4cc2-4550-83fa-300b05d6c1dc
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: Sector Null
   organizationId: realbakta
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
