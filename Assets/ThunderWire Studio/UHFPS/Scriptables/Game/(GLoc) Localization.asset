@@ -298,13 +298,13 @@ MonoBehaviour:
       Text: No refuelling required
   - Section: papers
     Localizations:
-    - Key: example
-      Text: 'This is an example text for a paper to demonstrate the examination system.
-        You can display the text on the paper using a texture or rewrite the text
-        as paper examination text.
+    - Key: warning
+      Text: 'WARNING: Do NOT explore the facility without a guard escort. Monsters
+        have been reported roaming the corridors. Proceed with extreme caution.
 
 
-        - From Patrick'
+        -
+        You have been warned.'
     - Key: crafting.ammo
       Text: '9MM PISTOL AMMO
 
