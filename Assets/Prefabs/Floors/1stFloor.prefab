@@ -8432,6 +8432,11 @@ Transform:
   - {fileID: 3705003511478147838}
   - {fileID: 2681259095014534340}
   - {fileID: 8195693673574831467}
+  - {fileID: 5960430623224540162}
+  - {fileID: 8312446654581140643}
+  - {fileID: 2652356993472728101}
+  - {fileID: 6284325433596236651}
+  - {fileID: 6526261224648116101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3702054091766806514
@@ -61575,6 +61580,106 @@ Transform:
   - {fileID: 813906136945576187}
   m_Father: {fileID: 3704847795587775360}
   m_LocalEulerAnglesHint: {x: 0.123, y: 178.634, z: 0.519}
+--- !u!1001 &631933077477951213
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3705087873732009006}
+    m_Modifications:
+    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: noteContent
+      value: 'TO ANYONE WHO FINDS THIS,
+
+
+
+
+        If the tape is still here, then
+        nobody has time to destroy it. Watch it carefully, because it explains what
+        this facility really is, what was hidden below it.
+
+        After that, there
+        will be no turning back. The truth inside Sector Null is not something they
+        intended for anyone to hear.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.875183
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.053
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.567606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2091031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.2091031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -34.401
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: PaperText.GlocText
+      value: papers.theaterTapeNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_text
+      value: 'TO ANYONE WHO FINDS THIS,
+
+
+
+
+        If the tape is still here, then
+        nobody has time to destroy it. Watch it carefully, because it explains what
+        this facility really is, what was hidden below it.
+
+        After that, there
+        will be no turning back. The truth inside Sector Null is not something they
+        intended for anyone to hear.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417743565912043633, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_Name
+      value: PaperNote_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+--- !u!4 &2652356993472728101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+  m_PrefabInstance: {fileID: 631933077477951213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &712889134779304711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64442,6 +64547,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 737453164909578385, guid: 8424729d80e67674cb58a4b2e791f96e, type: 3}
   m_PrefabInstance: {fileID: 6741579900570614267}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6868479093397186155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3705087873732009006}
+    m_Modifications:
+    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: noteContent
+      value: "TO ANYONE WHO FINDS THIS,\n\r\nI know what they hid in the theater
+        room, but every route to it was sealed behind layered mechanisms. One part
+        is hidden behind the device on this floor, and the rest was scattered where
+        nobody would think to search. That was deliberate.\r\nIf you are still trying
+        to force your way through, stop wasting time looking blindly. The answer
+        is inside the room itself.\n\r\n\u2014 Hidden Notice\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.929
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5308235
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.7398963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: PaperText.GlocText
+      value: papers.SecondFusePuzzleNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_text
+      value: "TO ANYONE WHO FINDS THIS,\n\r\nI know what they hid in the theater
+        room, but every route to it was sealed behind layered mechanisms. One part
+        is hidden behind the device on this floor, and the rest was scattered where
+        nobody would think to search. That was deliberate.\r\nIf you are still trying
+        to force your way through, stop wasting time looking blindly. The answer
+        is inside the room itself.\n\r\n\u2014 Hidden Notice\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417743565912043633, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_Name
+      value: PaperNote_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+--- !u!4 &8312446654581140643 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+  m_PrefabInstance: {fileID: 6868479093397186155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6893824920046503130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65393,6 +65582,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3394614887067672504, guid: 59761622b8cb812449078900cb630c48, type: 3}
   m_PrefabInstance: {fileID: 8370739818726225387}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8546692351355850061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3705087873732009006}
+    m_Modifications:
+    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: noteContent
+      value: "TO ANYONE WHO FINDS THIS,\n\r\nMain gate unlock requires restored power
+        and master-level access. In the event of total containment failure, all personnel
+        are advised to evacuate immediately and avoid all lower sectors. If the gate
+        is still open, leave now and do not look back.\r\nSector Null is no longer
+        secure.\n\r\n\u2014 Final Evacuation Notice\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5311319
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4805033
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.674067
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_text
+      value: "TO ANYONE WHO FINDS THIS,\n\r\nMain gate unlock requires restored power
+        and master-level access. In the event of total containment failure, all personnel
+        are advised to evacuate immediately and avoid all lower sectors. If the gate
+        is still open, leave now and do not look back.\r\nSector Null is no longer
+        secure.\n\r\n\u2014 Final Evacuation Notice\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417743565912043633, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_Name
+      value: PaperNote_4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+--- !u!4 &6526261224648116101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+  m_PrefabInstance: {fileID: 8546692351355850061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8702873112221891936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65732,4 +65999,192 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1833715933518638694, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
   m_PrefabInstance: {fileID: 8857492655350998136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8880091069654981027
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3705087873732009006}
+    m_Modifications:
+    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: noteContent
+      value: 'TO ANYONE WHO FINDS THIS,
+
+
+
+
+        Emergency fuel reserves were
+        moved into this room after the lower storage flooded, and they were never
+        intended for regular use. They should only be touched if power restoration
+        becomes necessary.
+
+        If you are up here to turn on the generator,
+        then time is already running out. Sector Null has started reacting to the
+        blackout, and that is never a good sign.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.863
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.029
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.537588
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.537588
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.45934644
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.45934644
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 81.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: PaperText.GlocText
+      value: papers.fuelNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_text
+      value: 'TO ANYONE WHO FINDS THIS,
+
+
+
+
+        Emergency fuel reserves were
+        moved into this room after the lower storage flooded, and they were never
+        intended for regular use. They should only be touched if power restoration
+        becomes necessary.
+
+        If you are up here to turn on the generator,
+        then time is already running out. Sector Null has started reacting to the
+        blackout, and that is never a good sign.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417743565912043633, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_Name
+      value: PaperNote_3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+--- !u!4 &6284325433596236651 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+  m_PrefabInstance: {fileID: 8880091069654981027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9132657356746467018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3705087873732009006}
+    m_Modifications:
+    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: noteContent
+      value: "TO ANYONE WHO FINDS THIS,\r\nThe theater room was sealed after the
+        last containment failure, and no one below senior clearance was told what
+        was inside. Power to the lock was split across three emergency fuses, supposedly
+        to keep the section isolated, though that was never the full story.\r\nSomething
+        in that room was important enough to bury, and the people in charge made
+        sure it stayed buried. If you are trying to open it now, then you are already
+        deeper into the facility than you should be.\r\n\u2014 Restricted Notice\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.35607
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4764786
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.8372755
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: PaperText.GlocText
+      value: papers.theaterRoomDoorNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_text
+      value: "TO ANYONE WHO FINDS THIS,\r\nThe theater room was sealed after the
+        last containment failure, and no one below senior clearance was told what
+        was inside. Power to the lock was split across three emergency fuses, supposedly
+        to keep the section isolated, though that was never the full story.\r\nSomething
+        in that room was important enough to bury, and the people in charge made
+        sure it stayed buried. If you are trying to open it now, then you are already
+        deeper into the facility than you should be.\r\n\u2014 Restricted Notice\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417743565912043633, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+      propertyPath: m_Name
+      value: PaperNote
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+--- !u!4 &5960430623224540162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+  m_PrefabInstance: {fileID: 9132657356746467018}
   m_PrefabAsset: {fileID: 0}
