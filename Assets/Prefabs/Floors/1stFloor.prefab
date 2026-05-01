@@ -838,41 +838,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 720224037048567523}
+  - {fileID: 6135969491817277558}
+  - {fileID: 3940243740052447783}
   - {fileID: 8030383631374114004}
   - {fileID: 2997173856969634713}
   m_Father: {fileID: 3705087873732009006}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1026552100435583730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6814946417008012549}
-  m_Layer: 0
-  m_Name: Jumpscare
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6814946417008012549
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026552100435583730}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 720224037048567523}
-  m_Father: {fileID: 3708113853571991224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1096303242369345311
 GameObject:
@@ -2797,38 +2768,6 @@ MonoBehaviour:
   FalseExamineTitle:
     GlocText: 
     NormalText: 
---- !u!1 &2523147420949815822
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7228508735047363254}
-  m_Layer: 0
-  m_Name: Jumpscare
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7228508735047363254
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2523147420949815822}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6135969491817277558}
-  m_Father: {fileID: 3707894978544872164}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2548402660984594748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,12 +3046,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2619917054891396773}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0047895154, y: 0.99963945, z: -0.006739922, w: 0.02554754}
-  m_LocalPosition: {x: 23.14, y: 1.62, z: -21.37}
+  m_LocalRotation: {x: -0.0047895163, y: 0.99963945, z: -0.0067399596, w: 0.02554754}
+  m_LocalPosition: {x: 23.14, y: 1.6199983, z: -21.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8740524358532480300}
+  m_Father: {fileID: 213903465791933549}
   m_LocalEulerAnglesHint: {x: 0.758, y: 177.068, z: -0.568}
 --- !u!65 &8996167651690845515
 BoxCollider:
@@ -3185,38 +3124,6 @@ MonoBehaviour:
   OnJumpscareEnded:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &2747043521042111997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8740524358532480300}
-  m_Layer: 0
-  m_Name: Jumpscare
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8740524358532480300
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2747043521042111997}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3940243740052447783}
-  m_Father: {fileID: 3704786012134898504}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3143943086841924295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,12 +3182,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3206270925163237148}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.014602057, y: -0.691878, z: -0.0014427378, w: 0.72186536}
-  m_LocalPosition: {x: -11.906, y: 2.191, z: -10.204}
+  m_LocalRotation: {x: -0.014602084, y: -0.691878, z: -0.0014427117, w: 0.72186536}
+  m_LocalPosition: {x: -11.906, y: 2.1909993, z: -10.204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7228508735047363254}
+  m_Father: {fileID: 213903465791933549}
   m_LocalEulerAnglesHint: {x: -1.322, y: -87.582, z: 1.039}
 --- !u!65 &2599312903970452996
 BoxCollider:
@@ -24494,7 +24401,6 @@ Transform:
   - {fileID: 3708048816977889486}
   - {fileID: 417101004550225211}
   - {fileID: 2679415957617480860}
-  - {fileID: 6814946417008012549}
   m_Father: {fileID: 3705087873732009006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3683335380213318800
@@ -26617,7 +26523,6 @@ Transform:
   - {fileID: 3814535794720189946}
   - {fileID: 3814535794640473676}
   - {fileID: 6217610891724806983}
-  - {fileID: 7228508735047363254}
   m_Father: {fileID: 3705087873732009006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3680195427110474892
@@ -35446,7 +35351,6 @@ Transform:
   - {fileID: 3814535793641664356}
   - {fileID: 8752733808999748949}
   - {fileID: 6909044767929209002}
-  - {fileID: 8740524358532480300}
   m_Father: {fileID: 3705087873732009006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3683209155608785354
@@ -62227,12 +62131,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8834208593182332406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.006927336, y: -0.007830673, z: -0.008043001, w: 0.99991304}
-  m_LocalPosition: {x: -27.176, y: 1.957, z: -8.617}
+  m_LocalRotation: {x: 0.0069272984, y: -0.007830673, z: -0.008043001, w: 0.99991304}
+  m_LocalPosition: {x: -27.176, y: 1.9569994, z: -8.617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6814946417008012549}
+  m_Father: {fileID: 213903465791933549}
   m_LocalEulerAnglesHint: {x: 0.787, y: -0.904, z: -0.928}
 --- !u!65 &2610471780245206090
 BoxCollider:
