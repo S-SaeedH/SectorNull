@@ -1134,21 +1134,21 @@ MonoBehaviour:
   Animator: {fileID: 0}
   AnimatorStateName: Jumpscare
   AnimatorTrigger: Jumpscare
-  InfluenceFear: 0
-  TentaclesIntensity: 0.165
-  TentaclesSpeed: 1
-  VignetteStrength: 0.22
+  InfluenceFear: 1
+  TentaclesIntensity: 0.634
+  TentaclesSpeed: 1.68
+  VignetteStrength: 0.33
   LookAtJumpscare: 0
   LookAtTarget: {fileID: 5271520481602035092}
   LookAtDuration: 0
   LockPlayer: 0
   EndJumpscareWithEvent: 0
-  InfluenceWobble: 0
+  InfluenceWobble: 1
   WobbleAmplitudeGain: 1
   WobbleFrequencyGain: 1
-  WobbleDuration: 0.2
-  DirectDuration: 1
-  FearDuration: 1
+  WobbleDuration: 0.3
+  DirectDuration: 1.5
+  FearDuration: 1.4
   TriggerEnter:
     m_PersistentCalls:
       m_Calls: []
