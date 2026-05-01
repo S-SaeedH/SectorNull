@@ -337,7 +337,7 @@ MonoBehaviour:
         you can open. Do NOT attempt to \r\n       force access beyond your level.\r\n\r\n      
         If you found this card \u2014 you shouldn't \r\n       be here.\r\n\n\u2014
         Security Division, Sector Null"
-    - Key: Breakroom Note
+    - Key: BreakroomNote
       Text: 'Personal reminders do not lose this.
 
 
@@ -370,12 +370,12 @@ MonoBehaviour:
         in that room was important enough to bury, and the people in charge made
         sure it stayed buried. If you are trying to open it now, then you are already
         deeper into the facility than you should be.\n\r\n\u2014 Restricted Notice\r\n"
-    - Key: Operations room note
+    - Key: OperationsRoomNote
       Text: "TO ANYONE WHO FINDS THIS,\n\r\nMaintenance record: one emergency fuse
         was moved into this operations room during the blackout and left here until
         power restoration could be attempted. The fuses are required to open the
         theater room and restore power to the locked system. If the facility loses
-        power again, this section should be checked first.\r\nDo not assume this
+        power again, this section should be checked first.\n\r\nDo not assume this
         room is clear just because nothing is moving right now. The operations sector
         has been unstable since the collapse, and the structure itself is beginning
         to fail.\n\r\n\u2014 Maintenance Record\r\n"
@@ -424,16 +424,16 @@ MonoBehaviour:
     - Key: fuelNote
       Text: 'TO ANYONE WHO FINDS THIS,
 
-        
 
-        Emergency fuel reserves
-        were moved into this room after the lower storage flooded, and they were
-        never intended for regular use. They should only be touched if power restoration
-        becomes necessary.
 
-        If you are up here to turn on the generator,
-        then time is already running out. Sector Null has started reacting to the
-        blackout, and that is never a good sign.
+        Emergency fuel reserves were moved
+        into this room after the lower storage flooded, and they were never intended
+        for regular use. They should only be touched if power restoration becomes
+        necessary.
+
+        If you are up here to turn on the generator, then time
+        is already running out. Sector Null has started reacting to the blackout,
+        and that is never a good sign.
 
 '
     - Key: SafeNote
