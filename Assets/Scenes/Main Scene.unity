@@ -69458,37 +69458,37 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1617927366362708406, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 996403236595656254, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8911299598816560665, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 1617927366362708406, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 6505240651373938360, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 996403236595656254, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9091245342494996848, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8326328700050927006, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5053175372883709272, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8055672329987559557, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 9091245342494996848, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 3863258106958602339, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7923396823964428482, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5053175372883709272, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 4855652233392948174, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7923396823964428482, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 8055672329987559557, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8365319435821159209, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -76408,6 +76408,8 @@ MonoBehaviour:
   JumpscareDirectModels:
   - ModelID: scare_zombie
     ModelObject: {fileID: 725195411}
+  - ModelID: scare_zombieprisoner
+    ModelObject: {fileID: 919132149155446097, guid: 5543faace275766498f86ea6530cfa72, type: 3}
 --- !u!114 &1452370396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76685,14 +76687,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452370394}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008995912, y: 0.9887939, z: -0.07259806, w: -0.13013585}
-  m_LocalPosition: {x: 19.802767, y: -3.0037937, z: -2.8781853}
+  m_LocalRotation: {x: 0, y: 0.99144495, z: -0, w: -0.13052607}
+  m_LocalPosition: {x: 12.991, y: 4.817, z: -1.723}
   m_LocalScale: {x: 1, y: 0.87, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1943533366}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 8.39, y: 195, z: 0.064}
+  m_LocalEulerAnglesHint: {x: 0, y: 195, z: 0}
 --- !u!1 &1453852568
 GameObject:
   m_ObjectHideFlags: 0
@@ -95587,8 +95589,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821745944}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008995912, y: 0.9887939, z: -0.07259806, w: -0.13013585}
-  m_LocalPosition: {x: 19.802767, y: -2.0037937, z: -2.8781853}
+  m_LocalRotation: {x: 0, y: 0.99144495, z: 0, w: -0.13052607}
+  m_LocalPosition: {x: 12.991, y: 5.817, z: -1.723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

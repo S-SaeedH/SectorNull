@@ -186,6 +186,38 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &856695653079665879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6024104637832665230}
+  m_Layer: 0
+  m_Name: Jumpscares
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6024104637832665230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856695653079665879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6204334916775072306}
+  m_Father: {fileID: 7222458593170080677}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1018691310472290819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1034,133 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3885193865587231985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6204334916775072306}
+  - component: {fileID: 1412732718583119419}
+  - component: {fileID: 1417727390206252430}
+  - component: {fileID: 814325944352771809}
+  m_Layer: 0
+  m_Name: Trigger1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6204334916775072306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3885193865587231985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18.983, y: 4.322, z: -3.074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6024104637832665230}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1412732718583119419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3885193865587231985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.7248726, y: 3.7923722, z: 0.36873344}
+  m_Center: {x: 0.8197863, y: 1.3961861, z: 0.15676785}
+--- !u!95 &1417727390206252430
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3885193865587231985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &814325944352771809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3885193865587231985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45df30382c8585a41b534c5f0f78982a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.JumpscareTrigger
+  JumpscareType: 0
+  DirectType: 1
+  TriggerType: 1
+  JumpscareImage: {fileID: 0}
+  JumpscareModelID: scare_zombieprisoner
+  JumpscareSound:
+    audioClip: {fileID: 8300000, guid: 006ccf91eeeffa544a0ec1742aaef640, type: 3}
+    volume: 1
+  Animator: {fileID: 0}
+  AnimatorStateName: Jumpscare
+  AnimatorTrigger: Jumpscare
+  InfluenceFear: 0
+  TentaclesIntensity: 0.165
+  TentaclesSpeed: 1
+  VignetteStrength: 0.22
+  LookAtJumpscare: 0
+  LookAtTarget: {fileID: 5271520481602035092}
+  LookAtDuration: 0
+  LockPlayer: 0
+  EndJumpscareWithEvent: 0
+  InfluenceWobble: 0
+  WobbleAmplitudeGain: 1
+  WobbleFrequencyGain: 1
+  WobbleDuration: 0.2
+  DirectDuration: 1
+  FearDuration: 1
+  TriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  TriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpscareStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpscareEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4911956634928060316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,6 +2992,7 @@ Transform:
   - {fileID: 7216336063880836821}
   - {fileID: 5625808021303282796}
   - {fileID: 2140016734618053113}
+  - {fileID: 6024104637832665230}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7219327484353502585
@@ -48246,6 +48406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Dynamic
       objectReference: {fileID: 0}
+    - target: {fileID: 5941286296918898347, guid: 0068907adffded8498d08d6b594cf7b1, type: 3}
+      propertyPath: m_Name
+      value: Classroom_Door
+      objectReference: {fileID: 0}
     - target: {fileID: 6191245762270202517, guid: 0068907adffded8498d08d6b594cf7b1, type: 3}
       propertyPath: DynamicUseTitle.ReflectName
       value: keepUnlockItem
@@ -48326,6 +48490,11 @@ MonoBehaviour:
   PlayerManager: {fileID: 0}
   DynamicObject: {fileID: 0}
   GameManager: {fileID: 0}
+--- !u!4 &5271520481602035092 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2780510044221391593, guid: 0068907adffded8498d08d6b594cf7b1, type: 3}
+  m_PrefabInstance: {fileID: 8051988450174115709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8150945453599961196
 PrefabInstance:
   m_ObjectHideFlags: 0
