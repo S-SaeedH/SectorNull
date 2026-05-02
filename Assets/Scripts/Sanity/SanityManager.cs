@@ -15,6 +15,15 @@ public class SanityManager : MonoBehaviour, ISaveable
     public float decayRate = 0f;
     public bool decayEnabled = false;
 
+    [Header("Auto Recovery")]
+    public bool recoveryEnabled = true;
+    [Tooltip("Seconds after last sanity drop before recovery begins")]
+    public float recoveryDelay = 10f;
+    [Tooltip("Sanity units restored per second during recovery")]
+    public float recoveryRate = 0.6f;
+    [Tooltip("Recovery stops at this sanity value (0 = recover to full)")]
+    public float recoveryCapSanity = 0f;
+
     [Header("Thresholds")]
     public float lowSanityThreshold = 40f;
     public float criticalSanityThreshold = 20f;
@@ -27,6 +36,8 @@ public class SanityManager : MonoBehaviour, ISaveable
 
     private bool _lowTriggered;
     private bool _criticalTriggered;
+    private float _timeSinceLastDrop;
+    private bool _isRecovering;
 
     void Awake()
     {
@@ -38,10 +49,49 @@ public class SanityManager : MonoBehaviour, ISaveable
     {
         if (decayEnabled && currentSanity > 0f)
             ModifySanity(-decayRate * Time.deltaTime);
+
+        HandleRecovery();
+    }
+
+    void HandleRecovery()
+    {
+        if (!recoveryEnabled) return;
+        if (currentSanity >= maxSanity) return;
+
+        // If a recovery cap is set, stop recovering at that value
+        float cap = recoveryCapSanity > 0f ? recoveryCapSanity : maxSanity;
+        if (currentSanity >= cap) return;
+
+        // Count up the delay timer
+        _timeSinceLastDrop += Time.deltaTime;
+
+        if (_timeSinceLastDrop >= recoveryDelay)
+        {
+            _isRecovering = true;
+            // Recover silently (don't re-trigger drop timer)
+            currentSanity = Mathf.Clamp(currentSanity + recoveryRate * Time.deltaTime, 0f, cap);
+            float normalized = currentSanity / maxSanity;
+            OnSanityChanged?.Invoke(normalized);
+
+            // Re-evaluate threshold resets during recovery
+            if (currentSanity > lowSanityThreshold) _lowTriggered = false;
+            if (currentSanity > criticalSanityThreshold) _criticalTriggered = false;
+        }
+        else
+        {
+            _isRecovering = false;
+        }
     }
 
     public void ModifySanity(float amount)
     {
+        // Only reset the timer when sanity DROPS (negative amount)
+        if (amount < 0f)
+        {
+            _timeSinceLastDrop = 0f;
+            _isRecovering = false;
+        }
+
         currentSanity = Mathf.Clamp(currentSanity + amount, 0f, maxSanity);
         float normalized = currentSanity / maxSanity;
         OnSanityChanged?.Invoke(normalized);
@@ -73,10 +123,11 @@ public class SanityManager : MonoBehaviour, ISaveable
     {
         return new StorableCollection()
         {
-            { "currentSanity",      currentSanity  },
-            { "decayEnabled",       decayEnabled   },
-            { "lowTriggered",       _lowTriggered  },
-            { "criticalTriggered",  _criticalTriggered }
+            { "currentSanity",        currentSanity       },
+            { "decayEnabled",         decayEnabled        },
+            { "lowTriggered",         _lowTriggered       },
+            { "criticalTriggered",    _criticalTriggered  },
+            { "timeSinceLastDrop",    _timeSinceLastDrop  }
         };
     }
 
@@ -86,9 +137,8 @@ public class SanityManager : MonoBehaviour, ISaveable
         decayEnabled = (bool)data["decayEnabled"];
         _lowTriggered = (bool)data["lowTriggered"];
         _criticalTriggered = (bool)data["criticalTriggered"];
+        _timeSinceLastDrop = (float)data["timeSinceLastDrop"];
 
-        // Re-fire the changed event so all effects/UI immediately
-        // reflect the loaded sanity value without waiting for next Update
         OnSanityChanged?.Invoke(GetNormalized());
     }
 }
