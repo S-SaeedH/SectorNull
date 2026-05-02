@@ -3715,6 +3715,94 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78559817}
   m_CullTransparentMesh: 1
+--- !u!1 &79413924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 79413925}
+  - component: {fileID: 79413928}
+  - component: {fileID: 79413927}
+  - component: {fileID: 79413926}
+  m_Layer: 5
+  m_Name: CriticalOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &79413925
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79413924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 873785107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &79413926
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79413924}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &79413927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79413924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14150941, g: 0.04739231, b: 0.06866437, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &79413928
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79413924}
+  m_CullTransparentMesh: 1
 --- !u!1 &79690235
 GameObject:
   m_ObjectHideFlags: 0
@@ -7597,6 +7685,81 @@ Transform:
   - {fileID: 332351167}
   m_Father: {fileID: 1910235555}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &166640745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166640746}
+  - component: {fileID: 166640748}
+  - component: {fileID: 166640747}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &166640746
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166640745}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2082795859}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &166640747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166640745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.078431375, g: 0.039215688, b: 0.039215688, a: 0.8627451}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &166640748
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166640745}
+  m_CullTransparentMesh: 1
 --- !u!1 &166936906
 GameObject:
   m_ObjectHideFlags: 0
@@ -9240,6 +9403,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191912429}
   m_CullTransparentMesh: 1
+--- !u!1 &192492977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192492979}
+  - component: {fileID: 192492978}
+  m_Layer: 0
+  m_Name: SanityEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &192492978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192492977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c24dfd52cedd6f47866be8709f75455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SanityEffectsController
+  globalVolume: {fileID: 2045279086}
+  cameraRoot: {fileID: 372341663}
+  maxShakeIntensity: 0.05
+  shakeSpeed: 10
+  effectCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &192492979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192492977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.83654, y: 4.49343, z: -6.96883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193076895
 GameObject:
   m_ObjectHideFlags: 0
@@ -12546,7 +12781,7 @@ AudioSource:
   m_GameObject: {fileID: 246495948}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e67e87c9e632631498c4066e2fd9bf33, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 982b2c08a2c885b4788eb6b217b69861, type: 3}
   m_PlayOnAwake: 1
@@ -22259,6 +22494,88 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &344637083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344637085}
+  - component: {fileID: 344637084}
+  m_Layer: 0
+  m_Name: SanityUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &344637084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344637083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6274e08426c88624d8d991361ab315f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SanityUI
+  sanitySlider: {fileID: 2082795860}
+  sanityFill: {fileID: 489619955}
+  sanityGradient:
+    serializedVersion: 2
+    key0: {r: 0.3137255, g: 0, b: 0, a: 1}
+    key1: {r: 0.627451, g: 0.23529412, b: 0, a: 1}
+    key2: {r: 0.15686275, g: 0.47058824, b: 0.15686275, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32960
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  barSmoothSpeed: 3
+  warningIcon: {fileID: 2002803705}
+  pulseSpeed: 2
+  criticalOverlay: {fileID: 79413926}
+  maxOverlayAlpha: 0.6
+  sanityLabel: {fileID: 0}
+--- !u!4 &344637085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344637083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.36112, y: 35.92307, z: 94.50446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347470429
 GameObject:
   m_ObjectHideFlags: 0
@@ -23099,6 +23416,38 @@ Transform:
   - {fileID: 1137983904}
   m_Father: {fileID: 545845968}
   m_LocalEulerAnglesHint: {x: 86.549965, y: -84.068535, z: -90.989136}
+--- !u!1 &372341662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372341663}
+  m_Layer: 3
+  m_Name: SanityShakeRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &372341663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372341662}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1505917188}
+  m_Father: {fileID: 1943533366}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374317092
 GameObject:
   m_ObjectHideFlags: 0
@@ -28902,6 +29251,81 @@ Transform:
   - {fileID: 1975815461}
   m_Father: {fileID: 947618860}
   m_LocalEulerAnglesHint: {x: 18.502346, y: 19.874407, z: -10.400677}
+--- !u!1 &489619954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489619957}
+  - component: {fileID: 489619956}
+  - component: {fileID: 489619955}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &489619955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489619954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7058824, g: 0.11764706, b: 0.11764706, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &489619956
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489619954}
+  m_CullTransparentMesh: 1
+--- !u!224 &489619957
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489619954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 819471200}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &490662070
 GameObject:
   m_ObjectHideFlags: 0
@@ -43856,6 +44280,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818587559}
   m_CullTransparentMesh: 1
+--- !u!1 &819471199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819471200}
+  m_Layer: 5
+  m_Name: Fill Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &819471200
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819471199}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 489619957}
+  m_Father: {fileID: 2082795859}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &821742417
 GameObject:
   m_ObjectHideFlags: 0
@@ -46502,6 +46962,110 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &873785106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873785107}
+  - component: {fileID: 873785110}
+  - component: {fileID: 873785109}
+  - component: {fileID: 873785108}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &873785107
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873785106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2082795859}
+  - {fileID: 2002803702}
+  - {fileID: 79413925}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &873785108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873785106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &873785109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873785106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &873785110
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873785106}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &873805032
 GameObject:
   m_ObjectHideFlags: 0
@@ -47841,6 +48405,159 @@ Transform:
   - {fileID: 2112459159}
   m_Father: {fileID: 955946632}
   m_LocalEulerAnglesHint: {x: -7.0049953, y: -8.757564, z: 5.682285}
+--- !u!1 &896679568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896679570}
+  - component: {fileID: 896679569}
+  - component: {fileID: 896679571}
+  m_Layer: 0
+  m_Name: SanityAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &896679569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896679568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdd39057507a6e40b86f352d1465c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SanityAudioController
+  audioMixer: {fileID: 24100000, guid: e67e87c9e632631498c4066e2fd9bf33, type: 2}
+  ambientSource: {fileID: 246495951}
+  hallucinationSounds:
+  - {fileID: 8300000, guid: 57c3d2df179b10e479ee09323af241b9, type: 3}
+  - {fileID: 8300000, guid: 901f0ccc5ae1f2e40a0d3fcee69201bf, type: 3}
+  - {fileID: 8300000, guid: 3a5c3f604fb258e4ab098d49ddf041cf, type: 3}
+  hallucinationSource: {fileID: 896679571}
+  maxPitch: 1
+  minPitch: 0.7
+  hallucinationChance: 0.3
+  hallucinationInterval: 8
+--- !u!4 &896679570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896679568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.83654, y: 4.49343, z: -6.96884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &896679571
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896679568}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e67e87c9e632631498c4066e2fd9bf33, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &896707491
 GameObject:
   m_ObjectHideFlags: 0
@@ -49188,6 +49905,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918742841}
+  m_CullTransparentMesh: 1
+--- !u!1 &920604132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920604133}
+  - component: {fileID: 920604135}
+  - component: {fileID: 920604134}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &920604133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920604132}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1402661469}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &920604134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920604132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &920604135
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920604132}
   m_CullTransparentMesh: 1
 --- !u!1 &920791271
 GameObject:
@@ -76420,6 +77212,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399827371}
   m_CullTransparentMesh: 1
+--- !u!1 &1402661468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402661469}
+  m_Layer: 5
+  m_Name: Handle Slide Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1402661469
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402661468}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 920604133}
+  m_Father: {fileID: 2082795859}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1403839012
 GameObject:
   m_ObjectHideFlags: 0
@@ -79005,7 +79833,7 @@ AudioSource:
   m_GameObject: {fileID: 1452370394}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e67e87c9e632631498c4066e2fd9bf33, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -82181,13 +83009,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505917187}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1189261586}
-  m_Father: {fileID: 1943533366}
+  m_Father: {fileID: 372341663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506977340
 GameObject:
@@ -103639,8 +104467,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1505917188}
   - {fileID: 476707845}
+  - {fileID: 372341663}
   m_Father: {fileID: 1452370402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1943533367
@@ -106703,6 +107531,7 @@ GameObject:
   - component: {fileID: 1981167669}
   - component: {fileID: 1981167672}
   - component: {fileID: 1981167671}
+  - component: {fileID: 1981167678}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -107093,409 +107922,411 @@ MonoBehaviour:
   SavingIcon: {fileID: 745065663}
   Debugging: 1
   worldSaveables:
-  - Token: InteractableItem.3a1a690dbb3247644be28944f600c2ec
-    Instance: {fileID: 1313791798}
-  - Token: SimpleSwitcher.cfa6ab7e7394d4542a89233631959bd4
-    Instance: {fileID: 1313791797}
-  - Token: PowerGenerator.664ffaccf4cbd374fb5aad402443bcf1
-    Instance: {fileID: 1313791796}
-  - Token: DynamicObject.91787a459ab46af43b3ff5bf185608ac
-    Instance: {fileID: 1313791795}
-  - Token: DynamicObject.7c6a0ba3cdd0daf47b27ba89dfa387a5
-    Instance: {fileID: 1313791794}
-  - Token: HintTrigger.dfe00042eb722f946b1a941374e3712f
-    Instance: {fileID: 1313791793}
-  - Token: KeycardPuzzle.bb0802ebdf9d47c4e849ba25eb13a253
-    Instance: {fileID: 1313791792}
-  - Token: DynamicObject.b5f9fa313b1e4364ba55399d5d6d1fea
-    Instance: {fileID: 1313791791}
-  - Token: InteractableItem.4d2930469e3a87d458fb30055a696473
-    Instance: {fileID: 1313791790}
-  - Token: InteractableItem.d2a5778c2ed9f7c43b4ccab4f247126d
-    Instance: {fileID: 1313791789}
-  - Token: InteractableItem.32707c342acc9aa498e7aa939e08a11f
-    Instance: {fileID: 1313791788}
-  - Token: InteractableItem.ad02077395c1fc445a475f094ae400bc
-    Instance: {fileID: 1313791787}
-  - Token: DynamicObject.c98df0ee75806cf4ba25a1d58dc2f1ad
-    Instance: {fileID: 1313791786}
-  - Token: DynamicObject.4b7abfbc8e889ea47ad5d914e9302e29
-    Instance: {fileID: 1313791785}
-  - Token: DynamicObject.de33ea4afc0746f489114f866f4048bb
-    Instance: {fileID: 1313791784}
-  - Token: DynamicObject.8c27bbc7e3acc1644a7c9c240d90ee56
-    Instance: {fileID: 1313791783}
-  - Token: HintTrigger.6a00170feb20d9c4d88950259eef4c34
-    Instance: {fileID: 1313791782}
-  - Token: KeycardPuzzle.34208fbdeb0d9c942a4948c94800bed2
-    Instance: {fileID: 1313791781}
-  - Token: JumpscareTrigger.342b31b961ca09f4892dfd6798db9dbd
-    Instance: {fileID: 1313791780}
-  - Token: JumpscareTrigger.bfba7735506902d4888ea423766ca1e7
-    Instance: {fileID: 1313791779}
-  - Token: JumpscareTrigger.6709773bfa54bb347813f0eb53da0c10
-    Instance: {fileID: 1313791778}
-  - Token: InteractableItem.647a32e9a4871fc419173e514d8330ed
-    Instance: {fileID: 1313791777}
-  - Token: DynamicObject.8e840c84ed0bc68419bf48ed9ff29e7a
-    Instance: {fileID: 1313791776}
-  - Token: DynamicObject.17a2e08fbc89a704fbc7ba6de6a8cb40
-    Instance: {fileID: 1313791775}
-  - Token: DynamicObject.33b32db205731df4da561e6585110b7b
-    Instance: {fileID: 1313791774}
-  - Token: DynamicObject.3c682dfabd900354fadd7df2d5a51fd6
-    Instance: {fileID: 1313791773}
-  - Token: DynamicObject.dacc11d9cbc37ff4195e76a51a1a2520
-    Instance: {fileID: 1313791772}
-  - Token: DynamicObject.9840dfc08c85921459728f71618f8d6e
-    Instance: {fileID: 1313791771}
-  - Token: InteractableItem.46a3e523a6be06542acf497d64cde822
-    Instance: {fileID: 1313791770}
-  - Token: DynamicObject.b65dd6143024ffd4d8e5a61752488c97
-    Instance: {fileID: 1313791769}
-  - Token: DynamicObject.da7259cc2bac87f4289943055860e938
-    Instance: {fileID: 1313791768}
-  - Token: DynamicObject.8c4d2c7930f7db94497dd40c54f9938b
-    Instance: {fileID: 1313791767}
-  - Token: DynamicObject.4f7f3011c0cc30648abd1db028b5bbbf
-    Instance: {fileID: 1313791766}
-  - Token: DynamicObject.fea4eaa42386b284eada83710482810b
-    Instance: {fileID: 1313791765}
-  - Token: DynamicObject.6725ef822a269d4458db61af72cee053
-    Instance: {fileID: 1313791764}
-  - Token: DynamicObject.96583a1ccc025204882342350fd0fbe5
-    Instance: {fileID: 1313791763}
-  - Token: DynamicObject.d4b674ede14950b42ab462cb3a2c75dc
-    Instance: {fileID: 1313791762}
-  - Token: DynamicObject.5925b1487d99c0d4996bd84101c9ea19
-    Instance: {fileID: 1313791761}
-  - Token: DynamicObject.272f1cacd7b890c4dbab83321739d312
-    Instance: {fileID: 1313791760}
-  - Token: DynamicObject.f02c47f1ce985324bb4b0c1cf10e538f
-    Instance: {fileID: 1313791759}
-  - Token: DynamicObject.0246df2ac5c56204b81b35ba0ada5ed7
-    Instance: {fileID: 1313791758}
-  - Token: DynamicObject.fb6a43c70119a4547bf219dc92e53232
-    Instance: {fileID: 1313791757}
-  - Token: DynamicObject.d83b5def5b76b8043bf7ce9a1a2afa91
-    Instance: {fileID: 1313791756}
-  - Token: DynamicObject.82cd5ac0895869f48839d180a52b2521
-    Instance: {fileID: 1313791755}
-  - Token: DynamicObject.0fbf362e5c2c5fa46accec2a46d9bb49
-    Instance: {fileID: 1313791754}
-  - Token: DynamicObject.4a7d3349e80f2744fb766f3419553dec
-    Instance: {fileID: 1313791753}
-  - Token: DynamicObject.d3bf47085f0ff824ea5970c57defb242
-    Instance: {fileID: 1313791752}
-  - Token: DynamicObject.8826459f40b71744284b8f012e428625
-    Instance: {fileID: 1313791751}
-  - Token: DynamicObject.8b8fb94c2a712c248b666f0f2baa6bd7
-    Instance: {fileID: 1313791750}
-  - Token: InteractableItem.db432938491ccde4bb3a410636f7aa14
-    Instance: {fileID: 1313791749}
-  - Token: DynamicObject.c52432057083ab146867ee080b6dbedc
-    Instance: {fileID: 1313791748}
-  - Token: DynamicObject.856af441f150fca4b8c47629d77e2f43
-    Instance: {fileID: 1313791747}
-  - Token: InteractableItem.d7f07252018957b4bb6165f80d592d37
-    Instance: {fileID: 1313791746}
-  - Token: DynamicObject.e88831af0bc8558428c7d79b2a27d214
-    Instance: {fileID: 1313791745}
-  - Token: DynamicObject.8db85eeda4f08c1479229f64a8c320fc
-    Instance: {fileID: 1313791744}
-  - Token: DynamicObject.09959bb3122f09e4da1683aefe0e3f15
-    Instance: {fileID: 1313791743}
-  - Token: DynamicObject.e4876c57724757247bf5ba990d2c7df8
-    Instance: {fileID: 1313791742}
-  - Token: InteractableItem.caf6415ed69d7d547bf2edf821fb6234
-    Instance: {fileID: 1313791741}
-  - Token: SimpleLight.3247c9bb411256847a61633c69d4f991
-    Instance: {fileID: 1313791740}
-  - Token: DynamicObject.9115bb516cbd33148985647b290b9815
-    Instance: {fileID: 1313791739}
-  - Token: InteractableItem.0b489a054a2082b4582f1c36c106cebd
-    Instance: {fileID: 1313791738}
-  - Token: DynamicObject.3f3843164e4e96247b0e35415331c87a
-    Instance: {fileID: 1313791737}
-  - Token: DynamicObject.db4667a7a152def4eb833bc7fbc92760
-    Instance: {fileID: 1313791736}
-  - Token: DynamicObject.27a10c13ce5ec444fac3cfba12b7c92e
-    Instance: {fileID: 1313791735}
-  - Token: DynamicObject.700247ef014d1e449b45d02da543f6a3
-    Instance: {fileID: 1313791734}
-  - Token: DynamicObject.9f2eb4e7a2a86d54e97ff100637ef7b7
-    Instance: {fileID: 1313791733}
-  - Token: DynamicObject.ebb4459cd9dff0e4eae596425802e617
-    Instance: {fileID: 1313791732}
-  - Token: DynamicObject.2d9cd51310e8ae84699a695c36d4f0b1
-    Instance: {fileID: 1313791731}
-  - Token: DynamicObject.9d1a1aa6842944940a3f1850c435ef23
-    Instance: {fileID: 1313791730}
-  - Token: DynamicObject.2e6202e364475bb44acaede3fc636e5a
-    Instance: {fileID: 1313791729}
-  - Token: DynamicObject.336edb857276738488cbccd7420b6c37
-    Instance: {fileID: 1313791728}
-  - Token: DynamicObject.61bee3d6f59d083448f50088d52cc1c8
-    Instance: {fileID: 1313791727}
-  - Token: DynamicObject.5d629402fc835604ebf69cb3aebb95e4
-    Instance: {fileID: 1313791726}
-  - Token: DynamicObject.b2398e2c18d9a6c4f9300ffcd41f2dfc
-    Instance: {fileID: 1313791725}
-  - Token: InteractableItem.45b19338cbd93e24dad46b44e2ea929b
-    Instance: {fileID: 1313791724}
-  - Token: SafePuzzle.63aa1422c878ebe45bc679ec19f909f1
-    Instance: {fileID: 1313791723}
-  - Token: InteractableItem.16fee1dfa98ab27418860cdfc95034e1
-    Instance: {fileID: 1313791722}
-  - Token: InteractableItem.88677de321e4f334a84e427a3213291b
-    Instance: {fileID: 1313791721}
-  - Token: DynamicObject.23b31abb20fda2a4c86f31dd38d37edf
-    Instance: {fileID: 1313791720}
-  - Token: DynamicObject.1317ae3a01de99f409b5c47034c40f63
-    Instance: {fileID: 1313791719}
-  - Token: DynamicObject.50294da7c4d78174ba13341391425e0a
-    Instance: {fileID: 1313791718}
-  - Token: DynamicObject.3accc40022f8c5e4da77e591b6304049
-    Instance: {fileID: 1313791717}
-  - Token: DynamicObject.7f96de5fac5828a42993e897c45ffbf9
-    Instance: {fileID: 1313791716}
-  - Token: DynamicObject.5d30b9db15bc955439a7210f569d637b
-    Instance: {fileID: 1313791715}
-  - Token: DynamicObject.798325e0dd2e39a468154ef8bb0e5343
-    Instance: {fileID: 1313791714}
-  - Token: InteractableItem.2a565d4d53180ef47bb76e1f7aa84c40
-    Instance: {fileID: 1313791713}
-  - Token: InteractableItem.b2c18e4e916d92348affaa9b14045fa1
-    Instance: {fileID: 1313791712}
-  - Token: InteractableItem.433a8e78c0744464f994f500dba0db65
-    Instance: {fileID: 1313791711}
-  - Token: LookAtTrigger.eceb0a3ebca7d4642ae84f0f4fa120f1
-    Instance: {fileID: 1313791710}
-  - Token: JumpscareTrigger.29c68517bbe31ec4ab011d97013c5031
-    Instance: {fileID: 1313791709}
-  - Token: JumpscareTrigger.2ba825d0afb395a4d80359df747a01f1
-    Instance: {fileID: 1313791708}
-  - Token: JumpscareTrigger.302aaa8157a9e7748b8f560b7415f08e
-    Instance: {fileID: 1313791707}
-  - Token: JumpscareTrigger.184c3a37e02cb3740b603045d5bdf225
-    Instance: {fileID: 1313791706}
-  - Token: JumpscareTrigger.ea52b605d85174e4c893c462f7acd1e3
-    Instance: {fileID: 1313791705}
-  - Token: JumpscareTrigger.e2a8722ad09be6f45867b9d416e699ea
-    Instance: {fileID: 1313791704}
-  - Token: NPCHealth.1b3435fdd033bbc40aa11fbfcd4031c0
-    Instance: {fileID: 1313791703}
-  - Token: DynamicObject.b453c69dc5ba58f42a3cab76d442090e
-    Instance: {fileID: 1313791702}
-  - Token: JumpscareTrigger.65dbf53150d9c38418ea2aed34379571
-    Instance: {fileID: 1313791701}
-  - Token: InteractableItem.6086821c9120f7441995b85017d13fe6
-    Instance: {fileID: 1313791700}
-  - Token: MazePuzzle.b3223d5961333224c9686ce8a10f449d
-    Instance: {fileID: 1313791699}
-  - Token: DynamicObject.7dc89c65317e7fe44a9b573502c895d3
-    Instance: {fileID: 1313791698}
-  - Token: DynamicObject.9691abf6f1a922542aaf7c768d45114c
-    Instance: {fileID: 1313791697}
-  - Token: DynamicObject.766cbc78c65e6a744b825d20578cf729
-    Instance: {fileID: 1313791696}
-  - Token: DynamicObject.93befbabe94eaf4448b26d3fa3e2a53b
-    Instance: {fileID: 1313791695}
-  - Token: DynamicObject.2380d8532f10fc745a13652dec18b5cc
-    Instance: {fileID: 1313791694}
-  - Token: InteractableItem.04fde7506bf4bc247b3e96ace4d1d514
-    Instance: {fileID: 1313791693}
-  - Token: InteractableItem.d2dd99e80b3068e43896bfaf74b8ab11
-    Instance: {fileID: 1313791692}
-  - Token: DynamicObject.466d98f82bfe8ce4ab4aa6e91d8ebde0
-    Instance: {fileID: 1313791691}
-  - Token: HintTrigger.f857a0d95325f5941965738385b19f0d
-    Instance: {fileID: 1313791690}
-  - Token: KeycardPuzzle.a5c59025517917f4b9a87d4442270a17
-    Instance: {fileID: 1313791689}
-  - Token: InteractableItem.c1fcd3b66fb314445aeeba4414c5280f
-    Instance: {fileID: 1313791688}
-  - Token: DynamicObject.6a7dd56b8d359ee4ca75a9aeab396f52
-    Instance: {fileID: 1313791687}
-  - Token: DynamicObject.f2abd00fd73fffe48be62b6f17d2afa0
-    Instance: {fileID: 1313791686}
-  - Token: HintTrigger.84eaa1dc32ddd134988beed0d570744b
-    Instance: {fileID: 1313791685}
-  - Token: KeycardPuzzle.4e7ae807adacddc4181b7413928bb05e
-    Instance: {fileID: 1313791684}
-  - Token: InteractableItem.3d16338f98929484d854426addbd5584
-    Instance: {fileID: 1313791683}
-  - Token: DraggableItem.e81863ca40c44ba4ab0213d75d3185a5
-    Instance: {fileID: 1313791682}
-  - Token: BreakableCrate.7a8565ef808ef314bb920449a2a4146a
-    Instance: {fileID: 1313791681}
-  - Token: DynamicObject.e294f030d05aacf4db5600af23ee4997
-    Instance: {fileID: 1313791680}
-  - Token: DynamicObject.2385c61e01ab88a4d951286b8520a3b8
-    Instance: {fileID: 1313791679}
-  - Token: ElectricalCircuitPuzzle.78ca25482a971b84ba85877d162ed6ec
-    Instance: {fileID: 1313791678}
-  - Token: DynamicObject.1017101b9d2514e48b3cb1590f01988a
-    Instance: {fileID: 1313791677}
-  - Token: DynamicObject.4215c6684fcfdcb4a9b9dda3edd6fe42
-    Instance: {fileID: 1313791676}
-  - Token: DynamicObject.d9fc21738fccb0349933259fb08f863b
-    Instance: {fileID: 1313791675}
-  - Token: DynamicObject.04025b78178480a409682d62aa5d54be
-    Instance: {fileID: 1313791674}
-  - Token: DynamicObject.f09a6bc882ccbe6408a10686e8258424
-    Instance: {fileID: 1313791673}
-  - Token: DynamicObject.bdd674d06d5e8634293be91fc61bc4a6
-    Instance: {fileID: 1313791672}
-  - Token: DynamicObject.52f9b7f8023fb954791309852b739aa4
-    Instance: {fileID: 1313791671}
-  - Token: DynamicObject.400f9fd6d82b1a4408d287022c35d2e2
-    Instance: {fileID: 1313791670}
-  - Token: DynamicObject.15f4214ea8b14b346a73ed43df1fa449
-    Instance: {fileID: 1313791669}
-  - Token: DynamicObject.2705d627723bdef45ba2330d1d2f462b
-    Instance: {fileID: 1313791668}
-  - Token: DynamicObject.4c98289ebdb5af44d9e57c7e3797799f
-    Instance: {fileID: 1313791667}
-  - Token: DynamicObject.d7f2a10875c13504f9150817092efb4e
-    Instance: {fileID: 1313791666}
-  - Token: DynamicObject.dc840cefc8bd6024ea5362d19a073e11
-    Instance: {fileID: 1313791665}
-  - Token: InteractableItem.c4188b8029f40ff4889be63317378ef2
-    Instance: {fileID: 1313791664}
-  - Token: DynamicObject.e9d6ce7d90d8a6e4dab336f9dcab2242
-    Instance: {fileID: 1313791663}
-  - Token: DynamicObject.b133414c8e2875646b86b9a38ae1c1bd
-    Instance: {fileID: 1313791662}
-  - Token: DynamicObject.f4555029e5f631440abe3318775eb5cf
-    Instance: {fileID: 1313791661}
-  - Token: DynamicObject.4b6c57a21c3d87e479ad508077503c3e
-    Instance: {fileID: 1313791660}
-  - Token: DynamicObject.a025d74cfeb555541a07417307f6028c
-    Instance: {fileID: 1313791659}
-  - Token: DynamicObject.d1243c74199ff4a48865bc54668ddb93
-    Instance: {fileID: 1313791658}
-  - Token: DynamicObject.38e3ff8f3ed091447ace2efb09ac30a3
-    Instance: {fileID: 1313791657}
-  - Token: DynamicObject.6c702bfd6108e1348bb5b28d2d1955e3
-    Instance: {fileID: 1313791656}
-  - Token: DynamicObject.20990175f5bebbb4aaac8582383ccde2
-    Instance: {fileID: 1313791655}
-  - Token: DynamicObject.4a3a9e3fd02adab4688129394b7d1bbf
-    Instance: {fileID: 1313791654}
-  - Token: DynamicObject.c6e5291f3b001e6498194cbe6ad2f1f0
-    Instance: {fileID: 1313791653}
-  - Token: InteractableItem.0c6ae71481bc71d4ca160d6e4e8fc1ae
-    Instance: {fileID: 1313791652}
-  - Token: DynamicObject.0e8f32560df59f94a95b3122b5a2989a
-    Instance: {fileID: 1313791651}
-  - Token: InteractableItem.b058ed2f8558d1c49b029f01e771f407
-    Instance: {fileID: 1313791650}
-  - Token: HintTrigger.da68e68920439db44b58442a8fcdfa31
-    Instance: {fileID: 1313791649}
-  - Token: KeycardPuzzle.94f584c342d9b3a4b896c7e7852c7da1
-    Instance: {fileID: 1313791648}
-  - Token: DynamicObject.607b6b424c6b7524d99c9417fba0a190
-    Instance: {fileID: 1313791647}
-  - Token: DynamicObject.aa2b31a045ab86c49859b50a8162fbf5
-    Instance: {fileID: 1313791646}
-  - Token: DynamicObject.45d28f5e8eeb9334e97a5dd6d6979f1e
-    Instance: {fileID: 1313791645}
-  - Token: DynamicObject.8bbf29a532c55414da2440c369c91c85
-    Instance: {fileID: 1313791644}
-  - Token: DynamicObject.699e0e488f1b6634b819baa4fefc8a32
-    Instance: {fileID: 1313791643}
-  - Token: DynamicObject.8903f876d21eeea4894d53ea3ef3936a
-    Instance: {fileID: 1313791642}
-  - Token: DynamicObject.c515aab9c51a46f49911a44e660c33ca
-    Instance: {fileID: 1313791641}
-  - Token: DynamicObject.07f7efea841130d4fb80b97db2e8d7df
-    Instance: {fileID: 1313791640}
-  - Token: DynamicObject.ef3f4f00c44192b4293e2929f5e4a3de
-    Instance: {fileID: 1313791639}
-  - Token: DynamicObject.f3a3ff6b01f91f844939527fdbf38992
-    Instance: {fileID: 1313791638}
-  - Token: DynamicObject.3ea3ca4290c154540b7679f28de4716f
-    Instance: {fileID: 1313791637}
-  - Token: DynamicObject.2975b55deb1684f4892cf6a1d17dfdeb
-    Instance: {fileID: 1313791636}
-  - Token: DynamicObject.31445d95776cfb643850dcf05f272ec4
-    Instance: {fileID: 1313791635}
-  - Token: DynamicObject.57eceef11acd57249a0d604252a72b29
-    Instance: {fileID: 1313791634}
-  - Token: DynamicObject.162a15469f8183244b49d63d55b64555
-    Instance: {fileID: 1313791633}
-  - Token: DynamicObject.d4fba8dc66c815c41b26c80c6054b00e
-    Instance: {fileID: 1313791632}
-  - Token: DynamicObject.5518e5c9cf533a34fa69a1368a6c8a8d
-    Instance: {fileID: 1313791631}
-  - Token: DynamicObject.c48e3059051dab9459ed73b6f4536055
-    Instance: {fileID: 1313791630}
-  - Token: InteractableItem.8e8c89e041e698d4ab475d92ade4860b
-    Instance: {fileID: 1313791629}
-  - Token: DynamicObject.740796e8b547db04e9bfa46f4076c82c
-    Instance: {fileID: 1313791628}
-  - Token: DynamicObject.bd28448494c833b4c9f292d00cd1c4a7
-    Instance: {fileID: 1313791627}
-  - Token: DynamicObject.d8f919226506e0b41a6587f9a742ba6e
-    Instance: {fileID: 1313791626}
-  - Token: DynamicObject.dafa4600f1144974183526da013d4636
-    Instance: {fileID: 1313791625}
-  - Token: DynamicObject.606da6ae312baaf468857b3160692399
-    Instance: {fileID: 1313791624}
-  - Token: DynamicObject.b40c3e1fb0fae1844935787899911f7e
-    Instance: {fileID: 1313791623}
-  - Token: InteractableItem.24b3516bbdcee8e4880fb2249e7a3791
-    Instance: {fileID: 1313791622}
-  - Token: DynamicObject.623c35b55a31a054f8ee572fae9971a4
-    Instance: {fileID: 1313791621}
-  - Token: KeypadPuzzle.5880cf08601cdce4cb3cd1b2bc147374
-    Instance: {fileID: 1313791620}
-  - Token: DynamicObject.cb49d6761317b0946b9d993c7683b238
-    Instance: {fileID: 1313791619}
-  - Token: InteractableItem.d02e5bcb12a4088498cc9abb65789ce3
-    Instance: {fileID: 1313791618}
-  - Token: InteractableItem.6c1d7c75e2dbd8140a1a5f0d45733c8a
-    Instance: {fileID: 1313791617}
-  - Token: DynamicObject.e50a33adbc959774fa34767c4a9320fa
-    Instance: {fileID: 1313791616}
-  - Token: DynamicObject.c14cfe05892be5144a53940a44b94791
-    Instance: {fileID: 1313791615}
-  - Token: DynamicObject.9758d09a77a90c04e8de5ea4d5c7cf98
-    Instance: {fileID: 1313791614}
-  - Token: DynamicObject.5e43c22a999dec64caf43201b331eb13
-    Instance: {fileID: 1313791613}
-  - Token: DynamicObject.9cbe70c2b91c33b4a98111182f83ebc9
-    Instance: {fileID: 1313791612}
-  - Token: CustomInteractEvent.7b820c5abf2f41f42b340da04f2cb866
-    Instance: {fileID: 1313791611}
-  - Token: CRTMonitor.4aaaf6b449fbf4f4a81ea642386fde17
-    Instance: {fileID: 1313791610}
-  - Token: DraggableItem.9b9174dbd59a11248b32bb4b8ef483aa
-    Instance: {fileID: 1313791609}
-  - Token: BreakableCrate.938a1aff4ace52246b31459b609028da
-    Instance: {fileID: 1313791608}
-  - Token: DynamicObject.491703df39c7be64ba76abfc84fa8b50
-    Instance: {fileID: 1313791607}
-  - Token: FuseboxPuzzle.f2de0f705cb900040a300c6bf88c85e3
-    Instance: {fileID: 1313791606}
-  - Token: DynamicObject.bdf3eb92495ee55468c2c40c9eaa8ab9
-    Instance: {fileID: 1313791605}
-  - Token: DynamicObject.e9b316fe54e049e44a71c2a5ab2fe60e
-    Instance: {fileID: 1313791604}
-  - Token: InteractableItem.2cafbcb1a0ea2e445a4063f3e000bb6f
-    Instance: {fileID: 1313791603}
-  - Token: InteractableItem.8cfa7099a825f9f468c940fe18c18c3f
-    Instance: {fileID: 1313791602}
-  - Token: DialogueTrigger.f5ae733df5ddb434ebe423aad5cf021a
+  - Token: DialogueTrigger.3a6a95c6f91be6649bfd3af3f71c9a0a
     Instance: {fileID: 49705964}
-  - Token: DialogueTrigger.ea94eb65465a9a54d9d975ca1dde9dff
+  - Token: DialogueTrigger.30a76fe893fe94b44a354d0946cf5cde
     Instance: {fileID: 532005860}
-  - Token: DialogueTrigger.e7b27d9fa617c0b42b36ad677db95ffd
+  - Token: InteractableItem.d253f7cbf2434a6409898e68b1b8a52a
+    Instance: {fileID: 1313791602}
+  - Token: InteractableItem.b83d31b0bef5bc94aa3f28dd4c6330a2
+    Instance: {fileID: 1313791603}
+  - Token: DynamicObject.a342513b77b902944a47cc9877c4d277
+    Instance: {fileID: 1313791604}
+  - Token: DynamicObject.f49e6a562da6aad4f82793915f973c0b
+    Instance: {fileID: 1313791605}
+  - Token: FuseboxPuzzle.74ca4d788710e624c8f641a12f070647
+    Instance: {fileID: 1313791606}
+  - Token: DynamicObject.84c0e5db662da0b4597671fa0407a2a9
+    Instance: {fileID: 1313791607}
+  - Token: BreakableCrate.f46d9e276ad76974e944a7889c44a105
+    Instance: {fileID: 1313791608}
+  - Token: DraggableItem.2c3d9264f32fbf3468b2741cc7bb49aa
+    Instance: {fileID: 1313791609}
+  - Token: CRTMonitor.92540434b5efc7d4a8c700178306cc91
+    Instance: {fileID: 1313791610}
+  - Token: CustomInteractEvent.4801e8153da5b3d4cb57feaa97f84426
+    Instance: {fileID: 1313791611}
+  - Token: DynamicObject.abe3c5b5ff8a027498aeb7bf4e695afa
+    Instance: {fileID: 1313791612}
+  - Token: DynamicObject.ff65d037e8ba01542a853dca53112d47
+    Instance: {fileID: 1313791613}
+  - Token: DynamicObject.ec88040b4033a13409b375c8f3a84d27
+    Instance: {fileID: 1313791614}
+  - Token: DynamicObject.18f81e2a8a2bdef4e9c2297058cf4555
+    Instance: {fileID: 1313791615}
+  - Token: DynamicObject.81c206908745b904b8a02e4a76aba0f8
+    Instance: {fileID: 1313791616}
+  - Token: InteractableItem.35b569fbacade2d4fa4312fe7325d7f9
+    Instance: {fileID: 1313791617}
+  - Token: InteractableItem.9032ce6e89efb0743a64d5105e2d1501
+    Instance: {fileID: 1313791618}
+  - Token: DynamicObject.8ef9644c2e0fbba48a1cb461f85115d6
+    Instance: {fileID: 1313791619}
+  - Token: KeypadPuzzle.530b8b0ca32518b49ad0b670c86c9253
+    Instance: {fileID: 1313791620}
+  - Token: DynamicObject.a3f0779e9f177ca4d9965c60a9ddf580
+    Instance: {fileID: 1313791621}
+  - Token: InteractableItem.4fe1a6d7684c4a245a5e59a33db2d26c
+    Instance: {fileID: 1313791622}
+  - Token: DynamicObject.ca5d1f2867643954c8ef8f4661de4b62
+    Instance: {fileID: 1313791623}
+  - Token: DynamicObject.0639f7f5469aa684ebe5a73328a7382a
+    Instance: {fileID: 1313791624}
+  - Token: DynamicObject.6ac17df1d86e71f4e9aa1eb51e2851f9
+    Instance: {fileID: 1313791625}
+  - Token: DynamicObject.781ad0382aa967c41b703ca633deb2a7
+    Instance: {fileID: 1313791626}
+  - Token: DynamicObject.a95cbca2d9a4fdd42bf84f25141c073f
+    Instance: {fileID: 1313791627}
+  - Token: DynamicObject.f6b49641fe8965c4a9743af96abf6780
+    Instance: {fileID: 1313791628}
+  - Token: InteractableItem.a7d93c016e8d2794f83504aa3816d35c
+    Instance: {fileID: 1313791629}
+  - Token: DynamicObject.5d4a147c9d446d64d95ca7745c383534
+    Instance: {fileID: 1313791630}
+  - Token: DynamicObject.25ab7d9e2396160418689ecf4f0cba81
+    Instance: {fileID: 1313791631}
+  - Token: DynamicObject.072d80fa3ed98b44597f019c7d716788
+    Instance: {fileID: 1313791632}
+  - Token: DynamicObject.4abd60f6ca59b3c4fb5cbb37dd942639
+    Instance: {fileID: 1313791633}
+  - Token: DynamicObject.24fd6a539a9c84e41b857079b1847ecc
+    Instance: {fileID: 1313791634}
+  - Token: DynamicObject.68a0c71b59e27e04297b94d31a0e3ad2
+    Instance: {fileID: 1313791635}
+  - Token: DynamicObject.fd97178287a27ff468b79be581f7c5e1
+    Instance: {fileID: 1313791636}
+  - Token: DynamicObject.b6b7d16364411104480c6accaa70b55d
+    Instance: {fileID: 1313791637}
+  - Token: DynamicObject.975d8bd7593dca04fa4d19a741892a02
+    Instance: {fileID: 1313791638}
+  - Token: DynamicObject.aa7a6260d09afd84fb7b9cde4911b650
+    Instance: {fileID: 1313791639}
+  - Token: DynamicObject.2fe412fda5e7cce42aa371049cb8ff8a
+    Instance: {fileID: 1313791640}
+  - Token: DynamicObject.9b992ac56e09a6c4ba4802e25903638f
+    Instance: {fileID: 1313791641}
+  - Token: DynamicObject.9d4b540ddbcce2c40807071fd750e70e
+    Instance: {fileID: 1313791642}
+  - Token: DynamicObject.8fc2d51b9d322af46a71a07ee5e13ef2
+    Instance: {fileID: 1313791643}
+  - Token: DynamicObject.7e1f189f948f1ac4aae78c9a05841ae0
+    Instance: {fileID: 1313791644}
+  - Token: DynamicObject.789e6279747c24e43bfe7ed353ba62de
+    Instance: {fileID: 1313791645}
+  - Token: DynamicObject.1f3c0c9d0172c3d43843a3e3d9e8a9d3
+    Instance: {fileID: 1313791646}
+  - Token: DynamicObject.702f41525cfbcfe4087b497b45122520
+    Instance: {fileID: 1313791647}
+  - Token: KeycardPuzzle.db7749e1bebed00438c107b82c6e6dbb
+    Instance: {fileID: 1313791648}
+  - Token: HintTrigger.8edeb3a0495321a49b604a93b46c2d11
+    Instance: {fileID: 1313791649}
+  - Token: InteractableItem.5110357c094282548a434c0782028a0c
+    Instance: {fileID: 1313791650}
+  - Token: DynamicObject.53a22cc74767c074c9217fa2d9bfe906
+    Instance: {fileID: 1313791651}
+  - Token: InteractableItem.9c49baf2377c7c74a8c83cb72ebec819
+    Instance: {fileID: 1313791652}
+  - Token: DynamicObject.6731861996058c245aaedb1a9a654469
+    Instance: {fileID: 1313791653}
+  - Token: DynamicObject.3b984b5703b5c4743abe80a94c55414c
+    Instance: {fileID: 1313791654}
+  - Token: DynamicObject.038aa833d0ff8874e8f218d7c5c3e56c
+    Instance: {fileID: 1313791655}
+  - Token: DynamicObject.2b81f2def15ff2f49943099b900653d3
+    Instance: {fileID: 1313791656}
+  - Token: DynamicObject.11aac16d7c570664ab873fb8577f5641
+    Instance: {fileID: 1313791657}
+  - Token: DynamicObject.0884527685e435b47b884c8ef924df19
+    Instance: {fileID: 1313791658}
+  - Token: DynamicObject.59601821125b2174391c16943a37a767
+    Instance: {fileID: 1313791659}
+  - Token: DynamicObject.ff7b1fb0514da9f438c52cda265d4e9d
+    Instance: {fileID: 1313791660}
+  - Token: DynamicObject.1fb41c8a433db1d47b502b97b84522a0
+    Instance: {fileID: 1313791661}
+  - Token: DynamicObject.61045fa34c45f9e4690efcfb52ed922f
+    Instance: {fileID: 1313791662}
+  - Token: DynamicObject.b24f92e1e8dc5a946b62dae2cd2e038c
+    Instance: {fileID: 1313791663}
+  - Token: InteractableItem.f3b24f517bf27774f99d8e165312d62f
+    Instance: {fileID: 1313791664}
+  - Token: DynamicObject.5b791f41e671e3a41bd76ae606f6ebd5
+    Instance: {fileID: 1313791665}
+  - Token: DynamicObject.58653318d88cd1d48ba7caec03335024
+    Instance: {fileID: 1313791666}
+  - Token: DynamicObject.bef94aa3919197f49a0f018b31796837
+    Instance: {fileID: 1313791667}
+  - Token: DynamicObject.a8220811819b41049b1e6fa8f0b3a31f
+    Instance: {fileID: 1313791668}
+  - Token: DynamicObject.44f71268d632ba148829b330973d731a
+    Instance: {fileID: 1313791669}
+  - Token: DynamicObject.83a94ce22f5e4e548b30bcd45d39c557
+    Instance: {fileID: 1313791670}
+  - Token: DynamicObject.1220af66061901c489224625ee4a1a4a
+    Instance: {fileID: 1313791671}
+  - Token: DynamicObject.52fb2eea791fb67439d72cc1d11ab4d5
+    Instance: {fileID: 1313791672}
+  - Token: DynamicObject.1d72b4da7c2418d41a6dcc2dc515553f
+    Instance: {fileID: 1313791673}
+  - Token: DynamicObject.fee72c537da5acd4fbf5a3886f246309
+    Instance: {fileID: 1313791674}
+  - Token: DynamicObject.c9b0b529c633a624b9b2b312f6cced17
+    Instance: {fileID: 1313791675}
+  - Token: DynamicObject.1d67d388f22bb994288a5838c05e94b0
+    Instance: {fileID: 1313791676}
+  - Token: DynamicObject.a24d3099c5c26ad4db781e0478de3705
+    Instance: {fileID: 1313791677}
+  - Token: ElectricalCircuitPuzzle.7627c850e0c75794b8514af084e78d17
+    Instance: {fileID: 1313791678}
+  - Token: DynamicObject.544f21e4e675b9848905ae12c6d5d2df
+    Instance: {fileID: 1313791679}
+  - Token: DynamicObject.fa1895d99d829a848ba52bae871e6b2c
+    Instance: {fileID: 1313791680}
+  - Token: BreakableCrate.4d06f30fd38dfe64e948c9237ca0bbb7
+    Instance: {fileID: 1313791681}
+  - Token: DraggableItem.20cf3c8eac5e71b4eacf5a51b4ac3aa4
+    Instance: {fileID: 1313791682}
+  - Token: InteractableItem.a74f40e4bbf54ea489e123103187461b
+    Instance: {fileID: 1313791683}
+  - Token: KeycardPuzzle.9afbac0d1526214448dc83101e90cbe2
+    Instance: {fileID: 1313791684}
+  - Token: HintTrigger.e451ca4dfe2a66c4481e75dcb33d8ab3
+    Instance: {fileID: 1313791685}
+  - Token: DynamicObject.4d59aad398d160446868a96caa52974d
+    Instance: {fileID: 1313791686}
+  - Token: DynamicObject.8ee699d975e6c75468eb5e180598d988
+    Instance: {fileID: 1313791687}
+  - Token: InteractableItem.2865923e4d0fd6c4395b5440ece68ec3
+    Instance: {fileID: 1313791688}
+  - Token: KeycardPuzzle.2ceac959b4bbf724fb5869ccce46ae95
+    Instance: {fileID: 1313791689}
+  - Token: HintTrigger.9762538f3315375428dfaf2e26e5a719
+    Instance: {fileID: 1313791690}
+  - Token: DynamicObject.989026bd0c929af4f96149b9fcb119be
+    Instance: {fileID: 1313791691}
+  - Token: InteractableItem.6be2c532cee1e3e4994a6e43bd112f3e
+    Instance: {fileID: 1313791692}
+  - Token: InteractableItem.4aee630e0d98093409f501715e5bc8eb
+    Instance: {fileID: 1313791693}
+  - Token: DynamicObject.3fe45d34d0d15c346b0e0cc1ea872a60
+    Instance: {fileID: 1313791694}
+  - Token: DynamicObject.d00ab22fa1f8a2444a92cfdac39ef223
+    Instance: {fileID: 1313791695}
+  - Token: DynamicObject.abdca800742baa14ebc2f3cf92cc92be
+    Instance: {fileID: 1313791696}
+  - Token: DynamicObject.1c14621f9efe4f2459612dd87c9c3696
+    Instance: {fileID: 1313791697}
+  - Token: DynamicObject.5c143b228745fb341b13b65f72fd7196
+    Instance: {fileID: 1313791698}
+  - Token: MazePuzzle.d2dfc3d53695caf44b17efe492694b26
+    Instance: {fileID: 1313791699}
+  - Token: InteractableItem.c75c61ebf3fe97847be851632bd956b9
+    Instance: {fileID: 1313791700}
+  - Token: JumpscareTrigger.ce9c858dbefaa884e9bc7581eb851094
+    Instance: {fileID: 1313791701}
+  - Token: DynamicObject.de619f5d12b6fdc4a929a0a8195f95a2
+    Instance: {fileID: 1313791702}
+  - Token: NPCHealth.8fbaaf0d9e204b64f952c2d7747b393a
+    Instance: {fileID: 1313791703}
+  - Token: JumpscareTrigger.1cb797a4a607a7d46be14bf79a8875fa
+    Instance: {fileID: 1313791704}
+  - Token: JumpscareTrigger.cf40468abebf7cd479e90e930d9dc4cf
+    Instance: {fileID: 1313791705}
+  - Token: JumpscareTrigger.6c6013094bdda6a40823af36e9a97c6e
+    Instance: {fileID: 1313791706}
+  - Token: JumpscareTrigger.1e34beb21aab7ae40896343808c165c3
+    Instance: {fileID: 1313791707}
+  - Token: JumpscareTrigger.e0638af6e1945bd47afabd377fe39a20
+    Instance: {fileID: 1313791708}
+  - Token: JumpscareTrigger.a1cf98c5d4b0f774c857b29f00d5d5b4
+    Instance: {fileID: 1313791709}
+  - Token: LookAtTrigger.a7025d4c3c2d4664d9402eeacf1a6649
+    Instance: {fileID: 1313791710}
+  - Token: InteractableItem.d26eb923e29b9964aa549d65c576f78d
+    Instance: {fileID: 1313791711}
+  - Token: InteractableItem.ae14bcfc544b4434290d20b3d179d3e9
+    Instance: {fileID: 1313791712}
+  - Token: InteractableItem.0b628f81fb991784f9079549d5485d1c
+    Instance: {fileID: 1313791713}
+  - Token: DynamicObject.ff9589e79bfa46b4a9b675dc89d0d5a7
+    Instance: {fileID: 1313791714}
+  - Token: DynamicObject.70be19e20b932d543a5cad04b8fcbed9
+    Instance: {fileID: 1313791715}
+  - Token: DynamicObject.4485b56dcb28b1f4e923a74965cd8731
+    Instance: {fileID: 1313791716}
+  - Token: DynamicObject.ee7047fa9d54f77418c40d4d77168086
+    Instance: {fileID: 1313791717}
+  - Token: DynamicObject.4366458af274bd04fbe01d5ffadafceb
+    Instance: {fileID: 1313791718}
+  - Token: DynamicObject.cee1d26242442e142a4ec743bd6732e8
+    Instance: {fileID: 1313791719}
+  - Token: DynamicObject.54d83c177e1ec5343b1ecfb62fb776e4
+    Instance: {fileID: 1313791720}
+  - Token: InteractableItem.23d6668cef523884e9e6f809dd896036
+    Instance: {fileID: 1313791721}
+  - Token: InteractableItem.34a8c28e185361c47bf2cf9f4d3423f1
+    Instance: {fileID: 1313791722}
+  - Token: SafePuzzle.d21edb2ce3a6bd24c8dd58e53ce1749e
+    Instance: {fileID: 1313791723}
+  - Token: InteractableItem.9742cdff092534c43a88a35835f0182a
+    Instance: {fileID: 1313791724}
+  - Token: DynamicObject.bf1ac28b6056f6c4f8a92af3b20a98ec
+    Instance: {fileID: 1313791725}
+  - Token: DynamicObject.b77fc801fcffa0a4f92b28932f05e5f6
+    Instance: {fileID: 1313791726}
+  - Token: DynamicObject.f19438c455097a140a87129530182b99
+    Instance: {fileID: 1313791727}
+  - Token: DynamicObject.264584b63ffc606488f361a1493f28b1
+    Instance: {fileID: 1313791728}
+  - Token: DynamicObject.44ccb61164b466548b84a29667c441e8
+    Instance: {fileID: 1313791729}
+  - Token: DynamicObject.e88455f56d035e54186c1a98b327d0bf
+    Instance: {fileID: 1313791730}
+  - Token: DynamicObject.cc4db07e0cdf3604987a56bfcc78a193
+    Instance: {fileID: 1313791731}
+  - Token: DynamicObject.c30a66586ae88264cbb7a9c397dcbd5b
+    Instance: {fileID: 1313791732}
+  - Token: DynamicObject.a918a57cd5727e642b3311af4d8df835
+    Instance: {fileID: 1313791733}
+  - Token: DynamicObject.74c9b450c90dc684e83b6db907eedfa8
+    Instance: {fileID: 1313791734}
+  - Token: DynamicObject.e14d458b28a83cf44871a607d348a1b9
+    Instance: {fileID: 1313791735}
+  - Token: DynamicObject.42f638088e601f842a3569c525dac075
+    Instance: {fileID: 1313791736}
+  - Token: DynamicObject.55e7575a18873864883ea19a8f209365
+    Instance: {fileID: 1313791737}
+  - Token: InteractableItem.b21d52465047c084e83000e920793931
+    Instance: {fileID: 1313791738}
+  - Token: DynamicObject.bf1eb50b5770e0340b28ffb2a0c91571
+    Instance: {fileID: 1313791739}
+  - Token: SimpleLight.2e934827565173c49a49d64a6d9ea242
+    Instance: {fileID: 1313791740}
+  - Token: InteractableItem.3e80383b6f28d8541ae625fb8fa128cf
+    Instance: {fileID: 1313791741}
+  - Token: DynamicObject.a4602459180198b4c904a514a7512a4c
+    Instance: {fileID: 1313791742}
+  - Token: DynamicObject.a1192f2c3e79c4d45ba7abff316363dd
+    Instance: {fileID: 1313791743}
+  - Token: DynamicObject.9fb0714f82d325c4c946b6a49e0010da
+    Instance: {fileID: 1313791744}
+  - Token: DynamicObject.ddc9cc538da09cb41bf106fba852c04d
+    Instance: {fileID: 1313791745}
+  - Token: InteractableItem.2e6d5d656baea6348a4df44df24b19bb
+    Instance: {fileID: 1313791746}
+  - Token: DynamicObject.71daa0315775c4840acc0eb78fe9caeb
+    Instance: {fileID: 1313791747}
+  - Token: DynamicObject.168fdb92f970d6144854970100922922
+    Instance: {fileID: 1313791748}
+  - Token: InteractableItem.8867a900b1f721748a21dfab1afc7ce5
+    Instance: {fileID: 1313791749}
+  - Token: DynamicObject.551d85281e4446147bb4d0bc3f5e1e95
+    Instance: {fileID: 1313791750}
+  - Token: DynamicObject.c0b7dae1e703d94468d4416e950252c7
+    Instance: {fileID: 1313791751}
+  - Token: DynamicObject.ae9186fd568cc1e45a238f46826d96d4
+    Instance: {fileID: 1313791752}
+  - Token: DynamicObject.563f3148488cc824fbfe147dc1fb166c
+    Instance: {fileID: 1313791753}
+  - Token: DynamicObject.0f7aaf0c563c145438c94963698c1690
+    Instance: {fileID: 1313791754}
+  - Token: DynamicObject.c1e76a5843038614cbf179b76eaca616
+    Instance: {fileID: 1313791755}
+  - Token: DynamicObject.91aa1ce50b692f345ab3ca9f9ecf4fbb
+    Instance: {fileID: 1313791756}
+  - Token: DynamicObject.bfaa5cd545aefa1468d036605bf2ef2a
+    Instance: {fileID: 1313791757}
+  - Token: DynamicObject.c3a782836ffc29c4aa603f1806ebba57
+    Instance: {fileID: 1313791758}
+  - Token: DynamicObject.d9e876bd9d80bd44d848c056f423df22
+    Instance: {fileID: 1313791759}
+  - Token: DynamicObject.4064c151b325d35499a414c3bdbc7c3e
+    Instance: {fileID: 1313791760}
+  - Token: DynamicObject.558bb78cc4896ad4289d77fa03552547
+    Instance: {fileID: 1313791761}
+  - Token: DynamicObject.0f431d96d08c3524f98cdef618fbf618
+    Instance: {fileID: 1313791762}
+  - Token: DynamicObject.3afd54584c56e0440ba66ca8191ed20a
+    Instance: {fileID: 1313791763}
+  - Token: DynamicObject.31c31b2b9e529d54fa87fbdc38528d17
+    Instance: {fileID: 1313791764}
+  - Token: DynamicObject.57114daa9da5e4845b90e67dbc4c2d54
+    Instance: {fileID: 1313791765}
+  - Token: DynamicObject.c0fbd7e3a8d433644a92c1360c6f1bd0
+    Instance: {fileID: 1313791766}
+  - Token: DynamicObject.ad2ebf79545d06549a92c1941dbef84f
+    Instance: {fileID: 1313791767}
+  - Token: DynamicObject.fb2506bc764ce79488d3df18e54ffdce
+    Instance: {fileID: 1313791768}
+  - Token: DynamicObject.9d5035169a621864189c8eecfcecef18
+    Instance: {fileID: 1313791769}
+  - Token: InteractableItem.23a05ab7874bc1b438a512f9e1ca521d
+    Instance: {fileID: 1313791770}
+  - Token: DynamicObject.d6512805e7e5f7f41a931212fbf0fa82
+    Instance: {fileID: 1313791771}
+  - Token: DynamicObject.9859e0aa2a50f4b4f99c662d9e86840f
+    Instance: {fileID: 1313791772}
+  - Token: DynamicObject.57dfe459582ecc840a766143f3b5198e
+    Instance: {fileID: 1313791773}
+  - Token: DynamicObject.9dbd12b54a3cc404982e0364707428bc
+    Instance: {fileID: 1313791774}
+  - Token: DynamicObject.9a260e7d08bbdc648b571b9035ca4b83
+    Instance: {fileID: 1313791775}
+  - Token: DynamicObject.34f1c3967b8150440bc74b4c37b8d164
+    Instance: {fileID: 1313791776}
+  - Token: InteractableItem.ac47065c33306944e9d28780c1621fce
+    Instance: {fileID: 1313791777}
+  - Token: JumpscareTrigger.9eac33db22a379c4f8a6d59f253e48de
+    Instance: {fileID: 1313791778}
+  - Token: JumpscareTrigger.48c970821ca8c4d4a8c409aef0295a2f
+    Instance: {fileID: 1313791779}
+  - Token: JumpscareTrigger.e45f554ff8125624a9fc4b7c13bd8a95
+    Instance: {fileID: 1313791780}
+  - Token: KeycardPuzzle.c9babf94765defc47af48d6d7419ec57
+    Instance: {fileID: 1313791781}
+  - Token: HintTrigger.f134eaac4e417684dbf3b3fa55fa6c76
+    Instance: {fileID: 1313791782}
+  - Token: DynamicObject.b6f74aa4d2556e34884f74f71cf7faca
+    Instance: {fileID: 1313791783}
+  - Token: DynamicObject.ae9c985087582a04aa6a1c6841af6c0f
+    Instance: {fileID: 1313791784}
+  - Token: DynamicObject.cc73c764d2cd4394baa82e5faab39063
+    Instance: {fileID: 1313791785}
+  - Token: DynamicObject.2d8fccce16338a048b15d9c779dd96c6
+    Instance: {fileID: 1313791786}
+  - Token: InteractableItem.f0425c64edd48ba47b32a28bee8364d7
+    Instance: {fileID: 1313791787}
+  - Token: InteractableItem.ff2bfaea9370f644691370a2efc5de58
+    Instance: {fileID: 1313791788}
+  - Token: InteractableItem.8ffcf5e168be29a4199edb0405325ff5
+    Instance: {fileID: 1313791789}
+  - Token: InteractableItem.11ab1fcb8d9cb28468eedcd9d0532054
+    Instance: {fileID: 1313791790}
+  - Token: DynamicObject.d498176ecebc48d41a44f5adf70a22bb
+    Instance: {fileID: 1313791791}
+  - Token: KeycardPuzzle.0d672fd6f3e72dc429416d62745984f5
+    Instance: {fileID: 1313791792}
+  - Token: HintTrigger.df4ee523fb14c984b9503b753c2847ad
+    Instance: {fileID: 1313791793}
+  - Token: DynamicObject.53ae50676e07705429bb3d8e4d1ccd96
+    Instance: {fileID: 1313791794}
+  - Token: DynamicObject.acdbe250d37ebd041959df638749da90
+    Instance: {fileID: 1313791795}
+  - Token: PowerGenerator.99e36c639abc46343a8ffeb64c5cdfdc
+    Instance: {fileID: 1313791796}
+  - Token: SimpleSwitcher.59085f2aaa682044fb296ed4d8b479b9
+    Instance: {fileID: 1313791797}
+  - Token: InteractableItem.4662d50fed1fcb64f8be6e4903498aa8
+    Instance: {fileID: 1313791798}
+  - Token: DialogueTrigger.106d33331c587104d86db7a016285f01
     Instance: {fileID: 1559506944}
-  - Token: DialogueTrigger.42f3b39c01c73eb4c9785a62d1037e40
+  - Token: DialogueTrigger.45a6202589148eb4b9e56b6093c895d0
     Instance: {fileID: 1719041810}
-  - Token: DialogueTrigger.2e52c45e9249d7d41bcd9ba128ca5f7f
+  - Token: SanityManager.6175ff5fd32043846b4eb944d97bc3a8
+    Instance: {fileID: 1981167678}
+  - Token: DialogueTrigger.eec898580383997408e892ffe42a0dcc
     Instance: {fileID: 2143044571}
   runtimeSaveables: []
 --- !u!114 &1981167671
@@ -107710,6 +108541,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1981167678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981167665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1622bc24eb2bf47ba6c10a54b93a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SanityManager
+  currentSanity: 100
+  maxSanity: 100
+  decayRate: 0
+  decayEnabled: 0
+  lowSanityThreshold: 40
+  criticalSanityThreshold: 20
+  OnSanityChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLowSanity:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCriticalSanity:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSanityDepleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1982185236
 GameObject:
   m_ObjectHideFlags: 0
@@ -108019,6 +108880,94 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000816855}
   m_CullTransparentMesh: 1
+--- !u!1 &2002803701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002803702}
+  - component: {fileID: 2002803704}
+  - component: {fileID: 2002803703}
+  - component: {fileID: 2002803705}
+  m_Layer: 5
+  m_Name: WarningIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2002803702
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002803701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 873785107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40, y: -20}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &2002803703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002803701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0edcf44f6af43de4b8d22a6fafaee7e8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2002803704
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002803701}
+  m_CullTransparentMesh: 1
+--- !u!225 &2002803705
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002803701}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2004026115
 GameObject:
   m_ObjectHideFlags: 0
@@ -110505,6 +111454,55 @@ Transform:
   - {fileID: 1966332587}
   m_Father: {fileID: 1337464906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2045279085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045279087}
+  - component: {fileID: 2045279086}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2045279086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045279085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: e4cc0f4800be90b489afdfaba90fda6f, type: 2}
+--- !u!4 &2045279087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045279085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.471683, y: 1.7510304, z: 46.676308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047582577
 GameObject:
   m_ObjectHideFlags: 0
@@ -111869,6 +112867,112 @@ Transform:
   - {fileID: 1625886395}
   m_Father: {fileID: 1202928705}
   m_LocalEulerAnglesHint: {x: 77.56401, y: 53.190804, z: 55.623055}
+--- !u!1 &2082795858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2082795859}
+  - component: {fileID: 2082795860}
+  - component: {fileID: 2082795861}
+  m_Layer: 5
+  m_Name: SanitySlider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2082795859
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082795858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 166640746}
+  - {fileID: 819471200}
+  - {fileID: 1402661469}
+  m_Father: {fileID: 873785107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -130}
+  m_SizeDelta: {x: 160, y: 20}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &2082795860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082795858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 920604134}
+  m_FillRect: {fileID: 489619957}
+  m_HandleRect: {fileID: 920604133}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2082795861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082795858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Shadow
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.7058824}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2084473755
 GameObject:
   m_ObjectHideFlags: 0
@@ -115388,3 +116492,8 @@ SceneRoots:
   - {fileID: 1711677859}
   - {fileID: 1981167666}
   - {fileID: 1452370402}
+  - {fileID: 2045279087}
+  - {fileID: 192492979}
+  - {fileID: 896679570}
+  - {fileID: 873785107}
+  - {fileID: 344637085}
