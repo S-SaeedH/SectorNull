@@ -70087,18 +70087,6 @@ PrefabInstance:
       propertyPath: OnExamineStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 49705964}
-    - target: {fileID: 2522857197340661727, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.541
-      objectReference: {fileID: 0}
-    - target: {fileID: 2522857197340661727, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2522857197340661727, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.346
-      objectReference: {fileID: 0}
     - target: {fileID: 2748614946698419292, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -70115,22 +70103,14 @@ PrefabInstance:
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1559506944}
-    - target: {fileID: 7589821123816741683, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_Size.y
-      value: 0.53033257
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589821123816741683, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_Size.z
-      value: 4.1674337
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589821123816741683, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_Center.y
-      value: 0.2348337
-      objectReference: {fileID: 0}
-    - target: {fileID: 7589821123816741683, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_Center.z
-      value: 0.6934862
-      objectReference: {fileID: 0}
+    - target: {fileID: 6578712106324050100, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 192492978}
+    - target: {fileID: 6578712106324050100, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1981167678}
     - target: {fileID: 8601886773751821610, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -70198,9 +70178,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8326328700050927006, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7980472695465845221, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1313791601}
     - targetCorrespondingSourceObject: {fileID: 9091245342494996848, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -70219,9 +70196,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8055672329987559557, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8604361375833548590, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1808069910}
     - targetCorrespondingSourceObject: {fileID: 8365319435821159209, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -70229,27 +70203,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
---- !u!1 &1313791600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980472695465845221, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &1313791601
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313791600}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 2.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!114 &1313791602 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8560158302837260928, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -98068,43 +98021,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1808069905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8604361375833548590, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1808069910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808069905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
-  m_SerializedVersion: 0
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 73a917ec207a2df42850b34a4ba31649, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1 &1808665727
 GameObject:
   m_ObjectHideFlags: 0
