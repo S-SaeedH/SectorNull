@@ -71706,6 +71706,62 @@ PrefabInstance:
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 192492978}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1981167678}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TriggerSanityPulse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ModifySanity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SanityEffectsController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SanityManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1085279949153515415, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnExamineStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -71737,6 +71793,10 @@ PrefabInstance:
     - target: {fileID: 1100970347420184064, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250187771559822802, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Name
+      value: BeforeMasterCard
       objectReference: {fileID: 0}
     - target: {fileID: 2735326530760380682, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.size
@@ -72010,6 +72070,38 @@ PrefabInstance:
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2131581252}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085398583965175887, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnAllFusesConnected.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5841238755505825098, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -72022,6 +72114,10 @@ PrefabInstance:
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1981167678}
+    - target: {fileID: 6869375605764937519, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: dynamicStatus
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6869375605764937519, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -74175,7 +74271,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
   m_PrefabInstance: {fileID: 1313791599}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2131581252}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45df30382c8585a41b534c5f0f78982a, type: 3}
@@ -111133,6 +111229,10 @@ MonoBehaviour:
   maxSanity: 100
   decayRate: 0
   decayEnabled: 0
+  recoveryEnabled: 1
+  recoveryDelay: 10
+  recoveryRate: 0.6
+  recoveryCapSanity: 0
   lowSanityThreshold: 40
   criticalSanityThreshold: 20
   OnSanityChanged:
@@ -117706,6 +117806,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131376111}
   m_CullTransparentMesh: 1
+--- !u!1 &2131581252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2250187771559822802, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_PrefabInstance: {fileID: 1313791599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2132041572
 GameObject:
   m_ObjectHideFlags: 0
