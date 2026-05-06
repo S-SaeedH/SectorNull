@@ -1,9 +1,9 @@
 {
-  "id": "cf3114b3ad4c494e994c07cede27b66d",
-  "scene": "Main Scene",
-  "dateTime": "2026-05-02 16:05:15",
-  "timePlayed": 35.997757,
-  "saveType": 0,
+  "id": "2e3a74cc578d49008040bf282490d90e",
+  "scene": "Raining",
+  "dateTime": "2026-05-06 03:19:50",
+  "timePlayed": 18.22873,
+  "saveType": 2,
   "data": "Data.bin",
   "thumbnail": "Thumbnail.png"
 }
