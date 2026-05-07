@@ -125,7 +125,8 @@ GameObject:
   - component: {fileID: 7834323270258457510}
   - component: {fileID: 7826082457062738128}
   - component: {fileID: 7794105560146994908}
-  m_Layer: 0
+  - component: {fileID: 8182847696964513039}
+  m_Layer: 11
   m_Name: Stairs_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,6 +227,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300210, guid: 19cfcdce0b9453b45af782ede3ff985f, type: 3}
+--- !u!114 &8182847696964513039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838757008072288124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 0}
+  m_BuildHeightMesh: 0
 --- !u!1 &7838992380504796888
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +271,7 @@ GameObject:
   - component: {fileID: 7833960194086602568}
   - component: {fileID: 7826052305287637392}
   - component: {fileID: 7794441372522709890}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stairs_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
