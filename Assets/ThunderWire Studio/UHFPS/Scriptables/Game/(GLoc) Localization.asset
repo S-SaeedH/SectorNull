@@ -450,6 +450,20 @@ MonoBehaviour:
         are advised to evacuate immediately and avoid all lower sectors. If the gate
         is still open, leave now and do not look back.\r\nSector Null is no longer
         secure.\n\r\n\u2014 Final Evacuation Notice\r\n"
+    - Key: StartingNote
+      Text: 'TO ANYONE WHO FINDS THIS,
+
+        
+
+        Do not remain in this
+        sector any longer than necessary. The lower corridor was breached first,
+        and the containment line failed before anyone had time to respond.
+
+
+        If
+        I did not make it out, take the flashlight and leave immediately. Sector
+        Null is no longer stable, and whatever is moving through the facility is
+        getting closer by the minute.'
   - Section: inventory
     Localizations:
     - Key: context.use
