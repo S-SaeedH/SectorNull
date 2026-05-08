@@ -3184,102 +3184,6 @@ Transform:
   - {fileID: 1090249392}
   m_Father: {fileID: 1657758660}
   m_LocalEulerAnglesHint: {x: 33.342518, y: 10.195064, z: 2.8284864}
---- !u!1001 &67116045
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: fontSize
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 676244225140074482, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: noteContent
-      value: "FACILITY SECURITY NOTICE\n\n       All restricted areas are protected
-        by a \n       keycard access system.\n\n       LEVEL 1 \u2014 Green Keycard\n      
-        LEVEL 2 \u2014 Red Keycard\n       LEVEL 3 \u2014 Master Keycard\n\n      
-        Your clearance level determines which \n       doors you can open. Do NOT
-        attempt to \n       force access beyond your level.\n       If you found
-        this card \u2014 you shouldn't \n       be here.\n\n\u2014 Security Division,
-        Sector Null"
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.319
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.824
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.525
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.48025593
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.48025593
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5189936
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5189935
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -94.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: PaperText.GlocText
-      value: papers.Hint1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_text
-      value: "FACILITY SECURITY NOTICE\n\n       All restricted areas are protected
-        by a \n       keycard access system.\n\n       LEVEL 1 \u2014 Green Keycard\n      
-        LEVEL 2 \u2014 Red Keycard\n       LEVEL 3 \u2014 Master Keycard\n\n      
-        Your clearance level determines which \n       doors you can open. Do NOT
-        attempt to \n       force access beyond your level.\n       If you found
-        this card \u2014 you shouldn't \n       be here.\n\n\u2014 Security Division,
-        Sector Null"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_fontSize
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266374834621212643, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6417743565912043633, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      propertyPath: m_Name
-      value: PaperNote
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4691752173283655285, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
 --- !u!1 &67286563
 GameObject:
   m_ObjectHideFlags: 0
@@ -9564,12 +9468,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192492977}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.83654, y: 4.49343, z: -6.96883}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.71887, y: 4.4615, z: 21.11744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1014504414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193076895
 GameObject:
@@ -22912,12 +22816,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344637083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.36112, y: 35.92307, z: 94.50446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.19429, y: 35.89114, z: 122.59073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1014504414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &347470429
 GameObject:
@@ -48280,7 +48184,7 @@ RectTransform:
   - {fileID: 2002803702}
   - {fileID: 213278761}
   - {fileID: 79413925}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1014504414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -49738,12 +49642,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896679568}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.83654, y: 4.49343, z: -6.96884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.71887, y: 4.4615, z: 21.11743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1014504414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &896679571
 AudioSource:
@@ -55280,6 +55184,42 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1701604194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1014504413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1014504414}
+  m_Layer: 0
+  m_Name: SanitySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1014504414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014504413}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.55541, y: 0.03193, z: -28.08627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2045279087}
+  - {fileID: 192492979}
+  - {fileID: 896679570}
+  - {fileID: 873785107}
+  - {fileID: 344637085}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1015124852
 GameObject:
@@ -71669,10 +71609,6 @@ PrefabInstance:
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2143044571}
-    - target: {fileID: 504383917332339064, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -71770,6 +71706,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 474711832}
     - target: {fileID: 8517075220104460214, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517075220104460214, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1981167678}
@@ -71848,6 +71788,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 1617927366362708406, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4158141443040815652, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 6505240651373938360, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -113519,12 +113462,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045279085}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.471683, y: 1.7510304, z: 46.676308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.083728, y: 1.7191005, z: 74.76257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1014504414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047582577
 GameObject:
@@ -118675,9 +118618,4 @@ SceneRoots:
   - {fileID: 1711677859}
   - {fileID: 1981167666}
   - {fileID: 1452370402}
-  - {fileID: 2045279087}
-  - {fileID: 192492979}
-  - {fileID: 896679570}
-  - {fileID: 873785107}
-  - {fileID: 344637085}
-  - {fileID: 67116045}
+  - {fileID: 1014504414}
