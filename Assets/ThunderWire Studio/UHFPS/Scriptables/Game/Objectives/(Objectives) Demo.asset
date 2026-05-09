@@ -37,7 +37,7 @@ MonoBehaviour:
       CompleteCount: 3
       ObjectiveText:
         GlocText: '*Try to solve the levers puzzle [count]/3'
-        NormalText: Try to solve the levers puzzle
+        NormalText: Try to solve the levers puzzle [count]/3
   - ObjectiveKey: WayOut
     ObjectiveTitle:
       GlocText: '*The way out'
@@ -48,3 +48,8 @@ MonoBehaviour:
       ObjectiveText:
         GlocText: '*Find a way out of this place'
         NormalText: Find a way out of this place
+  - ObjectiveKey: GetOut
+    ObjectiveTitle:
+      GlocText: '*Pick the flashlight and get out of the storage room'
+      NormalText: Pick the flashlight and get out of the storage room
+    SubObjectives: []

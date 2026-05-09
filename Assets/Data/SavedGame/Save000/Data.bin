@@ -1,5 +1,5 @@
 {
-  "id": "7307f84ae2d54d0eb75fd2301fd0b847",
+  "id": "ba1310b62b3a41358aa455a8fc5e032f",
   "playerData": {
     "position": {
       "x": 58.031002,
@@ -12,7 +12,7 @@
     },
     "localData": {
       "health": 100,
-      "selectedItem": -1,
+      "selectedItem": 4,
       "playerItems": {
         "playerItem_0": {
           "recordingTime": 0,
@@ -25,7 +25,7 @@
           "flashlightAttached": false
         },
         "playerItem_4": {
-          "batteryEnergy": 320.0
+          "batteryEnergy": 309.693
         },
         "playerItem_5": {
           "currentFuel": 60.0
@@ -54,13 +54,23 @@
           }
         },
         "shortcuts": {
-          "shortcut_0": "{}",
+          "shortcut_0": "ba53a6ad76bb4513ba434a3b7542345a",
           "shortcut_1": "{}",
           "shortcut_2": "{}",
           "shortcut_3": "{}"
         }
       },
-      "objectives": {}
+      "objectives": {
+        "WayOut": {
+          "isCompleted": false,
+          "subObjectives": {
+            "WayOut": {
+              "completeCount": 0,
+              "isCompleted": false
+            }
+          }
+        }
+      }
     }
   },
   "worldState": {

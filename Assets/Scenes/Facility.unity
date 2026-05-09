@@ -2337,7 +2337,7 @@ MonoBehaviour:
   TriggerType: 2
   DialogueType: 1
   DialogueContinue: 0
-  Dialogue: {fileID: 11400000, guid: 8d86a57d78502de47a6c163f0ec4677a, type: 2}
+  Dialogue: {fileID: 11400000, guid: 6e7c638ba17efa74bb2d923923e54bbe, type: 2}
   DialogueAudio: {fileID: 0}
   BinderName: 
   RangedDialogue: 0
