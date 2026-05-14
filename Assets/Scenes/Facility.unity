@@ -1986,10 +1986,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 566108996}
-  - component: {fileID: 566109000}
   - component: {fileID: 566108999}
   - component: {fileID: 566108998}
   - component: {fileID: 566108997}
+  - component: {fileID: 566109002}
+  - component: {fileID: 566109001}
+  - component: {fileID: 566109000}
   m_Layer: 2
   m_Name: Trigger
   m_TagString: Untagged
@@ -2005,13 +2007,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566108995}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.09377352, z: -0, w: 0.99559355}
-  m_LocalPosition: {x: 71.168655, y: 1.5000018, z: 30.236965}
+  m_LocalRotation: {x: 0.022631967, y: 0.61312836, z: -0.005429852, w: 0.78964037}
+  m_LocalPosition: {x: 70.5, y: 0.336, z: 28.568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 977692668}
-  m_LocalEulerAnglesHint: {x: 0, y: -10.761, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.43, y: 75.68, z: 1.1}
 --- !u!114 &566108997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,7 +2050,7 @@ MonoBehaviour:
   OnDialogueStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566109000}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_isTrigger
         m_Mode: 6
@@ -2063,7 +2065,7 @@ MonoBehaviour:
   OnDialogueEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566109000}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_isTrigger
         m_Mode: 6
@@ -2148,8 +2150,50 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 3, z: 17.7166}
-  m_Center: {x: 0.000000019575738, y: -0.0000000021306161, z: -1.9501501}
+  m_Size: {x: 0.3, y: 2, z: 2.6}
+  m_Center: {x: 0.5, y: 1, z: 0}
+--- !u!65 &566109001
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566108995}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 2, z: 2.6}
+  m_Center: {x: -0.5, y: 1, z: 0}
+--- !u!65 &566109002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566108995}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 0.3}
+  m_Center: {x: 0, y: 1, z: 0.8}
 --- !u!1001 &569168752
 PrefabInstance:
   m_ObjectHideFlags: 0
