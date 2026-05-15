@@ -50417,6 +50417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Safe Big
       objectReference: {fileID: 0}
+    - target: {fileID: 8506299206234332724, guid: 3c100908c8f04904c90d247d3af9f40f, type: 3}
+      propertyPath: UnlockCode
+      value: 030501
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7704846589188436717, guid: 3c100908c8f04904c90d247d3af9f40f, type: 3}
