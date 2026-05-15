@@ -23,6 +23,16 @@ MonoBehaviour:
         GlocText: Where Am i ?
         NormalText: 
     Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: fc9fa82006be2114599feabc6383d290, type: 3}
     SubtitleType: 0
     SingleSubtitle:
@@ -33,6 +43,16 @@ MonoBehaviour:
         GlocText: Why theres blood everywhere ?
         NormalText: 
     Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: 830500f71f34a414488f03152f81a0f8, type: 3}
     SubtitleType: 0
     SingleSubtitle:
@@ -40,7 +60,7 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Who did this ?
+        GlocText: Who did this?
         NormalText: 
     Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: e3b6314f222db6c4e8d26adc67abf694, type: 3}
@@ -50,6 +70,6 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: What is that on the floor
+        GlocText: what is that on the floor ?
         NormalText: 
     Subtitles: []
