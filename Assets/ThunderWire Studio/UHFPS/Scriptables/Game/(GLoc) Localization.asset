@@ -453,17 +453,17 @@ MonoBehaviour:
     - Key: StartingNote
       Text: 'TO ANYONE WHO FINDS THIS,
 
-        
-
-        Do not remain in this
-        sector any longer than necessary. The lower corridor was breached first,
-        and the containment line failed before anyone had time to respond.
 
 
-        If
-        I did not make it out, take the flashlight and leave immediately. Sector
-        Null is no longer stable, and whatever is moving through the facility is
-        getting closer by the minute.'
+        Do not remain in this sector any
+        longer than necessary. The lower corridor was breached first, and the containment
+        line failed before anyone had time to respond.
+
+
+        If I did not make
+        it out, take the flashlight and leave immediately. Sector Null is no longer
+        stable, and whatever is moving through the facility is getting closer by
+        the minute.'
   - Section: inventory
     Localizations:
     - Key: context.use
@@ -657,6 +657,10 @@ MonoBehaviour:
       Text: Scrap
     - Key: description.scrap
       Text: A collection of miscellaneous metal pieces. Useful for crafting and repairs.
+    - Key: title.masterkeycard
+      Text: Master Keycard
+    - Key: description.masterkeycard
+      Text: ' A master access card used to unlock high-security door.'
   - Section: tips
     Localizations:
     - Key: tip1
