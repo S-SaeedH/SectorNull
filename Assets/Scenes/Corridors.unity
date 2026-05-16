@@ -74280,17 +74280,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 474711832}
     - target: {fileID: 8517075220104460214, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8517075220104460214, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1981167678}
-    - target: {fileID: 8517075220104460214, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 192492978}
     - target: {fileID: 8601886773751821610, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
