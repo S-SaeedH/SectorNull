@@ -70781,7 +70781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: KeycardItem.m_GUID
-      value: 96cdd54e574046aeb73adf165af2a6f5
+      value: 6a592965438742c39de802ccdc956da2
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: RemoveKeycardAfterUse
@@ -70789,15 +70789,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: KeycardItem.m_Item.GUID
-      value: 96cdd54e574046aeb73adf165af2a6f5
+      value: 6a592965438742c39de802ccdc956da2
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: KeycardItem.m_Item.Icon
       value: 
-      objectReference: {fileID: 2800000, guid: e1c7e22c95805a8458fef07138e95615, type: 3}
+      objectReference: {fileID: 2800000, guid: 3045c600b16604342985197edee92892, type: 3}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: KeycardItem.m_Item.Name
-      value: Green Keycard
+      value: Master Keycard
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: KeycardItem.m_Section.GUID
