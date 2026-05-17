@@ -65,13 +65,13 @@ MonoBehaviour:
         NormalText: Search the facility for the gold master keycard.
   - ObjectiveKey: OpenRestrictedDoor
     ObjectiveTitle:
-      GlocText: '*Open the Restricted Doors'
+      GlocText: Open the Restricted Doors
       NormalText: Open the Restricted Doors
     SubObjectives:
     - SubObjectiveKey: OpenRestrictedDoor
       CompleteCount: 0
       ObjectiveText:
-        GlocText: '*Use the keycard to unlock the restricted areas.'
+        GlocText: Use the keycard to unlock the restricted areas.
         NormalText: Use the keycard to unlock the restricted areas.
   - ObjectiveKey: EscapeFacility
     ObjectiveTitle:
