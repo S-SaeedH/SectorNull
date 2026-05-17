@@ -6026,6 +6026,59 @@ Transform:
   - {fileID: 2201250112513262794}
   m_Father: {fileID: 1363591132269877627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3560788798178810653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7946172469058113125}
+  - component: {fileID: 5273978116687966595}
+  m_Layer: 0
+  m_Name: Objective_CompleteFindMasterKeycard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7946172469058113125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560788798178810653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2783865505125538976}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5273978116687966595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560788798178810653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bef1a4507177f14ca3a2b2e08bd4e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.ObjectiveTrigger
+  triggerType: 2
+  objectiveType: 1
+  objectiveToAdd:
+    ObjectiveKey: 
+    SubObjectives: []
+  objectiveToComplete:
+    ObjectiveKey: FindMasterKeycard
+    SubObjectives:
+    - FindMasterKeycard
 --- !u!1 &3716464539952806458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6282,6 +6335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 148517886619317050}
   - component: {fileID: 7751308485673747712}
+  - component: {fileID: 278379417675940558}
   m_Layer: 0
   m_Name: Objective_EscapeFacility
   m_TagString: Untagged
@@ -6298,11 +6352,11 @@ Transform:
   m_GameObject: {fileID: 4055930986078546695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.03197, y: 4.77298, z: -11.30306}
+  m_LocalPosition: {x: -0.3016796, y: 0.22954035, z: 2.3586006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7222458593170080677}
+  m_Father: {fileID: 2783865505125538976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7751308485673747712
 MonoBehaviour:
@@ -6325,6 +6379,20 @@ MonoBehaviour:
   objectiveToComplete:
     ObjectiveKey: 
     SubObjectives: []
+--- !u!114 &278379417675940558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055930986078546695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0a218ef9807d64aa981dbed1d9c002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DelayedObjectiveTrigger
+  objectiveTrigger: {fileID: 7751308485673747712}
+  delay: 4
 --- !u!1 &4819669320602052019
 GameObject:
   m_ObjectHideFlags: 0
@@ -6985,6 +7053,39 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5652401573161104176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2783865505125538976}
+  m_Layer: 0
+  m_Name: Objectives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2783865505125538976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652401573161104176}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.73029, y: 4.54344, z: -13.66166}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 148517886619317050}
+  - {fileID: 7946172469058113125}
+  m_Father: {fileID: 7222458593170080677}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5737714888780066286
 GameObject:
   m_ObjectHideFlags: 0
@@ -9407,7 +9508,7 @@ Transform:
   - {fileID: 6101228330323213028}
   - {fileID: 1363591132269877627}
   - {fileID: 2730599389767269100}
-  - {fileID: 148517886619317050}
+  - {fileID: 2783865505125538976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7219327484353502585
@@ -52044,18 +52145,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
+      propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7751308485673747712}
+      objectReference: {fileID: 5273978116687966595}
+    - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
+      propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 278379417675940558}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
+      propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
@@ -52063,11 +52176,23 @@ PrefabInstance:
       value: TriggerObjective
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
+      propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TriggerWithDelay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UHFPS.Runtime.ObjectiveTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
+      propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DelayedObjectiveTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145890066075441748, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
+      propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2145890066075441749, guid: e2c78e05c8c72b7468c8a7feb485f3bd, type: 3}
