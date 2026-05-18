@@ -53,3 +53,33 @@ MonoBehaviour:
       GlocText: '*Pick the flashlight and get out of the storage room'
       NormalText: Pick the flashlight and get out of the storage room
     SubObjectives: []
+  - ObjectiveKey: FindMasterKeycard
+    ObjectiveTitle:
+      GlocText: Find the Master Keycard
+      NormalText: Find the Master Keycard
+    SubObjectives:
+    - SubObjectiveKey: FindMasterKeycard
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Search the facility for the gold master keycard.
+        NormalText: Search the facility for the gold master keycard.
+  - ObjectiveKey: OpenRestrictedDoor
+    ObjectiveTitle:
+      GlocText: Open the Restricted Doors
+      NormalText: Open the Restricted Doors
+    SubObjectives:
+    - SubObjectiveKey: OpenRestrictedDoor
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Use the keycard to unlock the restricted areas.
+        NormalText: Use the keycard to unlock the restricted areas.
+  - ObjectiveKey: EscapeFacility
+    ObjectiveTitle:
+      GlocText: Escape the Facility
+      NormalText: Escape the Facility
+    SubObjectives:
+    - SubObjectiveKey: EscapeFacility
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find a way out before it is too late.
+        NormalText: Find a way out before it is too late.

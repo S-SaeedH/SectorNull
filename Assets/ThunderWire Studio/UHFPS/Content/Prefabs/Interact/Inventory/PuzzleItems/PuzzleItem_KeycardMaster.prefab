@@ -133,11 +133,11 @@ MonoBehaviour:
   ExamineRotate: 3
   DisableType: 1
   PickupItem:
-    m_GUID: 96cdd54e574046aeb73adf165af2a6f5
+    m_GUID: 6a592965438742c39de802ccdc956da2
     m_Item:
-      Name: Green Keycard
-      GUID: 96cdd54e574046aeb73adf165af2a6f5
-      Icon: {fileID: 2800000, guid: e1c7e22c95805a8458fef07138e95615, type: 3}
+      Name: Master Keycard
+      GUID: 6a592965438742c39de802ccdc956da2
+      Icon: {fileID: 2800000, guid: 3045c600b16604342985197edee92892, type: 3}
     m_Section:
       Name: Usables
       GUID: be7f17ba3cb145e6883bea6a70f0deb7
