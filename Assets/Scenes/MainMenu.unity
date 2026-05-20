@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844552278073669205, guid: 68e978a15bedca6459a73e501a635e73, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ce9e4e2f7abd3d4ca848474df4109a2, type: 3}
     - target: {fileID: 2870004043264967313, guid: 68e978a15bedca6459a73e501a635e73, type: 3}
       propertyPath: NewGameSceneName
       value: Facility
@@ -242,6 +246,14 @@ PrefabInstance:
     - target: {fileID: 4661438098043751765, guid: 68e978a15bedca6459a73e501a635e73, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203724479520145241, guid: 68e978a15bedca6459a73e501a635e73, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb58cf9b75a48d84dbfb5ac35425d3bc, type: 3}
+    - target: {fileID: 7389951039372158673, guid: 68e978a15bedca6459a73e501a635e73, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 8122523247755141597, guid: 68e978a15bedca6459a73e501a635e73, type: 3}
       propertyPath: m_Name

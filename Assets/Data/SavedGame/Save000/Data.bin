@@ -1,5 +1,5 @@
 {
-  "id": "ba1310b62b3a41358aa455a8fc5e032f",
+  "id": "c28fb037c7c34f42aef1b44ba7639eda",
   "playerData": {
     "position": {
       "x": 58.031002,
@@ -12,7 +12,7 @@
     },
     "localData": {
       "health": 100,
-      "selectedItem": 4,
+      "selectedItem": -1,
       "playerItems": {
         "playerItem_0": {
           "recordingTime": 0,
@@ -25,7 +25,7 @@
           "flashlightAttached": false
         },
         "playerItem_4": {
-          "batteryEnergy": 309.693
+          "batteryEnergy": 261.4491
         },
         "playerItem_5": {
           "currentFuel": 60.0
@@ -48,6 +48,26 @@
             "orientation": 0,
             "position": {
               "x": 0,
+              "y": 0
+            },
+            "customData": {}
+          },
+          "item_1": {
+            "item": "ba53a6ad76bb4513ba434a3b7542345a",
+            "quantity": 1,
+            "orientation": 0,
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "customData": {}
+          },
+          "item_2": {
+            "item": "e504d12d72e249a898b3ae4b65604ae0",
+            "quantity": 3,
+            "orientation": 0,
+            "position": {
+              "x": 4,
               "y": 0
             },
             "customData": {}

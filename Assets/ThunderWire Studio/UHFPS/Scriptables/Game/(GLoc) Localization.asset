@@ -113,17 +113,12 @@ MonoBehaviour:
       Text: You have died
   - Section: loading
     Localizations:
-    - Key: description.demoscene
-      Text: In this demo scene, you will be able to witness and explore all the impressive
-        features that come with the kit. This scene has been specially designed to
-        showcase the full potential of the asset, so you can fully test its capabilities.
-    - Key: description.demoscene2
-      Text: In this interactive demo scene, you will have the opportunity to engage
-        firsthand with the elevator system, showcasing its seamless operation and
-        integration along with the other great features of the kit.
-    - Key: description.demoscene3
-      Text: It's raining outside, you can test how the raindrop effect works when
-        you're sheltered under a roof or not.
+    - Key: description.facility
+      Text: A creepy dark abandoned facility.
+    - Key: description.corridors
+      Text: Watchout for the corridors.
+    - Key: description.ending
+      Text: THIS IS THE END.
   - Section: titles
     Localizations:
     - Key: putaway
