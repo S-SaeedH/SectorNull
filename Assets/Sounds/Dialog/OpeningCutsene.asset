@@ -40,7 +40,7 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Why theres blood everywhere ?
+        GlocText: What Happened Here
         NormalText: 
     Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
@@ -60,7 +60,7 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Who did this?
+        GlocText: This Cant Be Real
         NormalText: 
     Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: e3b6314f222db6c4e8d26adc67abf694, type: 3}
@@ -70,6 +70,6 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: what is that on the floor ?
+        GlocText: 'Is That A Note? '
         NormalText: 
     Subtitles: []
