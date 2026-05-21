@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb5bd7e8a706a41b793e7440b34eea, type: 3}
+  m_Name: EndingCutsceneDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.DialogueAsset
+  Dialogues:
+  - DialogueAudio: {fileID: 8300000, guid: f9918c6365eea1041a697f955025e3d3, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: You made it, I honstly wasn't sure you would.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f86a802841b59a540925759adf2466e9, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: DON'T .. don't you dare and act like this is normal.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 0fd26eccf423f064f8e2e6b52a99e968, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: Ahh .. I know you're angry
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: fc4746fc0afa59242924ab34bd2a818f, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: You WIPED my meomry, You took everything from me, my name, my past,
+          who I was. You destroyed my entire life and locked me in that place like
+          I was NOTHING!
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 56fb002262afaa846a4f89ee972b1f7b, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: We didn't destroy your life, we we're trying to save it. You don't
+          understand what you we're carrying before you came to us.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: e4c210c9bbc4c9945b963d05da51e064, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: I don't understand? .. I don't understand because YOU TOOK it from
+          me. I don't even know who I am anymore. Do you have ANY idea what that
+          feels like?
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 979a96ec5ad782a42931197879ffd63a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: What you knew, what you remembered, it was going to kill you. The
+          things you had seen, the things you we're part of, your mind was breaking
+          under the wait of it. We removed it to protect you.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 5df6211e3d675364280dba545b195e43, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: THAT was NOT your choice to make.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 2295775c76a4fa84a8bae26eabe487f9, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: No, it wasn't .. and I have lived with that everyday.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: ecb6d6eaf0412994385736995adec337, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: You don't get to feel guilty and call it even!
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 7dea6dcd9d08d384a965a9333003b412, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: Do what you need to do.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 820d50ab76dfa45418b9bf9225dba868, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: 'You are not worth remembering either. '
+        NormalText: 
+    Subtitles: []
