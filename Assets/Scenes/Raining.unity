@@ -1429,7 +1429,7 @@ MonoBehaviour:
   TriggerType: 2
   DialogueType: 1
   DialogueContinue: 0
-  Dialogue: {fileID: 11400000, guid: 6e7c638ba17efa74bb2d923923e54bbe, type: 2}
+  Dialogue: {fileID: 11400000, guid: 7c62ffd70f543a546b6ced62af715b9e, type: 2}
   DialogueAudio: {fileID: 0}
   BinderName: 
   RangedDialogue: 0
@@ -1469,6 +1469,8 @@ PlayableDirector:
     value: {fileID: 760661953}
   - key: {fileID: 2245397126286997718, guid: d6eec9248c290434a810a6f73bab7df8, type: 2}
     value: {fileID: 760661954}
+  - key: {fileID: -2270242674061159187, guid: d6eec9248c290434a810a6f73bab7df8, type: 2}
+    value: {fileID: 760661953}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &760661953
