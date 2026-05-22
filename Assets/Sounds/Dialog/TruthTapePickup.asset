@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93cb5bd7e8a706a41b793e7440b34eea, type: 3}
-  m_Name: 3 Fuses
+  m_Name: TruthTapePickup
   m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.DialogueAsset
   Dialogues:
-  - DialogueAudio: {fileID: 8300000, guid: 33bcc8d0ca19b124d8e5716123401043, type: 3}
+  - DialogueAudio: {fileID: 8300000, guid: 0a073db09f4a9a846b94d5f6a417ca83, type: 3}
     SubtitleType: 0
     SingleSubtitle:
       Time: 0
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Fueses they split the power deliberately some really dosnt want
-          this Opened
+        GlocText: Whatever is on this tape they didnt want anyone to see it
         NormalText: 
     Subtitles: []
