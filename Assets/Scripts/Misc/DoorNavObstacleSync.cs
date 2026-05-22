@@ -28,8 +28,8 @@ public class DoorNavObstacleSync : MonoBehaviour
 
     private void SetBlocked(bool blocked)
     {
-        if (doorBlockerCollider != null)
-            doorBlockerCollider.enabled = blocked;
+        /*if (doorBlockerCollider != null)
+            doorBlockerCollider.enabled = blocked;*/
 
         if (navMeshObstacle != null)
             navMeshObstacle.enabled = blocked;
