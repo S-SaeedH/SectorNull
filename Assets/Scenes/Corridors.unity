@@ -72243,6 +72243,10 @@ PrefabInstance:
       propertyPath: Title.GlocText
       value: objects.trunk
       objectReference: {fileID: 0}
+    - target: {fileID: 504383917332339064, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: f178b15329215ab418aecb27488fd9b1, type: 2}
     - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
