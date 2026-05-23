@@ -618,21 +618,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<size=52><color=#9E98A6><b>S // N U L L</b></color></size>
 
-    
+
 
     <size=18><color=#64777D>[
     PERSONNEL ARCHIVE // SECTOR NULL ]</color></size>
 
     <size=18><color=#64777D>____________________________________________</color></size>
 
-    
+
 
     <size=24><color=#7F9298>DEVELOPED
     BY</color></size>
 
     <size=32><color=#E6EEF0>Rocky Labs</color></size>
 
-    
+
 
     <size=24><color=#7F9298>ASSETS
     USED</color></size>
@@ -644,7 +644,7 @@ MonoBehaviour:
 
     <size=26><color=#C8D4D7>Sci-Fi Warehouse Kit</color></size>
 
-    
+
 
     <size=24><color=#7F9298>SPECIAL
     THANKS</color></size>
@@ -654,11 +654,11 @@ MonoBehaviour:
     <size=24><color=#C8D4D7>and
     playtesters.</color></size>
 
-    
+
 
     <size=18><color=#64777D>____________________________________________</color></size>
 
-    
+
 
     <size=24><color=#E6EEF0>Thank
     you for entering Sector Null.</color></size>'
@@ -777,7 +777,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 682, y: 748}
+  m_SizeDelta: {x: 682, y: 942.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294749632
 MonoBehaviour:
