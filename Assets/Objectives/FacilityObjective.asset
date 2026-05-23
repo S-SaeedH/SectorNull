@@ -13,8 +13,23 @@ MonoBehaviour:
   m_Name: FacilityObjective
   m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.ObjectivesAsset
   Objectives:
-  - ObjectiveKey: Get out of Here
+  - ObjectiveKey: level1
     ObjectiveTitle:
-      GlocText: take the flash light and leave the storage room
+      GlocText: 'level 1 : The Lower Sector'
       NormalText: 
-    SubObjectives: []
+    SubObjectives:
+    - SubObjectiveKey: Note
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Read the note next to the dead body
+        NormalText: 
+    - SubObjectiveKey: Flashlight
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Read the note next to the dead body
+        NormalText: 
+    - SubObjectiveKey: 'leave '
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: leave the lower sector
+        NormalText: 
