@@ -53,6 +53,26 @@ MonoBehaviour:
         GlocText: ...
         NormalText: 
     Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: 0300d46393b73ca419cf9fce63469249, type: 3}
     SubtitleType: 0
     SingleSubtitle:
