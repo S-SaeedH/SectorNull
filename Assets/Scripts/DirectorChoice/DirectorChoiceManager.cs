@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 using Cinemachine;
@@ -29,9 +30,14 @@ public class DirectorChoiceManager : MonoBehaviour
     public float swaySpeed = 0.55f;
     public float rollAmount = 1.2f;
 
+    [Header("Choice Result")]
+    public bool killedDirector;
+    public bool sparedDirector;
+
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private Quaternion originalCameraRotation;
     private bool choiceActive = false;
+    private Coroutine fadeRoutine;
 
     private void Start()
     {
@@ -48,6 +54,16 @@ public class DirectorChoiceManager : MonoBehaviour
 
         if (choicePostFX != null)
             choicePostFX.SetActive(false);
+
+        if (choiceCanvasGroup != null)
+        {
+            choiceCanvasGroup.alpha = 0f;
+            choiceCanvasGroup.interactable = false;
+            choiceCanvasGroup.blocksRaycasts = false;
+        }
+
+        if (choiceCanvas != null)
+            choiceCanvas.SetActive(false);
     }
 
     private void LateUpdate()
@@ -64,8 +80,19 @@ public class DirectorChoiceManager : MonoBehaviour
 
     public void ShowChoice()
     {
+        killedDirector = false;
+        sparedDirector = false;
+
         if (choiceCanvas != null)
             choiceCanvas.SetActive(true);
+
+        if (choiceCanvasGroup != null)
+        {
+            choiceCanvasGroup.gameObject.SetActive(true);
+            choiceCanvasGroup.alpha = 0f;
+            choiceCanvasGroup.interactable = false;
+            choiceCanvasGroup.blocksRaycasts = false;
+        }
 
         if (choicePostFX != null)
             choicePostFX.SetActive(true);
@@ -96,34 +123,33 @@ public class DirectorChoiceManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        StartCoroutine(FadeInChoiceUI());
+        if (fadeRoutine != null)
+            StopCoroutine(fadeRoutine);
+
+        fadeRoutine = StartCoroutine(FadeInChoiceUI());
     }
 
     public void KillDirector()
     {
         Debug.Log("Player chose to kill the director.");
-        StopChoiceEffects();
 
-        if (cutsceneDirector != null)
-            cutsceneDirector.Resume();
+        killedDirector = true;
+        sparedDirector = false;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        ResolveChoiceWithoutHidingUI();
     }
 
     public void SpareDirector()
     {
         Debug.Log("Player chose to spare the director.");
-        StopChoiceEffects();
 
-        if (cutsceneDirector != null)
-            cutsceneDirector.Resume();
+        killedDirector = false;
+        sparedDirector = true;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        ResolveChoiceWithoutHidingUI();
     }
 
-    private void StopChoiceEffects()
+    private void ResolveChoiceWithoutHidingUI()
     {
         choiceActive = false;
 
@@ -136,9 +162,6 @@ public class DirectorChoiceManager : MonoBehaviour
         if (whisperAudio != null)
             whisperAudio.Stop();
 
-        if (choiceCanvas != null)
-            choiceCanvas.SetActive(false);
-
         if (choicePostFX != null)
             choicePostFX.SetActive(false);
 
@@ -148,6 +171,24 @@ public class DirectorChoiceManager : MonoBehaviour
             cameraNoise.m_FrequencyGain = 0f;
         }
 
+        if (cameraSwayTarget != null)
+            cameraSwayTarget.localRotation = originalCameraRotation;
+
+        if (choiceCanvasGroup != null)
+        {
+            choiceCanvasGroup.interactable = false;
+            choiceCanvasGroup.blocksRaycasts = false;
+        }
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        if (cutsceneDirector != null)
+            cutsceneDirector.Resume();
+    }
+
+    public void ForceHideChoiceUI()
+    {
         if (choiceCanvasGroup != null)
         {
             choiceCanvasGroup.alpha = 0f;
@@ -155,11 +196,11 @@ public class DirectorChoiceManager : MonoBehaviour
             choiceCanvasGroup.blocksRaycasts = false;
         }
 
-        if (cameraSwayTarget != null)
-            cameraSwayTarget.localRotation = originalCameraRotation;
+        if (choiceCanvas != null)
+            choiceCanvas.SetActive(false);
     }
 
-    private System.Collections.IEnumerator FadeInChoiceUI()
+    private IEnumerator FadeInChoiceUI()
     {
         if (choiceCanvasGroup == null)
             yield break;
@@ -173,7 +214,10 @@ public class DirectorChoiceManager : MonoBehaviour
         while (timer < fadeDuration)
         {
             timer += Time.unscaledDeltaTime;
-            choiceCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            float t = Mathf.Clamp01(timer / fadeDuration);
+
+            choiceCanvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
+
             yield return null;
         }
 
