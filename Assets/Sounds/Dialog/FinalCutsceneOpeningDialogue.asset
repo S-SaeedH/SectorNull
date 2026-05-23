@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb5bd7e8a706a41b793e7440b34eea, type: 3}
+  m_Name: FinalCutsceneOpeningDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.DialogueAsset
+  Dialogues:
+  - DialogueAudio: {fileID: 8300000, guid: fb3194fd26c50ee4c893f7b4acd468f4, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: .. I made it .. I am outside
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 5d56909909d74ac4496a6963c776d610, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: But why does it still feel wrong?
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 0300d46393b73ca419cf9fce63469249, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: Wait .... Someone's there!
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 3d6f79fda9d0f7d49bb5e954c6efae67, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: NO ... It's him
+        NormalText: 
+    Subtitles: []
