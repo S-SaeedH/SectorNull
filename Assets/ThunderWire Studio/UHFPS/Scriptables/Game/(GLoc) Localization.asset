@@ -111,6 +111,10 @@ MonoBehaviour:
       Text: Pause Menu
     - Key: text.died
       Text: You have died
+    - Key: button.credits
+      Text: Credits
+    - Key: tooltip.credits
+      Text: View the game credits
   - Section: loading
     Localizations:
     - Key: description.facility
