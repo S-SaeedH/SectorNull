@@ -77316,7 +77316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: RemoveKeycardAfterUse
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: KeycardItem.m_Item.GUID
