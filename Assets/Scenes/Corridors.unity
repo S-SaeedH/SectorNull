@@ -75219,17 +75219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1313791778 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1735829814521346506, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45df30382c8585a41b534c5f0f78982a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.JumpscareTrigger
 --- !u!114 &1313791779 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -83036,6 +83025,7 @@ GameObject:
   - component: {fileID: 1452370397}
   - component: {fileID: 1452370396}
   - component: {fileID: 1452370395}
+  - component: {fileID: 1452370403}
   m_Layer: 3
   m_Name: HEROPLAYER
   m_TagString: Player
@@ -83345,6 +83335,31 @@ Transform:
   - {fileID: 1943533366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 195, z: 0}
+--- !u!114 &1452370403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452370394}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e6047fa5dad2c42974b66fc49f35c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SanityLightDetector
+  checkInterval: 0.25
+  detectionRadius: 12
+  lightThreshold: 0.35
+  darkDecayRate: 2
+  lightBlockerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  playerFlashlight: {fileID: 557146126}
+  flashlightProtectsSanity: 1
+  flashlightProtectionAmount: 1
+  requireFlashlightForwardCheck: 0
+  flashlightForwardCheckDistance: 3
+  showDebugLogs: 0
 --- !u!1 &1453852568
 GameObject:
   m_ObjectHideFlags: 0
@@ -114646,7 +114661,7 @@ MonoBehaviour:
   - Token: InteractableItem.b9ed5eaea1148c44a8af432b2e3f3c1e
     Instance: {fileID: 1313791777}
   - Token: JumpscareTrigger.07538a43605d41f48bd28da2f0567982
-    Instance: {fileID: 1313791778}
+    Instance: {fileID: 0}
   - Token: JumpscareTrigger.d4a25690a497a0f41b4f723977e368e4
     Instance: {fileID: 1313791779}
   - Token: JumpscareTrigger.dccfa605358c54e448851cfa4bd2da4d
