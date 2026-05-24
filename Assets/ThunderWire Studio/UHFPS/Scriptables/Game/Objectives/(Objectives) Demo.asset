@@ -143,3 +143,13 @@ MonoBehaviour:
       ObjectiveText:
         GlocText: 'Watch The Tape '
         NormalText: 'Watch The Tape '
+  - ObjectiveKey: level6
+    ObjectiveTitle:
+      GlocText: 'Level 6: Confront The Director'
+      NormalText: 'Level 6: Confront The Director'
+    SubObjectives:
+    - SubObjectiveKey: level6
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Step into the final scene
+        NormalText: 
