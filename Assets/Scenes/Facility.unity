@@ -242,6 +242,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3cd6adbcc46be449c88aff9236ad56, type: 3}
+--- !u!114 &25555875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5781481731243612775, guid: 2b3cd6adbcc46be449c88aff9236ad56, type: 3}
+  m_PrefabInstance: {fileID: 25555874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &29819340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,6 +812,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd6ae20373da1a45b5044bf1e4348bf, type: 3}
+--- !u!114 &108957374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 166133512025938489, guid: 9fd6ae20373da1a45b5044bf1e4348bf, type: 3}
+  m_PrefabInstance: {fileID: 108957373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &120041736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2759,6 +2781,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3173352636163525320, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
   m_PrefabInstance: {fileID: 687492941}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &687492943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
+  m_PrefabInstance: {fileID: 687492941}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &700960923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3412,6 +3445,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3cd6adbcc46be449c88aff9236ad56, type: 3}
+--- !u!114 &890862877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5781481731243612775, guid: 2b3cd6adbcc46be449c88aff9236ad56, type: 3}
+  m_PrefabInstance: {fileID: 890862876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &919277049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5093,6 +5137,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3cd6adbcc46be449c88aff9236ad56, type: 3}
+--- !u!114 &1498688840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5781481731243612775, guid: 2b3cd6adbcc46be449c88aff9236ad56, type: 3}
+  m_PrefabInstance: {fileID: 1498688839}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1517681667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76723,7 +76778,31 @@ MonoBehaviour:
   ObjectReferences: {fileID: 11400000, guid: 0ecd2d095f8fe2344b4750a1ccd0bdb3, type: 2}
   SavingIcon: {fileID: 2268820171287938815}
   Debugging: 1
-  worldSaveables: []
+  worldSaveables:
+  - Token: InteractableItem.36d4693d611770942ab647ab8d8ce579
+    Instance: {fileID: 108957374}
+  - Token: InteractableItem.ae56c522903462c4498cf381fded1785
+    Instance: {fileID: 890862877}
+  - Token: InteractableItem.2981290f0f9738c4688a50d108fedc32
+    Instance: {fileID: 687492943}
+  - Token: InteractableItem.e2ce0eac0e2553d4d892e0b533d6481e
+    Instance: {fileID: 1498688840}
+  - Token: InteractableItem.6d454e4f8745c0b4d821e18ec0a88498
+    Instance: {fileID: 25555875}
+  - Token: ObjectiveTrigger.ad5043447aae39e46be634da23c7c791
+    Instance: {fileID: 462758297}
+  - Token: ObjectiveTrigger.599c73f93fe450b49b55dce385a6fa46
+    Instance: {fileID: 566108997}
+  - Token: CutsceneTrigger.459c9860e4e8f8f4ea5bb21b48fd9c5f
+    Instance: {fileID: 566108999}
+  - Token: DialogueTrigger.d7c4c9afe2674614d823bac8aa1444ec
+    Instance: {fileID: 684650528}
+  - Token: ObjectiveTrigger.aa46523d82be7674e96450c115e9799f
+    Instance: {fileID: 872467369}
+  - Token: TimedInteractEvent.e296dfdaa5242554a87be6b9a8ac33c6
+    Instance: {fileID: 1771540503}
+  - Token: ObjectiveTrigger.19152dca4cecd8b4f97b8ca676f09019
+    Instance: {fileID: 2122582586}
   runtimeSaveables: []
 --- !u!1 &5813543553162854338
 GameObject:
