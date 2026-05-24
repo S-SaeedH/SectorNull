@@ -1,14 +1,14 @@
 {
-  "id": "034b4be6ab434372988e985711ed7c41",
+  "id": "c28fb037c7c34f42aef1b44ba7639eda",
   "playerData": {
     "position": {
-      "x": 3.79406738,
-      "y": -2.38418579E-07,
-      "z": 2.880709
+      "x": 58.031002,
+      "y": 6.056,
+      "z": 3.0
     },
     "rotation": {
-      "x": 87.60001,
-      "y": -4.9
+      "x": 270.0,
+      "y": 0.0
     },
     "localData": {
       "health": 100,
@@ -25,7 +25,7 @@
           "flashlightAttached": false
         },
         "playerItem_4": {
-          "batteryEnergy": 320.0
+          "batteryEnergy": 261.4491
         },
         "playerItem_5": {
           "currentFuel": 60.0
@@ -41,15 +41,56 @@
     "globalData": {
       "inventory": {
         "expanded": 0,
-        "items": {},
+        "items": {
+          "item_0": {
+            "item": "ba53a6ad76bb4513ba434a3b7542345a",
+            "quantity": 1,
+            "orientation": 0,
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "customData": {}
+          },
+          "item_1": {
+            "item": "ba53a6ad76bb4513ba434a3b7542345a",
+            "quantity": 1,
+            "orientation": 0,
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "customData": {}
+          },
+          "item_2": {
+            "item": "e504d12d72e249a898b3ae4b65604ae0",
+            "quantity": 3,
+            "orientation": 0,
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "customData": {}
+          }
+        },
         "shortcuts": {
-          "shortcut_0": "{}",
+          "shortcut_0": "ba53a6ad76bb4513ba434a3b7542345a",
           "shortcut_1": "{}",
           "shortcut_2": "{}",
           "shortcut_3": "{}"
         }
       },
-      "objectives": {}
+      "objectives": {
+        "WayOut": {
+          "isCompleted": false,
+          "subObjectives": {
+            "WayOut": {
+              "completeCount": 0,
+              "isCompleted": false
+            }
+          }
+        }
+      }
     }
   },
   "worldState": {

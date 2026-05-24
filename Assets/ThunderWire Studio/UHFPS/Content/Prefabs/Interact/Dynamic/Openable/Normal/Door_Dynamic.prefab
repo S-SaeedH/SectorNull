@@ -309,6 +309,8 @@ GameObject:
   - component: {fileID: 2780510044221391591}
   - component: {fileID: 2780510044221391590}
   - component: {fileID: 6191245762270202517}
+  - component: {fileID: 6110747136791174406}
+  - component: {fileID: 4822473144162888728}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -701,10 +703,34 @@ MonoBehaviour:
     volume: 0
   useEvent1:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4822473144162888728}
+        m_TargetAssemblyTypeName: DoorNavObstacleSync, Assembly-CSharp
+        m_MethodName: SetDoorOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   useEvent2:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4822473144162888728}
+        m_TargetAssemblyTypeName: DoorNavObstacleSync, Assembly-CSharp
+        m_MethodName: SetDoorClosed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onValueChange:
     m_PersistentCalls:
       m_Calls: []
@@ -777,6 +803,36 @@ MonoBehaviour:
   FalseExamineTitle:
     GlocText: 
     NormalText: 
+--- !u!208 &6110747136791174406
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941286296918898347}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.462, y: 1.0220001, z: 0.035}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.453, y: 0, z: -0.026}
+  m_TimeToStationary: 0.5
+--- !u!114 &4822473144162888728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5941286296918898347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37632e7d49bb4b049816cf287897788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorNavObstacleSync
+  doorBlockerCollider: {fileID: 2780510044221391591}
+  navMeshObstacle: {fileID: 6110747136791174406}
 --- !u!1 &6720870852924315822
 GameObject:
   m_ObjectHideFlags: 0

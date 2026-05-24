@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb5bd7e8a706a41b793e7440b34eea, type: 3}
+  m_Name: OpeningCutsene
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.DialogueAsset
+  Dialogues:
+  - DialogueAudio: {fileID: 8300000, guid: 56c698d1227d020429e747d54fd8516d, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: Where Am i ?
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: fc9fa82006be2114599feabc6383d290, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: What Happened Here
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ...
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 830500f71f34a414488f03152f81a0f8, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: This Cant Be Real
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: e3b6314f222db6c4e8d26adc67abf694, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: 'Is That A Note? '
+        NormalText: 
+    Subtitles: []

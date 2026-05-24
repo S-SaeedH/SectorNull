@@ -4,7 +4,7 @@
   "sensitivity": 1.0,
   "smoothing": false,
   "smoothing_speed": 1.0,
-  "show_fps": false,
+  "show_fps": true,
   "display": 0,
   "screen_fullscreen": false,
   "screen_width": 1920,

@@ -1289,8 +1289,10 @@ MonoBehaviour:
           NormalText: VHS Cassette
         descriptionKey:
           GlocText: item.description.vhscassette
-          NormalText: A classic, durable format for video recording and archiving
-            memories or documenting important events.
+          NormalText: 'Name: {name}
+
+            A classic, durable format for video
+            recording and archiving memories or documenting important events.'
     - GUID: 21cc6375d5614192aac1fedce6147cfa
       SectionGUID: be7f17ba3cb145e6883bea6a70f0deb7
       Title: Red Keycard
@@ -1454,6 +1456,44 @@ MonoBehaviour:
           GlocText: item.description.marbleball
           NormalText: A small, colorful glass ball often used in games. Can be thrown
             or rolled to solve puzzles and activate mechanisms.
+    - GUID: 6a592965438742c39de802ccdc956da2
+      SectionGUID: be7f17ba3cb145e6883bea6a70f0deb7
+      Title: Master Keycard
+      Description: A master access card used to unlock high-security door.
+      Width: 1
+      Height: 1
+      Orientation: 0
+      FlipDirection: 0
+      Icon: {fileID: 21300000, guid: 3045c600b16604342985197edee92892, type: 3}
+      ItemObject:
+        GUID: 
+        Object: {fileID: 0}
+      Settings:
+        isUsable: 0
+        isStackable: 0
+        isExaminable: 0
+        isCombinable: 0
+        isDroppable: 0
+        isDiscardable: 0
+        canBindShortcut: 0
+        alwaysShowQuantity: 0
+      UsableSettings:
+        usableType: 0
+        playerItemIndex: 0
+        healthPoints: 0
+        removeOnUse: 0
+        customData:
+          JsonData: 
+      Properties:
+        maxStack: 0
+      CombineSettings: []
+      LocalizationSettings:
+        titleKey:
+          GlocText: item.title.masterkeycard
+          NormalText: 
+        descriptionKey:
+          GlocText: item.description.masterkeycard
+          NormalText: 
   - Section:
       Name: Crafting
       GUID: 21af113af789404382a2532d30591873

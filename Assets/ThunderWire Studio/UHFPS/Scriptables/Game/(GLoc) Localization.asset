@@ -111,19 +111,18 @@ MonoBehaviour:
       Text: Pause Menu
     - Key: text.died
       Text: You have died
+    - Key: button.credits
+      Text: Credits
+    - Key: tooltip.credits
+      Text: View the game credits
   - Section: loading
     Localizations:
-    - Key: description.demoscene
-      Text: In this demo scene, you will be able to witness and explore all the impressive
-        features that come with the kit. This scene has been specially designed to
-        showcase the full potential of the asset, so you can fully test its capabilities.
-    - Key: description.demoscene2
-      Text: In this interactive demo scene, you will have the opportunity to engage
-        firsthand with the elevator system, showcasing its seamless operation and
-        integration along with the other great features of the kit.
-    - Key: description.demoscene3
-      Text: It's raining outside, you can test how the raindrop effect works when
-        you're sheltered under a roof or not.
+    - Key: description.facility
+      Text: A creepy dark abandoned facility.
+    - Key: description.corridors
+      Text: Watchout for the corridors.
+    - Key: description.ending
+      Text: THIS IS THE END.
   - Section: titles
     Localizations:
     - Key: putaway
@@ -299,12 +298,13 @@ MonoBehaviour:
   - Section: papers
     Localizations:
     - Key: warning
-      Text: 'WARNING: Do NOT explore the facility without a guard escort. Monsters
-        have been reported roaming the corridors. Proceed with extreme caution.
-
-
-        -
-        You have been warned.'
+      Text: "TO ANYONE WHO FINDS THIS,\r\n\r\nDo not explore this sector alone. The
+        corridors are not secure, and something hostile is still moving through the
+        facility. The upper levels were supposed to remain isolated, but the breaches
+        have made that impossible to maintain.\r\nWithout a guard, you will not make
+        it far. Stay near the secure zones, and do not enter any locked wing unless
+        you are prepared for contact. Silence in Sector Null is never a sign of safety.\r\n\r\n\u2014
+        Security Notice\r\n"
     - Key: crafting.ammo
       Text: '9MM PISTOL AMMO
 
@@ -336,6 +336,133 @@ MonoBehaviour:
         you can open. Do NOT attempt to \r\n       force access beyond your level.\r\n\r\n      
         If you found this card \u2014 you shouldn't \r\n       be here.\r\n\n\u2014
         Security Division, Sector Null"
+    - Key: BreakroomNote
+      Text: 'Personal reminders do not lose this.
+
+
+
+        The guardroom code follows
+        the inspection order.
+
+        Think of the four sections of this floor and
+        the numbers assigned to each during the last safety inspection.
+
+        Reception:
+        3rd
+
+        Ward A: 1st
+
+        Storage: 4th
+
+        Guard Post: 2nd
+
+
+        Put
+        them in order of inspection. That is the code.
+
+'
+    - Key: theaterRoomDoorNote
+      Text: "TO ANYONE WHO FINDS THIS,\n\r\nThe theater room was sealed after the
+        last containment failure, and no one below senior clearance was told what
+        was inside. Power to the lock was split across three emergency fuses, supposedly
+        to keep the section isolated, though that was never the full story.\r\nSomething
+        in that room was important enough to bury, and the people in charge made
+        sure it stayed buried. If you are trying to open it now, then you are already
+        deeper into the facility than you should be.\n\r\n\u2014 Restricted Notice\r\n"
+    - Key: OperationsRoomNote
+      Text: "TO ANYONE WHO FINDS THIS,\n\r\nMaintenance record: one emergency fuse
+        was moved into this operations room during the blackout and left here until
+        power restoration could be attempted. The fuses are required to open the
+        theater room and restore power to the locked system. If the facility loses
+        power again, this section should be checked first.\n\r\nDo not assume this
+        room is clear just because nothing is moving right now. The operations sector
+        has been unstable since the collapse, and the structure itself is beginning
+        to fail.\n\r\n\u2014 Maintenance Record\r\n"
+    - Key: SecondFusePuzzleNote
+      Text: "TO ANYONE WHO FINDS THIS,\n\r\nI know what they hid in the theater room,
+        but every route to it was sealed behind layered mechanisms. One part is hidden
+        behind the device on this floor, and the rest was scattered where nobody
+        would think to search. That was deliberate.\r\nIf you are still trying to
+        force your way through, stop wasting time looking blindly. The answer is
+        inside the room itself.\n\r\n\u2014 Hidden Notice\r\n"
+    - Key: lockpicknote
+      Text: "TO ANYONE WHO FINDS THIS,\n\nI locked this room myself, hoping no one
+        would ever need what was stored inside. If you find a way in continuing what
+        I could not finish. To open this door, you will need a lockpick.\nI am sorry
+        it came to this, but once the facility started failing, hiding things became
+        easier than explaining them.\n\n\n\u2014 Private Notice\n"
+    - Key: ballNote
+      Text: "They used to dismiss this object as useless,\n\nbut it is not. The table
+        puzzle was built around it, and without it the last fuse cannot be reached.
+        That was always the trick \u2014 hide something important inside something
+        that looks harmless.\r\nIf you have made it this far, do not leave it behind.
+        It matters more than it looks.\r\n"
+    - Key: theaterTapeNote
+      Text: 'TO ANYONE WHO FINDS THIS,
+
+
+
+        If the tape is still here, then
+        nobody has time to destroy it. Watch it carefully, because it explains what
+        this facility really is, what was hidden below it.
+
+        After that, there
+        will be no turning back. The truth inside Sector Null is not something they
+        intended for anyone to hear.
+
+'
+    - Key: genNote
+      Text: "TO ANYONE WHO FINDS THIS,\n\r\nThe facility is still running on backup
+        power, and it will not hold for long. The main generator must be turned on
+        before the power systems can fully function again, but it will not start
+        unless fuel is brought to the operations sector first.\r\nIf you are planning
+        to leave, you need to find the fuel, restore the generator, and bring the
+        main systems back online. Only then will the main exit respond again \u2014
+        assuming the rest of the facility does not wake up with it.\n\r\n\u2014 Maintenance
+        Record\r\n"
+    - Key: fuelNote
+      Text: 'TO ANYONE WHO FINDS THIS,
+
+
+
+        Emergency fuel reserves were moved
+        into this room after the lower storage flooded, and they were never intended
+        for regular use. They should only be touched if power restoration becomes
+        necessary.
+
+        If you are up here to turn on the generator, then time
+        is already running out. Sector Null has started reacting to the blackout,
+        and that is never a good sign.
+
+'
+    - Key: SafeNote
+      Text: "TO ANYONE WHO FINDS THIS,\n\nThe master keycard remains with the director\u2019s
+        records, locked away with the safe and the tape archive. If you want the
+        code for the safe, you need to watch the tape first, because the numbers
+        were never written down anywhere else.\n\nOnce you have the code, open the
+        safe and take what is inside. Control failed the moment Sector Null stopped
+        obeying its own systems, and the people in charge believed the facility could
+        contain anything. They were wrong.\n"
+    - Key: MainDoorNote
+      Text: "TO ANYONE WHO FINDS THIS,\n\r\nMain gate unlock requires restored power
+        and master-level access. In the event of total containment failure, all personnel
+        are advised to evacuate immediately and avoid all lower sectors. If the gate
+        is still open, leave now and do not look back.\r\nSector Null is no longer
+        secure.\n\r\n\u2014 Final Evacuation Notice\r\n"
+    - Key: StartingNote
+      Text: 'TO ANYONE WHO FINDS THIS,
+
+
+
+        Do not remain in this sector any
+        longer than necessary. The lower corridor was breached first, and the containment
+        line failed before anyone had time to respond.
+
+
+        If I did not make
+        it out, take the flashlight and leave immediately. Sector Null is no longer
+        stable, and whatever is moving through the facility is getting closer by
+        the minute.'
   - Section: inventory
     Localizations:
     - Key: context.use
@@ -529,6 +656,10 @@ MonoBehaviour:
       Text: Scrap
     - Key: description.scrap
       Text: A collection of miscellaneous metal pieces. Useful for crafting and repairs.
+    - Key: title.masterkeycard
+      Text: Master Keycard
+    - Key: description.masterkeycard
+      Text: ' A master access card used to unlock high-security door.'
   - Section: tips
     Localizations:
     - Key: tip1
