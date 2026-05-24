@@ -77,9 +77,74 @@ MonoBehaviour:
     ObjectiveTitle:
       GlocText: Escape the Facility
       NormalText: Escape the Facility
+    SubObjectives: []
+  - ObjectiveKey: level1
+    ObjectiveTitle:
+      GlocText: 'Level 1 : The Lower Sector'
+      NormalText: 'Level 1 : The Lower Sector'
     SubObjectives:
-    - SubObjectiveKey: EscapeFacility
+    - SubObjectiveKey: note
       CompleteCount: 0
       ObjectiveText:
-        GlocText: Find a way out before it is too late.
-        NormalText: Find a way out before it is too late.
+        GlocText: Read The Note Next To The Dead Body
+        NormalText: Read The Note Next To The Dead Body
+    - SubObjectiveKey: flashlight
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Pick Up The Flash Light
+        NormalText: Pick Up The Flash Light
+    - SubObjectiveKey: 'leave '
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Get Out Of The Lower Sector
+        NormalText: Get Out Of The Lower Sector
+  - ObjectiveKey: level2
+    ObjectiveTitle:
+      GlocText: 'Level 2 : Guard room'
+      NormalText: 'Level 2 : Guard room'
+    SubObjectives:
+    - SubObjectiveKey: GuardRoom
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Get Into The Gaurd Room
+        NormalText: Get Into The Gaurd Room
+    - SubObjectiveKey: GetCode
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: 'Get The Code For The Gaurd Room '
+        NormalText: 'Get The Code For The Gaurd Room '
+    - SubObjectiveKey: useCode
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Use The Code To Open The Door
+        NormalText: Use The Code To Open The Door
+  - ObjectiveKey: level3
+    ObjectiveTitle:
+      GlocText: 'Level 3 : The Theater'
+      NormalText: 'Level 3 : The Theater'
+    SubObjectives:
+    - SubObjectiveKey: GoToTheater
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Go Into The Theater
+        NormalText: Go Into The Theater
+    - SubObjectiveKey: GetFuse
+      CompleteCount: 4
+      ObjectiveText:
+        GlocText: Get The Fuses For The Power
+        NormalText: Get The Fuses For The Power
+    - SubObjectiveKey: Open
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Open The Door
+        NormalText: Open The Door
+    - SubObjectiveKey: Kill
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Kill The Monster
+        NormalText: Kill The Monster
+    - SubObjectiveKey: Watch
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: 'Watch The Tape '
+        NormalText: 'Watch The Tape '

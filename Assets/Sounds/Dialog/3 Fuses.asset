@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: 3 Fuses
   m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.DialogueAsset
   Dialogues:
-  - DialogueAudio: {fileID: 8300000, guid: 33bcc8d0ca19b124d8e5716123401043, type: 3}
+  - DialogueAudio: {fileID: 8300000, guid: a1ddc2ed41f7c724194c69f7147603f3, type: 3}
     SubtitleType: 0
     SingleSubtitle:
       Time: 0
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Fueses they split the power deliberately some really dosnt want
-          this Opened
+        GlocText: 4 Fueses They Split The Power Deliberately Someone Really Didn't
+          Want This Opened
         NormalText: 
     Subtitles: []
