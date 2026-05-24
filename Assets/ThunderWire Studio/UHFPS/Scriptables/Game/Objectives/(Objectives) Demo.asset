@@ -129,7 +129,7 @@ MonoBehaviour:
         GlocText: Go Into The Theater
         NormalText: Go Into The Theater
     - SubObjectiveKey: GetFuse
-      CompleteCount: 4
+      CompleteCount: 0
       ObjectiveText:
         GlocText: Get The Fuses For The Power
         NormalText: Get The Fuses For The Power
@@ -138,11 +138,6 @@ MonoBehaviour:
       ObjectiveText:
         GlocText: Open The Door
         NormalText: Open The Door
-    - SubObjectiveKey: Kill
-      CompleteCount: 0
-      ObjectiveText:
-        GlocText: Kill The Monster
-        NormalText: Kill The Monster
     - SubObjectiveKey: Watch
       CompleteCount: 0
       ObjectiveText:
