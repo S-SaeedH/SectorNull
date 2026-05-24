@@ -83342,7 +83342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452370394}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1e6047fa5dad2c42974b66fc49f35c7, type: 3}
   m_Name: 
@@ -83350,13 +83350,13 @@ MonoBehaviour:
   checkInterval: 0.25
   detectionRadius: 12
   lightThreshold: 0.35
-  darkDecayRate: 2
+  darkDecayRate: 0.5
   lightBlockerMask:
     serializedVersion: 2
     m_Bits: 0
   playerFlashlight: {fileID: 557146126}
   flashlightProtectsSanity: 1
-  flashlightProtectionAmount: 1
+  flashlightProtectionAmount: 0.25
   requireFlashlightForwardCheck: 0
   flashlightForwardCheckDistance: 3
   showDebugLogs: 0
@@ -114960,7 +114960,7 @@ MonoBehaviour:
   decayRate: 0
   decayEnabled: 0
   recoveryEnabled: 1
-  recoveryDelay: 10
+  recoveryDelay: 5
   recoveryRate: 0.6
   recoveryCapSanity: 0
   lowSanityThreshold: 40
