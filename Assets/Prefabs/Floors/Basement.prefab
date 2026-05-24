@@ -19228,6 +19228,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2178004511441187158}
     m_Modifications:
+    - target: {fileID: 2177491053050570813, guid: bc85fd93ea5ea5743a7c7e92d9b4b188, type: 3}
+      propertyPath: CurrentFuelLiters
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177491053050570813, guid: bc85fd93ea5ea5743a7c7e92d9b4b188, type: 3}
+      propertyPath: GeneratorEfficiency
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4072368983051103529, guid: bc85fd93ea5ea5743a7c7e92d9b4b188, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
