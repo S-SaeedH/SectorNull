@@ -14470,6 +14470,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1612129146}
     m_Modifications:
     - target: {fileID: 2177491053050570813, guid: bc85fd93ea5ea5743a7c7e92d9b4b188, type: 3}
+      propertyPath: CurrentFuelLiters
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177491053050570813, guid: bc85fd93ea5ea5743a7c7e92d9b4b188, type: 3}
       propertyPath: 'PowerConsumers.Array.data[0]'
       value: 
       objectReference: {fileID: 1885998238}
@@ -19949,6 +19953,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1612129146}
     m_Modifications:
+    - target: {fileID: 92307573397648412, guid: 6c3b42d9375604c4dbd796f63544133e, type: 3}
+      propertyPath: ItemCustomData.JsonData
+      value: "{\n\t\"fuel_liters\": 5\n}"
+      objectReference: {fileID: 0}
     - target: {fileID: 5747657090397534593, guid: 6c3b42d9375604c4dbd796f63544133e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 78.324
@@ -57989,6 +57997,10 @@ PrefabInstance:
     - target: {fileID: 92307573397648412, guid: 6c3b42d9375604c4dbd796f63544133e, type: 3}
       propertyPath: UseInventoryTitle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 92307573397648412, guid: 6c3b42d9375604c4dbd796f63544133e, type: 3}
+      propertyPath: ItemCustomData.JsonData
+      value: "{\n\t\"fuel_liters\": 5\n}"
       objectReference: {fileID: 0}
     - target: {fileID: 5747657090397534593, guid: 6c3b42d9375604c4dbd796f63544133e, type: 3}
       propertyPath: m_LocalPosition.x
