@@ -36,6 +36,7 @@ public class DirectorChoiceManager : MonoBehaviour
 
     [Header("Ending Logic")]
     public PlayableDirector killEndingDirector;
+    public PlayableDirector spareEndingDirector;
 
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private Quaternion originalCameraRotation;
@@ -176,7 +177,16 @@ public class DirectorChoiceManager : MonoBehaviour
         killedDirector = false;
         sparedDirector = true;
 
-        ResolveChoiceWithoutHidingUI();
+        if (choiceAudio != null)
+            choiceAudio.Stop();
+
+        if (hallucinationAudio != null)
+            hallucinationAudio.Stop();
+
+        if (whisperAudio != null)
+            whisperAudio.Stop();
+
+        StartCoroutine(StartSpareEndingAfterChoiceFade());
     }
 
     private void ResolveChoiceWithoutHidingUI()
@@ -254,5 +264,33 @@ public class DirectorChoiceManager : MonoBehaviour
         choiceCanvasGroup.alpha = 1f;
         choiceCanvasGroup.interactable = true;
         choiceCanvasGroup.blocksRaycasts = true;
+    }
+
+    private IEnumerator StartSpareEndingAfterChoiceFade()
+    {
+        yield return new WaitForSeconds(0.45f);
+
+        choiceActive = false;
+
+        if (cameraNoise != null)
+        {
+            cameraNoise.m_AmplitudeGain = 0f;
+            cameraNoise.m_FrequencyGain = 0f;
+        }
+
+        if (cameraSwayTarget != null)
+            cameraSwayTarget.localRotation = originalCameraRotation;
+
+        if (choiceCanvas != null)
+            choiceCanvas.SetActive(false);
+
+        if (choicePostFX != null)
+            choicePostFX.SetActive(false);
+
+        if (spareEndingDirector != null)
+        {
+            spareEndingDirector.time = 0;
+            spareEndingDirector.Play();
+        }
     }
 }

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb5bd7e8a706a41b793e7440b34eea, type: 3}
+  m_Name: SpareEndingDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Scriptable.DialogueAsset
+  Dialogues:
+  - DialogueAudio: {fileID: 8300000, guid: 7ce6af69b12349c4caf588949d76c414, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: Living with what you did is worse than death.
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 41b7334971b683e488b74a8b22124450, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: "So this is what I become\u2026 a prisoner of my own work."
+        NormalText: 
+    Subtitles: []
+  - DialogueAudio: {fileID: 8300000, guid: 31f53ffc4dc279548823c71cba25f7e7, type: 3}
+    SubtitleType: 0
+    SingleSubtitle:
+      Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: "Then stay here\u2026 with everything you created."
+        NormalText: 
+    Subtitles: []
