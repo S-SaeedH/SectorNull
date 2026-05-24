@@ -34,6 +34,9 @@ public class DirectorChoiceManager : MonoBehaviour
     public bool killedDirector;
     public bool sparedDirector;
 
+    [Header("Ending Logic")]
+    public PlayableDirector killEndingDirector;
+
     private CinemachineBasicMultiChannelPerlin cameraNoise;
     private Quaternion originalCameraRotation;
     private bool choiceActive = false;
@@ -136,7 +139,34 @@ public class DirectorChoiceManager : MonoBehaviour
         killedDirector = true;
         sparedDirector = false;
 
-        ResolveChoiceWithoutHidingUI();
+        if (choiceAudio != null)
+            choiceAudio.Stop();
+
+        if (hallucinationAudio != null)
+            hallucinationAudio.Stop();
+
+        if (whisperAudio != null)
+            whisperAudio.Stop();
+
+        StartCoroutine(StartKillEndingAfterChoiceFade());
+    }
+
+    private IEnumerator StartKillEndingAfterChoiceFade()
+    {
+        // Wait for the half-screen choice fade animation to finish
+        yield return new WaitForSeconds(0.45f);
+
+        if (choiceCanvas != null)
+            choiceCanvas.SetActive(false);
+
+        if (choicePostFX != null)
+            choicePostFX.SetActive(false);
+
+        if (killEndingDirector != null)
+        {
+            killEndingDirector.time = 0;
+            killEndingDirector.Play();
+        }
     }
 
     public void SpareDirector()

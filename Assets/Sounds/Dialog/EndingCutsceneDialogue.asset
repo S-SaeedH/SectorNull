@@ -30,7 +30,7 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: DON'T .. don't you dare and act like this is normal.
+        GlocText: DON'T .. don't you dare act like this is normal.
         NormalText: 
     Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: 0fd26eccf423f064f8e2e6b52a99e968, type: 3}
