@@ -1661,8 +1661,7 @@ GameObject:
   - component: {fileID: 4987845226519997939}
   - component: {fileID: 2997901189921089816}
   - component: {fileID: 535441988479490895}
-  - component: {fileID: 6111727027744222671}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1763,22 +1762,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 30a37ce794ca1c94192e4d8721b12940, type: 3}
---- !u!208 &6111727027744222671
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250788371021151300}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.528, y: 1.049, z: 0.079}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.527, y: -0.90900004, z: 0.028}
-  m_TimeToStationary: 0.5
 --- !u!1 &1328012349160975986
 GameObject:
   m_ObjectHideFlags: 0
@@ -73784,7 +73767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1085274250471148, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1085274250471148, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -73876,37 +73859,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4546697730940662, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
       insertIndex: 1
       addedObject: {fileID: 4740326908033886812}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1085274250471148, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5434124644784840264}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
 --- !u!4 &4152460451708137899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4546697730940662, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
   m_PrefabInstance: {fileID: 4157007127724732253}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4157804286172088753 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1085274250471148, guid: b95c20770a08b1549a9ba34c35f574e6, type: 3}
-  m_PrefabInstance: {fileID: 4157007127724732253}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &5434124644784840264
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4157804286172088753}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.528, y: 1.049, z: 0.079}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.527, y: -0.90900004, z: 0.028}
-  m_TimeToStationary: 0.5
 --- !u!1001 &4200023382479226673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76513,7 +76472,7 @@ MonoBehaviour:
   collidersToEnable: []
   lockedLayerName: Default
   unlockedLayerName: Interact
-  includeChildren: 1
+  includeChildren: 0
   isUnlocked: 0
   startLocked: 1
 --- !u!1001 &6834119676055658797
