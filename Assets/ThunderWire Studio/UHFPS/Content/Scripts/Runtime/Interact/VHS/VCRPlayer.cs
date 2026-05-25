@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.Events;
 using Newtonsoft.Json.Linq;
 using UHFPS.Tools;
 using TMPro;
@@ -53,6 +54,10 @@ namespace UHFPS.Runtime
         public SoundClip stop;
         public SoundClip rewind;
 
+        [Header("Events")]
+        [SerializeField] private UnityEvent OnTapeStart;
+        [SerializeField] private UnityEvent OnTapeEnd;
+
         private RenderTexture outputTexture;
         private Collider tapeCollider;
         private string tapeCustomData;
@@ -71,6 +76,8 @@ namespace UHFPS.Runtime
         private bool isPaused;
         private bool isEnded;
         private bool isWinding;
+
+        private bool startEventInvoked;
 
         private void Awake()
         {
@@ -92,15 +99,29 @@ namespace UHFPS.Runtime
             if (isStarted && !isWinding)
             {
                 UpdateClipTime(monitor.videoPlayer.time);
+
                 if ((tapeDuration - currentTime) <= 0.5f && !isEnded)
                 {
                     monitor.videoPlayer.Pause();
                     SetDisplayText(DisplayText.Stop);
                     monitor.SetDisplayTexture(DisplayTexture.Stop);
                     audioSource.SetSoundClip(stop, play: true);
+
                     isEnded = true;
+                    isPaused = true;
+
+                    OnTapeEnd?.Invoke();
                 }
             }
+        }
+
+        private void InvokeStartEventOnce()
+        {
+            if (startEventInvoked)
+                return;
+
+            startEventInvoked = true;
+            OnTapeStart?.Invoke();
         }
 
         private void UpdateClipTime(double time, bool setCurrent = true)
@@ -108,7 +129,9 @@ namespace UHFPS.Runtime
             int seconds = ((int)time) % 60;
             int minutes = Mathf.FloorToInt((int)time / 60f);
             timeText.text = string.Format(displayFormat, minutes, seconds);
-            if(setCurrent) currentTime = time;
+
+            if (setCurrent)
+                currentTime = time;
         }
 
         public void PowerOnOff()
@@ -120,6 +143,7 @@ namespace UHFPS.Runtime
         public void SetPower(bool power)
         {
             if (isWinding) return;
+
             if (isPoweredOn = power)
             {
                 if (canEject)
@@ -134,7 +158,8 @@ namespace UHFPS.Runtime
                 }
 
                 insertCollider.gameObject.SetActive(canInsert);
-                if(emissionMaterial.IsAssigned)
+
+                if (emissionMaterial.IsAssigned)
                     emissionMaterial.ClonedMaterial.EnableKeyword(emissionKeyword);
             }
             else
@@ -153,6 +178,7 @@ namespace UHFPS.Runtime
         public void SetDisplayText(DisplayText? display, bool resetTimer = false)
         {
             stateText.gameObject.SetActive(display.HasValue);
+
             stateText.text = display switch
             {
                 DisplayText.Play => playSymbol,
@@ -165,7 +191,8 @@ namespace UHFPS.Runtime
                 _ => ""
             };
 
-            if (resetTimer) timeText.text = "-- : --";
+            if (resetTimer)
+                timeText.text = "-- : --";
         }
 
         public void StartPausePlayback()
@@ -176,11 +203,14 @@ namespace UHFPS.Runtime
             if (isWinding)
             {
                 StopAllCoroutines();
+
                 SetDisplayText(DisplayText.Stop);
                 monitor.SetDisplayTexture(DisplayTexture.Stop);
                 audioSource.SetSoundClip(stop, play: true);
+
                 monitor.videoPlayer.time = currentTime;
                 monitor.videoPlayer.Prepare();
+
                 isWinding = false;
                 isPaused = true;
             }
@@ -190,13 +220,17 @@ namespace UHFPS.Runtime
                 monitor.SetVideoInput(outputTexture);
                 audioSource.SetSoundClip(play, play: true);
                 monitor.videoPlayer.Play();
+
                 isStarted = true;
                 isPaused = false;
+
+                InvokeStartEventOnce();
             }
-            else if(!isPaused)
+            else if (!isPaused)
             {
                 SetDisplayText(DisplayText.Pause);
                 monitor.videoPlayer.Pause();
+
                 isPaused = true;
             }
         }
@@ -212,8 +246,11 @@ namespace UHFPS.Runtime
                 monitor.SetVideoInput(outputTexture);
                 audioSource.SetSoundClip(play, play: true);
                 monitor.videoPlayer.Play();
+
                 isStarted = true;
                 isPaused = false;
+
+                InvokeStartEventOnce();
             }
         }
 
@@ -225,11 +262,14 @@ namespace UHFPS.Runtime
             if (isWinding)
             {
                 StopAllCoroutines();
+
                 SetDisplayText(DisplayText.Stop);
                 monitor.SetDisplayTexture(DisplayTexture.Stop);
                 audioSource.SetSoundClip(stop, play: true);
+
                 monitor.videoPlayer.time = currentTime;
                 monitor.videoPlayer.Prepare();
+
                 isWinding = false;
                 isPaused = true;
             }
@@ -237,16 +277,19 @@ namespace UHFPS.Runtime
             {
                 SetDisplayText(DisplayText.Pause);
                 monitor.videoPlayer.Pause();
+
                 isPaused = true;
             }
         }
 
         public void Rewind()
         {
-            if(isStarted && !isWinding && (tapeDuration - currentTime) < tapeDuration - 0.5f)
+            if (isStarted && !isWinding && (tapeDuration - currentTime) < tapeDuration - 0.5f)
             {
                 monitor.videoPlayer.Pause();
+
                 StartCoroutine(OnRewind());
+
                 isWinding = true;
                 isEnded = false;
             }
@@ -257,7 +300,9 @@ namespace UHFPS.Runtime
             if (isStarted && !isWinding && (tapeDuration - currentTime) > 0.5f)
             {
                 monitor.videoPlayer.Pause();
+
                 StartCoroutine(OnFastForward());
+
                 isWinding = true;
             }
         }
@@ -273,20 +318,24 @@ namespace UHFPS.Runtime
             if (isPoweredOn && canEject && !isWinding)
             {
                 monitor.videoPlayer.Pause();
+
                 StartCoroutine(OnEject());
+
                 isWinding = true;
             }
         }
 
         public void OnInventoryItemSelect(Inventory inventory, InventoryItem selectedItem)
         {
-            if(selectedItem.ItemGuid == VHSItem)
+            if (selectedItem.ItemGuid == VHSItem)
             {
                 var customData = selectedItem.CustomData.GetJson();
-                if(customData.TryGetValue("texture", out JToken texture))
+
+                if (customData.TryGetValue("texture", out JToken texture))
                 {
                     string texturePath = texture.ToString();
                     Texture2D tapeTexture = Resources.Load<Texture2D>(texturePath);
+
                     MeshRenderer tapeRenderer = VHSTape.GetComponentInChildren<MeshRenderer>();
                     tapeRenderer.material.SetTexture(tapeMaterialProperty, tapeTexture);
                 }
@@ -295,6 +344,7 @@ namespace UHFPS.Runtime
                 {
                     string videoPath = video.ToString();
                     VideoClip videoClip = Resources.Load<VideoClip>(videoPath);
+
                     monitor.PrepareVideo(videoClip, outputTexture);
                     tapeDuration = videoClip.length;
                 }
@@ -309,6 +359,13 @@ namespace UHFPS.Runtime
                 canInsert = false;
                 canEject = false;
 
+                isStarted = false;
+                isPaused = true;
+                isEnded = false;
+                isWinding = false;
+                startEventInvoked = false;
+                currentTime = 0;
+
                 StartCoroutine(OnInsert());
             }
             else
@@ -322,10 +379,12 @@ namespace UHFPS.Runtime
             insertCollider.gameObject.SetActive(true);
             VHSTape.gameObject.SetActive(false);
             animator.SetTrigger(closeCoverTrigger);
+
             canInsert = true;
         }
 
         #region Enumerators
+
         IEnumerator OnInsert()
         {
             animator.SetTrigger(insertTrigger);
@@ -338,6 +397,7 @@ namespace UHFPS.Runtime
 
             VHSIcon.SetActive(true);
             VHSTape.gameObject.SetActive(false);
+
             canEject = true;
         }
 
@@ -347,10 +407,12 @@ namespace UHFPS.Runtime
 
             SetDisplayText(DisplayText.Eject, true);
             monitor.SetDisplayTexture(DisplayTexture.Stop);
+
             yield return new WaitForSeconds(1f);
 
             VHSTape.gameObject.SetActive(true);
             tapeCollider.enabled = false;
+
             animator.SetTrigger(ejectTrigger);
             audioSource.SetSoundClip(tapeEject, play: true);
 
@@ -361,16 +423,21 @@ namespace UHFPS.Runtime
             monitor.SetDisplayTexture(DisplayTexture.NoTape);
 
             VHSIcon.SetActive(false);
+
             VHSTape.ItemCustomData.JsonData = tapeCustomData;
             tapeCustomData = null;
+
             tapeCollider.enabled = true;
 
             canInsert = true;
             canEject = false;
+
             isStarted = false;
             isWinding = false;
             isPaused = false;
             isEnded = false;
+            startEventInvoked = false;
+            currentTime = 0;
         }
 
         IEnumerator OnRewind()
@@ -378,16 +445,20 @@ namespace UHFPS.Runtime
             if (currentTime > 0)
             {
                 windingMod = 0;
+
                 monitor.SetDisplayTexture(DisplayTexture.Rewind);
                 SetDisplayText(DisplayText.Rewind);
                 audioSource.SetSoundClip(rewind, play: true);
+
                 yield return new WaitForSeconds(timeBeforeWinding);
 
                 while (currentTime > 0)
                 {
                     UpdateClipTime(currentTime, false);
+
                     windingMod = Mathf.MoveTowards(windingMod, 1, Time.deltaTime * windingStartupSpeed);
                     currentTime -= Time.deltaTime * rewindSpeed * windingMod;
+
                     yield return null;
                 }
 
@@ -399,9 +470,12 @@ namespace UHFPS.Runtime
 
             currentTime = 0;
             monitor.videoPlayer.time = currentTime;
+
             isStarted = false;
             isWinding = false;
             isPaused = true;
+            isEnded = false;
+            startEventInvoked = false;
         }
 
         IEnumerator OnFastForward()
@@ -409,16 +483,20 @@ namespace UHFPS.Runtime
             if (currentTime < tapeDuration)
             {
                 windingMod = 0;
+
                 monitor.SetDisplayTexture(DisplayTexture.FastForward);
                 SetDisplayText(DisplayText.FastForwad);
                 audioSource.SetSoundClip(rewind, play: true);
+
                 yield return new WaitForSeconds(timeBeforeWinding);
 
                 while (currentTime < tapeDuration)
                 {
                     UpdateClipTime(currentTime, false);
+
                     windingMod = Mathf.MoveTowards(windingMod, 1, Time.deltaTime * windingStartupSpeed);
                     currentTime += Time.deltaTime * fastForwardSpeed * windingMod;
+
                     yield return null;
                 }
             }
@@ -429,9 +507,11 @@ namespace UHFPS.Runtime
 
             currentTime = tapeDuration;
             monitor.videoPlayer.time = currentTime;
+
             isWinding = false;
             isPaused = true;
         }
+
         #endregion
 
         public StorableCollection OnSave()
@@ -442,9 +522,14 @@ namespace UHFPS.Runtime
                 { nameof(canInsert), canInsert },
                 { nameof(canEject), canEject },
                 { nameof(isEnded), isEnded },
+                { nameof(startEventInvoked), startEventInvoked },
                 { "playtime", currentTime },
-                { "customData", !string.IsNullOrEmpty(tapeCustomData) 
-                    ? JObject.Parse(tapeCustomData) : new JObject() }
+                {
+                    "customData",
+                    !string.IsNullOrEmpty(tapeCustomData)
+                        ? JObject.Parse(tapeCustomData)
+                        : new JObject()
+                }
             };
         }
 
@@ -452,24 +537,36 @@ namespace UHFPS.Runtime
         {
             bool isPowered = (bool)data[nameof(isPoweredOn)];
             SetPower(isPowered);
+
             isPaused = isPowered;
 
             canInsert = (bool)data[nameof(canInsert)];
             canEject = (bool)data[nameof(canEject)];
             isEnded = (bool)data[nameof(isEnded)];
+
+            if (data[nameof(startEventInvoked)] != null)
+                startEventInvoked = (bool)data[nameof(startEventInvoked)];
+            else
+                startEventInvoked = false;
+
             currentTime = (double)data["playtime"];
             tapeCustomData = data["customData"].ToString();
 
-            if (!string.IsNullOrEmpty(tapeCustomData) && data["customData"]["texture"] != null && data["customData"]["video"] != null)
+            if (!string.IsNullOrEmpty(tapeCustomData)
+                && data["customData"]["texture"] != null
+                && data["customData"]["video"] != null)
             {
                 string texturePath = data["customData"]["texture"].ToString();
                 string videoPath = data["customData"]["video"].ToString();
 
                 Texture2D tapeTexture = Resources.Load<Texture2D>(texturePath);
                 VideoClip videoClip = Resources.Load<VideoClip>(videoPath);
+
                 MeshRenderer tapeRenderer = VHSTape.GetComponentInChildren<MeshRenderer>();
 
-                if (tapeTexture) tapeRenderer.material.SetTexture(tapeMaterialProperty, tapeTexture);
+                if (tapeTexture)
+                    tapeRenderer.material.SetTexture(tapeMaterialProperty, tapeTexture);
+
                 if (videoClip)
                 {
                     tapeDuration = videoClip.length;
