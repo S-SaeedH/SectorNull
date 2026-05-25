@@ -20,6 +20,6 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Not Much But Its Better Than Nothing
+        GlocText: Not much, but it's better than nothing
         NormalText: 
     Subtitles: []

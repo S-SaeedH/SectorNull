@@ -20,7 +20,7 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Where Am i ?
+        GlocText: Where am I?
         NormalText: 
     Subtitles: []
   - DialogueAudio: {fileID: 8300000, guid: f05af29926721f84da6c8c334e55106a, type: 3}

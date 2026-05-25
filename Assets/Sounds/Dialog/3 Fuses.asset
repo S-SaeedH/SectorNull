@@ -20,7 +20,7 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: 4 Fueses They Split The Power Deliberately Someone Really Didn't
-          Want This Opened
+        GlocText: 4 Fueses, they split the power deliberately. Someone really didn't
+          want this opened
         NormalText: 
     Subtitles: []

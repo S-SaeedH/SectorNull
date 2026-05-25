@@ -391,6 +391,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6131786226474861802, guid: e2a633a82276bec469c4ed9213529b0d, type: 3}
   m_PrefabInstance: {fileID: 2483784277042732270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3971670787564570178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8610787765282099514}
+    m_Modifications:
+    - target: {fileID: 417350135684318392, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_Name
+      value: Warzombie F Pedroso
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.692673
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.927299
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6620004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000003774895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+--- !u!4 &4152139197874542656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1045232106551942658, guid: ed03775603bb0ec498e91c60e2b637b5, type: 3}
+  m_PrefabInstance: {fileID: 3971670787564570178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6976121647497055106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,12 +630,20 @@ PrefabInstance:
       objectReference: {fileID: 9137976451433539821}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2177676861283322860, guid: 36e4a99beaa431243b881c604a584a85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4152139197874542656}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36e4a99beaa431243b881c604a584a85, type: 3}
 --- !u!4 &8610552465704381312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2178004511441187158, guid: 36e4a99beaa431243b881c604a584a85, type: 3}
+  m_PrefabInstance: {fileID: 7586032408874064598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8610787765282099514 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2177676861283322860, guid: 36e4a99beaa431243b881c604a584a85, type: 3}
   m_PrefabInstance: {fileID: 7586032408874064598}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8531008011817003417
