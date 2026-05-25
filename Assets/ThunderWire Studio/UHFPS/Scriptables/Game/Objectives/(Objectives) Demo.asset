@@ -152,4 +152,44 @@ MonoBehaviour:
       CompleteCount: 0
       ObjectiveText:
         GlocText: Step into the final scene
-        NormalText: 
+        NormalText: Step into the final scene
+  - ObjectiveKey: level4
+    ObjectiveTitle:
+      GlocText: 'level 4 : Prepare To Escape '
+      NormalText: 'level 4 : Prepare To Escape '
+    SubObjectives:
+    - SubObjectiveKey: GoExit
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Go to The Main Exit
+        NormalText: Go to The Main Exit
+    - SubObjectiveKey: ReadNote
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find The Maste Card
+        NormalText: Find The Maste Card
+    - SubObjectiveKey: ReadDircNote
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find The Code In The Video
+        NormalText: Find The Code In The Video
+  - ObjectiveKey: level5
+    ObjectiveTitle:
+      GlocText: 'level 5 : Escape The Sector'
+      NormalText: 'level 5 : Escape The Sector'
+    SubObjectives:
+    - SubObjectiveKey: FindGen
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find the Generator
+        NormalText: Find the Generator
+    - SubObjectiveKey: FindFuel
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find Fuel For the Generator
+        NormalText: Find Fuel For the Generator
+    - SubObjectiveKey: Escape
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Turn On The Generator And Escape
+        NormalText: Turn On The Generator And Escape
