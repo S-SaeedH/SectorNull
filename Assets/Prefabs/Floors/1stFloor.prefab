@@ -76301,6 +76301,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 683486953323025230}
     m_Modifications:
+    - target: {fileID: 66693198378177483, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150430307228386442, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1833715933518638694, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3525
@@ -76339,6 +76347,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1833715933518638694, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3116736258098934082, guid: 369f5832442b17f46b16dc28d9e231e6, type: 3}
@@ -76448,7 +76460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6788758662063501660}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8464052699547533343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9280722be6050ce4393906637af06874, type: 3}
   m_Name: 
@@ -76459,7 +76471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6788758662063501660}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8464052699547533343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44e2230d6857bf14995464535978be6b, type: 3}
   m_Name: 
@@ -76470,7 +76482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 6788758662063501660}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8464052699547533343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87703a88d6d19dc4aa4b7ad20bc59abb, type: 3}
   m_Name: 
@@ -76492,12 +76504,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1094d5d74e417bc4485a06e5a20afa2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveableComponentEnabler
-  componentsToEnable:
+  layerObjects:
+  - {fileID: 8464052699547533343}
+  behavioursToEnable:
   - {fileID: 8464052699547533342}
   - {fileID: 6834904116072981143}
   - {fileID: 5891168235131745750}
-  isEnabled: 0
-  disableOnStart: 1
+  collidersToEnable: []
+  lockedLayerName: Default
+  unlockedLayerName: Interact
+  includeChildren: 1
+  isUnlocked: 0
+  startLocked: 1
 --- !u!1001 &6834119676055658797
 PrefabInstance:
   m_ObjectHideFlags: 0
