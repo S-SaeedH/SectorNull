@@ -6,6 +6,6 @@
 *.psd binary
 *.wav binary
 *.mp3 binary
-LightingData.asset filter=lfs diff=lfs merge=lfs -text
-*Terrain*.asset filter=lfs diff=lfs merge=lfs -text
-*NavMesh*.asset filter=lfs diff=lfs merge=lfs -text
+LightingData.asset binary
+*Terrain*.asset binary
+*NavMesh*.asset binary
