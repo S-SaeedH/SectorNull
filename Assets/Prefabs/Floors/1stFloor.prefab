@@ -60407,6 +60407,59 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 10.098366, y: -1.8843112e-10, z: 1.3462096e-12}
   m_TimeToStationary: 0.5
+--- !u!1 &2078065603944441639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3178433339410591540}
+  - component: {fileID: 1369892684830024379}
+  m_Layer: 0
+  m_Name: WindowColliderLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3178433339410591540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078065603944441639}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.268, y: 0.43400002, z: 0.059000023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3413194647141159469}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1369892684830024379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078065603944441639}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.60681975, y: 1.0963745, z: 0.1}
+  m_Center: {x: 0.11563147, y: -0.048187498, z: -6.23019e-13}
 --- !u!1 &2082204171097213851
 GameObject:
   m_ObjectHideFlags: 0
@@ -60907,6 +60960,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3869006068846446118}
+  - {fileID: 3178433339410591540}
   m_Father: {fileID: 5054456350067973432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2342055142304682352
@@ -62607,10 +62661,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3252752726178599879}
   - {fileID: 8213986358303292754}
   - {fileID: 5452453909851212272}
   - {fileID: 7477524374553037005}
+  - {fileID: 3755456004523490880}
   m_Father: {fileID: 1707351782987008266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3265915868981830622
@@ -63575,6 +63629,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4027825048941844235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6428044429957711271}
+  - component: {fileID: 3930094171757502084}
+  m_Layer: 0
+  m_Name: WindowColliderRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6428044429957711271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4027825048941844235}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.497, y: 0.496, z: 0.039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3840116030604516765}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3930094171757502084
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4027825048941844235}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.60681975, y: 1.0963745, z: 0.1}
+  m_Center: {x: 0.11563147, y: -0.048187498, z: -6.23019e-13}
 --- !u!1 &4093535124176910108
 GameObject:
   m_ObjectHideFlags: 0
@@ -64427,6 +64534,110 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.92180187, y: 1.8471745, z: -3.8765618e-10}
   m_TimeToStationary: 0.5
+--- !u!1 &4415430291575540902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3755456004523490880}
+  - component: {fileID: 9102521200489376842}
+  - component: {fileID: 2905600872098346846}
+  m_Layer: 0
+  m_Name: BeforePlotTwist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3755456004523490880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415430291575540902}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 22.155, y: 3.254, z: -28.22003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2750950318789728585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9102521200489376842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415430291575540902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45df30382c8585a41b534c5f0f78982a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.JumpscareTrigger
+  JumpscareType: 0
+  DirectType: 0
+  TriggerType: 1
+  JumpscareImage: {fileID: 21300000, guid: 2030da6f64556c8469c20c10ad9d188b, type: 3}
+  JumpscareModelID: scare_zombie
+  JumpscareSound:
+    audioClip: {fileID: 8300000, guid: 1187bd578c7b24e4a94c3c4d903179c9, type: 3}
+    volume: 1
+  Animator: {fileID: 0}
+  AnimatorStateName: Jumpscare
+  AnimatorTrigger: Jumpscare
+  InfluenceFear: 1
+  TentaclesIntensity: 0
+  TentaclesSpeed: 1
+  VignetteStrength: 0
+  LookAtJumpscare: 0
+  LookAtTarget: {fileID: 0}
+  LookAtDuration: 0
+  LockPlayer: 0
+  EndJumpscareWithEvent: 0
+  InfluenceWobble: 1
+  WobbleAmplitudeGain: 1
+  WobbleFrequencyGain: 1
+  WobbleDuration: 0.2
+  DirectDuration: 0.7
+  FearDuration: 1
+  TriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  TriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpscareStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpscareEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &2905600872098346846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415430291575540902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.7353325, y: 6.8411016, z: 0.17992592}
+  m_Center: {x: -0.13724709, y: 0.2329855, z: 0.41003704}
 --- !u!1 &4513489805720383942
 GameObject:
   m_ObjectHideFlags: 0
@@ -66508,110 +66719,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 8.910339, y: -2.7368163e-10, z: 1.1409641e-12}
   m_TimeToStationary: 0.5
---- !u!1 &6792500554248700114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3252752726178599879}
-  - component: {fileID: 63302097739129198}
-  - component: {fileID: 636717941502790695}
-  m_Layer: 0
-  m_Name: EmergencyNote
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3252752726178599879
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6792500554248700114}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.0069272984, y: -0.007830673, z: -0.008043001, w: 0.99991304}
-  m_LocalPosition: {x: -27.176, y: 1.9569994, z: -8.617}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2750950318789728585}
-  m_LocalEulerAnglesHint: {x: 0.787, y: -0.904, z: -0.928}
---- !u!65 &63302097739129198
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6792500554248700114}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.343155, y: 3.0608091, z: 0.43984723}
-  m_Center: {x: -0.318892, y: -0.2921179, z: -0.28007832}
---- !u!114 &636717941502790695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6792500554248700114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45df30382c8585a41b534c5f0f78982a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.JumpscareTrigger
-  JumpscareType: 0
-  DirectType: 0
-  TriggerType: 0
-  JumpscareImage: {fileID: 0}
-  JumpscareModelID: scare_zombie
-  JumpscareSound:
-    audioClip: {fileID: 0}
-    volume: 0
-  Animator: {fileID: 0}
-  AnimatorStateName: Jumpscare
-  AnimatorTrigger: Jumpscare
-  InfluenceFear: 0
-  TentaclesIntensity: 0
-  TentaclesSpeed: 1
-  VignetteStrength: 0
-  LookAtJumpscare: 0
-  LookAtTarget: {fileID: 0}
-  LookAtDuration: 0
-  LockPlayer: 0
-  EndJumpscareWithEvent: 0
-  InfluenceWobble: 0
-  WobbleAmplitudeGain: 1
-  WobbleFrequencyGain: 1
-  WobbleDuration: 0.2
-  DirectDuration: 1
-  FearDuration: 1
-  TriggerEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  TriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnJumpscareStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  OnJumpscareEnded:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &6799901329358252929
 GameObject:
   m_ObjectHideFlags: 0
@@ -66722,6 +66829,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6829158254272880845}
+  - {fileID: 6428044429957711271}
   m_Father: {fileID: 5054456350067973432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7005858210945605100
@@ -73800,10 +73908,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TwoStepDoorAccessSaveable
   keycardGranted: 0
   generatorRunning: 0
+  componentsToEnable: []
   OnBothConditionsMet:
-    m_PersistentCalls:
-      m_Calls: []
-  OnLoadAlreadyUnlocked:
     m_PersistentCalls:
       m_Calls: []
   triggerOnlyOnce: 1
