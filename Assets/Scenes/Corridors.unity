@@ -72961,14 +72961,16 @@ PrefabInstance:
       value: 'TO ANYONE WHO FINDS THIS,
 
 
-        Emergency fuel reserves were moved
-        into this room after the lower storage flooded, and they were never intended
-        for regular use. They should only be touched if power restoration becomes
-        necessary.
 
-        If you are up here to turn on the generator, then time
-        is already running out. Sector Null has started reacting to the blackout,
-        and that is never a good sign.
+
+        Emergency fuel reserves were
+        moved into this room after the lower storage flooded, and they were never
+        intended for regular use. They should only be touched if power restoration
+        becomes necessary.
+
+        If you are up here to turn on the generator,
+        then time is already running out. Sector Null has started reacting to the
+        blackout, and that is never a good sign.
 
 '
       objectReference: {fileID: 0}
@@ -73062,11 +73064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816174995477020309, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnGeneratorStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetGeneratorRunning
+      value: EnableComponents
       objectReference: {fileID: 0}
     - target: {fileID: 816174995477020309, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnGeneratorStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TwoStepDoorAccessSaveable, Assembly-CSharp
+      value: SaveableComponentEnabler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 816174995477020309, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnGeneratorStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -73793,6 +73795,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6441120333555942483, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1556542480}
+    - targetCorrespondingSourceObject: {fileID: 6441120333555942483, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1803975209}
     - targetCorrespondingSourceObject: {fileID: 9091245342494996848, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -73820,15 +73825,15 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
 --- !u!114 &1313791600 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8207928185514668960, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9083941302817115122, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
   m_PrefabInstance: {fileID: 1313791599}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313791601}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d20c3e2a91bd74bb951dbfeb672497, type: 3}
+  m_Script: {fileID: 11500000, guid: 1094d5d74e417bc4485a06e5a20afa2f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TwoStepDoorAccessSaveable
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableComponentEnabler
 --- !u!1 &1313791601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6441120333555942483, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -74890,17 +74895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1313791704 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7495742630213306277, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45df30382c8585a41b534c5f0f78982a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.JumpscareTrigger
 --- !u!114 &1313791705 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1873265913322022932, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -91361,7 +91355,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313791601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec61008361d4a9142b8295cbe1eb0e0b, type: 3}
   m_Name: 
@@ -103872,6 +103866,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6444837343040010793, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
   m_PrefabInstance: {fileID: 1313791599}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1803975209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313791601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1094d5d74e417bc4485a06e5a20afa2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveableComponentEnabler
+  componentsToEnable:
+  - {fileID: 1556542478}
+  - {fileID: 1556542479}
+  - {fileID: 1556542480}
+  isEnabled: 0
+  disableOnStart: 1
 --- !u!1 &1804172770
 GameObject:
   m_ObjectHideFlags: 0
@@ -114892,7 +114904,7 @@ MonoBehaviour:
   - Token: DialogueTrigger.c3fcbab1111e373488a00c68a6900cc0
     Instance: {fileID: 1290317977}
   - Token: TwoStepDoorAccessSaveable.fc464afded03a2944a53ff00dd6d982b
-    Instance: {fileID: 1313791600}
+    Instance: {fileID: 0}
   - Token: InteractableItem.eab688f8b11cb56478f8ad75ffc16b5d
     Instance: {fileID: 1313791602}
   - Token: InteractableItem.053617ade6ec7d24ca99a6ff8982e14c
@@ -115086,7 +115098,7 @@ MonoBehaviour:
   - Token: NPCHealth.47c6d2eca2f603a41ba99e73d8701da6
     Instance: {fileID: 1313791703}
   - Token: JumpscareTrigger.35d9e2225554e0148811728d580c21d5
-    Instance: {fileID: 1313791704}
+    Instance: {fileID: 0}
   - Token: JumpscareTrigger.e911636425f09154aba956aa3a9739af
     Instance: {fileID: 1313791705}
   - Token: JumpscareTrigger.f265fd8618328264c94458ffbf3dbb90
