@@ -387,13 +387,18 @@ namespace UHFPS.Runtime
                 if (interactable.InteractableType == InteractableTypeEnum.InventoryItem)
                 {
                     isAddedToInventory = inventory.AddItem(interactable.PickupItem.GUID, interactable.Quantity, interactable.ItemCustomData, out var addedItem);
+
                     if (isAddedToInventory)
                     {
-                        if(interactable.AutoShortcut)
+                        if (interactable.AutoShortcut)
                             shortcutId = inventory.AutoShortcut(addedItem);
 
                         if (interactable.AutoEquip && addedItem.Item.Settings.isUsable && addedItem.Item.UsableSettings.usableType == UsableType.PlayerItem)
                             inventory.UseItem(addedItem, false);
+                    }
+                    else
+                    {
+                        gameManager.ShowHintMessage("Not enough inventory space.", 2f);
                     }
                 }
 
