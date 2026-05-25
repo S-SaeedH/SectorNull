@@ -71912,14 +71912,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2143044571}
     - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 414561879}
@@ -71927,22 +71919,6 @@ PrefabInstance:
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1251985782}
-    - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UHFPS.Runtime.DialogueTrigger, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 542966458056340204, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -71996,33 +71972,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1593806269}
     - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1481479430}
-    - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UHFPS.Runtime.DialogueTrigger, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4367192105078194272, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -72056,45 +72008,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 410605908}
     - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1897337571}
-    - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UHFPS.Runtime.DialogueTrigger, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7852915438300844598, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7927556937113805647, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.473
-      objectReference: {fileID: 0}
-    - target: {fileID: 7927556937113805647, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.117
-      objectReference: {fileID: 0}
-    - target: {fileID: 7927556937113805647, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.197
-      objectReference: {fileID: 0}
     - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -73260,17 +73176,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ddc39b34b857144a9bdc90423afbb96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1313791703 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4538973477174284659, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1313791705 stripped
@@ -85020,17 +84925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3672e961bc7bf394491120367c76586e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1499511951 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4077854953703574583, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1499511952 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2573566545960959541, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -85084,39 +84978,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499511957 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4393906239846781729, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499511958 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6461609771947530241, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499511959 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3271397999377658096, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1499511961 stripped
@@ -85755,17 +85616,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1193cc42578b51349ae91df02822e87c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499512020 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3233254361338039567, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1499512022 stripped
@@ -86516,50 +86366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bef1a4507177f14ca3a2b2e08bd4e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.ObjectiveTrigger
---- !u!114 &1499512090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8023243441622577221, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499512091 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8254200955211809381, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499512092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2214238284113075325, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1499512094 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2001060690564914875, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
-  m_PrefabInstance: {fileID: 1313791599}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df34d8deeee11f64aaa8afbba5c2a724, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1499512095 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8867343343041826508, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
@@ -112784,7 +112590,7 @@ MonoBehaviour:
   - Token: DynamicObject.8f5cf9f347a736f438df91ddf16a98be
     Instance: {fileID: 1313791702}
   - Token: NPCHealth.7c97a14bee662f349883a0fc296ddb9f
-    Instance: {fileID: 1313791703}
+    Instance: {fileID: 0}
   - Token: JumpscareTrigger.1b0d80f5dfd781e4d9f4e7a0700c261e
     Instance: {fileID: 1313791705}
   - Token: JumpscareTrigger.e547fd08d78facd4a9d7d67779bbea6d
@@ -112998,7 +112804,7 @@ MonoBehaviour:
   - Token: CustomInteractEvent.48531223fc4937b4cbb6d4d73ee0ac45
     Instance: {fileID: 1499511950}
   - Token: NPCHealth.7b39e1b184f4a2743a57d220b091bea6
-    Instance: {fileID: 1499511951}
+    Instance: {fileID: 0}
   - Token: NPCHealth.d8016633fe6e4fb4e8a0eb08791fc4ed
     Instance: {fileID: 1499511952}
   - Token: InteractableItem.74a6c3d30588df649a46ba0874392cc3
@@ -113010,11 +112816,11 @@ MonoBehaviour:
   - Token: InteractableItem.391dce8abb035f942b6d2c23bd01a14f
     Instance: {fileID: 1499511956}
   - Token: NPCHealth.9007c6a6df24c164fb8fded1429bdfb7
-    Instance: {fileID: 1499511957}
+    Instance: {fileID: 0}
   - Token: NPCHealth.50717e7101c07544eaa7bef4050ce0a4
-    Instance: {fileID: 1499511958}
+    Instance: {fileID: 0}
   - Token: NPCHealth.94671b3ebc5ad604b9ef0c6324c0e5ff
-    Instance: {fileID: 1499511959}
+    Instance: {fileID: 0}
   - Token: NPCHealth.1400296f6d789ff4d971ed12ef104bba
     Instance: {fileID: 0}
   - Token: NPCHealth.6743da96e9108fb458e5afab85ee3261
@@ -113136,7 +112942,7 @@ MonoBehaviour:
   - Token: InteractableItem.ca917c645b73662448a20577bfa8040f
     Instance: {fileID: 1499512019}
   - Token: NPCHealth.3effc6b230684264ba30cba48f7aa5bf
-    Instance: {fileID: 1499512020}
+    Instance: {fileID: 0}
   - Token: NPCHealth.1422a48dd06473d4fb2924edd431deb8
     Instance: {fileID: 0}
   - Token: CRTMonitor.6f693664f5885b84292adf00ed5c88d0
@@ -113276,15 +113082,15 @@ MonoBehaviour:
   - Token: ObjectiveTrigger.5bdfbbf8f9c6ad545b6e494a75f620d5
     Instance: {fileID: 1499512089}
   - Token: NPCHealth.7aaea626d3ac0a848af3838e3d2d4ff0
-    Instance: {fileID: 1499512090}
+    Instance: {fileID: 0}
   - Token: NPCHealth.8f738a6d6df5be04280f32433cad4b8d
-    Instance: {fileID: 1499512091}
+    Instance: {fileID: 0}
   - Token: NPCHealth.d70d76c8705a3ec428ddb2c2611cbd95
-    Instance: {fileID: 1499512092}
+    Instance: {fileID: 0}
   - Token: NPCHealth.5161292a003a3434c99039510ec47c72
     Instance: {fileID: 0}
   - Token: NPCHealth.b9f34ba80364a614ab69ba86754731b2
-    Instance: {fileID: 1499512094}
+    Instance: {fileID: 0}
   - Token: InteractableItem.6da1c1fe914fee442ba338462853ec6e
     Instance: {fileID: 1499512095}
   - Token: InteractableItem.0f47247f8b4b3bd4a9a8622e5a3811b6
