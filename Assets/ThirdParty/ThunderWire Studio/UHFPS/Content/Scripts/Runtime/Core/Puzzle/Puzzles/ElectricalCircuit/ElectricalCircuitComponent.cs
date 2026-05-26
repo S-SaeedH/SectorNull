@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UHFPS.Tools;
 using Newtonsoft.Json.Linq;
@@ -44,18 +45,20 @@ namespace UHFPS.Runtime
         private void Awake()
         {
             BuildPowerFlows();
-
             SnapAngle();
 
             if (!SaveGameManager.GameWillLoad)
-            {
                 InitializeDirections();
-            }
         }
 
-        private void Start()
+        public void InitializeDirections()
         {
-            AutoFixCoordsFromPuzzleList();
+            SnapAngle();
+
+            int angleTimes = Mathf.RoundToInt(Angle / 90f);
+            angleTimes = Mathf.Abs(angleTimes) % 4;
+
+            RotateDirections(angleTimes);
         }
 
         private void BuildPowerFlows()
@@ -80,16 +83,6 @@ namespace UHFPS.Runtime
 
                 PowerFlows[i] = flow;
             }
-        }
-
-        public void InitializeDirections()
-        {
-            SnapAngle();
-
-            int angleTimes = Mathf.RoundToInt(Angle / 90f);
-            angleTimes = Mathf.Abs(angleTimes) % 4;
-
-            RotateDirections(angleTimes);
         }
 
         public void InteractStart()
@@ -230,6 +223,7 @@ namespace UHFPS.Runtime
                 return false;
 
             component = ElectricalCircuit.Components[compIndex];
+
             return component != null;
         }
 
@@ -272,38 +266,6 @@ namespace UHFPS.Runtime
             return direction;
         }
 
-        [ContextMenu("Auto Fix Coords From Puzzle List")]
-        public void AutoFixCoordsFromPuzzleList()
-        {
-            if (ElectricalCircuit == null)
-                return;
-
-            if (ElectricalCircuit.Components == null)
-                return;
-
-            int index = ElectricalCircuit.Components.IndexOf(this);
-
-            if (index < 0)
-            {
-                Debug.LogWarning($"{name} is not inside ElectricalCircuit.Components list.", this);
-                return;
-            }
-
-            if (ElectricalCircuit.Columns <= 0)
-                return;
-
-            int x = index % ElectricalCircuit.Columns;
-            int y = index / ElectricalCircuit.Columns;
-
-            Vector2Int fixedCoords = new Vector2Int(x, y);
-
-            if (Coords != fixedCoords)
-            {
-                Debug.LogWarning($"{name} had wrong Coords {Coords}. Fixed to {fixedCoords}.", this);
-                Coords = fixedCoords;
-            }
-        }
-
         [ContextMenu("Debug Flow Directions")]
         public void DebugFlowDirections()
         {
@@ -329,6 +291,32 @@ namespace UHFPS.Runtime
                 string powers = flow.PowerFlows != null ? string.Join(", ", flow.PowerFlows) : "null";
 
                 Debug.Log($"Flow {i}: Directions [{dirs}] | PowerIDs [{powers}]", this);
+            }
+        }
+
+        [ContextMenu("Debug Inspector Flow Setup")]
+        public void DebugInspectorFlowSetup()
+        {
+            Debug.Log($"--- Inspector Flow Setup: {name} | Base Angle: {Angle} ---", this);
+
+            if (FlowDirections == null)
+            {
+                Debug.LogWarning("FlowDirections list is null.", this);
+                return;
+            }
+
+            for (int i = 0; i < FlowDirections.Count; i++)
+            {
+                FlowDirection flow = FlowDirections[i];
+
+                if (flow == null || flow.FlowDirections == null)
+                {
+                    Debug.LogWarning($"Inspector Flow {i} is null.", this);
+                    continue;
+                }
+
+                string dirs = string.Join(", ", flow.FlowDirections);
+                Debug.Log($"Inspector Flow {i}: Directions [{dirs}]", this);
             }
         }
 
@@ -358,9 +346,7 @@ namespace UHFPS.Runtime
             return new StorableCollection()
             {
                 { "angle", Angle },
-                { "partDirections", partDirections },
-                { "coordsX", Coords.x },
-                { "coordsY", Coords.y }
+                { "partDirections", partDirections }
             };
         }
 
@@ -373,14 +359,8 @@ namespace UHFPS.Runtime
             SnapAngle();
             SetComponentAngle();
 
-            if (data["coordsX"] != null && data["coordsY"] != null)
-            {
-                Coords = new Vector2Int((int)data["coordsX"], (int)data["coordsY"]);
-            }
-            else
-            {
-                AutoFixCoordsFromPuzzleList();
-            }
+            if (PowerFlows == null || PowerFlows.Length == 0)
+                BuildPowerFlows();
 
             JToken directionsToken = data["partDirections"];
 
@@ -388,9 +368,6 @@ namespace UHFPS.Runtime
                 return;
 
             string[] partDirections = directionsToken.ToObject<string[]>();
-
-            if (PowerFlows == null)
-                BuildPowerFlows();
 
             if (partDirections.Length == PowerFlows.Length)
             {

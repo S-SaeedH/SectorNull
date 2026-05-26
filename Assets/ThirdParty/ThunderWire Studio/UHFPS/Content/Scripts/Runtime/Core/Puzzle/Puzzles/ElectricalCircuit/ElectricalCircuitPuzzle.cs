@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using Newtonsoft.Json.Linq;
@@ -74,6 +74,7 @@ namespace UHFPS.Runtime
         public bool isConnected;
 
         private AudioSource audioSource;
+        private Coroutine connectedCoroutine;
 
         private void OnValidate()
         {
@@ -140,6 +141,8 @@ namespace UHFPS.Runtime
         {
             base.Awake();
             audioSource = GetComponent<AudioSource>();
+
+            SyncComponentCoords();
         }
 
         private void Start()
@@ -147,12 +150,11 @@ namespace UHFPS.Runtime
             if (!IsSetupValid())
                 return;
 
+            SyncComponentCoords();
+
             if (!SaveGameManager.GameWillLoad)
             {
-                RemoveAllPowerIDs();
-                PowerAllOutputs();
-                CheckPowerStates();
-                CheckAllInputs();
+                RecalculateCircuit(false);
             }
         }
 
@@ -164,19 +166,50 @@ namespace UHFPS.Runtime
             if (!IsSetupValid())
                 return;
 
+            RecalculateCircuit(true);
+        }
+
+        private void RecalculateCircuit(bool playRotateSound)
+        {
+            SyncComponentCoords();
+
             RemoveAllPowerIDs();
+            ResetAllFlowVisuals();
+
             PowerAllOutputs();
             CheckPowerStates();
             CheckAllInputs();
 
-            if (audioSource != null && RotateComponent != null)
+            if (playRotateSound && audioSource != null && RotateComponent != null)
                 audioSource.PlayOneShotSoundClip(RotateComponent);
+        }
+
+        private void SyncComponentCoords()
+        {
+            if (Components == null)
+                return;
+
+            for (int i = 0; i < Components.Count; i++)
+            {
+                ElectricalCircuitComponent component = Components[i];
+
+                if (component == null)
+                    continue;
+
+                int x = i % Columns;
+                int y = i / Columns;
+
+                component.Coords = new Vector2Int(x, y);
+                component.ElectricalCircuit = this;
+            }
         }
 
         public void PowerAllOutputs()
         {
             if (!IsSetupValid())
                 return;
+
+            SyncComponentCoords();
 
             for (int i = 0; i < PowerFlow.Length; i++)
             {
@@ -185,19 +218,19 @@ namespace UHFPS.Runtime
                 if (powerComponent == null)
                     continue;
 
-                if (powerComponent.PowerType == PowerType.Output)
+                if (powerComponent.PowerType != PowerType.Output)
+                    continue;
+
+                ElectricalCircuitComponent component = Components[i];
+
+                if (component == null)
                 {
-                    ElectricalCircuitComponent component = Components[i];
-
-                    if (component == null)
-                    {
-                        Debug.LogError($"Missing circuit component at index {i}.", this);
-                        continue;
-                    }
-
-                    PartDirection fromDirection = ToOppositeDirection(powerComponent.PowerDirection);
-                    component.SetPowerFlow(fromDirection, powerComponent.PowerID, null);
+                    Debug.LogError($"Missing circuit component at index {i}.", this);
+                    continue;
                 }
+
+                PartDirection fromDirection = ToOppositeDirection(powerComponent.PowerDirection);
+                component.SetPowerFlow(fromDirection, powerComponent.PowerID, null);
             }
         }
 
@@ -262,7 +295,7 @@ namespace UHFPS.Runtime
                 }
 
                 PartDirection oppositeDirection = ToOppositeDirection(input.Key.PowerDirection);
-                var oppositeFlow = input.Value.GetOppositePowerFlow(oppositeDirection);
+                ElectricalCircuitComponent.PowerFlow oppositeFlow = input.Value.GetOppositePowerFlow(oppositeDirection);
 
                 bool hasRequiredConnections = outputPairs.TryGetValue(input.Key.PowerID, out List<int> requiredConnections);
 
@@ -279,11 +312,11 @@ namespace UHFPS.Runtime
 
                 foreach (int connection in requiredConnections)
                 {
-                    bool isConnectionValid = oppositeFlow != null
+                    bool validConnection = oppositeFlow != null
                         && oppositeFlow.PowerFlows != null
                         && oppositeFlow.PowerFlows.Contains(connection);
 
-                    if (isConnectionValid)
+                    if (validConnection)
                     {
                         if (events.InputLight != null)
                             events.InputLight.OnConnected(connection);
@@ -318,8 +351,11 @@ namespace UHFPS.Runtime
                 {
                     canManuallySwitch = false;
 
+                    if (connectedCoroutine != null)
+                        StopCoroutine(connectedCoroutine);
+
                     if (isActive)
-                        StartCoroutine(OnPowerConnected());
+                        connectedCoroutine = StartCoroutine(OnPowerConnected());
                     else
                         DisableInteract();
                 }
@@ -363,12 +399,32 @@ namespace UHFPS.Runtime
                 if (component == null || component.PowerFlows == null)
                     continue;
 
-                foreach (var flow in component.PowerFlows)
+                foreach (ElectricalCircuitComponent.PowerFlow flow in component.PowerFlows)
                 {
                     if (flow == null || flow.PowerFlows == null)
                         continue;
 
                     flow.PowerFlows.Clear();
+                }
+            }
+        }
+
+        public void ResetAllFlowVisuals()
+        {
+            if (Components == null)
+                return;
+
+            foreach (ElectricalCircuitComponent component in Components)
+            {
+                if (component == null || component.PowerFlows == null)
+                    continue;
+
+                foreach (ElectricalCircuitComponent.PowerFlow flow in component.PowerFlows)
+                {
+                    if (flow == null)
+                        continue;
+
+                    component.SetFlowState(flow, false);
                 }
             }
         }
@@ -383,7 +439,7 @@ namespace UHFPS.Runtime
                 if (component == null || component.PowerFlows == null)
                     continue;
 
-                foreach (var flow in component.PowerFlows)
+                foreach (ElectricalCircuitComponent.PowerFlow flow in component.PowerFlows)
                 {
                     if (flow == null || flow.PowerFlows == null)
                         continue;
@@ -514,6 +570,8 @@ namespace UHFPS.Runtime
             else
                 Debug.Log($"Components count is correct: {Components.Count}", this);
 
+            SyncComponentCoords();
+
             for (int i = 0; i < Components.Count; i++)
             {
                 ElectricalCircuitComponent component = Components[i];
@@ -527,17 +585,39 @@ namespace UHFPS.Runtime
                     continue;
                 }
 
-                Debug.Log($"Index {i} = Grid({x},{y}) = {component.name}", component);
+                Debug.Log($"Index {i} = Grid({x},{y}) = {component.name} | Coords: {component.Coords}", component);
             }
 
-            var duplicates = Components
+            var duplicateComponents = Components
                 .Where(x => x != null)
                 .GroupBy(x => x)
                 .Where(g => g.Count() > 1);
 
-            foreach (var duplicate in duplicates)
+            foreach (var duplicate in duplicateComponents)
             {
                 Debug.LogError($"Duplicate component reference found: {duplicate.Key.name}", duplicate.Key);
+            }
+
+            Dictionary<Vector2Int, List<ElectricalCircuitComponent>> coordMap = new();
+
+            foreach (ElectricalCircuitComponent component in Components)
+            {
+                if (component == null)
+                    continue;
+
+                if (!coordMap.ContainsKey(component.Coords))
+                    coordMap[component.Coords] = new List<ElectricalCircuitComponent>();
+
+                coordMap[component.Coords].Add(component);
+            }
+
+            foreach (var pair in coordMap)
+            {
+                if (pair.Value.Count > 1)
+                {
+                    string names = string.Join(", ", pair.Value.Select(x => x.name));
+                    Debug.LogError($"Duplicate Coords found at {pair.Key}: {names}", this);
+                }
             }
 
             Debug.Log("Circuit validation finished.", this);
@@ -549,6 +629,8 @@ namespace UHFPS.Runtime
 
             if (Components == null)
                 return saveableBuffer;
+
+            SyncComponentCoords();
 
             for (int i = 0; i < Components.Count; i++)
             {
@@ -566,6 +648,8 @@ namespace UHFPS.Runtime
             if (Components == null)
                 return;
 
+            SyncComponentCoords();
+
             for (int i = 0; i < Components.Count; i++)
             {
                 if (Components[i] == null)
@@ -577,7 +661,11 @@ namespace UHFPS.Runtime
                     Components[i].OnCustomLoad(componentData);
             }
 
+            SyncComponentCoords();
+
             RemoveAllPowerIDs();
+            ResetAllFlowVisuals();
+
             PowerAllOutputs();
             CheckPowerStates();
             CheckAllInputs();
