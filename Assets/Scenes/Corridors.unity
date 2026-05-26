@@ -72666,6 +72666,26 @@ PrefabInstance:
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1251985782}
+    - target: {fileID: 577691555135940334, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Size.x
+      value: 6.1380644
+      objectReference: {fileID: 0}
+    - target: {fileID: 577691555135940334, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5010846
+      objectReference: {fileID: 0}
+    - target: {fileID: 577691555135940334, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Center.x
+      value: 6.457213
+      objectReference: {fileID: 0}
+    - target: {fileID: 577691555135940334, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Center.y
+      value: 9.9157786e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 577691555135940334, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Center.z
+      value: 2.8115726e-13
+      objectReference: {fileID: 0}
     - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -72857,6 +72877,26 @@ PrefabInstance:
     - target: {fileID: 5530720849945556065, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651902135047476963, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Size.x
+      value: 6.54594
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651902135047476963, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5009625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651902135047476963, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Center.x
+      value: 3.3723288
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651902135047476963, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Center.y
+      value: -8.4367e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651902135047476963, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: m_Center.z
+      value: 2.02124e-13
       objectReference: {fileID: 0}
     - target: {fileID: 6543525500216460406, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -87018,7 +87058,7 @@ MonoBehaviour:
   ControllerOffset: 0
   PlayerBasicSettings:
     WalkSpeed: 2.5
-    RunSpeed: 6
+    RunSpeed: 4
     CrouchSpeed: 1
     JumpHeight: 0
   PlayerFeatures:
@@ -87204,7 +87244,7 @@ Transform:
   m_GameObject: {fileID: 1452370394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.821, y: -2.806, z: -2.732}
+  m_LocalPosition: {x: 29.770779, y: -62.211666, z: -29.624931}
   m_LocalScale: {x: 1, y: 0.87, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -108826,7 +108866,7 @@ Transform:
   m_GameObject: {fileID: 1821745944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.821, y: -1.806, z: -2.732}
+  m_LocalPosition: {x: 29.770779, y: -61.211666, z: -29.624931}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
