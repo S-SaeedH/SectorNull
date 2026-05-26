@@ -644,6 +644,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
+--- !u!1 &61395066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61395067}
+  m_Layer: 0
+  m_Name: = Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61395067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61395066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &67467024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6096,6 +6127,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
   m_PrefabInstance: {fileID: 1116148738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1116981971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116981972}
+  m_Layer: 0
+  m_Name: = Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1116981972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116981971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1141495346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78969,29 +79031,29 @@ MonoBehaviour:
   SavingIcon: {fileID: 2268820171287938815}
   Debugging: 1
   worldSaveables:
-  - Token: InteractableItem.36d4693d611770942ab647ab8d8ce579
-    Instance: {fileID: 108957374}
-  - Token: InteractableItem.ae56c522903462c4498cf381fded1785
-    Instance: {fileID: 890862877}
-  - Token: InteractableItem.2981290f0f9738c4688a50d108fedc32
-    Instance: {fileID: 687492943}
-  - Token: InteractableItem.e2ce0eac0e2553d4d892e0b533d6481e
-    Instance: {fileID: 1498688840}
-  - Token: InteractableItem.6d454e4f8745c0b4d821e18ec0a88498
+  - Token: InteractableItem.5047045681563c34d936940bb12e5583
     Instance: {fileID: 25555875}
-  - Token: ObjectiveTrigger.ad5043447aae39e46be634da23c7c791
+  - Token: InteractableItem.9216c04b8e6cef340bf9a6d36e50d235
+    Instance: {fileID: 108957374}
+  - Token: ObjectiveTrigger.84b287cf07cfb084dac9dcaba651963b
     Instance: {fileID: 462758297}
-  - Token: ObjectiveTrigger.599c73f93fe450b49b55dce385a6fa46
+  - Token: ObjectiveTrigger.9a79d6c5a0579a540925115a89689c22
     Instance: {fileID: 566108997}
-  - Token: CutsceneTrigger.459c9860e4e8f8f4ea5bb21b48fd9c5f
+  - Token: CutsceneTrigger.152440da4f6dc8e459620463735adf37
     Instance: {fileID: 566108999}
-  - Token: DialogueTrigger.d7c4c9afe2674614d823bac8aa1444ec
+  - Token: DialogueTrigger.2739d7c715accbf42a4156709d6aa7a2
     Instance: {fileID: 684650528}
-  - Token: ObjectiveTrigger.aa46523d82be7674e96450c115e9799f
+  - Token: InteractableItem.6a402f7d5de342a4b85ce8b96eb13aee
+    Instance: {fileID: 687492943}
+  - Token: ObjectiveTrigger.462755d21b4baef4c8d646c900e37fec
     Instance: {fileID: 872467369}
-  - Token: TimedInteractEvent.e296dfdaa5242554a87be6b9a8ac33c6
+  - Token: InteractableItem.86114175aecfd5449a8760845e7a8f35
+    Instance: {fileID: 890862877}
+  - Token: InteractableItem.0da758cd2d6b70e43b7c2ea3e0e095a0
+    Instance: {fileID: 1498688840}
+  - Token: TimedInteractEvent.a813c7753056e4a44995f407a52e9f46
     Instance: {fileID: 1771540503}
-  - Token: ObjectiveTrigger.19152dca4cecd8b4f97b8ca676f09019
+  - Token: ObjectiveTrigger.144b29cd53125fd419274e0479f04dbb
     Instance: {fileID: 2122582586}
   runtimeSaveables: []
 --- !u!1 &5813543553162854338
@@ -117707,14 +117769,16 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1116981972}
   - {fileID: 38002654}
   - {fileID: 1394383843}
   - {fileID: 47135151}
   - {fileID: 1282973889}
-  - {fileID: 6210745926994812174}
-  - {fileID: 2252989445689534003}
   - {fileID: 1644828484}
   - {fileID: 977692668}
   - {fileID: 2122582588}
   - {fileID: 462758298}
   - {fileID: 872467370}
+  - {fileID: 61395067}
+  - {fileID: 6210745926994812174}
+  - {fileID: 2252989445689534003}
