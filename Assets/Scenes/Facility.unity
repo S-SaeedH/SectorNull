@@ -31735,7 +31735,7 @@ MonoBehaviour:
     WalkSpeed: 2.5
     RunSpeed: 6
     CrouchSpeed: 1
-    JumpHeight: 1
+    JumpHeight: 0
   PlayerFeatures:
     EnableStamina: 0
     RunToggle: 0
