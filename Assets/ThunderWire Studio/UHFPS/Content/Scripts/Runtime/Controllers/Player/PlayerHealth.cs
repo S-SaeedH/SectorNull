@@ -29,6 +29,7 @@ namespace UHFPS.Runtime
         public AudioClip[] DamageSounds;
         [Range(0f, 1f)]
         public float DamageVolume = 1f;
+        public float DamageSoundCooldown = 0.15f;
 
         public bool IsInvisibleToEnemies;
         public bool IsInvisibleToAllies;
@@ -45,11 +46,13 @@ namespace UHFPS.Runtime
         private float bloodTime;
         private float eyesTime;
 
-        private int lastDamageSound;
+        private int lastDamageSound = -1;
         private Vector3 lastPosition;
 
         private bool wasInAir;
         private bool lastPosLoaded;
+
+        private float lastDamageSoundTime = -999f;
 
         private void Awake()
         {
@@ -78,7 +81,10 @@ namespace UHFPS.Runtime
 
             if (EntityHealth > MinHealthFade)
             {
-                if (bloodTime > 0f) bloodTime -= Time.deltaTime;
+                if (bloodTime > 0f)
+                {
+                    bloodTime -= Time.deltaTime;
+                }
                 else
                 {
                     targetBlood = 0f;
@@ -86,7 +92,12 @@ namespace UHFPS.Runtime
                 }
             }
 
-            bloodWeight = Mathf.MoveTowards(bloodWeight, targetBlood, Time.deltaTime * (bloodTime > 0 ? BloodFadeInSpeed : BloodFadeOutSpeed));
+            bloodWeight = Mathf.MoveTowards(
+                bloodWeight,
+                targetBlood,
+                Time.deltaTime * (bloodTime > 0 ? BloodFadeInSpeed : BloodFadeOutSpeed)
+            );
+
             gameManager.HealthPPVolume.weight = bloodWeight;
 
             if (IsDead && eyeBlink != null)
@@ -106,20 +117,27 @@ namespace UHFPS.Runtime
             {
                 if (player.StateGrounded)
                 {
-                    if(!wasInAir) lastPosition = transform.position;
+                    if (!wasInAir)
+                    {
+                        lastPosition = transform.position;
+                    }
                     else
                     {
                         Vector3 dropPosition = transform.position;
-                        float fallDistance = Mathf.Clamp(lastPosition.y - dropPosition.y, 0, Mathf.Infinity);
+                        float fallDistance = Mathf.Clamp(lastPosition.y - dropPosition.y, 0f, Mathf.Infinity);
                         float fallModifier = Mathf.InverseLerp(FallDistance.RealMin, FallDistance.RealMax, fallDistance);
                         float fallDamage = 0f;
 
-                        if (fallModifier > 0f) fallDamage = Mathf.Lerp(FallDamage.RealMin, FallDamage.RealMax, fallModifier);
-                        if (fallDamage > 1f) OnApplyDamage(Mathf.RoundToInt(fallDamage));
+                        if (fallModifier > 0f)
+                            fallDamage = Mathf.Lerp(FallDamage.RealMin, FallDamage.RealMax, fallModifier);
+
+                        if (fallDamage > 1f)
+                            OnApplyDamage(Mathf.RoundToInt(fallDamage));
+
                         wasInAir = false;
                     }
                 }
-                else if(!wasInAir)
+                else if (!wasInAir)
                 {
                     wasInAir = true;
                 }
@@ -165,21 +183,32 @@ namespace UHFPS.Runtime
 
             base.OnApplyDamage(damage, sender);
 
-            if (UseDamageSounds && DamageSounds.Length > 0)
-            {
-                int damageSound = GameTools.RandomUnique(0, DamageSounds.Length, lastDamageSound);
-                GameTools.PlayOneShot2D(transform.position, DamageSounds[damageSound], DamageVolume, "DamageSound");
-                lastDamageSound = damageSound;
-            }
+            PlayDamageSoundOnce();
 
             targetBlood = 1f;
             bloodTime = BloodDuration;
         }
 
+        private void PlayDamageSoundOnce()
+        {
+            if (!UseDamageSounds || DamageSounds == null || DamageSounds.Length == 0)
+                return;
+
+            if (Time.time - lastDamageSoundTime < DamageSoundCooldown)
+                return;
+
+            int damageSound = GameTools.RandomUnique(0, DamageSounds.Length, lastDamageSound);
+            GameTools.PlayOneShot2D(transform.position, DamageSounds[damageSound], DamageVolume, "DamageSound");
+
+            lastDamageSound = damageSound;
+            lastDamageSoundTime = Time.time;
+        }
+
         public override void OnApplyHeal(int healAmount)
         {
             base.OnApplyHeal(healAmount);
-            if(EntityHealth > MinHealthFade)
+
+            if (EntityHealth > MinHealthFade)
                 bloodTime = BloodDuration;
         }
 
