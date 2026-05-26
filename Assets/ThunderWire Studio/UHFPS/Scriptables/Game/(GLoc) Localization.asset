@@ -118,11 +118,14 @@ MonoBehaviour:
   - Section: loading
     Localizations:
     - Key: description.facility
-      Text: A creepy dark abandoned facility.
+      Text: A dark abandoned facility where broken lights, empty rooms, and strange
+        silence create an unsettling atmosphere.
     - Key: description.corridors
-      Text: Watchout for the corridors.
+      Text: Long, narrow corridors stretch ahead, making every step feel tense as
+        the player moves deeper into the unknown.
     - Key: description.ending
-      Text: THIS IS THE END.
+      Text: The final confrontation begins here. The player has reached the end,
+        where the mystery is finally revealed.
   - Section: titles
     Localizations:
     - Key: putaway
@@ -663,11 +666,14 @@ MonoBehaviour:
   - Section: tips
     Localizations:
     - Key: tip1
-      Text: This is the first example of a tip.
+      Text: Use your flashlight wisely. Darkness can hide clues, but it can also
+        hide threats waiting nearby.
     - Key: tip2
-      Text: This is the second example of a tip.
+      Text: Pay attention to notes, symbols, and locked areas. They may reveal important
+        hints for solving puzzles.
     - Key: tip3
-      Text: This is the third example of a tip.
+      Text: Do not rush through the facility. Moving carefully can help you avoid
+        danger and understand what happened here.
   - Section: options
     Localizations:
     - Key: brightness

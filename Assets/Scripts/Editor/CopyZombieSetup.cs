@@ -9,7 +9,11 @@ public static class CopyZombieSetup
 {
     private static readonly HashSet<System.Type> RootSkipTypes = new()
     {
-        typeof(Transform)
+        typeof(Transform),
+        typeof(Animator),              // Keep target avatar
+        typeof(SkinnedMeshRenderer),
+        typeof(MeshRenderer),
+        typeof(MeshFilter)
     };
 
     private static readonly HashSet<System.Type> ChildSkipTypes = new()
@@ -21,8 +25,8 @@ public static class CopyZombieSetup
         typeof(MeshFilter)
     };
 
-    [MenuItem("Tools/Zombie/Copy Full Zombie Setup")]
-    private static void CopyFullZombieSetup()
+    [MenuItem("Tools/Zombie/Copy Full Zombie Setup FIXED")]
+    private static void CopyFullZombieSetupFixed()
     {
         GameObject[] selected = Selection.gameObjects;
 
@@ -35,18 +39,48 @@ public static class CopyZombieSetup
         GameObject sourceRoot = selected[0];
         GameObject targetRoot = selected[1];
 
-        Undo.RegisterFullObjectHierarchyUndo(targetRoot, "Copy Full Zombie Setup");
+        if (!EditorUtility.DisplayDialog(
+                "Copy Zombie Setup",
+                $"SOURCE: {sourceRoot.name}\nTARGET: {targetRoot.name}\n\nContinue?",
+                "Copy",
+                "Cancel"))
+        {
+            return;
+        }
+
+        Undo.RegisterFullObjectHierarchyUndo(targetRoot, "Copy Full Zombie Setup Fixed");
 
         Dictionary<string, Transform> sourceMap = BuildBoneMap(sourceRoot.transform);
         Dictionary<string, Transform> targetMap = BuildBoneMap(targetRoot.transform);
 
         Dictionary<Object, Object> referenceMap = new();
 
-        BuildReferenceMap(sourceRoot.transform, targetRoot.transform, sourceMap, targetMap, referenceMap);
+        // Root object mapping.
+        referenceMap[sourceRoot] = targetRoot;
+        referenceMap[sourceRoot.transform] = targetRoot.transform;
+        referenceMap[sourceRoot.gameObject] = targetRoot.gameObject;
+
+        // Bone object mapping.
+        foreach (var sourcePair in sourceMap)
+        {
+            string key = sourcePair.Key;
+            Transform sourceBone = sourcePair.Value;
+
+            if (!targetMap.TryGetValue(key, out Transform targetBone))
+                continue;
+
+            referenceMap[sourceBone] = targetBone;
+            referenceMap[sourceBone.gameObject] = targetBone.gameObject;
+        }
 
         CopyTagAndLayer(sourceRoot, targetRoot);
+
+        // Keep target Animator, but copy safe Animator settings from source.
+        CopyAnimatorSettingsSafely(sourceRoot, targetRoot);
+
+        // Remove and copy root components.
         RemoveExistingComponents(targetRoot, RootSkipTypes);
-        CopyComponentsFromTo(sourceRoot, targetRoot, RootSkipTypes);
+        CopyComponentsFromTo(sourceRoot, targetRoot, RootSkipTypes, referenceMap);
 
         int copiedBones = 0;
         int missingBones = 0;
@@ -64,17 +98,20 @@ public static class CopyZombieSetup
             }
 
             CopyTagAndLayer(sourceBone.gameObject, targetBone.gameObject);
+
             RemoveExistingComponents(targetBone.gameObject, ChildSkipTypes);
-            CopyComponentsFromTo(sourceBone.gameObject, targetBone.gameObject, ChildSkipTypes);
+            CopyComponentsFromTo(sourceBone.gameObject, targetBone.gameObject, ChildSkipTypes, referenceMap);
 
             copiedBones++;
         }
 
+        // Now remap references AFTER the new components exist.
         RemapObjectReferences(targetRoot, referenceMap);
 
         EditorUtility.SetDirty(targetRoot);
 
-        Debug.Log($"Done. Parent copied. Bones copied: {copiedBones}. Missing bones: {missingBones}.");
+        Debug.Log($"Done FIXED. Parent copied. Bones copied: {copiedBones}. Missing bones: {missingBones}.");
+        Debug.Log("Now select the target zombie, click NPC Health -> Find Body Parts, then Apply Prefab.");
     }
 
     private static Dictionary<string, Transform> BuildBoneMap(Transform root)
@@ -131,80 +168,6 @@ public static class CopyZombieSetup
         return name;
     }
 
-    private static void BuildReferenceMap(
-        Transform sourceRoot,
-        Transform targetRoot,
-        Dictionary<string, Transform> sourceMap,
-        Dictionary<string, Transform> targetMap,
-        Dictionary<Object, Object> referenceMap)
-    {
-        referenceMap[sourceRoot] = targetRoot;
-        referenceMap[sourceRoot.gameObject] = targetRoot.gameObject;
-
-        foreach (var sourcePair in sourceMap)
-        {
-            string key = sourcePair.Key;
-            Transform sourceTransform = sourcePair.Value;
-
-            if (!targetMap.TryGetValue(key, out Transform targetTransform))
-                continue;
-
-            referenceMap[sourceTransform] = targetTransform;
-            referenceMap[sourceTransform.gameObject] = targetTransform.gameObject;
-        }
-
-        foreach (var sourcePair in sourceMap)
-        {
-            string key = sourcePair.Key;
-            Transform sourceTransform = sourcePair.Value;
-
-            if (!targetMap.TryGetValue(key, out Transform targetTransform))
-                continue;
-
-            Component[] sourceComponents = sourceTransform.GetComponents<Component>();
-            Component[] targetComponents = targetTransform.GetComponents<Component>();
-
-            foreach (Component sourceComponent in sourceComponents)
-            {
-                if (sourceComponent == null)
-                    continue;
-
-                foreach (Component targetComponent in targetComponents)
-                {
-                    if (targetComponent == null)
-                        continue;
-
-                    if (sourceComponent.GetType() == targetComponent.GetType())
-                    {
-                        referenceMap[sourceComponent] = targetComponent;
-                        break;
-                    }
-                }
-            }
-        }
-
-        Component[] sourceRootComponents = sourceRoot.GetComponents<Component>();
-        Component[] targetRootComponents = targetRoot.GetComponents<Component>();
-
-        foreach (Component sourceComponent in sourceRootComponents)
-        {
-            if (sourceComponent == null)
-                continue;
-
-            foreach (Component targetComponent in targetRootComponents)
-            {
-                if (targetComponent == null)
-                    continue;
-
-                if (sourceComponent.GetType() == targetComponent.GetType())
-                {
-                    referenceMap[sourceComponent] = targetComponent;
-                    break;
-                }
-            }
-        }
-    }
-
     private static void CopyTagAndLayer(GameObject source, GameObject target)
     {
         try
@@ -239,23 +202,78 @@ public static class CopyZombieSetup
         }
     }
 
-    private static void CopyComponentsFromTo(GameObject source, GameObject target, HashSet<System.Type> skipTypes)
+    private static void CopyComponentsFromTo(
+        GameObject source,
+        GameObject target,
+        HashSet<System.Type> skipTypes,
+        Dictionary<Object, Object> referenceMap)
     {
-        Component[] components = source.GetComponents<Component>();
+        Component[] sourceComponents = source.GetComponents<Component>();
+
+        foreach (Component sourceComponent in sourceComponents)
+        {
+            if (sourceComponent == null)
+                continue;
+
+            System.Type type = sourceComponent.GetType();
+
+            if (skipTypes.Contains(type))
+                continue;
+
+            ComponentUtility.CopyComponent(sourceComponent);
+            ComponentUtility.PasteComponentAsNew(target);
+
+            Component copiedComponent = GetLastComponentOfType(target, type);
+
+            if (copiedComponent != null)
+            {
+                referenceMap[sourceComponent] = copiedComponent;
+                EditorUtility.SetDirty(copiedComponent);
+            }
+            else
+            {
+                Debug.LogWarning($"Copied component mapping failed: {source.name} -> {target.name}, Type: {type.Name}");
+            }
+        }
+    }
+
+    private static Component GetLastComponentOfType(GameObject obj, System.Type type)
+    {
+        Component[] components = obj.GetComponents<Component>();
+        Component last = null;
 
         foreach (Component component in components)
         {
             if (component == null)
                 continue;
 
-            System.Type type = component.GetType();
-
-            if (skipTypes.Contains(type))
-                continue;
-
-            ComponentUtility.CopyComponent(component);
-            ComponentUtility.PasteComponentAsNew(target);
+            if (component.GetType() == type)
+                last = component;
         }
+
+        return last;
+    }
+
+    private static void CopyAnimatorSettingsSafely(GameObject sourceRoot, GameObject targetRoot)
+    {
+        Animator sourceAnimator = sourceRoot.GetComponent<Animator>();
+        Animator targetAnimator = targetRoot.GetComponent<Animator>();
+
+        if (sourceAnimator == null || targetAnimator == null)
+            return;
+
+        Undo.RecordObject(targetAnimator, "Copy Animator Settings Safely");
+
+        // Keep target avatar. Only copy controller/settings.
+        targetAnimator.runtimeAnimatorController = sourceAnimator.runtimeAnimatorController;
+        targetAnimator.applyRootMotion = sourceAnimator.applyRootMotion;
+        targetAnimator.animatePhysics = sourceAnimator.animatePhysics;
+        targetAnimator.updateMode = sourceAnimator.updateMode;
+        targetAnimator.cullingMode = sourceAnimator.cullingMode;
+
+        EditorUtility.SetDirty(targetAnimator);
+
+        Debug.Log($"Animator kept on target '{targetRoot.name}'. Target avatar preserved: {targetAnimator.avatar?.name}");
     }
 
     private static void RemapObjectReferences(GameObject targetRoot, Dictionary<Object, Object> referenceMap)
@@ -272,9 +290,10 @@ public static class CopyZombieSetup
 
             bool enterChildren = true;
 
-            while (property.NextVisible(enterChildren))
+            // Use Next instead of NextVisible so hidden serialized references are also checked.
+            while (property.Next(enterChildren))
             {
-                enterChildren = false;
+                enterChildren = true;
 
                 if (property.propertyType != SerializedPropertyType.ObjectReference)
                     continue;
@@ -290,7 +309,7 @@ public static class CopyZombieSetup
                 }
             }
 
-            serializedObject.ApplyModifiedProperties();
+            serializedObject.ApplyModifiedPropertiesWithoutUndo();
             EditorUtility.SetDirty(component);
         }
     }

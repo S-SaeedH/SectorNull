@@ -20,6 +20,6 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: A Keycard Level 1 There Must Be More Of These Somewhere
+        GlocText: A Keycard! "Level 1", there must be more of these somewhere
         NormalText: 
     Subtitles: []

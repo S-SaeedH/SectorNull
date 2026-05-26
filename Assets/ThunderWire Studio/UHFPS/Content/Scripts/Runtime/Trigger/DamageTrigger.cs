@@ -29,64 +29,114 @@ namespace UHFPS.Runtime
         private float damageTime;
         private bool damageOnce;
 
-        private readonly List<Collider> damageables = new();
+        private readonly HashSet<BaseHealthEntity> damagedHealthEntities = new();
+        private readonly HashSet<BaseBreakableEntity> damagedBreakables = new();
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out IDamagable damageable) && !damageables.Contains(other))
-            {
-                SendDamage(other.gameObject, damageable);
-                damageables.Add(other);
-            }
+            if (DamageType == DamageTypeEnum.Stay)
+                return;
+
+            if (DamageType == DamageTypeEnum.Once && damageOnce)
+                return;
+
+            TryApplyDamage(other, true);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (DamageType == DamageTypeEnum.MoreTimes)
-            {
-                if (other.TryGetComponent(out IDamagable _))
-                    damageables.Remove(other);
-            }
+            if (DamageType != DamageTypeEnum.MoreTimes)
+                return;
+
+            BaseHealthEntity health = other.GetComponentInParent<BaseHealthEntity>();
+            if (health != null)
+                damagedHealthEntities.Remove(health);
+
+            BaseBreakableEntity breakable = other.GetComponentInParent<BaseBreakableEntity>();
+            if (breakable != null)
+                damagedBreakables.Remove(breakable);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (DamageType == DamageTypeEnum.Stay && !damageOnce && damageTime <= 0)
-            {
-                if (other.TryGetComponent(out IDamagable damageable))
-                    SendDamage(other.gameObject, damageable);
+            if (DamageType != DamageTypeEnum.Stay || damageOnce || damageTime > 0f)
+                return;
 
+            if (TryApplyDamage(other, false))
                 damageTime = DamageRate;
-            }
         }
 
-        private void SendDamage(GameObject obj, IDamagable damageable)
+        private bool TryApplyDamage(Collider other, bool trackEntry)
         {
             uint damage = DamageInRange ? (uint)DamageRange.Random() : Damage;
-            if (InstantDeath) damageOnce = true;
 
-            if (DamageReceiver.HasFlag(DamageReceiverEnum.Player) && obj.CompareTag("Player") && damageable is BaseHealthEntity player)
+            BaseHealthEntity health = other.GetComponentInParent<BaseHealthEntity>();
+            if (health != null)
             {
-                if (InstantDeath) player.ApplyDamageMax(transform);
-                else player.OnApplyDamage((int)damage, transform);
+                GameObject target = health.gameObject;
+
+                if (target.CompareTag("Player") && DamageReceiver.HasFlag(DamageReceiverEnum.Player))
+                {
+                    if (trackEntry && damagedHealthEntities.Contains(health))
+                        return false;
+
+                    if (InstantDeath) health.ApplyDamageMax(transform);
+                    else health.OnApplyDamage((int)damage, transform);
+
+                    if (trackEntry)
+                        damagedHealthEntities.Add(health);
+
+                    if (DamageType == DamageTypeEnum.Once)
+                        damageOnce = true;
+
+                    OnDamage?.Invoke(damage);
+                    return true;
+                }
+
+                if (DamageReceiver.HasFlag(DamageReceiverEnum.Enemy) && target.CompareTag(EnemyTag))
+                {
+                    if (trackEntry && damagedHealthEntities.Contains(health))
+                        return false;
+
+                    if (InstantDeath) health.ApplyDamageMax(transform);
+                    else health.OnApplyDamage((int)damage, transform);
+
+                    if (trackEntry)
+                        damagedHealthEntities.Add(health);
+
+                    if (DamageType == DamageTypeEnum.Once)
+                        damageOnce = true;
+
+                    OnDamage?.Invoke(damage);
+                    return true;
+                }
             }
-            else if (DamageReceiver.HasFlag(DamageReceiverEnum.Enemy) && obj.CompareTag(EnemyTag) && damageable is BaseHealthEntity enemy)
+
+            BaseBreakableEntity breakable = other.GetComponentInParent<BaseBreakableEntity>();
+            if (breakable != null && DamageReceiver.HasFlag(DamageReceiverEnum.Breakable))
             {
-                if (InstantDeath) enemy.ApplyDamageMax(transform);
-                else enemy.OnApplyDamage((int)damage, transform);
-            }
-            else if (DamageReceiver.HasFlag(DamageReceiverEnum.Breakable) && damageable is BaseBreakableEntity breakable)
-            {
+                if (trackEntry && damagedBreakables.Contains(breakable))
+                    return false;
+
                 if (InstantDeath) breakable.ApplyDamageMax(transform);
                 else breakable.OnApplyDamage((int)damage, transform);
+
+                if (trackEntry)
+                    damagedBreakables.Add(breakable);
+
+                if (DamageType == DamageTypeEnum.Once)
+                    damageOnce = true;
+
+                OnDamage?.Invoke(damage);
+                return true;
             }
 
-            OnDamage?.Invoke(damage);
+            return false;
         }
 
         private void Update()
         {
-            if (DamageType == DamageTypeEnum.Stay && !damageOnce && damageTime > 0)
+            if (DamageType == DamageTypeEnum.Stay && !damageOnce && damageTime > 0f)
                 damageTime -= Time.deltaTime;
         }
 

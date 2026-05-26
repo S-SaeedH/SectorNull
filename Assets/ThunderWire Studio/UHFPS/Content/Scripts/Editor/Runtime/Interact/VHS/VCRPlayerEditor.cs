@@ -96,7 +96,15 @@ namespace UHFPS.Editors
                     Properties.Draw("rewind");
                     EditorDrawing.EndBorderHeaderLayout();
                 }
+
+                EditorGUILayout.Space(1f);
+                using (new EditorDrawing.BorderBoxScope(new GUIContent("Events")))
+                {
+                    Properties.Draw("OnTapeStart");
+                    Properties.Draw("OnTapeEnd");
+                }
             }
+
             serializedObject.ApplyModifiedProperties();
         }
     }

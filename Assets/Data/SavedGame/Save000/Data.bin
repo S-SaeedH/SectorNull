@@ -1,5 +1,5 @@
 {
-  "id": "c28fb037c7c34f42aef1b44ba7639eda",
+  "id": "e66288dc02804821afc37c4d4fc4dc33",
   "playerData": {
     "position": {
       "x": 58.031002,
@@ -25,7 +25,7 @@
           "flashlightAttached": false
         },
         "playerItem_4": {
-          "batteryEnergy": 261.4491
+          "batteryEnergy": 320.0
         },
         "playerItem_5": {
           "currentFuel": 60.0
@@ -43,8 +43,8 @@
         "expanded": 0,
         "items": {
           "item_0": {
-            "item": "ba53a6ad76bb4513ba434a3b7542345a",
-            "quantity": 1,
+            "item": "e504d12d72e249a898b3ae4b65604ae0",
+            "quantity": 3,
             "orientation": 0,
             "position": {
               "x": 0,
@@ -57,34 +57,32 @@
             "quantity": 1,
             "orientation": 0,
             "position": {
-              "x": 2,
-              "y": 0
-            },
-            "customData": {}
-          },
-          "item_2": {
-            "item": "e504d12d72e249a898b3ae4b65604ae0",
-            "quantity": 3,
-            "orientation": 0,
-            "position": {
-              "x": 4,
+              "x": 1,
               "y": 0
             },
             "customData": {}
           }
         },
         "shortcuts": {
-          "shortcut_0": "ba53a6ad76bb4513ba434a3b7542345a",
+          "shortcut_0": "{}",
           "shortcut_1": "{}",
           "shortcut_2": "{}",
           "shortcut_3": "{}"
         }
       },
       "objectives": {
-        "WayOut": {
+        "level1": {
           "isCompleted": false,
           "subObjectives": {
-            "WayOut": {
+            "note": {
+              "completeCount": 0,
+              "isCompleted": false
+            },
+            "flashlight": {
+              "completeCount": 0,
+              "isCompleted": false
+            },
+            "leave ": {
               "completeCount": 0,
               "isCompleted": false
             }
@@ -94,7 +92,110 @@
     }
   },
   "worldState": {
-    "worldSaveables": {},
+    "worldSaveables": {
+      "InteractableItem.36d4693d611770942ab647ab8d8ce579": {
+        "position": {
+          "x": 17.13102,
+          "y": 0.0243660472,
+          "z": -1.51292658
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quantity": 1,
+        "enabledState": false,
+        "hotspotEnabled": true,
+        "customData": {}
+      },
+      "InteractableItem.ae56c522903462c4498cf381fded1785": {
+        "position": {
+          "x": 16.994,
+          "y": 0.03074982,
+          "z": -1.49
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quantity": 1,
+        "enabledState": false,
+        "hotspotEnabled": true,
+        "customData": {}
+      },
+      "InteractableItem.2981290f0f9738c4688a50d108fedc32": {
+        "position": {
+          "x": 16.943,
+          "y": 0.003,
+          "z": -1.25199986
+        },
+        "rotation": {
+          "x": 270.0,
+          "y": 230.422012,
+          "z": 0.0
+        },
+        "quantity": 1,
+        "enabledState": true,
+        "hotspotEnabled": true,
+        "customData": {}
+      },
+      "InteractableItem.e2ce0eac0e2553d4d892e0b533d6481e": {
+        "position": {
+          "x": 17.0294,
+          "y": 0.03074982,
+          "z": -1.5416
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quantity": 1,
+        "enabledState": false,
+        "hotspotEnabled": true,
+        "customData": {}
+      },
+      "InteractableItem.6d454e4f8745c0b4d821e18ec0a88498": {
+        "position": {
+          "x": 16.9835,
+          "y": 0.03074982,
+          "z": -1.55311012
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "quantity": 1,
+        "enabledState": false,
+        "hotspotEnabled": true,
+        "customData": {}
+      },
+      "ObjectiveTrigger.ad5043447aae39e46be634da23c7c791": {
+        "isTriggered": false
+      },
+      "ObjectiveTrigger.599c73f93fe450b49b55dce385a6fa46": {
+        "isTriggered": false
+      },
+      "CutsceneTrigger.459c9860e4e8f8f4ea5bb21b48fd9c5f": {
+        "isPlayed": true
+      },
+      "DialogueTrigger.d7c4c9afe2674614d823bac8aa1444ec": {
+        "IsCompleted": true
+      },
+      "ObjectiveTrigger.aa46523d82be7674e96450c115e9799f": {
+        "isTriggered": false
+      },
+      "TimedInteractEvent.e296dfdaa5242554a87be6b9a8ac33c6": {
+        "interactOnce": false,
+        "isInteractTimed": false
+      },
+      "ObjectiveTrigger.19152dca4cecd8b4f97b8ca676f09019": {
+        "isTriggered": true
+      }
+    },
     "runtimeSaveables": {}
   }
 }
