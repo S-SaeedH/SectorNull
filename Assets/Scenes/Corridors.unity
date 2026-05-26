@@ -12859,7 +12859,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e67e87c9e632631498c4066e2fd9bf33, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 982b2c08a2c885b4788eb6b217b69861, type: 3}
+  m_Resource: {fileID: 8300000, guid: c73e991c10274ab4694153f3d2c308d9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -12958,7 +12958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UHFPSMusicVolume
   musicOptionName: volume_music
-  baseVolume: 1
+  baseVolume: 0.1
 --- !u!1 &247235708
 GameObject:
   m_ObjectHideFlags: 0
