@@ -15,7 +15,7 @@ MonoBehaviour:
   Objectives:
   - ObjectiveKey: level1
     ObjectiveTitle:
-      GlocText: 'level 1 : The Lower Sector'
+      GlocText: 'Level 1: The Lower Sector'
       NormalText: 
     SubObjectives:
     - SubObjectiveKey: Note
@@ -31,5 +31,5 @@ MonoBehaviour:
     - SubObjectiveKey: 'leave '
       CompleteCount: 0
       ObjectiveText:
-        GlocText: leave the lower sector
+        GlocText: Leave the lower sector
         NormalText: 

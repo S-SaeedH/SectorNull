@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55106f91a38b6d4a8120c7aec3aa82d, type: 3}
+  m_Name: (Objectives) Demo
+  m_EditorClassIdentifier: 
+  Objectives:
+  - ObjectiveKey: level1
+    ObjectiveTitle:
+      GlocText: 'Level 1: The Lower Sector'
+      NormalText: 'Level 1 : The Lower Sector'
+    SubObjectives:
+    - SubObjectiveKey: note
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Read the note next to the dead body
+        NormalText: Read The Note Next To The Dead Body
+    - SubObjectiveKey: flashlight
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Pick up the flash light
+        NormalText: Pick Up The Flash Light
+    - SubObjectiveKey: 'leave '
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Get out of the lower sector
+        NormalText: Get Out Of The Lower Sector
+  - ObjectiveKey: level2
+    ObjectiveTitle:
+      GlocText: 'Level 2: Guard Room'
+      NormalText: 'Level 2 : Guard room'
+    SubObjectives:
+    - SubObjectiveKey: GuardRoom
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Get into the guard room
+        NormalText: Get Into The Gaurd Room
+    - SubObjectiveKey: GetCode
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: 'Get the code for the guard room '
+        NormalText: 'Get The Code For The Gaurd Room '
+    - SubObjectiveKey: useCode
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Use the code to open the door
+        NormalText: Use The Code To Open The Door
+  - ObjectiveKey: level3
+    ObjectiveTitle:
+      GlocText: 'Level 3: The Theater'
+      NormalText: 'Level 3 : The Theater'
+    SubObjectives:
+    - SubObjectiveKey: GoToTheater
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Go to the theater
+        NormalText: Go Into The Theater
+    - SubObjectiveKey: GetFuse
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Get the fuses to power up the section
+        NormalText: Get The Fuses For The Power
+    - SubObjectiveKey: Open
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Open the door
+        NormalText: Open The Door
+    - SubObjectiveKey: Watch
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: 'Watch the tape '
+        NormalText: 'Watch The Tape '
+  - ObjectiveKey: level6
+    ObjectiveTitle:
+      GlocText: 'Level 6: Confront The Director'
+      NormalText: 'Level 6: Confront The Director'
+    SubObjectives:
+    - SubObjectiveKey: level6
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Step into the final scene
+        NormalText: Step into the final scene
+  - ObjectiveKey: level4
+    ObjectiveTitle:
+      GlocText: 'Level 4: Prepare To Escape '
+      NormalText: 'level 4 : Prepare To Escape '
+    SubObjectives:
+    - SubObjectiveKey: GoExit
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Go to the main exit
+        NormalText: Go to The Main Exit
+    - SubObjectiveKey: ReadNote
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find the master card
+        NormalText: Find The Maste Card
+    - SubObjectiveKey: ReadDircNote
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find the code in the video
+        NormalText: Find The Code In The Video
+  - ObjectiveKey: level5
+    ObjectiveTitle:
+      GlocText: 'Level 5: Escape The Sector'
+      NormalText: 'level 5 : Escape The Sector'
+    SubObjectives:
+    - SubObjectiveKey: FindGen
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find the generator
+        NormalText: Find the Generator
+    - SubObjectiveKey: FindFuel
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Find fuel for the generator
+        NormalText: Find Fuel For the Generator
+    - SubObjectiveKey: Escape
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Turn on the generator and escape
+        NormalText: Turn On The Generator And Escape
