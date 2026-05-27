@@ -6795,14 +6795,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerType: 2
-  objectiveType: 0
+  objectiveType: 2
   objectiveToAdd:
     ObjectiveKey: WayOut
     SubObjectives:
     - WayOut
   objectiveToComplete:
-    ObjectiveKey: 
-    SubObjectives: []
+    ObjectiveKey: level5
+    SubObjectives:
+    - Escape
+    - FindFuel
 --- !u!114 &1380320124
 MonoBehaviour:
   m_ObjectHideFlags: 0
