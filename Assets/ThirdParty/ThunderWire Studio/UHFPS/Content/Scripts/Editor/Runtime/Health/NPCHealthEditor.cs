@@ -17,21 +17,29 @@ namespace UHFPS.Editors
 
             serializedObject.Update();
             {
-                using(new EditorDrawing.BorderBoxScope(new GUIContent("Body Parts")))
+                using (new EditorDrawing.BorderBoxScope(new GUIContent("Body Parts")))
                 {
                     Properties.Draw("Hips");
                     Properties.Draw("Head");
                     Properties.Draw("BodyPartLayer");
                     EditorGUILayout.Space();
 
-                    if(Target.BodySegments.Count > 0)
+                    if (Target.BodySegments.Count > 0)
                     {
-                        string parts = string.Join(", ", Target.BodySegments.Select(x => x.Collider.gameObject.name));
+                        string parts = string.Join(", ", Target.BodySegments
+                            .Where(x => x.Collider != null)
+                            .Select(x => x.Collider.gameObject.name));
+
                         EditorGUILayout.HelpBox("Body Parts: " + parts, MessageType.Info);
                     }
                     else
                     {
-                        EditorGUILayout.HelpBox("Click the \"Find body parts\" button to find all body parts in the hip transform. Body parts can only be found when the character is defined as a ragdoll. To define a character as a ragdoll, go to GameObject -> 3D Object -> Ragdoll.", MessageType.Info);
+                        EditorGUILayout.HelpBox(
+                            "Click the \"Find Body Parts\" button to find all body parts in the hip transform. " +
+                            "Body parts can only be found when the character is defined as a ragdoll. " +
+                            "To define a character as a ragdoll, go to GameObject -> 3D Object -> Ragdoll.",
+                            MessageType.Info
+                        );
                     }
 
                     EditorGUILayout.Space(1f);
@@ -41,14 +49,18 @@ namespace UHFPS.Editors
                         if (GUILayout.Button("Find Body Parts", GUILayout.Height(25)))
                         {
                             Target.BodySegments.Clear();
+
                             foreach (var collider in Target.Hips.GetComponentsInChildren<Collider>())
                             {
                                 Rigidbody rigidbody = collider.GetComponent<Rigidbody>();
 
-                                if(!collider.gameObject.TryGetComponent(out NPCBodyPart bodyPart))
+                                if (rigidbody == null)
+                                    rigidbody = collider.gameObject.AddComponent<Rigidbody>();
+
+                                if (!collider.gameObject.TryGetComponent(out NPCBodyPart bodyPart))
                                     bodyPart = collider.gameObject.AddComponent<NPCBodyPart>();
 
-                                if(Target.Head != null && collider == Target.Head)
+                                if (Target.Head != null && collider == Target.Head)
                                     bodyPart.IsHeadDamage = true;
 
                                 rigidbody.isKinematic = true;
@@ -56,29 +68,48 @@ namespace UHFPS.Editors
                                 collider.isTrigger = true;
                                 bodyPart.HealthScript = Target;
 
-                                Target.BodySegments.Add(new(rigidbody, collider, bodyPart));
+                                Target.BodySegments.Add(new NPCHealth.BodySegment(rigidbody, collider, bodyPart));
                             }
 
                             Target.Hips.gameObject.SetLayerRecursively(Target.BodyPartLayer);
+
+                            EditorUtility.SetDirty(Target);
                         }
                     }
                 }
 
                 EditorGUILayout.Space();
 
-                using(new EditorDrawing.BorderBoxScope(new GUIContent("Health Settings")))
+                using (new EditorDrawing.BorderBoxScope(new GUIContent("Health Settings")))
                 {
-                    if(Properties.DrawGetBool("AllowHeadhsot"))
+                    if (Properties.DrawGetBool("AllowHeadhsot"))
                         Properties.Draw("HeadshotMultiplier");
 
                     Properties.Draw("MaxHealth");
                     Properties.Draw("StartHealth");
 
                     EditorGUILayout.Space();
+
                     Rect healthRect = EditorGUILayout.GetControlRect();
+
+                    float maxHealth = Mathf.Max(1, Target.MaxHealth);
                     float health = Application.isPlaying ? Target.EntityHealth : Target.StartHealth;
-                    float healthPercent = health / Target.MaxHealth;
+                    float healthPercent = Mathf.Clamp01(health / maxHealth);
+
                     EditorGUI.ProgressBar(healthRect, healthPercent, $"Health ({health} HP)");
+                }
+
+                EditorGUILayout.Space();
+
+                using (new EditorDrawing.BorderBoxScope(new GUIContent("Save Settings")))
+                {
+                    Properties.Draw("SaveDeathState");
+                    Properties.Draw("InitializeIfMissingFromSave");
+
+                    EditorGUILayout.HelpBox(
+                        "For normal enemies that should appear again when loading, disable Save Death State and enable Initialize If Missing From Save.",
+                        MessageType.Info
+                    );
                 }
 
                 EditorGUILayout.Space();
@@ -112,15 +143,18 @@ namespace UHFPS.Editors
 
                 EditorGUILayout.Space();
 
-                if(EditorDrawing.BeginFoldoutBorderLayout(Properties["OnTakeDamage"], new GUIContent("Events")))
+                if (EditorDrawing.BeginFoldoutBorderLayout(Properties["OnTakeDamage"], new GUIContent("Events")))
                 {
                     Properties.Draw("OnTakeDamage");
                     Properties.Draw("OnDeath");
-                    if (Properties.BoolValue("RemoveCorpse"))
+
+                    if (Properties.BoolValue("RemoveCorpse") || Properties.BoolValue("DisableCorpse"))
                         Properties.Draw("OnCorpseRemove");
+
                     EditorDrawing.EndBorderHeaderLayout();
                 }
             }
+
             serializedObject.ApplyModifiedProperties();
         }
     }
