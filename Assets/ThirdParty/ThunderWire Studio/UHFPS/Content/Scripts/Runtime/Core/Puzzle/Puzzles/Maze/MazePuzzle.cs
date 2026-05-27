@@ -44,8 +44,13 @@ namespace UHFPS.Runtime
         public MinMax VerticalLimits = new(-45, 45);
         public MinMax HorizontalLimits = new(-45, 45);
 
+        [Header("Puzzle Events")]
         public UnityEvent OnBallEnterWrongHole;
         public UnityEvent OnBallEnterFinishHole;
+
+        [Header("Interaction Events")]
+        public UnityEvent OnPuzzleInteractionStarted;
+        public UnityEvent OnPuzzleInteractionEnded;
 
         private Inventory inventory;
 
@@ -56,24 +61,31 @@ namespace UHFPS.Runtime
         private bool puzzleCompleted;
         private bool mazeRotateLocked;
         private bool isBallGrabbed;
+        private bool puzzleInteractionStarted;
 
         public override void Awake()
         {
             base.Awake();
+
             inventory = Inventory.Instance;
-            defaulPosition = MazeTransform.position;
-            defaulRotation = MazeTransform.rotation;
+
+            if (MazeTransform != null)
+            {
+                defaulPosition = MazeTransform.position;
+                defaulRotation = MazeTransform.rotation;
+            }
         }
 
         public override void Update()
         {
             base.Update();
 
-            if (isActive && !mazeRotateLocked) 
+            if (isActive && !mazeRotateLocked)
             {
                 if (InputManager.ReadButton(Controls.LEFT_BUTTON))
                 {
                     Vector2 rotateValue = InputManager.ReadInput<Vector2>(Controls.LOOK) * RotateSpeed;
+
                     mazeRotation.y += rotateValue.y;
                     mazeRotation.x += -rotateValue.x;
 
@@ -99,129 +111,232 @@ namespace UHFPS.Runtime
                 interactStart.InteractStart();
             });
 
-            PutBallTrigger.enabled = BallItem.InInventory;
+            if (PutBallTrigger != null && BallItem != null)
+                PutBallTrigger.enabled = BallItem.InInventory;
         }
 
         public override void OnBlendStart(bool blendIn)
         {
-            // move maze to start/end position or rotation
             StopAllCoroutines();
             StartCoroutine(LiftPuzzle(blendIn));
 
-            if (!blendIn)
+            if (blendIn)
             {
-                mazeRotation = Vector3.zero;
-                PutBallTrigger.enabled = false;
-                GrabBallTrigger.enabled = false;
-                isBallGrabbed = false;
+                NotifyPuzzleInteractionStarted();
+                return;
             }
-            else return;
+
+            NotifyPuzzleInteractionEnded();
+
+            mazeRotation = Vector2.zero;
+
+            if (PutBallTrigger != null)
+                PutBallTrigger.enabled = false;
+
+            if (GrabBallTrigger != null)
+                GrabBallTrigger.enabled = false;
+
+            isBallGrabbed = false;
 
             gameManager.HidePointer();
-            BallObject.linearVelocity = Vector3.zero;
-            BallObject.gameObject.SetActive(false);
+
+            if (BallObject != null)
+            {
+                BallObject.linearVelocity = Vector3.zero;
+                BallObject.gameObject.SetActive(false);
+            }
+        }
+
+        private void NotifyPuzzleInteractionStarted()
+        {
+            if (puzzleInteractionStarted)
+                return;
+
+            puzzleInteractionStarted = true;
+            OnPuzzleInteractionStarted?.Invoke();
+        }
+
+        private void NotifyPuzzleInteractionEnded()
+        {
+            if (!puzzleInteractionStarted)
+                return;
+
+            puzzleInteractionStarted = false;
+            OnPuzzleInteractionEnded?.Invoke();
         }
 
         public void OnMazeTrigger(TriggerType trigger)
         {
-            if(trigger == TriggerType.PutBall)
+            if (trigger == TriggerType.PutBall)
             {
-                PutBallTrigger.enabled = false;
-                BallObject.transform.position = BallStart.position;
-                BallObject.linearVelocity = Vector3.zero;
-                BallObject.gameObject.SetActive(true);
+                if (PutBallTrigger != null)
+                    PutBallTrigger.enabled = false;
+
+                if (BallObject != null && BallStart != null)
+                {
+                    BallObject.transform.position = BallStart.position;
+                    BallObject.linearVelocity = Vector3.zero;
+                    BallObject.gameObject.SetActive(true);
+                }
             }
             else if (trigger == TriggerType.GrabBall)
             {
-                GrabBallAnim.SetActive(false);
-                GrabBallTrigger.enabled = false;
+                if (GrabBallAnim != null)
+                    GrabBallAnim.SetActive(false);
+
+                if (GrabBallTrigger != null)
+                    GrabBallTrigger.enabled = false;
+
                 isBallGrabbed = true;
             }
             else if (trigger == TriggerType.WrongHole)
             {
-                BallObject.gameObject.SetActive(false);
+                if (BallObject != null)
+                    BallObject.gameObject.SetActive(false);
+
                 StartCoroutine(OnGrabBallRotate());
                 OnBallEnterWrongHole?.Invoke();
             }
             else if (trigger == TriggerType.FinishHole)
             {
                 switchColliders = false;
-                inventory.RemoveItem(BallItem);
-                MazeAnimator.Play(OpenDrawerState);
-                SwitchBack();
+
+                if (inventory != null && BallItem != null)
+                    inventory.RemoveItem(BallItem);
+
+                if (MazeAnimator != null)
+                    MazeAnimator.Play(OpenDrawerState);
 
                 OnBallEnterFinishHole?.Invoke();
+
                 puzzleCompleted = true;
+
+                SwitchBack();
+
+                // Safety call. OnBlendStart(false) should also call this,
+                // but this prevents missed end events if SwitchBack behavior changes.
+                NotifyPuzzleInteractionEnded();
             }
         }
 
-        IEnumerator LiftPuzzle(bool liftUp)
+        private IEnumerator LiftPuzzle(bool liftUp)
         {
             mazeRotateLocked = true;
+
+            if (MazeTransform == null)
+            {
+                mazeRotateLocked = false;
+                yield break;
+            }
+
             MazeTransform.GetPositionAndRotation(out Vector3 currPos, out Quaternion currRot);
 
-            Vector3 endPos = liftUp 
+            Vector3 endPos = liftUp
                 ? defaulPosition + MazeLiftOffset
                 : defaulPosition;
-            Quaternion endRot = liftUp 
+
+            Quaternion endRot = liftUp
                 ? Quaternion.Euler(RotationOffset)
                 : defaulRotation;
 
             float duration = liftUp ? LiftDuration : ReturnDuration;
-            float elapsed = 0;
+            float elapsed = 0f;
 
             while (elapsed < duration)
             {
                 elapsed += Time.deltaTime;
-                float t = GameTools.SmootherStep(0f, 1f, elapsed / duration);
+
+                float t = duration > 0f
+                    ? GameTools.SmootherStep(0f, 1f, elapsed / duration)
+                    : 1f;
+
                 MazeTransform.position = Vector3.Lerp(currPos, endPos, t);
                 MazeTransform.rotation = Quaternion.Slerp(currRot, endRot, t);
+
                 yield return null;
             }
+
+            MazeTransform.position = endPos;
+            MazeTransform.rotation = endRot;
 
             mazeRotateLocked = false;
         }
 
-        IEnumerator OnGrabBallRotate()
+        private IEnumerator OnGrabBallRotate()
         {
             mazeRotateLocked = true;
             canManuallySwitch = false;
 
-            GrabBallAnim.SetActive(true);
-            MazeAnimator.Play(GrabBallState);
+            if (GrabBallAnim != null)
+                GrabBallAnim.SetActive(true);
+
+            if (MazeAnimator != null)
+                MazeAnimator.Play(GrabBallState);
+
+            if (MazeTransform == null)
+            {
+                canManuallySwitch = true;
+                mazeRotateLocked = false;
+                yield break;
+            }
 
             MazeTransform.GetPositionAndRotation(out Vector3 currPos, out Quaternion currRot);
+
             Vector3 endPos = currPos + GrabBallPosition;
             Quaternion endRot = Quaternion.Euler(GrabBallRotation);
 
-            float elapsed = 0;
+            float elapsed = 0f;
+
             while (elapsed < GrabBallDuration)
             {
                 elapsed += Time.deltaTime;
-                float t = GameTools.SmootherStep(0f, 1f, elapsed / GrabBallDuration);
+
+                float t = GrabBallDuration > 0f
+                    ? GameTools.SmootherStep(0f, 1f, elapsed / GrabBallDuration)
+                    : 1f;
+
                 MazeTransform.position = Vector3.Lerp(currPos, endPos, t);
                 MazeTransform.rotation = Quaternion.Slerp(currRot, endRot, t);
+
                 yield return null;
             }
 
-            GrabBallTrigger.enabled = true;
+            MazeTransform.position = endPos;
+            MazeTransform.rotation = endRot;
+
+            if (GrabBallTrigger != null)
+                GrabBallTrigger.enabled = true;
+
             yield return new WaitUntil(() => isBallGrabbed);
 
             Quaternion backRotation = Quaternion.Euler(RotationOffset);
-            elapsed = 0;
+            elapsed = 0f;
 
             while (elapsed < GrabBallDuration)
             {
                 elapsed += Time.deltaTime;
-                float t = GameTools.SmootherStep(0f, 1f, elapsed / GrabBallDuration);
+
+                float t = GrabBallDuration > 0f
+                    ? GameTools.SmootherStep(0f, 1f, elapsed / GrabBallDuration)
+                    : 1f;
+
                 MazeTransform.position = Vector3.Lerp(endPos, currPos, t);
                 MazeTransform.rotation = Quaternion.Slerp(endRot, backRotation, t);
+
                 yield return null;
             }
 
-            MazeAnimator.Rebind();
-            mazeRotation = Vector3.zero;
-            PutBallTrigger.enabled = true;
+            MazeTransform.position = currPos;
+            MazeTransform.rotation = backRotation;
+
+            if (MazeAnimator != null)
+                MazeAnimator.Rebind();
+
+            mazeRotation = Vector2.zero;
+
+            if (PutBallTrigger != null)
+                PutBallTrigger.enabled = true;
+
             isBallGrabbed = false;
 
             canManuallySwitch = true;
@@ -239,11 +354,11 @@ namespace UHFPS.Runtime
             if (MazeTransform == null)
                 return;
 
-            Vector3 liftPosition = Application.isPlaying 
+            Vector3 liftPosition = Application.isPlaying
                 ? defaulPosition + MazeLiftOffset
                 : MazeTransform.position + MazeLiftOffset;
 
-            if(BallStart != null)
+            if (BallStart != null)
             {
                 Gizmos.color = Color.magenta.Alpha(0.5f);
                 Gizmos.DrawSphere(BallStart.position, 0.01f);
@@ -272,13 +387,17 @@ namespace UHFPS.Runtime
 
             if (puzzleCompleted)
             {
-                PutBallTrigger.enabled = false;
-                GrabBallTrigger.enabled = false;
+                if (PutBallTrigger != null)
+                    PutBallTrigger.enabled = false;
+
+                if (GrabBallTrigger != null)
+                    GrabBallTrigger.enabled = false;
 
                 CollidersEnable.ForEach(x => x.enabled = true);
                 CollidersDisable.ForEach(x => x.enabled = false);
 
-                MazeAnimator.Play(OpenDrawerState, 0, 1f);
+                if (MazeAnimator != null)
+                    MazeAnimator.Play(OpenDrawerState, 0, 1f);
             }
         }
     }
