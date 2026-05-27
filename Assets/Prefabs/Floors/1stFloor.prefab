@@ -64172,7 +64172,6 @@ Transform:
   m_Children:
   - {fileID: 8632264084214088871}
   - {fileID: 4011364549002124294}
-  - {fileID: 6430572072479347689}
   m_Father: {fileID: 683486953323025230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6223004410062546345
@@ -64209,14 +64208,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.ObjectiveTrigger
   triggerType: 0
-  objectiveType: 0
+  objectiveType: 2
   objectiveToAdd:
     ObjectiveKey: level2
     SubObjectives:
     - GuardRoom
   objectiveToComplete:
-    ObjectiveKey: 
-    SubObjectives: []
+    ObjectiveKey: level1
+    SubObjectives:
+    - 'leave '
 --- !u!114 &2458614585204696055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65812,59 +65812,6 @@ MonoBehaviour:
   OnJumpscareEnded:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &6064397015086123931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6430572072479347689}
-  - component: {fileID: 3323616912066061491}
-  m_Layer: 0
-  m_Name: EndLevel2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6430572072479347689
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6064397015086123931}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6719225980413733019}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3323616912066061491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6064397015086123931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bef1a4507177f14ca3a2b2e08bd4e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.ObjectiveTrigger
-  triggerType: 0
-  objectiveType: 1
-  objectiveToAdd:
-    ObjectiveKey: 
-    SubObjectives: []
-  objectiveToComplete:
-    ObjectiveKey: level2
-    SubObjectives:
-    - useCode
 --- !u!1 &6125689258396011523
 GameObject:
   m_ObjectHideFlags: 0
@@ -72622,10 +72569,6 @@ PrefabInstance:
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2780510044221391590, guid: 0068907adffded8498d08d6b594cf7b1, type: 3}
-      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 3323616912066061491}
     - target: {fileID: 2780510044221391590, guid: 0068907adffded8498d08d6b594cf7b1, type: 3}
       propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
