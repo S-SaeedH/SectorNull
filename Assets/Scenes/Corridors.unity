@@ -35344,6 +35344,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608261824}
   m_CullTransparentMesh: 1
+--- !u!1 &608618490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8937090018861214885, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_PrefabInstance: {fileID: 1313791599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &608618491
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608618490}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.30340987, y: 0.54818726, z: 0.05}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.11563147, y: -0.048187498, z: -6.23019e-13}
+  m_TimeToStationary: 0.5
 --- !u!1 &609151960
 GameObject:
   m_ObjectHideFlags: 0
@@ -57550,6 +57571,27 @@ Transform:
   - {fileID: 1727455004}
   m_Father: {fileID: 331167482}
   m_LocalEulerAnglesHint: {x: -80.40824, y: -174.039, z: 167.48424}
+--- !u!1 &1045328805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6284100549862284425, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_PrefabInstance: {fileID: 1313791599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1045328806
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045328805}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.30340987, y: 0.54818726, z: 0.05}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.11563147, y: -0.048187498, z: -6.23019e-13}
+  m_TimeToStationary: 0.5
 --- !u!1 &1045616286
 GameObject:
   m_ObjectHideFlags: 0
@@ -77491,6 +77533,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8911299598816560665, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8937090018861214885, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 608618491}
+    - targetCorrespondingSourceObject: {fileID: 6284100549862284425, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1045328806}
     - targetCorrespondingSourceObject: {fileID: 1617927366362708406, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
