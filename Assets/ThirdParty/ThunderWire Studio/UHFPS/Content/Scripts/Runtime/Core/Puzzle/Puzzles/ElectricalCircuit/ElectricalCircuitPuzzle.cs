@@ -396,16 +396,11 @@ namespace UHFPS.Runtime
 
             foreach (ElectricalCircuitComponent component in Components)
             {
-                if (component == null || component.PowerFlows == null)
+                if (component == null)
                     continue;
 
-                foreach (ElectricalCircuitComponent.PowerFlow flow in component.PowerFlows)
-                {
-                    if (flow == null || flow.PowerFlows == null)
-                        continue;
-
-                    flow.PowerFlows.Clear();
-                }
+                component.RebuildRuntimeFlowsFromAngle();
+                component.ClearPower();
             }
         }
 
