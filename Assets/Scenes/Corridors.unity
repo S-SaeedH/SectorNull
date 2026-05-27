@@ -73053,6 +73053,10 @@ PrefabInstance:
       propertyPath: OnTakeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1607422341}
+    - target: {fileID: 5504640120245060138, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f314a92c50a53d46ad5f950db5b04fe, type: 2}
     - target: {fileID: 5530720849945556065, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.size
       value: 2
