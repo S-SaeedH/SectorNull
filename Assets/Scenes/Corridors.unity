@@ -72690,6 +72690,74 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 2.8115726e-13
       objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: PuzzleSuccess.volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: PuzzleSuccess.audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b75664418ee052f4e88a1e199d87f4ee, type: 3}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2036930698}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2036930698}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 945499851648287403, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: OnPuzzleInteractionStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1055341629511561133, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: OnJumpscareStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -121910,7 +121978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2036930699
 Transform:
   m_ObjectHideFlags: 0

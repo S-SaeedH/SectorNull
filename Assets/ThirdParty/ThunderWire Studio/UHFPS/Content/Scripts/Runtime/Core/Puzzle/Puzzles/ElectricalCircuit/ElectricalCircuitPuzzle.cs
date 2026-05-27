@@ -66,15 +66,23 @@ namespace UHFPS.Runtime
         public SoundClip RotateComponent;
         public SoundClip PowerConnected;
         public SoundClip PowerDisconnected;
+        public SoundClip PuzzleSuccess;
 
         [Header("Events")]
         public UnityEvent OnConnected;
         public UnityEvent OnDisconnected;
 
+        [Header("Interaction Events")]
+        public UnityEvent OnPuzzleInteractionStarted;
+        public UnityEvent OnPuzzleInteractionEnded;
+
         public bool isConnected;
 
         private AudioSource audioSource;
         private Coroutine connectedCoroutine;
+
+        private bool wasPuzzleActive;
+        private bool puzzleInteractionStarted;
 
         private void OnValidate()
         {
@@ -140,6 +148,7 @@ namespace UHFPS.Runtime
         public override void Awake()
         {
             base.Awake();
+
             audioSource = GetComponent<AudioSource>();
 
             SyncComponentCoords();
@@ -156,6 +165,39 @@ namespace UHFPS.Runtime
             {
                 RecalculateCircuit(false);
             }
+        }
+
+        private void LateUpdate()
+        {
+            if (isActive && !wasPuzzleActive)
+            {
+                wasPuzzleActive = true;
+                NotifyPuzzleInteractionStarted();
+            }
+
+            if (!isActive && wasPuzzleActive)
+            {
+                wasPuzzleActive = false;
+                NotifyPuzzleInteractionEnded();
+            }
+        }
+
+        private void NotifyPuzzleInteractionStarted()
+        {
+            if (puzzleInteractionStarted)
+                return;
+
+            puzzleInteractionStarted = true;
+            OnPuzzleInteractionStarted?.Invoke();
+        }
+
+        private void NotifyPuzzleInteractionEnded()
+        {
+            if (!puzzleInteractionStarted)
+                return;
+
+            puzzleInteractionStarted = false;
+            OnPuzzleInteractionEnded?.Invoke();
         }
 
         public void ReinitializeCircuit()
@@ -343,8 +385,14 @@ namespace UHFPS.Runtime
             {
                 if (!isConnected && !SaveGameManager.GameWillLoad)
                 {
-                    if (audioSource != null && PowerConnected != null)
-                        audioSource.PlayOneShotSoundClip(PowerConnected);
+                    if (audioSource != null)
+                    {
+                        if (PowerConnected != null)
+                            audioSource.PlayOneShotSoundClip(PowerConnected);
+
+                        if (PuzzleSuccess != null)
+                            audioSource.PlayOneShotSoundClip(PuzzleSuccess);
+                    }
                 }
 
                 if (DisableWhenConnected)
@@ -386,6 +434,10 @@ namespace UHFPS.Runtime
             yield return new WaitForSeconds(PowerConnectedWaitTime);
 
             SwitchBack();
+
+            wasPuzzleActive = false;
+            NotifyPuzzleInteractionEnded();
+
             DisableInteract();
         }
 

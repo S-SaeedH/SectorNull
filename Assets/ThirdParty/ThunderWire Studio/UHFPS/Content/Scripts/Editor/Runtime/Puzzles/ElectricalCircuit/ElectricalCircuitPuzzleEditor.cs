@@ -13,7 +13,8 @@ namespace UHFPS.Editors
     public class ElectricalCircuitPuzzleEditor : PuzzleEditor<ElectricalCircuitPuzzle>
     {
         public const string ALPHA = "ABCDEFGHIKLMNOPQRSTVXYZ";
-        private readonly bool[] foldout = new bool[1];
+
+        private readonly bool[] foldout = new bool[2];
         private int circuitEditType = 0;
 
         public override void OnInspectorGUI()
@@ -51,80 +52,65 @@ namespace UHFPS.Editors
                     Rect circuitRandomRect = GUILayoutUtility.GetRect(1f, 20f);
                     circuitRandomRect.x = (circuitRandomRect.width / 2) - (100f / 2) + 23f;
                     circuitRandomRect.width = 100f;
+
                     if (GUI.Button(circuitRandomRect, "Randomize"))
                     {
                         Undo.RegisterFullObjectHierarchyUndo(Target, "Randomize Circuit Puzzle");
+
+                        System.Random random = new System.Random();
+
                         foreach (var component in Target.ComponentsFlow)
                         {
-                            System.Random random = new System.Random();
+                            if (component == null)
+                                continue;
+
+                            if (Target.CircuitComponents == null || Target.CircuitComponents.Length == 0)
+                                continue;
+
                             component.Component = Target.CircuitComponents[random.Next(0, Target.CircuitComponents.Length)];
-                            component.Rotation = random.Next(1, 4) * 90;
+                            component.Rotation = random.Next(0, 4) * 90;
                         }
+
+                        EditorUtility.SetDirty(Target);
+                        serializedObject.ApplyModifiedProperties();
                     }
 
                     EditorGUILayout.Space();
+
                     EditorGUI.BeginChangeCheck();
                     {
                         Target.Rows = (ushort)EditorGUILayout.Slider(new GUIContent("Rows"), Target.Rows, 1, 5);
                         Target.Columns = (ushort)EditorGUILayout.Slider(new GUIContent("Columns"), Target.Columns, 1, 5);
                     }
+
                     if (EditorGUI.EndChangeCheck())
                     {
                         Undo.RegisterFullObjectHierarchyUndo(Target, "Rows or Columns Change");
-                        Target.PowerFlow = new ElectricalCircuitPuzzle.PowerComponent[Target.Rows * Target.Columns];
-                        Target.ComponentsFlow = new ElectricalCircuitPuzzle.ComponentFlow[Target.Rows * Target.Columns];
+
+                        int size = Target.Rows * Target.Columns;
+
+                        Target.PowerFlow = new ElectricalCircuitPuzzle.PowerComponent[size];
+                        Target.ComponentsFlow = new ElectricalCircuitPuzzle.ComponentFlow[size];
+
+                        for (int i = 0; i < size; i++)
+                        {
+                            Target.PowerFlow[i] = new ElectricalCircuitPuzzle.PowerComponent();
+                            Target.ComponentsFlow[i] = new ElectricalCircuitPuzzle.ComponentFlow();
+                        }
+
                         Target.InputEvents.Clear();
+
+                        EditorUtility.SetDirty(Target);
                         serializedObject.ApplyModifiedProperties();
                         return;
                     }
 
-                    EditorGUILayout.HelpBox("Changing the number of rows or columns resets the entire circuit!", MessageType.Warning);
+                    EditorGUILayout.HelpBox("Changing the number of rows or columns resets the entire circuit.", MessageType.Warning);
 
-                    var powerFlowArray = Target.PowerFlow
-                        .Where(x => x.PowerType != PowerType.None && x.PowerID > 0)
-                        .OrderBy(x => x.PowerType);
-
-                    if (powerFlowArray.Count() > 0)
-                    {
-                        EditorGUILayout.Space();
-                        using (new EditorDrawing.BorderBoxScope(new GUIContent("Power Flow")))
-                        {
-                            foreach (var component in powerFlowArray)
-                            {
-                                int alphaPowerID = component.PowerID - 1;
-
-                                if (component.PowerType == PowerType.Output)
-                                {
-                                    EditorGUILayout.BeginHorizontal();
-                                    {
-                                        EditorGUILayout.PrefixLabel($"[{ALPHA[alphaPowerID]}, {component.PowerDirection}, {component.PowerID}] <b>{component.PowerType}</b>", "Button", EditorDrawing.Styles.RichLabel);
-
-                                        IDictionary<string, ElectricalCircuitPuzzle.PowerComponent> contents = Target.PowerFlow
-                                            .Where(x => x.PowerType == PowerType.Input && x.PowerID > 0)
-                                            .ToDictionary(x => $"[{ALPHA[x.PowerID - 1]}, {x.PowerDirection}] {x.PowerType}", y => y);
-
-                                        string selected = contents.Where(x => x.Value.PowerID == component.ConnectPowerID)
-                                            .Select(x => x.Key)
-                                            .FirstOrDefault();
-
-                                        Rect popupRect = EditorGUILayout.GetControlRect();
-                                        EditorDrawing.DrawStringSelectPopup(popupRect, new GUIContent("Outputs To"), contents.Keys.ToArray(), selected, selection =>
-                                        {
-                                            component.ConnectPowerID = contents[selection].PowerID;
-                                            serializedObject.ApplyModifiedProperties();
-                                        });
-                                    }
-                                    EditorGUILayout.EndHorizontal();
-                                }
-                                else if (component.PowerType == PowerType.Input)
-                                {
-                                    EditorGUILayout.LabelField($"[{ALPHA[alphaPowerID]}, {component.PowerDirection}, {component.PowerID}] <b>{component.PowerType}</b>", EditorDrawing.Styles.RichLabel);
-                                }
-                            }
-                        }
-                    }
+                    DrawPowerFlowSettings();
 
                     EditorGUILayout.Space();
+
                     using (new EditorDrawing.BorderBoxScope(new GUIContent("Circuit Settings")))
                     {
                         EditorGUI.indentLevel++;
@@ -132,6 +118,7 @@ namespace UHFPS.Editors
                         EditorGUI.indentLevel--;
 
                         EditorGUILayout.Space();
+
                         Properties.Draw("ComponentsParent");
                         Properties.Draw("ComponentsSpacing");
                         Properties.Draw("ComponentsSize");
@@ -141,9 +128,13 @@ namespace UHFPS.Editors
                     }
 
                     EditorGUILayout.Space();
-                    bool flag1 = Properties["CircuitComponents"].arraySize == 0;
-                    bool flag2 = !Target.ComponentsFlow.Any(x => x.Component != null);
-                    using (new EditorGUI.DisabledGroupScope(flag1 || flag2))
+
+                    bool noCircuitComponents = Properties["CircuitComponents"].arraySize == 0;
+                    bool noComponentsFlow = Target.ComponentsFlow == null || Target.ComponentsFlow.Length == 0;
+                    bool hasEmptySlots = Target.ComponentsFlow == null || Target.ComponentsFlow.Any(x => x == null || x.Component == null);
+                    bool missingParent = Target.ComponentsParent == null;
+
+                    using (new EditorGUI.DisabledGroupScope(noCircuitComponents || noComponentsFlow || hasEmptySlots || missingParent))
                     {
                         if (GUILayout.Button("Build Circuit", GUILayout.Height(25)))
                         {
@@ -155,61 +146,201 @@ namespace UHFPS.Editors
                             BuildCircuit(true);
                         }
                     }
+
+                    if (noCircuitComponents)
+                        EditorGUILayout.HelpBox("Assign Circuit Components before building.", MessageType.Info);
+
+                    if (missingParent)
+                        EditorGUILayout.HelpBox("Assign Components Parent before building.", MessageType.Warning);
+
+                    if (hasEmptySlots)
+                        EditorGUILayout.HelpBox("Every grid slot must have a component before building.", MessageType.Warning);
                 }
 
                 EditorGUILayout.Space();
+
                 using (new EditorDrawing.BorderBoxScope(new GUIContent("Sounds")))
                 {
                     Properties.Draw("RotateComponent");
                     Properties.Draw("PowerConnected");
                     Properties.Draw("PowerDisconnected");
+                    Properties.Draw("PuzzleSuccess");
                 }
 
                 EditorGUILayout.Space(2f);
+
                 using (new EditorDrawing.BorderBoxScope(new GUIContent("Events")))
                 {
-                    for (int i = 0; i < Properties["InputEvents"].arraySize; i++)
+                    DrawInputEvents();
+                    DrawGlobalEvents();
+                    DrawInteractionEvents();
+                }
+            }
+
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void DrawPowerFlowSettings()
+        {
+            if (Target.PowerFlow == null)
+                return;
+
+            var powerFlowArray = Target.PowerFlow
+                .Where(x => x != null && x.PowerType != PowerType.None && x.PowerID > 0)
+                .OrderBy(x => x.PowerType)
+                .ToArray();
+
+            if (powerFlowArray.Length <= 0)
+                return;
+
+            EditorGUILayout.Space();
+
+            using (new EditorDrawing.BorderBoxScope(new GUIContent("Power Flow")))
+            {
+                foreach (var component in powerFlowArray)
+                {
+                    int alphaPowerID = component.PowerID - 1;
+                    string alphaLabel = alphaPowerID >= 0 && alphaPowerID < ALPHA.Length
+                        ? ALPHA[alphaPowerID].ToString()
+                        : component.PowerID.ToString();
+
+                    if (component.PowerType == PowerType.Output)
                     {
-                        SerializedProperty input = Properties["InputEvents"].GetArrayElementAtIndex(i);
-                        var inputEvent = Target.InputEvents[i];
-                        var powerComp = inputEvent.PowerComponent;
-
-                        if (inputEvent.PowerComponent.PowerType == PowerType.Input)
+                        EditorGUILayout.BeginHorizontal();
                         {
-                            SerializedProperty inputLight = input.FindPropertyRelative("InputLight");
-                            SerializedProperty onConnected = input.FindPropertyRelative("OnConnected");
-                            SerializedProperty onDisconnected = input.FindPropertyRelative("OnDisconnected");
+                            EditorGUILayout.PrefixLabel(
+                                $"[{alphaLabel}, {component.PowerDirection}, {component.PowerID}] <b>{component.PowerType}</b>",
+                                "Button",
+                                EditorDrawing.Styles.RichLabel
+                            );
 
-                            if (EditorDrawing.BeginFoldoutBorderLayout(input, new GUIContent($"[{ALPHA[powerComp.PowerID - 1]}, {powerComp.PowerDirection}, {powerComp.PowerID}] Input Events")))
+                            IDictionary<string, ElectricalCircuitPuzzle.PowerComponent> contents = Target.PowerFlow
+                                .Where(x => x != null && x.PowerType == PowerType.Input && x.PowerID > 0)
+                                .ToDictionary(
+                                    x =>
+                                    {
+                                        int id = x.PowerID - 1;
+                                        string label = id >= 0 && id < ALPHA.Length ? ALPHA[id].ToString() : x.PowerID.ToString();
+                                        return $"[{label}, {x.PowerDirection}] {x.PowerType}";
+                                    },
+                                    y => y
+                                );
+
+                            string selected = contents
+                                .Where(x => x.Value.PowerID == component.ConnectPowerID)
+                                .Select(x => x.Key)
+                                .FirstOrDefault();
+
+                            Rect popupRect = EditorGUILayout.GetControlRect();
+
+                            if (contents.Count > 0)
                             {
-                                EditorGUILayout.PropertyField(inputLight);
-                                EditorGUILayout.Space(1f);
-
-                                if (EditorDrawing.BeginFoldoutBorderLayout(onConnected, new GUIContent("Events")))
-                                {
-                                    EditorGUILayout.PropertyField(onConnected);
-                                    EditorGUILayout.Space(1f);
-                                    EditorGUILayout.PropertyField(onDisconnected);
-                                    EditorDrawing.EndBorderHeaderLayout();
-                                }
-
-                                EditorDrawing.EndBorderHeaderLayout();
+                                EditorDrawing.DrawStringSelectPopup(
+                                    popupRect,
+                                    new GUIContent("Outputs To"),
+                                    contents.Keys.ToArray(),
+                                    selected,
+                                    selection =>
+                                    {
+                                        component.ConnectPowerID = contents[selection].PowerID;
+                                        EditorUtility.SetDirty(Target);
+                                        serializedObject.ApplyModifiedProperties();
+                                    }
+                                );
+                            }
+                            else
+                            {
+                                EditorGUI.LabelField(popupRect, "No inputs available.");
                             }
                         }
-
-                        EditorGUILayout.Space(1f);
+                        EditorGUILayout.EndHorizontal();
                     }
-
-                    if (EditorDrawing.BeginFoldoutBorderLayout(new GUIContent("Global Events"), ref foldout[0]))
+                    else if (component.PowerType == PowerType.Input)
                     {
-                        Properties.Draw("OnConnected");
-                        EditorGUILayout.Space(1f);
-                        Properties.Draw("OnDisconnected");
-                        EditorDrawing.EndBorderHeaderLayout();
+                        EditorGUILayout.LabelField(
+                            $"[{alphaLabel}, {component.PowerDirection}, {component.PowerID}] <b>{component.PowerType}</b>",
+                            EditorDrawing.Styles.RichLabel
+                        );
                     }
                 }
             }
-            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void DrawInputEvents()
+        {
+            if (Properties["InputEvents"] == null)
+                return;
+
+            for (int i = 0; i < Properties["InputEvents"].arraySize; i++)
+            {
+                SerializedProperty input = Properties["InputEvents"].GetArrayElementAtIndex(i);
+
+                if (i < 0 || i >= Target.InputEvents.Count)
+                    continue;
+
+                var inputEvent = Target.InputEvents[i];
+
+                if (inputEvent == null || inputEvent.PowerComponent == null)
+                    continue;
+
+                var powerComp = inputEvent.PowerComponent;
+
+                if (powerComp.PowerType == PowerType.Input)
+                {
+                    SerializedProperty inputLight = input.FindPropertyRelative("InputLight");
+                    SerializedProperty onConnected = input.FindPropertyRelative("OnConnected");
+                    SerializedProperty onDisconnected = input.FindPropertyRelative("OnDisconnected");
+
+                    int alphaPowerID = powerComp.PowerID - 1;
+                    string alphaLabel = alphaPowerID >= 0 && alphaPowerID < ALPHA.Length
+                        ? ALPHA[alphaPowerID].ToString()
+                        : powerComp.PowerID.ToString();
+
+                    if (EditorDrawing.BeginFoldoutBorderLayout(
+                        input,
+                        new GUIContent($"[{alphaLabel}, {powerComp.PowerDirection}, {powerComp.PowerID}] Input Events")))
+                    {
+                        EditorGUILayout.PropertyField(inputLight);
+                        EditorGUILayout.Space(1f);
+
+                        if (EditorDrawing.BeginFoldoutBorderLayout(onConnected, new GUIContent("Events")))
+                        {
+                            EditorGUILayout.PropertyField(onConnected);
+                            EditorGUILayout.Space(1f);
+                            EditorGUILayout.PropertyField(onDisconnected);
+                            EditorDrawing.EndBorderHeaderLayout();
+                        }
+
+                        EditorDrawing.EndBorderHeaderLayout();
+                    }
+                }
+
+                EditorGUILayout.Space(1f);
+            }
+        }
+
+        private void DrawGlobalEvents()
+        {
+            if (EditorDrawing.BeginFoldoutBorderLayout(new GUIContent("Global Events"), ref foldout[0]))
+            {
+                Properties.Draw("OnConnected");
+                EditorGUILayout.Space(1f);
+                Properties.Draw("OnDisconnected");
+
+                EditorDrawing.EndBorderHeaderLayout();
+            }
+        }
+
+        private void DrawInteractionEvents()
+        {
+            if (EditorDrawing.BeginFoldoutBorderLayout(new GUIContent("Interaction Events"), ref foldout[1]))
+            {
+                Properties.Draw("OnPuzzleInteractionStarted");
+                EditorGUILayout.Space(1f);
+                Properties.Draw("OnPuzzleInteractionEnded");
+
+                EditorDrawing.EndBorderHeaderLayout();
+            }
         }
 
         private void DrawCircuitPreview(Rect rect, int rows, int columns)
@@ -225,6 +356,7 @@ namespace UHFPS.Editors
             float X = (rect.width / 2) - (columns * slotSize + spacing * (columns + 1)) / 2;
 
             GUI.BeginGroup(rect);
+
             for (int y = 0; y < rows; y++)
             {
                 Vector2 slotPosition = new Vector2(X + spacing, Y + y * slotSize + spacing * (y + 1));
@@ -233,23 +365,25 @@ namespace UHFPS.Editors
                 {
                     Vector2 localSlotPosition = slotPosition + (x * new Vector2(slotSize + spacing, 0));
 
-                    if(y == 0)
+                    if (y == 0)
                     {
                         Vector2 powerYPos = new Vector2(localSlotPosition.x, localSlotPosition.y - spacing - powerSlotSize);
                         DrawCircuitPower(new Rect(powerYPos, new Vector2(slotSize, powerSlotSize)), x, y, PartDirection.Up);
                     }
-                    if(y == rows - 1)
+
+                    if (y == rows - 1)
                     {
                         Vector2 powerYPos = new Vector2(localSlotPosition.x, localSlotPosition.y + spacing + slotSize);
                         DrawCircuitPower(new Rect(powerYPos, new Vector2(slotSize, powerSlotSize)), x, y, PartDirection.Down);
                     }
 
-                    if(x == 0)
+                    if (x == 0)
                     {
                         Vector2 powerXPos = new Vector2(localSlotPosition.x - spacing - powerSlotSize, localSlotPosition.y);
                         DrawCircuitPower(new Rect(powerXPos, new Vector2(powerSlotSize, slotSize)), x, y, PartDirection.Left);
                     }
-                    if(x == columns - 1)
+
+                    if (x == columns - 1)
                     {
                         Vector2 powerXPos = new Vector2(localSlotPosition.x + spacing + slotSize, localSlotPosition.y);
                         DrawCircuitPower(new Rect(powerXPos, new Vector2(powerSlotSize, slotSize)), x, y, PartDirection.Right);
@@ -258,48 +392,66 @@ namespace UHFPS.Editors
                     DrawCircuitSlot(new Rect(localSlotPosition, new Vector2(slotSize, slotSize)), x, y);
                 }
             }
+
             GUI.EndGroup();
+
             Repaint();
         }
 
         private void DrawCircuitPower(Rect rect, int x, int y, PartDirection direction)
         {
-            // set normal rect color
-            Color rectColor = Color.black.Alpha(0.5f);
+            if (Target.PowerFlow == null || Target.PowerFlow.Length == 0)
+                return;
 
             int index = y * Target.Columns + x;
+
+            if (index < 0 || index >= Target.PowerFlow.Length)
+                return;
+
+            Color rectColor = Color.black.Alpha(0.5f);
+
             ElectricalCircuitPuzzle.PowerComponent powerComponent = Target.PowerFlow[index];
+
+            if (powerComponent == null)
+            {
+                powerComponent = new ElectricalCircuitPuzzle.PowerComponent();
+                Target.PowerFlow[index] = powerComponent;
+            }
+
             PowerType powerType = powerComponent.PowerType;
             PartDirection powerDirection = powerComponent.PowerDirection;
 
-            // set rect color depending of the power type
             if (powerDirection == direction)
             {
-                if (powerType == PowerType.Output) rectColor = Color.green.Alpha(0.35f);
-                else if (powerType == PowerType.Input) rectColor = Color.red.Alpha(0.35f);
+                if (powerType == PowerType.Output)
+                    rectColor = Color.green.Alpha(0.35f);
+                else if (powerType == PowerType.Input)
+                    rectColor = Color.red.Alpha(0.35f);
             }
 
             Event e = Event.current;
+
             if (rect.Contains(e.mousePosition))
             {
                 rectColor = Color.white.Alpha(0.35f);
+
                 if (e.type == EventType.MouseDown && e.button == 0)
                 {
-                    // register undo
                     Undo.RegisterFullObjectHierarchyUndo(Target, "Circuit Power Change");
 
-                    // reset output component connected power id
-                    if (powerType == PowerType.Output) powerComponent.ConnectPowerID = 0;
+                    if (powerType == PowerType.Output)
+                    {
+                        powerComponent.ConnectPowerID = 0;
+                    }
                     else if (powerType == PowerType.Input)
                     {
                         foreach (var flow in Target.PowerFlow)
                         {
-                            if (flow.PowerType == PowerType.Output && flow.ConnectPowerID == powerComponent.PowerID)
+                            if (flow != null && flow.PowerType == PowerType.Output && flow.ConnectPowerID == powerComponent.PowerID)
                                 flow.ConnectPowerID = 0;
                         }
                     }
 
-                    // reset component variables when changing power direction
                     if (powerDirection != direction)
                     {
                         powerType = PowerType.None;
@@ -307,19 +459,24 @@ namespace UHFPS.Editors
                         powerComponent.ConnectPowerID = 0;
                     }
 
-                    // change power type and direction
                     int powerTypeEnumCount = Enum.GetValues(typeof(PowerType)).Length;
-                    powerComponent.PowerType = (PowerType)((int)(powerType + 1) % powerTypeEnumCount);
+                    powerComponent.PowerType = (PowerType)(((int)powerType + 1) % powerTypeEnumCount);
                     powerComponent.PowerDirection = direction;
 
-                    // assign power id
                     if (powerComponent.PowerType != PowerType.None)
                     {
                         for (int i = 0; i < ALPHA.Length; i++)
                         {
-                            if (!Target.PowerFlow.Any(x => x.PowerType == powerComponent.PowerType && x.PowerID == i + 1))
+                            int id = i + 1;
+
+                            bool idExists = Target.PowerFlow.Any(x =>
+                                x != null &&
+                                x.PowerType == powerComponent.PowerType &&
+                                x.PowerID == id);
+
+                            if (!idExists)
                             {
-                                powerComponent.PowerID = i + 1;
+                                powerComponent.PowerID = id;
                                 break;
                             }
                         }
@@ -327,30 +484,36 @@ namespace UHFPS.Editors
                     else
                     {
                         powerComponent.PowerID = 0;
+                        powerComponent.ConnectPowerID = 0;
                     }
 
-                    // update the input events list
                     if (powerComponent.PowerType == PowerType.Input && !Target.InputEvents.Any(x => x.PowerComponent == powerComponent))
                     {
-                        Target.InputEvents.Add(new ElectricalCircuitPuzzle.PowerInputEvents() { PowerComponent = powerComponent });
+                        Target.InputEvents.Add(new ElectricalCircuitPuzzle.PowerInputEvents()
+                        {
+                            PowerComponent = powerComponent
+                        });
                     }
                     else if (powerComponent.PowerType == PowerType.None)
                     {
-                        Target.InputEvents.RemoveAll(x => x.PowerComponent.PowerID == 0);
+                        Target.InputEvents.RemoveAll(x => x.PowerComponent == null || x.PowerComponent.PowerID == 0);
                     }
 
-                    // apply changes
+                    EditorUtility.SetDirty(Target);
                     serializedObject.ApplyModifiedProperties();
                     serializedObject.UpdateIfRequiredOrScript();
                     e.Use();
                 }
             }
 
-            // draw rect and alphabet label
             EditorGUI.DrawRect(rect, rectColor);
+
             if (powerType != PowerType.None && powerDirection == direction)
             {
-                string label = powerComponent.PowerID > 0 ? ALPHA[powerComponent.PowerID - 1].ToString() : "-";
+                string label = powerComponent.PowerID > 0 && powerComponent.PowerID - 1 < ALPHA.Length
+                    ? ALPHA[powerComponent.PowerID - 1].ToString()
+                    : "-";
+
                 GUI.Label(rect, label, EditorDrawing.CenterStyle(EditorStyles.miniBoldLabel));
             }
         }
@@ -360,89 +523,150 @@ namespace UHFPS.Editors
             Color rectColor = Color.black.Alpha(0.5f);
 
             int index = y * Target.Columns + x;
-            ElectricalCircuitPuzzle.ComponentFlow componentFlow = Target.ComponentsFlow.Length > 0 ? Target.ComponentsFlow[index] : new();
+
+            if (Target.ComponentsFlow == null || Target.ComponentsFlow.Length == 0 || index < 0 || index >= Target.ComponentsFlow.Length)
+                return;
+
+            ElectricalCircuitPuzzle.ComponentFlow componentFlow = Target.ComponentsFlow[index];
+
+            if (componentFlow == null)
+            {
+                componentFlow = new ElectricalCircuitPuzzle.ComponentFlow();
+                Target.ComponentsFlow[index] = componentFlow;
+            }
 
             Event e = Event.current;
+
             if (rect.Contains(e.mousePosition))
             {
                 rectColor = Color.white.Alpha(0.35f);
+
                 if (e.type == EventType.MouseDown && e.button == 0)
                 {
-                    // register undo
                     Undo.RegisterFullObjectHierarchyUndo(Target, "Circuit Slot Change");
 
-                    // chnage component flow component
                     if (circuitEditType == 0)
                     {
                         int componentIndex = Array.IndexOf(Target.CircuitComponents, componentFlow.Component);
-                        componentFlow.Component = componentIndex + 1 > Target.CircuitComponents.Count() - 1 ? null
+
+                        componentFlow.Component = componentIndex + 1 > Target.CircuitComponents.Length - 1
+                            ? null
                             : Target.CircuitComponents[componentIndex + 1];
                     }
-                    // rotate component flow
-                    else if(circuitEditType == 1)
+                    else if (circuitEditType == 1)
                     {
                         componentFlow.Rotation = (componentFlow.Rotation + 90) % 360;
                     }
-                    // clear component
-                    else if(circuitEditType == 2)
+                    else if (circuitEditType == 2)
                     {
                         componentFlow.Component = null;
+                        componentFlow.Rotation = 0;
                     }
 
-                    // apply changes
+                    EditorUtility.SetDirty(Target);
                     serializedObject.ApplyModifiedProperties();
                     e.Use();
                 }
             }
 
-            // draw rect
             EditorGUI.DrawRect(rect, rectColor);
 
-            // draw component icon with rotation
             Matrix4x4 matrix = GUI.matrix;
-            GUIUtility.RotateAroundPivot(componentFlow.Rotation, new Vector2(rect.xMin + rect.width * 0.5f, rect.yMin + rect.height * 0.5f));
-            if(componentFlow.Component != null && componentFlow.Component.ComponentIcon != null)
+
+            GUIUtility.RotateAroundPivot(
+                componentFlow.Rotation,
+                new Vector2(rect.xMin + rect.width * 0.5f, rect.yMin + rect.height * 0.5f)
+            );
+
+            if (componentFlow.Component != null && componentFlow.Component.ComponentIcon != null)
                 EditorDrawing.DrawTransparentTexture(rect, componentFlow.Component.ComponentIcon);
+
             GUI.matrix = matrix;
         }
 
         private void BuildCircuit(bool random)
         {
+            if (Target.ComponentsParent == null)
+            {
+                Debug.LogError("Cannot build circuit. ComponentsParent is missing.", Target);
+                return;
+            }
+
+            if (Target.CircuitComponents == null || Target.CircuitComponents.Length == 0)
+            {
+                Debug.LogError("Cannot build circuit. CircuitComponents is empty.", Target);
+                return;
+            }
+
+            if (Target.ComponentsFlow == null || Target.ComponentsFlow.Length != Target.Rows * Target.Columns)
+            {
+                Debug.LogError("Cannot build circuit. ComponentsFlow size does not match rows * columns.", Target);
+                return;
+            }
+
+            if (Target.ComponentsFlow.Any(x => x == null || x.Component == null))
+            {
+                Debug.LogError("Cannot build circuit. Every slot must have a component assigned.", Target);
+                return;
+            }
+
+            Undo.RegisterFullObjectHierarchyUndo(Target.gameObject, "Build Circuit Puzzle");
+
             foreach (var component in Target.Components)
             {
+                if (component == null)
+                    continue;
+
                 if (component.TryGetComponent(out Collider collider))
                     Target.CollidersEnable.Remove(collider);
             }
 
-            Target.Components.ForEach(x => DestroyImmediate(x.gameObject));
+            foreach (var component in Target.Components.ToArray())
+            {
+                if (component != null)
+                    DestroyImmediate(component.gameObject);
+            }
+
             Target.Components.Clear();
 
             float componentSize = Target.CircuitComponents[0].ComponentMesh.sharedMesh.bounds.size.x;
             componentSize *= Target.ComponentsSize;
-            float panelSize = componentSize * Target.Columns + Target.ComponentsSpacing * (Target.Columns - 1);
 
-            Vector2 localStart = new Vector2(panelSize, panelSize) / 2;
-            Vector2 position = localStart;
+            float panelWidth = componentSize * Target.Columns + Target.ComponentsSpacing * (Target.Columns - 1);
+            float panelHeight = componentSize * Target.Rows + Target.ComponentsSpacing * (Target.Rows - 1);
+
+            Vector2 localStart = new Vector2(panelWidth, panelHeight) / 2f;
+
+            System.Random rand = new System.Random();
 
             for (int i = 0; i < Target.ComponentsFlow.Length; i++)
             {
                 var component = Target.ComponentsFlow[i];
+
                 int x = i % Target.Columns;
-                int y = i / Target.Rows;
+                int y = i / Target.Columns;
 
                 GameObject componentGO = Instantiate(component.Component.gameObject, Target.ComponentsParent);
+                componentGO.name = component.Component.gameObject.name;
+
                 ElectricalCircuitComponent instance = componentGO.GetComponent<ElectricalCircuitComponent>();
 
-                float angle = component.Rotation;
-                if (random)
+                if (instance == null)
                 {
-                    System.Random rand = new System.Random();
-                    angle = rand.Next(1, 4) * 90;
+                    Debug.LogError($"Component prefab {component.Component.name} has no ElectricalCircuitComponent.", component.Component);
+                    DestroyImmediate(componentGO);
+                    continue;
                 }
 
+                float angle = component.Rotation;
+
+                if (random)
+                    angle = rand.Next(0, 4) * 90;
+
                 Vector2 localPos = componentGO.transform.localPosition;
-                localPos.x = localStart.x - (x * (componentSize + Target.ComponentsSpacing)) - componentSize / 2;
-                localPos.y = localStart.y - (y * (componentSize + Target.ComponentsSpacing)) - componentSize / 2;
+
+                localPos.x = localStart.x - (x * (componentSize + Target.ComponentsSpacing)) - componentSize / 2f;
+                localPos.y = localStart.y - (y * (componentSize + Target.ComponentsSpacing)) - componentSize / 2f;
 
                 Vector3 localRot = componentGO.transform.localEulerAngles;
                 localRot = localRot.SetComponent(instance.ComponentUp, angle);
@@ -456,9 +680,18 @@ namespace UHFPS.Editors
                 instance.Angle = angle;
 
                 Target.Components.Add(instance);
+
                 if (componentGO.TryGetComponent(out Collider collider))
                     Target.CollidersEnable.Add(collider);
+
+                EditorUtility.SetDirty(componentGO);
+                EditorUtility.SetDirty(instance);
             }
+
+            EditorUtility.SetDirty(Target);
+            serializedObject.ApplyModifiedProperties();
+
+            Debug.Log("Electrical circuit built successfully.", Target);
         }
     }
 }
