@@ -43,9 +43,12 @@ namespace UHFPS.Runtime
                 // load saves process
                 await LoadAllSaves();
 
+                // Hide Continue only if player returned from the ending scene
+                bool gameCompleted = PlayerPrefs.GetInt("GameCompleted", 0) == 1;
+
                 // enable or disable continue button when last save exists
-                if(ContinueButton != null)
-                    ContinueButton.gameObject.SetActive(lastSave.HasValue);
+                if (ContinueButton != null)
+                    ContinueButton.gameObject.SetActive(lastSave.HasValue && !gameCompleted);
 
                 if (FadeOutAtStart) 
                     StartCoroutine(BackgroundFader.StartBackgroundFade(true));
@@ -67,7 +70,10 @@ namespace UHFPS.Runtime
 
         public void LoadLastSave()
         {
-            if (!lastSave.HasValue || isLoading) 
+            if (PlayerPrefs.GetInt("GameCompleted", 0) == 1)
+                return;
+
+            if (!lastSave.HasValue || isLoading)
                 return;
 
             SaveGameManager.SetLoadGameState(lastSave.Value.Scene, lastSave.Value.Foldername);
