@@ -77957,29 +77957,29 @@ MonoBehaviour:
   SavingIcon: {fileID: 2268820171287938815}
   Debugging: 1
   worldSaveables:
-  - Token: InteractableItem.5f0f23d8535ec41478dd737e4334cae3
+  - Token: InteractableItem.3624de192d6799445bcf025262b3230c
     Instance: {fileID: 25555875}
-  - Token: InteractableItem.4d3941b397c540a49b415cd384232f3b
+  - Token: InteractableItem.c3ed78fbd214d1e4fbe86dba36ed94a2
     Instance: {fileID: 108957374}
-  - Token: ObjectiveTrigger.e54fcc78d0f6b294396e856d466b063a
+  - Token: ObjectiveTrigger.2ef48a24a4196b04e92cec413dcee3f4
     Instance: {fileID: 462758297}
-  - Token: ObjectiveTrigger.4f192d60cfdee084aa80bdb81a4537d7
+  - Token: ObjectiveTrigger.b9884071acc314948b2052dd231a2886
     Instance: {fileID: 566108997}
-  - Token: CutsceneTrigger.ed8bb5dbf9076fe4ba2c8a4340b7a93f
+  - Token: CutsceneTrigger.e963281adfc37514eaa3e041ee526917
     Instance: {fileID: 566108999}
-  - Token: DialogueTrigger.d6129071c02803d4eb0981945ee32957
+  - Token: DialogueTrigger.1206e519d696cd84eb3601f608f06ef6
     Instance: {fileID: 684650528}
-  - Token: InteractableItem.743a9939b7537324d9fb80bb5db57d16
+  - Token: InteractableItem.b31b1ba90252be249b6df2b566bdfa90
     Instance: {fileID: 687492943}
-  - Token: ObjectiveTrigger.f4c482276796c3040bc9166e1a4f6ddd
+  - Token: ObjectiveTrigger.5960bbdfffbdd0a408f29ed89c8b897f
     Instance: {fileID: 872467369}
-  - Token: InteractableItem.9fe0fe90fa700be43a302e438ebf1967
+  - Token: InteractableItem.3f0227975417fc349a6a326709643322
     Instance: {fileID: 890862877}
-  - Token: InteractableItem.ccf4f2b8fe28582448e5fdc062886c40
+  - Token: InteractableItem.a944dae7f16b7a444ae3c56ff8350dcd
     Instance: {fileID: 1498688840}
-  - Token: TimedInteractEvent.8e3e90027e94ab54a8e80fe488eb1b94
+  - Token: TimedInteractEvent.0cd66d3ebfac2504a8628803eb8ebd7f
     Instance: {fileID: 1771540503}
-  - Token: ObjectiveTrigger.a6968310ef850724d911ab9f8ada952b
+  - Token: ObjectiveTrigger.c797097b23213f847940d73e6f133d41
     Instance: {fileID: 2122582586}
   runtimeSaveables: []
 --- !u!1 &5813543553162854338

@@ -15072,25 +15072,25 @@ MonoBehaviour:
   SavingIcon: {fileID: 5401978728176420620}
   Debugging: 1
   worldSaveables:
-  - Token: DialogueTrigger.fac66239d336bc34a95b349d3a9b7fe6
+  - Token: DialogueTrigger.c3a9db1aab7dd084aa64d04d4c6ef67d
     Instance: {fileID: 632515839}
-  - Token: DialogueTrigger.3129dca713a254847b7686cff0d24dfe
+  - Token: DialogueTrigger.f329cf8fb48b19348b45b623399c2677
     Instance: {fileID: 760661950}
-  - Token: RainingSet.c183298f0b81a274fa66a646bc22d274
+  - Token: RainingSet.056337e20bf1ab445b365955a1351d2c
     Instance: {fileID: 896729993}
-  - Token: UHFPSAutoSaveTrigger.f35ba74d07f374c4cae78ce4f661ed3d
+  - Token: UHFPSAutoSaveTrigger.6f533d52f58f95a4b8209bbb36387a6c
     Instance: {fileID: 980951183}
-  - Token: TimedInteractEvent.54dacd4456b13b8449f0fe1ec0062980
+  - Token: TimedInteractEvent.d9d9caf292a323e428b0a288e50b8ec1
     Instance: {fileID: 1007290253}
-  - Token: DialogueTrigger.8d9d0b63d1dfa9546a4ded4d85ad21dd
+  - Token: DialogueTrigger.064f3618d70a8ec449d6374e3e8d599f
     Instance: {fileID: 1320935615}
-  - Token: ObjectiveTrigger.5d2c97f3bb675ee4887f0bcfb0a02d25
+  - Token: ObjectiveTrigger.543b0fe9a1d8ec54ab194b2d25beb3f8
     Instance: {fileID: 1372242365}
-  - Token: ObjectiveTrigger.00749b6a212127947b99cd1c1828d96a
+  - Token: ObjectiveTrigger.790c9d64868b5f84d8b474886b070824
     Instance: {fileID: 1380320123}
-  - Token: CutsceneTrigger.2d451b1973d035e499de246d398a08ab
+  - Token: CutsceneTrigger.7d10f26ccb7f4c642b09eacbc8ddc812
     Instance: {fileID: 1380320125}
-  - Token: DialogueTrigger.0a2018b8d586f4d4f998f10cc79d2450
+  - Token: DialogueTrigger.fc4775560e2c8bc42a85e92efd933e1e
     Instance: {fileID: 1387387687}
   runtimeSaveables: []
 --- !u!1 &370988331409833521

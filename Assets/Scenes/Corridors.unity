@@ -8520,7 +8520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &179945626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8536,9 +8536,9 @@ RectTransform:
   - {fileID: 1541518874}
   m_Father: {fileID: 202108591}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -20}
   m_SizeDelta: {x: 250, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179945627
@@ -35365,6 +35365,25 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.11563147, y: -0.048187498, z: -6.23019e-13}
   m_TimeToStationary: 0.5
+--- !u!65 &608618493 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8346014048836036921, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_PrefabInstance: {fileID: 1313791599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &608618494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608618490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37632e7d49bb4b049816cf287897788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorNavObstacleSync
+  doorBlockerCollider: {fileID: 608618493}
+  navMeshObstacle: {fileID: 608618491}
 --- !u!1 &609151960
 GameObject:
   m_ObjectHideFlags: 0
@@ -57592,6 +57611,25 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.11563147, y: -0.048187498, z: -6.23019e-13}
   m_TimeToStationary: 0.5
+--- !u!65 &1045328808 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6222380937645774086, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_PrefabInstance: {fileID: 1313791599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1045328809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045328805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37632e7d49bb4b049816cf287897788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorNavObstacleSync
+  doorBlockerCollider: {fileID: 1045328808}
+  navMeshObstacle: {fileID: 1045328806}
 --- !u!1 &1045616286
 GameObject:
   m_ObjectHideFlags: 0
@@ -72855,6 +72893,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 173125091224056070, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: navMeshObstacle
+      value: 
+      objectReference: {fileID: 1757954075}
     - target: {fileID: 266497503459294454, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -72987,6 +73029,10 @@ PrefabInstance:
       propertyPath: OnAccessGranted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 332541373}
+    - target: {fileID: 3043044252179950719, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f94d0e2d192e5f439964a83fc31cb06, type: 2}
     - target: {fileID: 3307986583449860993, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -73016,9 +73062,93 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 581603674}
     - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: dynamicStatus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 608618494}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1313791605}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 608618494}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1593806269}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetDoorOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetOpenState
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetDoorClosed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DoorNavObstacleSync, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UHFPS.Runtime.DynamicObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DoorNavObstacleSync, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608586303860576973, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3737870299922525439, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -73340,9 +73470,93 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: dynamicStatus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1045328809}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1313791604}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1045328809}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1593806269}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetDoorOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetOpenState
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetDoorClosed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DoorNavObstacleSync, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UHFPS.Runtime.DynamicObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DoorNavObstacleSync, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent1.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329752659286834752, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      propertyPath: useEvent2.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8461740770602188351, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       propertyPath: lockedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -77536,9 +77750,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8937090018861214885, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 608618491}
+    - targetCorrespondingSourceObject: {fileID: 8937090018861214885, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 608618494}
     - targetCorrespondingSourceObject: {fileID: 6284100549862284425, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1045328806}
+    - targetCorrespondingSourceObject: {fileID: 6284100549862284425, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1045328809}
     - targetCorrespondingSourceObject: {fileID: 1617927366362708406, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -87597,14 +87817,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452370394}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.438, y: -3.723, z: -2.505}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 17.98, y: -3.723, z: -2.443}
   m_LocalScale: {x: 1, y: 0.87, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1943533366}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1452370403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105857,6 +106077,11 @@ Transform:
   - {fileID: 1846135769}
   m_Father: {fileID: 596699241}
   m_LocalEulerAnglesHint: {x: 7.493668, y: -97.8607, z: -99.550186}
+--- !u!208 &1757954075 stripped
+NavMeshObstacle:
+  m_CorrespondingSourceObject: {fileID: 3979682705389660902, guid: beef3bcde1610f04aa96275436147bb9, type: 3}
+  m_PrefabInstance: {fileID: 1313791599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1758014987
 GameObject:
   m_ObjectHideFlags: 0
@@ -108540,7 +108765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1808665728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109289,8 +109514,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821745944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.438, y: -2.723, z: -2.505}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 17.98, y: -2.723, z: -2.443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109983,7 +110208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1838024210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -118909,835 +119134,835 @@ MonoBehaviour:
   SavingIcon: {fileID: 745065663}
   Debugging: 1
   worldSaveables:
-  - Token: DialogueTrigger.1773cd137f17ae049bf131a6a4d5acf2
+  - Token: DialogueTrigger.6492cb24f5c8ffd478c345fdcc96a0a1
     Instance: {fileID: 49705964}
-  - Token: DialogueTrigger.7bfe96d0fbfd94043af70a6161950a02
+  - Token: DialogueTrigger.8528e3f090d39244b8d093a8b72c1fa2
     Instance: {fileID: 332541373}
-  - Token: DialogueTrigger.7ec720bbe962ef94796d711680c24a2b
+  - Token: DialogueTrigger.fef3b11fa296bae4e803782c448d2a56
     Instance: {fileID: 404736928}
-  - Token: DialogueTrigger.4cf967cf4503302429de3f68b9a86ef2
+  - Token: DialogueTrigger.319f1725f9eba2549aab8a5dd8709edf
     Instance: {fileID: 410605908}
-  - Token: DialogueTrigger.7aeefb4c5d14d554e98a0721140a5a5f
+  - Token: DialogueTrigger.84a293cd50208434690d2c419d0c2f69
     Instance: {fileID: 414561879}
-  - Token: DialogueTrigger.3f44f7e692602d14b80ae254dbc9b448
+  - Token: DialogueTrigger.e5d5be14ad0e21846b32973144dd94bd
     Instance: {fileID: 474711832}
-  - Token: DialogueTrigger.19a8886562118b04b8b212880786c3a9
+  - Token: DialogueTrigger.81f2e1b1bdf618d409543b55a8aed667
     Instance: {fileID: 532005860}
-  - Token: DialogueTrigger.d3363ae9edcafa94782a74eb00dad51e
+  - Token: DialogueTrigger.377576b554054e4429816a8c4e648942
     Instance: {fileID: 581603674}
-  - Token: DialogueTrigger.25015b732c884334480fff26447be15c
+  - Token: DialogueTrigger.1c3c0f327659fd84caa5be0bd2b06954
     Instance: {fileID: 633166321}
-  - Token: ObjectiveTrigger.fa281384037286146b3e0af05e474bba
+  - Token: ObjectiveTrigger.095559fdb3351a44e87d9b74fdcda971
     Instance: {fileID: 668140122}
-  - Token: ObjectiveTrigger.7b87fd78ae25e7b4683012d7a89c3680
+  - Token: ObjectiveTrigger.a248b7560884b9f4fa52e60c60ab89e9
     Instance: {fileID: 668140123}
-  - Token: ObjectiveTrigger.fa24c07f79064284bbc2b92062c9d38f
+  - Token: ObjectiveTrigger.fa105099efd3c4240aa9a8e563c17bcf
     Instance: {fileID: 668140124}
-  - Token: ObjectiveTrigger.9df8ca44f67807242b548bb5f36d1abe
+  - Token: ObjectiveTrigger.54d55dbe7ba001c4e8aa884dc6235191
     Instance: {fileID: 668140125}
-  - Token: ObjectiveTrigger.7a40d57119309a244b0dc1c64108260b
+  - Token: ObjectiveTrigger.c0fc8f84ec158a848b5ba5b3ff62dc26
     Instance: {fileID: 668140126}
-  - Token: InteractableItem.717526aacc90e4545b68057ac671c861
+  - Token: InteractableItem.fd5ffd20e63f8ec41919212be714bed4
     Instance: {fileID: 668140127}
-  - Token: ObjectiveTrigger.ca7cb135d5985d94ba6edc1348581bd6
+  - Token: ObjectiveTrigger.90f79540eeb229943b6d7221a1a27c59
     Instance: {fileID: 668140128}
-  - Token: ObjectiveTrigger.f8c304d6f3e6f0c46b9a849b0316ee2c
+  - Token: ObjectiveTrigger.f7218e72e57a16c438b76a4863a8f615
     Instance: {fileID: 668140129}
-  - Token: ObjectiveTrigger.166573cd12c18044fadcd85490c8bc50
+  - Token: ObjectiveTrigger.435c32ba7ffa7cb4e9fc29d20a678ef6
     Instance: {fileID: 668140130}
-  - Token: ObjectiveTrigger.2c6f7bdd0d07bf34e84126560936e108
+  - Token: ObjectiveTrigger.e35975bfe66b26b40be5f92c180ac8ea
     Instance: {fileID: 668140131}
-  - Token: TimedInteractEvent.55786e04d299f504faf0615f9493a8ed
+  - Token: TimedInteractEvent.0ad29d956e200514a9327e14450944d9
     Instance: {fileID: 668140132}
-  - Token: SaveableInteractionUnlocker.a28a0cd33b9479045b098c92959225fd
+  - Token: SaveableInteractionUnlocker.fec992f39b34098479714e0af1afe1c4
     Instance: {fileID: 668140133}
-  - Token: InteractableItem.dc5b12f117f9a7a4395d2142b8f58379
+  - Token: InteractableItem.e6e803fe165c69a4c8f474692b1527ba
     Instance: {fileID: 668140134}
-  - Token: InteractableItem.ed6bce3c675fafa4ba87503d138d1cc3
+  - Token: InteractableItem.11bb8644de316e04eb79ac1c59bbf7f1
     Instance: {fileID: 668140135}
-  - Token: InteractableItem.49e9a09ebabb5d04590039029a95458a
+  - Token: InteractableItem.e26c784ee45939c4283e85135fddd5eb
     Instance: {fileID: 668140136}
-  - Token: InteractableItem.dce118ed7125b134bb07f36a98608f87
+  - Token: InteractableItem.84f486000751a0b42be863878b9a9b65
     Instance: {fileID: 668140137}
-  - Token: InteractableItem.014540a7d29509249965cd03784c48d8
+  - Token: InteractableItem.291a3c12d98ed6140b9abb132b0d6b0a
     Instance: {fileID: 668140138}
-  - Token: InteractableItem.920964c4309977146bb4e02d1bc63363
+  - Token: InteractableItem.f204712d117be3147bbe9a62e58d3daf
     Instance: {fileID: 668140139}
-  - Token: ObjectiveTrigger.56b8572f4d385d54dbe5736a05b360cf
+  - Token: ObjectiveTrigger.2497488da6da655408cf33e8b02ba791
     Instance: {fileID: 668140140}
-  - Token: ObjectiveTrigger.711cd6767f5a78a49a3b16386bccb054
+  - Token: ObjectiveTrigger.dd85c2b88b4f77544b0dd3179546b377
     Instance: {fileID: 668140141}
-  - Token: ObjectiveTrigger.3143ea61f8d456748b6d72c129ac3a9e
+  - Token: ObjectiveTrigger.27805ab653487a74b8c94b0d261bc113
     Instance: {fileID: 668140142}
-  - Token: DialogueTrigger.4b8fe201fee071b4db475c44d9eabc68
+  - Token: DialogueTrigger.cce2dc719c3b61642b59ceb691034088
     Instance: {fileID: 1031401157}
-  - Token: InteractableItem.e02051a75d94bf1438bdde4b102b8f04
+  - Token: InteractableItem.2f8793f7afe01444690f69468077923c
     Instance: {fileID: 1069582772}
-  - Token: InteractableItem.b834e81e5be804e40a147fc78dd5c37e
+  - Token: InteractableItem.cf76db0a257a5d545924f99a706838e6
     Instance: {fileID: 1082228184}
-  - Token: InteractableItem.419ab9412d5ab9746bb734c04653a7cc
+  - Token: InteractableItem.d9d1f4f846bc26a4cb73813e7679a9c1
     Instance: {fileID: 1143471577}
-  - Token: DialogueTrigger.0cd8f301c1a1d4040af330cfcb1dfdff
+  - Token: DialogueTrigger.899076e77a024bc49874cfd555a6d083
     Instance: {fileID: 1167676408}
-  - Token: DialogueTrigger.5000398f42d368a418abd12c80aedf0b
+  - Token: DialogueTrigger.c984382153eba264f9efbe39ade7efe1
     Instance: {fileID: 1251985782}
-  - Token: DialogueTrigger.b0188947202610b4990532f38519d8c6
+  - Token: DialogueTrigger.dee339e991914f7468efebda923f16b6
     Instance: {fileID: 1290317977}
-  - Token: ObjectiveTrigger.29951dffd6adc01469d25957a719e77c
+  - Token: ObjectiveTrigger.5b5a0ccb30dfeee4abb230132b83c69f
     Instance: {fileID: 1313791600}
-  - Token: ObjectiveTrigger.f3df84faa9ac510409615a54f8c15e25
+  - Token: ObjectiveTrigger.108b876a24c2c1b41af3b8024f74781f
     Instance: {fileID: 1313791601}
-  - Token: InteractableItem.fff581587997c4747bfeb0a934103eb8
+  - Token: InteractableItem.2b910b63d699c6f42bbccb5341399032
     Instance: {fileID: 1313791602}
-  - Token: InteractableItem.8c8f7f48c3c807140aaa79e91f3338eb
+  - Token: InteractableItem.51ecba463cc28f543a99194ec96e4e0d
     Instance: {fileID: 1313791603}
-  - Token: DynamicObject.db215b5f6f56a09439fa2064f4b589b3
+  - Token: DynamicObject.ac52202a2b826bb4bb1e4dbdd4af9d97
     Instance: {fileID: 1313791604}
-  - Token: DynamicObject.00cdb6127bc34e740b2d844ad157c83b
+  - Token: DynamicObject.2a281a4d791e4e242aad77c7460aab64
     Instance: {fileID: 1313791605}
-  - Token: FuseboxPuzzle.dcb5fd8eca92e0d4b8a2dd81716cbc56
+  - Token: FuseboxPuzzle.7ad3c6cabab420d449084c10b7fea728
     Instance: {fileID: 1313791606}
-  - Token: DynamicObject.d0cc90b11f8ff97458cccdeef8fbdc30
+  - Token: DynamicObject.e63bd1fe5f67091439da972b8f92cd65
     Instance: {fileID: 1313791607}
-  - Token: BreakableCrate.d54a7e96b0e5cd8418d8af872dde7836
+  - Token: BreakableCrate.ac2e273a389470148bfa2f84d4de7e7c
     Instance: {fileID: 1313791608}
-  - Token: DraggableItem.7da7436853eaf22408a4391c13170085
+  - Token: DraggableItem.332d0354ff1bbb2409ed3a45def70498
     Instance: {fileID: 1313791609}
-  - Token: DynamicObject.6aca7c08fff67be418fa8bf525ccd9a4
+  - Token: DynamicObject.8e2491b4452ac4244949366ee5f67104
     Instance: {fileID: 1313791612}
-  - Token: DynamicObject.aadc6de2fb90fe646adf98dd8ac60cab
+  - Token: DynamicObject.93b0bfc8dc650744a9c966e434ae02c8
     Instance: {fileID: 1313791613}
-  - Token: DynamicObject.10158c7ef63f2144ba19443994ca9b21
+  - Token: DynamicObject.e0b1b4c22aa2e484aa5e3463b0b588d5
     Instance: {fileID: 1313791614}
-  - Token: DynamicObject.1414c10be6a36ce4d8f9d111bc72a22e
+  - Token: DynamicObject.df0acb5ee47a5154b98d3f3de011908d
     Instance: {fileID: 1313791615}
-  - Token: DynamicObject.172169c28b36ba74fa16b19ff55136a2
+  - Token: DynamicObject.68b6db29597223c4cba01b9bb6aea7e8
     Instance: {fileID: 1313791616}
-  - Token: InteractableItem.c7226a7fc6d9eee44969bbc27eb5406d
+  - Token: InteractableItem.b1c3917e4959dd048afce4b8d0078d49
     Instance: {fileID: 1313791617}
-  - Token: DynamicObject.e841710338647fa449ba7caa780f03d7
+  - Token: DynamicObject.fcfcbc4b57fbcf84c866477ade44419f
     Instance: {fileID: 1313791619}
-  - Token: KeypadPuzzle.aeac8bfda23d671489e0d4da7be98abd
+  - Token: KeypadPuzzle.b278e4c0ff00bd1479f13698f5697a0d
     Instance: {fileID: 1313791620}
-  - Token: DynamicObject.3620dd35070a9c74f9f8831cc1855d59
+  - Token: DynamicObject.bf871d617c7e6c149b63f985642dc4b7
     Instance: {fileID: 1313791621}
-  - Token: DynamicObject.1b8c7ae7f4af00a48b4e9d9579aead2c
+  - Token: DynamicObject.d6086c96889894741a4997b85858c63d
     Instance: {fileID: 1313791623}
-  - Token: DynamicObject.7d52a12c4306e6340a0ca4f0660f3d80
+  - Token: DynamicObject.154ea89c41c27894e9b7fd0f08c33732
     Instance: {fileID: 1313791624}
-  - Token: DynamicObject.b9722a9d8f58b494083aad38f2bf64bd
+  - Token: DynamicObject.cc784655de7b9a442bee53f2b0e45b0b
     Instance: {fileID: 1313791625}
-  - Token: DynamicObject.98adc8eff10595b4e90aa599be2b3c1c
+  - Token: DynamicObject.4fcdfe86b8775ec4eb23f8bb8b923011
     Instance: {fileID: 1313791626}
-  - Token: DynamicObject.d50fec15f2ec5ea46b50e49654b007fe
+  - Token: DynamicObject.c1b3528e105cc234fa4642baac4625ad
     Instance: {fileID: 1313791627}
-  - Token: DynamicObject.d8d6e4b400fb59a4ca4c65e16f6c8dc8
+  - Token: DynamicObject.46a16fe1fcc355d4190e34bf0ca37482
     Instance: {fileID: 1313791628}
-  - Token: InteractableItem.817af67eb2bb56a439514fe7a0e411cf
+  - Token: InteractableItem.c5a5aacf8f9c7674094b8cbb3bc4dd76
     Instance: {fileID: 1313791629}
-  - Token: DynamicObject.c65582f4aca80db48b3c2a9a9af21a08
+  - Token: DynamicObject.30f9040d38d80f7419a11c0f1def4be7
     Instance: {fileID: 1313791630}
-  - Token: DynamicObject.49dde72050760a947bba90b92632beb0
+  - Token: DynamicObject.4c621456820bc434db3bb70504b0fdc2
     Instance: {fileID: 1313791631}
-  - Token: DynamicObject.466b1b6ab9bbca64ead49533d14e04fc
+  - Token: DynamicObject.0edddaad0e084334781826c1f4e87a2d
     Instance: {fileID: 1313791632}
-  - Token: DynamicObject.34aeacb36ef34734eabfbb230e7c2d62
+  - Token: DynamicObject.40ce63178863b954eaec0841330e4c92
     Instance: {fileID: 1313791633}
-  - Token: DynamicObject.b488d7b782be56c42ab54147025229ef
+  - Token: DynamicObject.8e13a01cd5fca514f95752f2783e5e39
     Instance: {fileID: 1313791634}
-  - Token: DynamicObject.d761a9dc733432d49aaf7ecc0f505966
+  - Token: DynamicObject.bc5281eb628e4f94ea4758efeab77c15
     Instance: {fileID: 1313791635}
-  - Token: DynamicObject.925b71b07148e844ea9be236fb1542b6
+  - Token: DynamicObject.1ac286ef603ed9f47aa12d2e4911d417
     Instance: {fileID: 1313791636}
-  - Token: DynamicObject.438c8c40062ef3943bf8b663253cee8b
+  - Token: DynamicObject.dfbc362688e3a2342b8d5f3d28ffdaf3
     Instance: {fileID: 1313791637}
-  - Token: DynamicObject.57adbb3ffda40f0409150cd6807605ed
+  - Token: DynamicObject.752fd6a8dc41ae545b75c462590d9b57
     Instance: {fileID: 1313791638}
-  - Token: DynamicObject.49dda68d65a88b54dae8d8236c45ef16
+  - Token: DynamicObject.a6a89542187d18942ab75aee5122edeb
     Instance: {fileID: 1313791639}
-  - Token: DynamicObject.d2531f2ec887d9d4da992b9c0af295a1
+  - Token: DynamicObject.969d1ea87d9fee4469d7d597ceefbff7
     Instance: {fileID: 1313791640}
-  - Token: DynamicObject.0d95bc6e650246f449e15a94b8bcb282
+  - Token: DynamicObject.f8e2fec666127594eb74be428f0e4fe6
     Instance: {fileID: 1313791641}
-  - Token: DynamicObject.1a3ea37c7e580ab4abd19924049af81f
+  - Token: DynamicObject.a401a845f5da59b47a31a0de90c420c2
     Instance: {fileID: 1313791642}
-  - Token: DynamicObject.ea19ecc3686f9ea4aad53aac41089238
+  - Token: DynamicObject.8cb9686298e22fd48ba7be9ed8cef322
     Instance: {fileID: 1313791643}
-  - Token: DynamicObject.119af7564c5473044ac33b9e6f3ae524
+  - Token: DynamicObject.f614f6c6f5526eb42a40d55b2d15b08b
     Instance: {fileID: 1313791644}
-  - Token: DynamicObject.c8ef8b0c29208744e8c5993f4b11e08e
+  - Token: DynamicObject.9e2b3325a834b9d4c8451e290b75033a
     Instance: {fileID: 1313791645}
-  - Token: DynamicObject.4ac9179d9aabb9e4189d6f02e8014527
+  - Token: DynamicObject.179135dab22f09a47a82a9a67b90de40
     Instance: {fileID: 1313791646}
-  - Token: DynamicObject.808ea8527b0d65c4d81db60d87443eb3
+  - Token: DynamicObject.19d8e6b16daf3c6479948d9fcb485d24
     Instance: {fileID: 1313791647}
-  - Token: KeycardPuzzle.898813d1e81918e4f87b784282450016
+  - Token: KeycardPuzzle.49bff9c83a94c22429262471e52b9c20
     Instance: {fileID: 1313791648}
-  - Token: HintTrigger.ef1f4e8ece4b2344fb8c9932ad3ed5cf
+  - Token: HintTrigger.fd43eafdec8d83f4a92f4cc714f44f07
     Instance: {fileID: 1313791649}
-  - Token: InteractableItem.3147d897ca335c34aaa59489763010ad
+  - Token: InteractableItem.ca04803847d4ac6418795873bded663a
     Instance: {fileID: 1313791650}
-  - Token: DynamicObject.6ae86ce2aaabcab478a50ee399bece71
+  - Token: DynamicObject.71c834470aa5dd6449fd0d56ef7e5b3b
     Instance: {fileID: 1313791651}
-  - Token: InteractableItem.545c28b71fc463545bbc63d71b40991d
+  - Token: InteractableItem.58ffc8aa97eac52479fd2984c16798bc
     Instance: {fileID: 1313791652}
-  - Token: DynamicObject.893ca61c8321cae43a2653891036f7e9
+  - Token: DynamicObject.e95ed40b2d068d24bb502be6aa2b584c
     Instance: {fileID: 1313791653}
-  - Token: DynamicObject.f315a8d5a6970e54384be11da9864b1d
+  - Token: DynamicObject.2e033313d067bb54cb67bf9e92d62e24
     Instance: {fileID: 1313791654}
-  - Token: DynamicObject.586676cdc067835438abe44cc51f0a12
+  - Token: DynamicObject.0000d9b2ff9c25b4684e88bf17adf84c
     Instance: {fileID: 1313791655}
-  - Token: DynamicObject.47261a82f0f03ad4286bdedc639bc042
+  - Token: DynamicObject.4cd585951c937124fa629dbc0db85bc0
     Instance: {fileID: 1313791656}
-  - Token: DynamicObject.e43d1d45e4d5e7d44a1497c8e9e3fbee
+  - Token: DynamicObject.0eb1b106506977c4784e03f470243f1f
     Instance: {fileID: 1313791657}
-  - Token: DynamicObject.f73775f427fe60249861465d3faf16ff
+  - Token: DynamicObject.5655e0be27e36f041b3d34339ba81773
     Instance: {fileID: 1313791658}
-  - Token: DynamicObject.4c69abf01c9a4ea4e916d7d10f58ef75
+  - Token: DynamicObject.67f21d54e8078f94b9c33da262549c97
     Instance: {fileID: 1313791659}
-  - Token: DynamicObject.7f20137dc4c5dfb4b80205ca5fc4ad8c
+  - Token: DynamicObject.cdab0f266c0ef194783ba52b0ba499f9
     Instance: {fileID: 1313791660}
-  - Token: DynamicObject.b12f335fdb99b044e9e79c4335c350cf
+  - Token: DynamicObject.a690725bd0dfab0498d67082e3400679
     Instance: {fileID: 1313791661}
-  - Token: DynamicObject.59d1742449b9fc6408fbbe5b1ccae0ee
+  - Token: DynamicObject.4f4e8fed80f2a1441aa1a388c017ae62
     Instance: {fileID: 1313791662}
-  - Token: DynamicObject.bf51a63fff0c1154d8b7a4bcf3270a6c
+  - Token: DynamicObject.1a2af8ce58fdcdb41b0c29bc350e55e8
     Instance: {fileID: 1313791663}
-  - Token: InteractableItem.93ed8a9ac6e94134fac7c964b025e659
+  - Token: InteractableItem.08f78cabc5eea8447af6dcf1cac885e6
     Instance: {fileID: 1313791664}
-  - Token: DynamicObject.6e7d548f8ecd186438c014eb89a53fee
+  - Token: DynamicObject.41881adaf2cdaf142a50fba954fd5acc
     Instance: {fileID: 1313791665}
-  - Token: DynamicObject.a283afa8e27af4241bec9e5433cc983e
+  - Token: DynamicObject.9d5d753ef70ac014cb3b3c301890812f
     Instance: {fileID: 1313791666}
-  - Token: DynamicObject.9b7d2fcc2c78f064da287f0efedf6757
+  - Token: DynamicObject.e6a27ae17558bb74fb4e3046afa19d77
     Instance: {fileID: 1313791667}
-  - Token: DynamicObject.7b9ec34c5ea995c47828aaf431f7008e
+  - Token: DynamicObject.0b6f8693421110d48aa81b70224e366c
     Instance: {fileID: 1313791668}
-  - Token: DynamicObject.89d73db4cb2927244b4ab540f3244dfe
+  - Token: DynamicObject.bcc4084ec8aa6574592f354905d52037
     Instance: {fileID: 1313791669}
-  - Token: DynamicObject.b4d1bdcf2e23d504786a35eacc2b9e34
+  - Token: DynamicObject.fe5d7ccf1b710c14588ee3d638fc3a73
     Instance: {fileID: 1313791670}
-  - Token: DynamicObject.940de2eb896db4b49903e2c2e242de12
+  - Token: DynamicObject.591fcc2e1db39c34ead074d145b826a1
     Instance: {fileID: 1313791671}
-  - Token: DynamicObject.b310c891d8beefb42801ce37e26952e4
+  - Token: DynamicObject.878b367ebe3939d43afea5ffb0565ac4
     Instance: {fileID: 1313791672}
-  - Token: DynamicObject.4a59d42263dc3634fac02e600c087849
+  - Token: DynamicObject.66a7b709bd3452844b913e2e6c9b03eb
     Instance: {fileID: 1313791673}
-  - Token: DynamicObject.09305a162af4faa4ebb19be0113498e7
+  - Token: DynamicObject.86956d0cd2e4c8249a2af64c91d9091d
     Instance: {fileID: 1313791674}
-  - Token: DynamicObject.84dd856fefaae804bb3ef0b96887d3b7
+  - Token: DynamicObject.a533cc3c92d1df64bb0a74eaf5c684a0
     Instance: {fileID: 1313791675}
-  - Token: DynamicObject.651debd7ae09d1d48b43db1247190c57
+  - Token: DynamicObject.9c74c9951ae21b34c8ac621092259a11
     Instance: {fileID: 1313791676}
-  - Token: DynamicObject.87cc51e5b87d318478fa1738e393865f
+  - Token: DynamicObject.9727dd48dd28f7c498a4536fc713cab9
     Instance: {fileID: 1313791677}
-  - Token: ElectricalCircuitPuzzle.3733f2ed8193a5f4ab57b615a92903dd
+  - Token: ElectricalCircuitPuzzle.b8358d833c8382048b377b1f17f444ac
     Instance: {fileID: 1313791678}
-  - Token: DynamicObject.9d8040aa4debbb145a3637a58d2c4d6f
+  - Token: DynamicObject.9237e0fa649ce264ea5347f5382e7971
     Instance: {fileID: 1313791679}
-  - Token: DynamicObject.26aca42039e810c4d86911249202c1fd
+  - Token: DynamicObject.9ce654af0e9b3be46bb6870229b45b26
     Instance: {fileID: 1313791680}
-  - Token: BreakableCrate.5687c11f8cfb36d429b0e6c366d666eb
+  - Token: BreakableCrate.1d5fb31e55d70d549bae018dc3cb636b
     Instance: {fileID: 1313791681}
-  - Token: DraggableItem.66ead37c683379d4691abde0842307be
+  - Token: DraggableItem.831f1a0b27404624b9e26c672fe18470
     Instance: {fileID: 1313791682}
-  - Token: InteractableItem.0cb4b6d4442b21c4195ad95054a6127c
+  - Token: InteractableItem.15ae851ceae27be45a2309926e38a9ab
     Instance: {fileID: 1313791683}
-  - Token: KeycardPuzzle.7f690b9a4ab747a418e7c44da05dcf85
+  - Token: KeycardPuzzle.3af92545ef77a524cba8ef0e6865f0fb
     Instance: {fileID: 1313791684}
-  - Token: HintTrigger.4542c7d09abee004cafe6b3b843aa5ec
+  - Token: HintTrigger.7c182a179e04c8b459acc635d13f3570
     Instance: {fileID: 1313791685}
-  - Token: InteractableItem.05e49f3053802c74ebf8d3a1b4c5775d
+  - Token: InteractableItem.f93b55430044b8148968e7d67b8c9afc
     Instance: {fileID: 1313791688}
-  - Token: KeycardPuzzle.056c7710739b35a4c9af9501aa65ad1b
+  - Token: KeycardPuzzle.6a1306cd3e6e27449ab650889c1dff1c
     Instance: {fileID: 1313791689}
-  - Token: HintTrigger.99d86edbec6eb3847b17922ea7d7a798
+  - Token: HintTrigger.3b7a96bc68517a442bb87357352b449b
     Instance: {fileID: 1313791690}
-  - Token: DynamicObject.d176783d44eadae4189bedcda28210f7
+  - Token: DynamicObject.3340a00bd9637984fbcad1c5a8759c79
     Instance: {fileID: 1313791691}
-  - Token: InteractableItem.ce8cdf990e450394e973cbd09fc1bb87
+  - Token: InteractableItem.5e25d1e67a3f3d346a3060eaf00de515
     Instance: {fileID: 1313791692}
-  - Token: InteractableItem.9cc232dba8a452546a33a3c5b5ed58f5
+  - Token: InteractableItem.f85637ba1e28950458b346b3f1d723f1
     Instance: {fileID: 1313791693}
-  - Token: DynamicObject.76568c6531624744fabf3cc63f3c8338
+  - Token: DynamicObject.25980a4548e630342b7513631a17216e
     Instance: {fileID: 1313791694}
-  - Token: DynamicObject.af5abe6791f564046a97a6d2a7130149
+  - Token: DynamicObject.b6c616221602f7540932085ad1ccf475
     Instance: {fileID: 1313791695}
-  - Token: DynamicObject.c9dc69bd2c0a6d94885f4b98e5339063
+  - Token: DynamicObject.a6b789ae27f96b34eacd6796351bbe2b
     Instance: {fileID: 1313791696}
-  - Token: DynamicObject.b4d93e87913928448b2cfea256de5b6e
+  - Token: DynamicObject.7c7b50bfc63e64c489843c11b73a45fb
     Instance: {fileID: 1313791697}
-  - Token: DynamicObject.6aa2fcbffa2abf04d81d3c8c91ac0a64
+  - Token: DynamicObject.69afa3bfbf808bf4aaba56c109244979
     Instance: {fileID: 1313791698}
-  - Token: MazePuzzle.912622f9d0bf65344a81f89e05e612e6
+  - Token: MazePuzzle.3aa503cf507defa489edbb3851b31c6e
     Instance: {fileID: 1313791699}
-  - Token: InteractableItem.4a02d5c729803a54888d15d2089636c0
+  - Token: InteractableItem.7abdb710bad9dbb4f8b6c6337a5cce17
     Instance: {fileID: 1313791700}
-  - Token: JumpscareTrigger.f71c2cac929957c42ba6e52f3790fda1
+  - Token: JumpscareTrigger.51175ae9f9ca6de439b2eb379894b4a0
     Instance: {fileID: 1313791701}
-  - Token: DynamicObject.e982b21f69885a04cb132e8ccc5a50e5
+  - Token: DynamicObject.d09c79abd6272394eaf68954704036d3
     Instance: {fileID: 1313791702}
-  - Token: JumpscareTrigger.a46ad51efd4dbdd4d846f617a56b0461
+  - Token: JumpscareTrigger.611a187f1bf56c24296e7db647f3c046
     Instance: {fileID: 1313791705}
-  - Token: JumpscareTrigger.abacb4880e36bd743a3325eddc1d46c1
+  - Token: JumpscareTrigger.576e965f9115fc54f84a2f94ae325e06
     Instance: {fileID: 1313791707}
-  - Token: JumpscareTrigger.d47fbe4a4b6c6694983c2995db42b6be
+  - Token: JumpscareTrigger.57c609474c686b44592bd4f1e648fb1a
     Instance: {fileID: 1313791709}
-  - Token: LookAtTrigger.20aff33f117ab4544a3996acc8503bb9
+  - Token: LookAtTrigger.6adb51a41e31c9e48886e1ca1c62a53a
     Instance: {fileID: 1313791710}
-  - Token: InteractableItem.8d880704fdb61364a8fa0873d71f7dc6
+  - Token: InteractableItem.e1a343330f5d4054a9ce353f0a035ee3
     Instance: {fileID: 1313791711}
-  - Token: InteractableItem.0ad35e7d32b1cf942aeef19df423c8f9
+  - Token: InteractableItem.a103a934eb9fbc64dbdda925dc99457b
     Instance: {fileID: 1313791712}
-  - Token: InteractableItem.4c858b749b3361646a5c934057d31382
+  - Token: InteractableItem.1b9ad1824ece0e64382dcaf4784ce3c9
     Instance: {fileID: 1313791713}
-  - Token: DynamicObject.174af60236ccd6647a82c955a03c0513
+  - Token: DynamicObject.17e321391ee6a8a4f99e90ba58e6b76e
     Instance: {fileID: 1313791714}
-  - Token: DynamicObject.01123b58100245647bf155705dea3422
+  - Token: DynamicObject.64eaf5df42c6c824486c78341f9b0507
     Instance: {fileID: 1313791715}
-  - Token: DynamicObject.c9bb2bca052f6f24795b06c90d3fa191
+  - Token: DynamicObject.fa17e40bb87d72e4e9cbc4e646017295
     Instance: {fileID: 1313791716}
-  - Token: DynamicObject.6240f6867c9f8d949a341f754ffc62b3
+  - Token: DynamicObject.405a4864223bd244699d1d8718f66987
     Instance: {fileID: 1313791717}
-  - Token: DynamicObject.e86f7777375c57e4ea936afac023e251
+  - Token: DynamicObject.c34bba63191b49f4bab7ec7bb8730644
     Instance: {fileID: 1313791718}
-  - Token: DynamicObject.d5ca357d9ae133e4db2e4be03267ee91
+  - Token: DynamicObject.5eff300586e065e40bbb513b4375c8bc
     Instance: {fileID: 1313791719}
-  - Token: DynamicObject.a43401ad11677384f8056ffca8a27d8b
+  - Token: DynamicObject.0d3ca3ea3fb4c5a40b9b8b9ae034b170
     Instance: {fileID: 1313791720}
-  - Token: InteractableItem.51602128e85f0874d870be99927896de
+  - Token: InteractableItem.08c4f823d04a7b14aa0a08d0be12d6f7
     Instance: {fileID: 1313791721}
-  - Token: SafePuzzle.4234508437836424cbd98fc44caaf3f7
+  - Token: SafePuzzle.9bf593c1022f24e47ba14b56073f409f
     Instance: {fileID: 1313791723}
-  - Token: InteractableItem.64ac482a6f4bdbd45a47b78885766417
+  - Token: InteractableItem.db62d48b5eb8dae4da5235c5074dc8f8
     Instance: {fileID: 1313791724}
-  - Token: DynamicObject.d3973421ed42679438258654887380d5
+  - Token: DynamicObject.b3be661c0abebc746a73f20c085e1514
     Instance: {fileID: 1313791725}
-  - Token: DynamicObject.b3b2e8efe815094429a0477f9485a0d9
+  - Token: DynamicObject.787e4c18c2c50ea4caf13aac76414ebf
     Instance: {fileID: 1313791726}
-  - Token: DynamicObject.78c4438cd23f4354ebd73b910b933bf7
+  - Token: DynamicObject.817082cf091a4834795846836f30e77f
     Instance: {fileID: 1313791727}
-  - Token: DynamicObject.5dac786362a3bce4b937c4057cba245f
+  - Token: DynamicObject.04dbcb145a926dc459458a35bbae9b83
     Instance: {fileID: 1313791728}
-  - Token: DynamicObject.f8e8ed4877502ef42874c3e1cb1fe20d
+  - Token: DynamicObject.485fe411605f3354ba7381da54644094
     Instance: {fileID: 1313791729}
-  - Token: DynamicObject.16540c16eaee38c479884dd0ccebbc4c
+  - Token: DynamicObject.cc2182ebed1f50b4a9594dbf6f0e80a6
     Instance: {fileID: 1313791730}
-  - Token: DynamicObject.44c50af1dfcd9674ba90c6b2cb217db2
+  - Token: DynamicObject.834ce79e40b31714982cc54e9c497ec7
     Instance: {fileID: 1313791731}
-  - Token: DynamicObject.d42675cab4ee5da4fb9881ce8f7f0a50
+  - Token: DynamicObject.97305e2cb00f56e48920969bd09445e5
     Instance: {fileID: 1313791732}
-  - Token: DynamicObject.aa0638dacb5d89c4abd38dc085f57d0a
+  - Token: DynamicObject.d9c61bc5a128ae94cb8e4cddcc09fd98
     Instance: {fileID: 1313791733}
-  - Token: DynamicObject.fb76c6020be94c1479fa6b7ca36c88da
+  - Token: DynamicObject.52f6acba1734e4c4c91bcbbec20f2daf
     Instance: {fileID: 1313791734}
-  - Token: DynamicObject.9e6898ed7322af3458171e3007151075
+  - Token: DynamicObject.dc20ea4293c8bb1438b8fbf3d569b9fb
     Instance: {fileID: 1313791735}
-  - Token: DynamicObject.210e7811a0563cf44af17fecb14a1410
+  - Token: DynamicObject.7b0810a4742c4fc44b1a1aee36d1f86e
     Instance: {fileID: 1313791736}
-  - Token: DynamicObject.3481cb945fa09f34fba8e2a05c39c795
+  - Token: DynamicObject.0ae106b144a9ee94fa0d575db077d9dd
     Instance: {fileID: 1313791737}
-  - Token: InteractableItem.94352d826041e0f4785519812fc82d14
+  - Token: InteractableItem.2498c0c4520ce5c4da4a7be60b65b537
     Instance: {fileID: 1313791738}
-  - Token: DynamicObject.2ea992f7bca08bc46bc22efa3c222a65
+  - Token: DynamicObject.61e6f606eb5ee2e4cbde849d576d6af1
     Instance: {fileID: 1313791739}
-  - Token: SimpleLight.8125b8b9562740a49a38e80eac4b4d3f
+  - Token: SimpleLight.f678cb45a423ef346a7fbf7ebe4cc1c1
     Instance: {fileID: 1313791740}
-  - Token: InteractableItem.a99e1a8a0d72404438c4c80396323188
+  - Token: InteractableItem.e39bec7907410824caf8ed2c6cb7799c
     Instance: {fileID: 1313791741}
-  - Token: DynamicObject.d99786545ed42ef4d8d8c51673e71a77
+  - Token: DynamicObject.e0811942b80cecf44952f160d4e28e34
     Instance: {fileID: 1313791742}
-  - Token: DynamicObject.db29bf9a1ce066f4893955bea2677e2b
+  - Token: DynamicObject.dd257f39e56a974418704718ef89cf38
     Instance: {fileID: 1313791743}
-  - Token: DynamicObject.696ba5a9bf9471b4480594bf1dc57a9b
+  - Token: DynamicObject.c22bc6b53c0586749853327af38941c1
     Instance: {fileID: 1313791744}
-  - Token: DynamicObject.181b1fdcf284db648a73db398bbf6b4e
+  - Token: DynamicObject.aa01b272283d70047ab217964e56cadd
     Instance: {fileID: 1313791745}
-  - Token: InteractableItem.5c6299792a16ecd418a03b63522d64ad
+  - Token: InteractableItem.71264d7351ec8ec4a94be80391abb456
     Instance: {fileID: 1313791746}
-  - Token: DynamicObject.193f8077d6daee84d8c6b984128dd07a
+  - Token: DynamicObject.72b0238ee1d6283499583960cb0c38b6
     Instance: {fileID: 1313791747}
-  - Token: DynamicObject.7d89c5dbc69add3488a45a939d2de9a0
+  - Token: DynamicObject.a4007ef055bc0d54e8ca01da18edb244
     Instance: {fileID: 1313791748}
-  - Token: InteractableItem.85e98484d1bcabf4ebe453cf0b28c40e
+  - Token: InteractableItem.b1a3e36503313fd4fa85368c1ab6acb4
     Instance: {fileID: 1313791749}
-  - Token: DynamicObject.ba01bb56831ba594ab9db88e246220ef
+  - Token: DynamicObject.e83f6cbecfbd9da4186694345b2cfa66
     Instance: {fileID: 1313791750}
-  - Token: DynamicObject.687b737e93f974f478d097cd04cc1585
+  - Token: DynamicObject.be56b65cb4f60de4185ee44ceaeb0d4e
     Instance: {fileID: 1313791751}
-  - Token: DynamicObject.7c08ebd1b1e47634a81a7ce62be45941
+  - Token: DynamicObject.9a0bc78121271344d89fe929897c3a9e
     Instance: {fileID: 1313791752}
-  - Token: DynamicObject.96b470a03ee20c1458eab2b3229df11a
+  - Token: DynamicObject.f5fc29a4e0967da4cabf26817bb7327f
     Instance: {fileID: 1313791753}
-  - Token: DynamicObject.6148770b1b9e2534cb99e5072230278f
+  - Token: DynamicObject.8cf2138b93b3268408362f3f9d641142
     Instance: {fileID: 1313791754}
-  - Token: DynamicObject.d199c316f9cf49e45a626fd9e47a2105
+  - Token: DynamicObject.1ef2168d5f024b74292db0400b48e29a
     Instance: {fileID: 1313791755}
-  - Token: DynamicObject.f99e996d201da284bb15911bba687df4
+  - Token: DynamicObject.912fdc0b8b87fe347a51ce4a22bcfc85
     Instance: {fileID: 1313791756}
-  - Token: DynamicObject.5589734999eef26469a0c453ce06232e
+  - Token: DynamicObject.a07867fe8b19a6b479c2ef612ff122ac
     Instance: {fileID: 1313791757}
-  - Token: DynamicObject.40548068f402831408111e40f22e61ef
+  - Token: DynamicObject.891254ec295af424291c71457be38cd4
     Instance: {fileID: 1313791758}
-  - Token: DynamicObject.fa507edca3519c14db90c6c5b0176c7d
+  - Token: DynamicObject.0415c2a3b78b33c4fae3e3568b7494c1
     Instance: {fileID: 1313791759}
-  - Token: DynamicObject.7aebc44f9217f244a8f49cda38a47501
+  - Token: DynamicObject.1f4616350f17d7f429d8cd1210ddc202
     Instance: {fileID: 1313791760}
-  - Token: DynamicObject.4a89fe68938c6974e995e1bbeb4415a2
+  - Token: DynamicObject.6bf75eb23e0a2154b95eaf61cbf96a34
     Instance: {fileID: 1313791761}
-  - Token: DynamicObject.b5053550a48531646a698790822f992d
+  - Token: DynamicObject.14add52140d6543408cdab225ba97292
     Instance: {fileID: 1313791762}
-  - Token: DynamicObject.059f08f929dab994fb863a69c53b343c
+  - Token: DynamicObject.dbc39ca15ef2a7c4abb821cc8652414c
     Instance: {fileID: 1313791763}
-  - Token: DynamicObject.3518f4061c774e5478fd0fd71b3faf29
+  - Token: DynamicObject.f7ce2a84142754f4497b0b36d3dad402
     Instance: {fileID: 1313791764}
-  - Token: DynamicObject.06c7074e788906943b9a146e355c7d96
+  - Token: DynamicObject.4080f55a50416ad4d908c074d3f4335c
     Instance: {fileID: 1313791765}
-  - Token: DynamicObject.180169ffb34afdd47a5e511c365fcdde
+  - Token: DynamicObject.7ab6304ab53f427459dc74a431224ad6
     Instance: {fileID: 1313791766}
-  - Token: DynamicObject.319723a16b969424097cbaed92d25a8e
+  - Token: DynamicObject.71f41b92402b8a84995270af2397a743
     Instance: {fileID: 1313791767}
-  - Token: DynamicObject.c45c47093a6c0924db4fca06448a2c02
+  - Token: DynamicObject.dc96eb47453e0dc4baafe96eeb4caed6
     Instance: {fileID: 1313791768}
-  - Token: DynamicObject.0412f2f7b792e89479d8dcd960db3ee6
+  - Token: DynamicObject.2a7108656371a2440bc1db5746ccbc59
     Instance: {fileID: 1313791769}
-  - Token: InteractableItem.ce6a3a76dfb0e034a944f08fe8853416
+  - Token: InteractableItem.91858ba37a15f434e8f9f447a09d5c13
     Instance: {fileID: 1313791770}
-  - Token: DynamicObject.e89369ff57e7d9e49ae86a4c30d814be
+  - Token: DynamicObject.10dcb9b29f8cd4c4e8b60757de763794
     Instance: {fileID: 1313791771}
-  - Token: DynamicObject.e38d3f58a67244640bf43e952a91187e
+  - Token: DynamicObject.801b1783d64c79442b2a580bc7fea1d1
     Instance: {fileID: 1313791772}
-  - Token: DynamicObject.d786d48c00de6fa41a69d2b8d66857b5
+  - Token: DynamicObject.2129b162fb1c2934b880a7f1611945b0
     Instance: {fileID: 1313791773}
-  - Token: DynamicObject.847be61ffc0193f448fa7e516c90b150
+  - Token: DynamicObject.11724488dabf1104188a8878360f2e9a
     Instance: {fileID: 1313791774}
-  - Token: DynamicObject.cb750672246a4754cac91fab5d44758a
+  - Token: DynamicObject.3fb6d0e6a9a61814d81329ef52e7d09f
     Instance: {fileID: 1313791775}
-  - Token: DynamicObject.a4367b587497e9245a02edfdb3a60a9a
+  - Token: DynamicObject.24113bb84baf53342aee374d5943eb5b
     Instance: {fileID: 1313791776}
-  - Token: InteractableItem.f1516219e308b7b448687ec2b41dd1ce
+  - Token: InteractableItem.210309e8bda9df24daec112e365590be
     Instance: {fileID: 1313791777}
-  - Token: JumpscareTrigger.93bb683600ae51b48919e6d29fb3bff6
+  - Token: JumpscareTrigger.778e36d237bffd24e82bc848bf4fd786
     Instance: {fileID: 1313791779}
-  - Token: JumpscareTrigger.d6493855e653d374fa701ac034759cd4
+  - Token: JumpscareTrigger.5808e910676f32d46a1f09d517a625bb
     Instance: {fileID: 1313791780}
-  - Token: KeycardPuzzle.ed39494b4ac9eb643a3970889ef59d8d
+  - Token: KeycardPuzzle.652aaaa52da47f74cba7cf4b5c0ada10
     Instance: {fileID: 1313791781}
-  - Token: HintTrigger.1c47ce4edb26d7d4fbf3b11d1d3b971b
+  - Token: HintTrigger.a4a8e66121742254782a299860845e75
     Instance: {fileID: 1313791782}
-  - Token: DynamicObject.619122bdd83549b47ba6aa12906e8759
+  - Token: DynamicObject.7be158ccb938b7c49a3f7a392943352e
     Instance: {fileID: 1313791783}
-  - Token: DynamicObject.e330d53dc240439459a9b295bddfa947
+  - Token: DynamicObject.247890218d03456469f795d3668f3137
     Instance: {fileID: 1313791784}
-  - Token: DynamicObject.46a688c98a3de0144a989e01e1ca14c0
+  - Token: DynamicObject.72e2769dafa09324d82c0a3b4902879b
     Instance: {fileID: 1313791785}
-  - Token: DynamicObject.c8ce430a2bc6ad541827b67f878b2361
+  - Token: DynamicObject.f51a82827e913a048a5c6f0e80e545d8
     Instance: {fileID: 1313791786}
-  - Token: InteractableItem.002c669b57f48144187ee0c91f995381
+  - Token: InteractableItem.15ac223bf370c4748888c0923eda6a8b
     Instance: {fileID: 1313791787}
-  - Token: InteractableItem.c5730e303e44ee64a826afad49fa9f3f
+  - Token: InteractableItem.6d4dc78ea9104ad469cccd2320191aba
     Instance: {fileID: 1313791788}
-  - Token: InteractableItem.5ca1b2f5481140f4589f5ad4740f3a76
+  - Token: InteractableItem.eedf670fa308d0943b2871d5132f7eb3
     Instance: {fileID: 1313791789}
-  - Token: InteractableItem.3aa7289d7003163409a07053eb73b3f3
+  - Token: InteractableItem.d76605e2a608c7e47974c4b471382a64
     Instance: {fileID: 1313791790}
-  - Token: DynamicObject.a1b6975e344528e43a48671bb32df69c
+  - Token: DynamicObject.8c590aebaecf29340b5c8d627593b4b5
     Instance: {fileID: 1313791791}
-  - Token: KeycardPuzzle.0fa9f2b2112b60143948e21e4eeb5507
+  - Token: KeycardPuzzle.d376cfc8b9b9ead4ba573160a2005d4a
     Instance: {fileID: 1313791792}
-  - Token: HintTrigger.48b811d3821450c43be19e50b7c20a6f
+  - Token: HintTrigger.c5f0803d73ba85744bdb84de0844a17e
     Instance: {fileID: 1313791793}
-  - Token: DynamicObject.da7f578692b36d44884d161f51b34614
+  - Token: DynamicObject.198814b1068fc7b419c5ebe6ef897355
     Instance: {fileID: 1313791794}
-  - Token: DynamicObject.669e88052048bbe47bac613728cb0f9a
+  - Token: DynamicObject.231126baf85a57246830b5716ce4b09f
     Instance: {fileID: 1313791795}
-  - Token: PowerGenerator.db69d74a0cf9cc749ba43a42f68e97ab
+  - Token: PowerGenerator.262b68259adb0d843890cef4781175c2
     Instance: {fileID: 1313791796}
-  - Token: SimpleSwitcher.f2827dd9da3bec948a03e0f8b66b9034
+  - Token: SimpleSwitcher.396c7a537bae5d94f930062ccedf12ef
     Instance: {fileID: 1313791797}
-  - Token: InteractableItem.24d7b226da2bedf438bc501df99cdad7
+  - Token: InteractableItem.ee8fc50c722d2054fa2aebe0ff8f47d3
     Instance: {fileID: 1313791798}
-  - Token: DialogueTrigger.5c50081460144ec4ca1ac084fd19ac60
+  - Token: DialogueTrigger.89a47f26afb64504f80fd26a7327f7d9
     Instance: {fileID: 1359076979}
-  - Token: JumpscareTrigger.ecfbc79b08ddd0546b4527510f64fd11
+  - Token: JumpscareTrigger.a20d65a3bf097e74e8763faaa44375ad
     Instance: {fileID: 1390421573}
-  - Token: JumpscareTrigger.b8c95983ca524f8479da3398e5d1eb90
+  - Token: JumpscareTrigger.1c83bf5e3fd5e6c4e9df9f8c825b3b79
     Instance: {fileID: 1390421574}
-  - Token: DialogueTrigger.4c54072ac78154d478afe6a12f79d9f3
+  - Token: DialogueTrigger.bec9aadeab5a95444b7cceb3a3ddae7b
     Instance: {fileID: 1421547671}
-  - Token: DialogueTrigger.33daf1bfa6f8aa94bb2e8bf406651911
+  - Token: DialogueTrigger.f2f8e663587a0924cb3fbe73f2508d2c
     Instance: {fileID: 1480704024}
-  - Token: DialogueTrigger.37a1b169bba77d74ba45b24b904235a8
+  - Token: DialogueTrigger.fd7860da638ef7547b719d0040245e4f
     Instance: {fileID: 1481479430}
-  - Token: CRTMonitor.739559705b125414e84134d7fc09408d
+  - Token: CRTMonitor.3b5ddec4aec45304d9215ddcdd3b9031
     Instance: {fileID: 1499511940}
-  - Token: CustomInteractEvent.07246a32d34ac4246b952b6bde86287f
+  - Token: CustomInteractEvent.45e2b9d277cc19d4e87dbbeb30286a25
     Instance: {fileID: 1499511941}
-  - Token: VCRPlayer.12ae8d6023138af4faa8e9404a5856bc
+  - Token: VCRPlayer.f0d49e9c869e0de4f8c92a1daa7c524b
     Instance: {fileID: 1499511942}
-  - Token: InteractableItem.10c2baba8a8bcd243ad0d00beafa5468
+  - Token: InteractableItem.f260e81c937085647b58a0d5223e290c
     Instance: {fileID: 1499511943}
-  - Token: CustomInteractEvent.c0b577d70e5a1e94eb6494077327ca1f
+  - Token: CustomInteractEvent.4736df32defc5744da7ff2ee6dfc0084
     Instance: {fileID: 1499511944}
-  - Token: CustomInteractEvent.7f315bcb3c30f504ba7a70e337e5d21b
+  - Token: CustomInteractEvent.2e85894f2cd932b4c97e1ed74ab3a5ba
     Instance: {fileID: 1499511945}
-  - Token: CustomInteractEvent.f1b12374683d30e47ba65be5d6c86b06
+  - Token: CustomInteractEvent.f7d09059dfcdfcc4f85af675e4892c73
     Instance: {fileID: 1499511946}
-  - Token: CustomInteractEvent.9482c43153683684685cb9f9961652e6
+  - Token: CustomInteractEvent.096997d17bc36cd4697e42e26d3acb6f
     Instance: {fileID: 1499511947}
-  - Token: CustomInteractEvent.8857dc4a6227ad0468b8838f48f848c8
+  - Token: CustomInteractEvent.7c3525d265db7f140bd9e119b00c1d7c
     Instance: {fileID: 1499511948}
-  - Token: CustomInteractEvent.871745785eae3d04f99118cbc1a30918
+  - Token: CustomInteractEvent.340ef53dbaafc114c8e7913a16d01a73
     Instance: {fileID: 1499511949}
-  - Token: CustomInteractEvent.23fbdb44f16ff3141b828e875cbe0ff0
+  - Token: CustomInteractEvent.a852a83d9e882e042805886bcec4eda7
     Instance: {fileID: 1499511950}
-  - Token: InteractableItem.add7af3cf42780543b5f9834eb9c54b2
+  - Token: InteractableItem.53bd33ea21c17e24ea92b8031f2eff32
     Instance: {fileID: 1499511953}
-  - Token: InteractableItem.392a206507806164ca6e51458b0bb298
+  - Token: InteractableItem.056a1d16847f430409c2db80090ba277
     Instance: {fileID: 1499511954}
-  - Token: InteractableItem.6fb4ee78af337d84b8bc08756baddd30
+  - Token: InteractableItem.1099ce22661af324e85fcbc58a1bbe62
     Instance: {fileID: 1499511955}
-  - Token: InteractableItem.46b809bb39a9ed64cbacbff808f8f0d8
+  - Token: InteractableItem.0dd38864562af8b498ec14dbb5c887d3
     Instance: {fileID: 1499511956}
-  - Token: InteractableItem.c0100007106ff6c49bc56d96e1a7cde7
+  - Token: InteractableItem.4b366e82f8d941749957d4a99b9d01c1
     Instance: {fileID: 1499511962}
-  - Token: InteractableItem.bca009ad49268404ea1a44f269beb33d
+  - Token: InteractableItem.2cc3b78b43547234b9da34dda203f17e
     Instance: {fileID: 1499511963}
-  - Token: InteractableItem.b7e8969a073b2754a9afc9d13ac1dec5
+  - Token: InteractableItem.b43ee3396559e194fbc774440ad5ec35
     Instance: {fileID: 1499511964}
-  - Token: InteractableItem.6dc94d29c28a1c04dbfc8576decb803d
+  - Token: InteractableItem.f4147a00f4876644cb2dcba1ca5627e5
     Instance: {fileID: 1499511966}
-  - Token: InteractableItem.6314db3d302f04a4691fbc727986b241
+  - Token: InteractableItem.060fa855aa53d3040913f03fcfaa2bb0
     Instance: {fileID: 1499511967}
-  - Token: InteractableItem.3c185ddb63953a24e918f918aafa04a6
+  - Token: InteractableItem.9922742acf72d034b9ca1d463e234075
     Instance: {fileID: 1499511968}
-  - Token: InteractableItem.38fc32c7a3c93a04eb5bb6d3d0a1a633
+  - Token: InteractableItem.a4da95924461fad43bfcac42c61b1e0e
     Instance: {fileID: 1499511969}
-  - Token: InteractableItem.425e640fc99e8384d9819d94957f292b
+  - Token: InteractableItem.10ff1cccd89f68841a388e21e838d3ce
     Instance: {fileID: 1499511970}
-  - Token: InteractableItem.a2b1e1fa68b1bdc498c45ae4b59a2d4e
+  - Token: InteractableItem.31d360af1d444664fb3413fa5ff94a85
     Instance: {fileID: 1499511971}
-  - Token: InteractableItem.3553d5420ddea0441879daf0b9f518b3
+  - Token: InteractableItem.f02df128f71d6b24b8e80659327a37f4
     Instance: {fileID: 1499511972}
-  - Token: InteractableItem.dc85b6961f0aee248a9f08bfc4dfff14
+  - Token: InteractableItem.4be72d701e96bd54aa51de6da5a2efec
     Instance: {fileID: 1499511973}
-  - Token: InteractableItem.ed075eaadcfe3ef4ca2a3827a5135402
+  - Token: InteractableItem.0605fd28c858c684baff9556b707e3f9
     Instance: {fileID: 1499511974}
-  - Token: InteractableItem.1332bbbdb0253a14d838111af544216b
+  - Token: InteractableItem.42101d61e18ba2a42a871d0763a2c0bf
     Instance: {fileID: 1499511975}
-  - Token: InteractableItem.102f167c7bd7f934ea8c70aeaa97cf71
+  - Token: InteractableItem.048a218440fe0514184375859c235f39
     Instance: {fileID: 1499511976}
-  - Token: InteractableItem.1717bbdb747ce5345a12565cf77ac67b
+  - Token: InteractableItem.060be42c6b603e544838be27a0fe6e37
     Instance: {fileID: 1499511977}
-  - Token: InteractableItem.b92bf266b534f4b458931abc6a757c4e
+  - Token: InteractableItem.c4ed78b57f53a784ea15b2db2ea44c79
     Instance: {fileID: 1499511978}
-  - Token: InteractableItem.dbfb00a3095029b48bee2579c492e108
+  - Token: InteractableItem.2b8a929d50f1e2c44b8aaf21945c2c93
     Instance: {fileID: 1499511979}
-  - Token: InteractableItem.74d5bf3726585ee4f8f88e7655ce7659
+  - Token: InteractableItem.29c433e9f5ccd2248aee7bd55ab66065
     Instance: {fileID: 1499511980}
-  - Token: InteractableItem.7a522d9822631fd4cb83260ae98bb58f
+  - Token: InteractableItem.3eb69a97440a04841bfebf8596a90236
     Instance: {fileID: 1499511981}
-  - Token: InteractableItem.7bc643cf9fe881b4c837ed05aa0b9785
+  - Token: InteractableItem.3c2314dac759c3d45b8530f56c44f01e
     Instance: {fileID: 1499511982}
-  - Token: InteractableItem.497e2e327d5cfc04084a9fa1de830971
+  - Token: InteractableItem.46d92f6b2b885c04a92452ec348e4f5f
     Instance: {fileID: 1499511983}
-  - Token: InteractableItem.ac010623634c7544591b00703291d9f2
+  - Token: InteractableItem.9d140bb4a666eb341ab70b12f2baac53
     Instance: {fileID: 1499511984}
-  - Token: InteractableItem.4eb803133f353304ba2ae555852f996a
+  - Token: InteractableItem.8cf4feaada53be04191e9f40c7798470
     Instance: {fileID: 1499511985}
-  - Token: InteractableItem.34a4b713c34608c40a0ac0761873eaa6
+  - Token: InteractableItem.ae319284a4085f9499d3b1008720aabc
     Instance: {fileID: 1499511986}
-  - Token: InteractableItem.c8220c71cb09f12429c5a41bcfb824ff
+  - Token: InteractableItem.3498a88e9ee2df7408afe3a02fb8f02f
     Instance: {fileID: 1499511987}
-  - Token: InteractableItem.658e821ebbd23dc439d9773b1a74133e
+  - Token: InteractableItem.db8f21b1983973046a291a9965a28f2d
     Instance: {fileID: 1499511988}
-  - Token: InteractableItem.4ebebcb059f2ffa4b815f6bcb314cac3
+  - Token: InteractableItem.60b2317bd6c8d4a4f956aca2cf3e5248
     Instance: {fileID: 1499511989}
-  - Token: InteractableItem.550dd24422e7a054aa5a185ee4d839c3
+  - Token: InteractableItem.13f7336977b29a945886f7b80d90aa58
     Instance: {fileID: 1499511990}
-  - Token: InteractableItem.402079b13b14c5147a4f6c5d881ce4ff
+  - Token: InteractableItem.2dd57198e537cc745bb99f15df147f70
     Instance: {fileID: 1499511991}
-  - Token: InteractableItem.44d187e739808f04aa463af9116c1cc5
+  - Token: InteractableItem.a9d3f42b7b65bb141b16fe910efaf04d
     Instance: {fileID: 1499511992}
-  - Token: InteractableItem.1db9ddeaa7003b64c9eb77c34e957e79
+  - Token: InteractableItem.80b4ea87a920b6343b27508ed8527d43
     Instance: {fileID: 1499511993}
-  - Token: InteractableItem.f5ae8ccfb973d0240a5220591ed0f702
+  - Token: InteractableItem.e4e9f52aa819e74468a504ee83a1afff
     Instance: {fileID: 1499511994}
-  - Token: InteractableItem.5673aaab25876bc42bbf0b57bbf4c5f9
+  - Token: InteractableItem.b8bf7ac40d547d0408dceaf4da802733
     Instance: {fileID: 1499511995}
-  - Token: InteractableItem.f08b1658b4b7a8849aa106bdfa8aee86
+  - Token: InteractableItem.03b1df3955e44c24292dec66ffa5d98c
     Instance: {fileID: 1499511996}
-  - Token: InteractableItem.1c4059acd09d5e74b80846d740e204ff
+  - Token: InteractableItem.15af8c9ce2739854ba9fea2793c98e3f
     Instance: {fileID: 1499511997}
-  - Token: InteractableItem.0631d46991c091e46a52fab326daf03a
+  - Token: InteractableItem.253b1743fcb84e24289c541522a4dbde
     Instance: {fileID: 1499511998}
-  - Token: InteractableItem.c2294ecaa50e48940a603016b493b65b
+  - Token: InteractableItem.0bd82edef1e6f8c47bf017297bb3aa39
     Instance: {fileID: 1499511999}
-  - Token: InteractableItem.1cf13f952fd8f424094d9c97361dea0c
+  - Token: InteractableItem.3c30950d25743dc4390c6e7b22fe1d9e
     Instance: {fileID: 1499512000}
-  - Token: InteractableItem.020d7f494234d2947a9b09d8f568d698
+  - Token: InteractableItem.40e47acd7b823324883599e714fe226a
     Instance: {fileID: 1499512001}
-  - Token: InteractableItem.54842a8bca9c8c54984168b1c83ded60
+  - Token: InteractableItem.caffc2800652d5a49b7bea34e467410c
     Instance: {fileID: 1499512002}
-  - Token: InteractableItem.1008f2e299317f9489883ded4936133d
+  - Token: InteractableItem.02fffb3fee33b2047a433df4f10311a2
     Instance: {fileID: 1499512003}
-  - Token: InteractableItem.1d4f5693dbf053447b8de04a04cc88e7
+  - Token: InteractableItem.218c3618efe873c4f8fb34d16372ccdd
     Instance: {fileID: 1499512004}
-  - Token: InteractableItem.821e0769e6f7a2f4da2920966ce9f3fc
+  - Token: InteractableItem.86ab54478c178464c9d71d14168bfb1c
     Instance: {fileID: 1499512005}
-  - Token: InteractableItem.7db83159947dab54e87c253e98626af7
+  - Token: InteractableItem.56b8ee1709861e94eac49b5819434de1
     Instance: {fileID: 1499512006}
-  - Token: InteractableItem.22c935c90d792524e96b5a0c459e23b2
+  - Token: InteractableItem.cc3744bc3a2540246a3999e8292ddf8b
     Instance: {fileID: 1499512007}
-  - Token: InteractableItem.03008014490e6564b98f17a79aea6a88
+  - Token: InteractableItem.8758ff075975a3a49bd088ae51fb465f
     Instance: {fileID: 1499512008}
-  - Token: InteractableItem.5db9c6a46b92a0b4090cb90297f9c387
+  - Token: InteractableItem.3f18dc80b9ed52340ad750b555f9a13e
     Instance: {fileID: 1499512009}
-  - Token: InteractableItem.6286d8aac8c20c44487cb95717b9e981
+  - Token: InteractableItem.74239c8a493367d4eb8709ae417fadf7
     Instance: {fileID: 1499512010}
-  - Token: InteractableItem.3d89ec246ff35204ab8be5e4f6b3606a
+  - Token: InteractableItem.dea99bfa2074abd408ca77ebf7ce3833
     Instance: {fileID: 1499512011}
-  - Token: InteractableItem.05a523ac288ef4549b549fca4eabe399
+  - Token: InteractableItem.414bb6a20954807448cce883f7381a02
     Instance: {fileID: 1499512012}
-  - Token: InteractableItem.7a203a9f425b48744b24b6f5409475df
+  - Token: InteractableItem.c92fca88132e3a94391491ae03f1a24f
     Instance: {fileID: 1499512013}
-  - Token: InteractableItem.145bba48483b3254ba168dda26c7ec6a
+  - Token: InteractableItem.e6a5bd723381db1489dc1d07dfa0171d
     Instance: {fileID: 1499512014}
-  - Token: ItemsContainer.d7814389a846ee241b9cdb8b47ce54e6
+  - Token: ItemsContainer.71272227c2235984fb3461f6b8de5ab2
     Instance: {fileID: 1499512015}
-  - Token: ObjectiveTrigger.b9406d93888468e4e822ededc3596e79
+  - Token: ObjectiveTrigger.a6d5377f0d632064eb581d0119501a29
     Instance: {fileID: 1499512016}
-  - Token: ObjectiveTrigger.a631505027fb14d42be02934c560c14e
+  - Token: ObjectiveTrigger.66719716795aa11498f74a4986c50b97
     Instance: {fileID: 1499512017}
-  - Token: ObjectiveTrigger.addd1a6db038b444997e58547e4a2716
+  - Token: ObjectiveTrigger.25333fd16c0c7374da44247d96d69381
     Instance: {fileID: 1499512018}
-  - Token: InteractableItem.418a245216e6c93409b8c605e0fa37c5
+  - Token: InteractableItem.1690bc8aa04abb9488914a239349a31f
     Instance: {fileID: 1499512019}
-  - Token: CRTMonitor.e283f320623ceb94389b4a5003ab44e3
+  - Token: CRTMonitor.32f68a8afd664774f981d8691cd83d7b
     Instance: {fileID: 1499512022}
-  - Token: CustomInteractEvent.4b399979d0095e14c88b1b4e46e39bb2
+  - Token: CustomInteractEvent.0316bcc42f20dac44b339818572cdea4
     Instance: {fileID: 1499512023}
-  - Token: KeycardPuzzle.a6fc26c441cce6a498228de3dfa5db73
+  - Token: KeycardPuzzle.0b835fac87bbebd4097ff8d80d5237d2
     Instance: {fileID: 1499512024}
-  - Token: HintTrigger.89f054613a49fe8409162aa0354ec205
+  - Token: HintTrigger.a72b98a8511353f40b9c5c5d1adfcb6c
     Instance: {fileID: 1499512025}
-  - Token: InteractableItem.ee0e4bedfd2424940934b604eaf114a9
+  - Token: InteractableItem.4f56ef0f7740c8949b4b27cffea4a961
     Instance: {fileID: 1499512026}
-  - Token: InteractableItem.d5c94d29959f4314db863e0a872073db
+  - Token: InteractableItem.873c4e0e5d67c7a46843ab5b298ddf07
     Instance: {fileID: 1499512027}
-  - Token: KeycardPuzzle.526b53daa286a7c498a6c682c743e65d
+  - Token: KeycardPuzzle.aaf14a3605d422845951d6dc69c409be
     Instance: {fileID: 1499512028}
-  - Token: HintTrigger.66e7d74ca782cce4e8e288a7f64453df
+  - Token: HintTrigger.03e137359a5e10c42a43619046d4790a
     Instance: {fileID: 1499512029}
-  - Token: DynamicObject.346f8200ed2a7c948a0ba185f1a241b3
+  - Token: DynamicObject.2a202a0e7c79e544db14f761715450dd
     Instance: {fileID: 1499512030}
-  - Token: VCRPlayer.704a80a19f09d9e4283d01b5fa62d076
+  - Token: VCRPlayer.d8e9db29ab90e8441b42a674af623123
     Instance: {fileID: 1499512031}
-  - Token: InteractableItem.7cd59e1fcd8d541448d53e23f319dbe3
+  - Token: InteractableItem.b0f2e71da772a0643a7a92829ea7e471
     Instance: {fileID: 1499512032}
-  - Token: CustomInteractEvent.a6f303971c26e7b499eaf880c91279af
+  - Token: CustomInteractEvent.1799f42b209b1ee45b938519d73b472d
     Instance: {fileID: 1499512033}
-  - Token: CustomInteractEvent.e9957f1eb3f5dac4f9e35d381deb9824
+  - Token: CustomInteractEvent.9d771dd1a4c716447978d1b990eff070
     Instance: {fileID: 1499512034}
-  - Token: CustomInteractEvent.d37a6252e9a894e41a6909c51611d4f9
+  - Token: CustomInteractEvent.1bb95b91a04f18040bb50e52260f403e
     Instance: {fileID: 1499512035}
-  - Token: CustomInteractEvent.2f237ba1e363fbd498a80934b13cf268
+  - Token: CustomInteractEvent.93f83e852f8bb464d9c5185afc90d6b5
     Instance: {fileID: 1499512036}
-  - Token: CustomInteractEvent.948d56e3cee587b48bd746b109819691
+  - Token: CustomInteractEvent.c4658d8f024da2f4d8424d9d7bea7ddc
     Instance: {fileID: 1499512037}
-  - Token: CustomInteractEvent.8c42d09f586bff247962dcada8497a02
+  - Token: CustomInteractEvent.b91685bd8606a9743b5fa59eac3c82d3
     Instance: {fileID: 1499512038}
-  - Token: CustomInteractEvent.701b1f207e4ea824a83e96ababdb3ed9
+  - Token: CustomInteractEvent.c9da80bebf5968f45a7737ef1094180d
     Instance: {fileID: 1499512039}
-  - Token: InteractableItem.f34bc49cb3baae74d8a75d790c2ad3e4
+  - Token: InteractableItem.f9e70e2512e67974d9f6f1a883e3e525
     Instance: {fileID: 1499512040}
-  - Token: InteractableItem.c887bf4252ea09e4aa7acd92527ca673
+  - Token: InteractableItem.fbeda62f96970034eb73b9e5428793a4
     Instance: {fileID: 1499512041}
-  - Token: InteractableItem.506a52a4160fbd541a86798044f3d537
+  - Token: InteractableItem.a437393defef27941bb12e9e7bc3426d
     Instance: {fileID: 1499512043}
-  - Token: InteractableItem.57bd1331fa706cf4d8e327ccc51aab94
+  - Token: InteractableItem.5d33edd923e090f4893a04ff10a8ad5a
     Instance: {fileID: 1499512044}
-  - Token: InteractableItem.720defda1910b6043962afcf67473088
+  - Token: InteractableItem.b64be413606a9d346a07f5b656b9279c
     Instance: {fileID: 1499512045}
-  - Token: InteractableItem.ea03118ea6aad944ca1646d13415fe70
+  - Token: InteractableItem.433d70ea72ab58e469255c38fcdba360
     Instance: {fileID: 1499512046}
-  - Token: InteractableItem.c8bda24a57f5861428293fd15fe4e041
+  - Token: InteractableItem.c5c67520ef157524693bf0ab4c2bc9ab
     Instance: {fileID: 1499512047}
-  - Token: InteractableItem.98fb1045dcf6ae54da2d300af87f92ac
+  - Token: InteractableItem.fe55d79865cefd64e92a5fdf0f5eeec6
     Instance: {fileID: 1499512048}
-  - Token: InteractableItem.429ba79fd1d374d46b6e864831d82e86
+  - Token: InteractableItem.f3b10c1b796fef242abc1b54244661b0
     Instance: {fileID: 1499512049}
-  - Token: InteractableItem.61a5230ebc9849449beeb42623ea6956
+  - Token: InteractableItem.e2716043ed16da341b81e8dca4af2ef2
     Instance: {fileID: 1499512050}
-  - Token: InteractableItem.b675997452ba3f14abb9e96e44c6fdbc
+  - Token: InteractableItem.4a99fac97718aab4791cc54763e07406
     Instance: {fileID: 1499512051}
-  - Token: InteractableItem.bc38eedd92ce51447bcf8bf20e3a1777
+  - Token: InteractableItem.f4b1d7c0bbdec8f4e9380d14f0e0a6ac
     Instance: {fileID: 1499512052}
-  - Token: InteractableItem.90d470f896bedde4aa7012c94d515895
+  - Token: InteractableItem.3eed75f2549e65947b6547ce028cf20d
     Instance: {fileID: 1499512053}
-  - Token: InteractableItem.f020a7ba23674664ebf49bf8d1d73c63
+  - Token: InteractableItem.eb5ca830288288a46b0fd22a84517dad
     Instance: {fileID: 1499512054}
-  - Token: InteractableItem.9d931c6b8e437df4c95b0d7ad8f9a49b
+  - Token: InteractableItem.c0ef8b93aa490ef428a883592f7090f9
     Instance: {fileID: 1499512055}
-  - Token: InteractableItem.d33094ad340d5e847a79111926be60b6
+  - Token: InteractableItem.5add6ebcb37c0b2438129bc72ee07925
     Instance: {fileID: 1499512056}
-  - Token: InteractableItem.65b1623285587e942a4fb31a38116e82
+  - Token: InteractableItem.1cdd070b7035acd49aea333ab62f75b6
     Instance: {fileID: 1499512057}
-  - Token: InteractableItem.08f63ea194d13ad408c0d8ad5482f51b
+  - Token: InteractableItem.db8872b750e5c9749805697e2eeee170
     Instance: {fileID: 1499512058}
-  - Token: InteractableItem.c326a5bb49825ec46b03e14724bb9b32
+  - Token: InteractableItem.ea5ab2a564e3e0d43a391c699b52fe63
     Instance: {fileID: 1499512059}
-  - Token: InteractableItem.115d4283688158c499b3b39693bcff17
+  - Token: InteractableItem.683c8cb9d9e5a2f49935dcacff208a28
     Instance: {fileID: 1499512060}
-  - Token: InteractableItem.edd1f75998f69984eb20fcd76ba18d9f
+  - Token: InteractableItem.08236369a4f9e044eadb555672bd947c
     Instance: {fileID: 1499512061}
-  - Token: InteractableItem.d1b210022a7de2e419956b4d474f2576
+  - Token: InteractableItem.d84a9b0dc7c37e843bb065c47fd753a1
     Instance: {fileID: 1499512062}
-  - Token: InteractableItem.d86f4e753f2ccf649b03fce337dd1585
+  - Token: InteractableItem.0606e1548baf88348a53aa0562d46ccc
     Instance: {fileID: 1499512063}
-  - Token: InteractableItem.a5285fc60cf463c4c96b5debdd06abf7
+  - Token: InteractableItem.6914951302908ea4393cd635cd615c83
     Instance: {fileID: 1499512064}
-  - Token: InteractableItem.5f9f51c5330302144b4e8e1706ea0c22
+  - Token: InteractableItem.d3976bd2bba9cd7499dd48e6c3b0cf9e
     Instance: {fileID: 1499512065}
-  - Token: InteractableItem.1daedbd6192af4a4eb250bee4e018760
+  - Token: InteractableItem.234aa30ac9bd9514ba8e4d225769b963
     Instance: {fileID: 1499512066}
-  - Token: InteractableItem.68cd98767f76e3a48986960032ef23ff
+  - Token: InteractableItem.6a85f1ae9564d8449b11a5760e06ef6f
     Instance: {fileID: 1499512067}
-  - Token: InteractableItem.4a0fbda365fa1994ba1e50baa916de1d
+  - Token: InteractableItem.43a7fd985f667ce40938949cda4af257
     Instance: {fileID: 1499512068}
-  - Token: InteractableItem.17905894c0829f5498bb543b27a1297b
+  - Token: InteractableItem.4f2999d8e09b8804dae6f6afbd8af37d
     Instance: {fileID: 1499512069}
-  - Token: InteractableItem.63af77bc636d6da40964d38eaebb228b
+  - Token: InteractableItem.c8317c5e2c3d38441bf71092b373d4a7
     Instance: {fileID: 1499512070}
-  - Token: InteractableItem.90a187489f49a744c97169440bb351c0
+  - Token: InteractableItem.8f45e5cc82b055b4bb31296a10a288da
     Instance: {fileID: 1499512071}
-  - Token: InteractableItem.39be8356695373b4ca95a3919d4c6055
+  - Token: InteractableItem.36e32b854f47f9647b8a47933fbf8743
     Instance: {fileID: 1499512072}
-  - Token: InteractableItem.72540ea10dfcad54a89601cebeb34509
+  - Token: InteractableItem.b3c45195f98ee9641add2704ddf54368
     Instance: {fileID: 1499512073}
-  - Token: InteractableItem.de33e35d1005740438753e9527ad6727
+  - Token: InteractableItem.56a3c798974fe8d41a7b8ed238d234da
     Instance: {fileID: 1499512074}
-  - Token: InteractableItem.89dbac893c207e0458d117115bce99a8
+  - Token: InteractableItem.f5c88bcfefbd34f4ea5d3ec8a419b769
     Instance: {fileID: 1499512075}
-  - Token: InteractableItem.ed2e0e13bcf30804494995f68bd5d0ff
+  - Token: InteractableItem.a56ec01765509764d823acc016a1a545
     Instance: {fileID: 1499512076}
-  - Token: InteractableItem.473dc22922442654097c2dee3219d16b
+  - Token: InteractableItem.d5629aab4746eb448838894961b167e2
     Instance: {fileID: 1499512077}
-  - Token: InteractableItem.f8a9dbf0aa55d0a43b4a8310dd5b09b0
+  - Token: InteractableItem.2492b70973262434ca8f79d35c2a0fe3
     Instance: {fileID: 1499512078}
-  - Token: InteractableItem.2a202e2b2fe5f094b9d4db83d102f127
+  - Token: InteractableItem.082f297c28fa44b4fab44b05738f132a
     Instance: {fileID: 1499512079}
-  - Token: InteractableItem.d0f67239a27895444bbe918b48066c6a
+  - Token: InteractableItem.dc6cbb321621a504bb207f221187172d
     Instance: {fileID: 1499512080}
-  - Token: InteractableItem.ce9b7561041f62148a32aefd36269933
+  - Token: InteractableItem.a2dbe39d352b1cd42aaf93ce7e44d405
     Instance: {fileID: 1499512081}
-  - Token: InteractableItem.3d062f8a1f828c54a85c2d16c077c475
+  - Token: InteractableItem.1ac0e04b5e8962d4b8b69a6f5c8b52b6
     Instance: {fileID: 1499512082}
-  - Token: InteractableItem.352c7f7a4162ad442a30c289228d2581
+  - Token: InteractableItem.eefa8cf5c7e177647bccf95ecdd7a42f
     Instance: {fileID: 1499512083}
-  - Token: InteractableItem.a59a452d9bd5ec542948edbc4de76b2b
+  - Token: InteractableItem.fdcd4d07ccf2f614391b6b576a3d9a52
     Instance: {fileID: 1499512084}
-  - Token: InteractableItem.7d4179a0077b20b45b5f1e1f88bd2dee
+  - Token: InteractableItem.c3c4cb57cc318774ca2a7378d1680964
     Instance: {fileID: 1499512085}
-  - Token: InteractableItem.4fb1748dac6c5924eaaef36b28e31dac
+  - Token: InteractableItem.dd594260708cb6d4889a76046c86bbd3
     Instance: {fileID: 1499512086}
-  - Token: InteractableItem.5fe715f5ce7a09d4abb5564bc41ca587
+  - Token: InteractableItem.14e8018b66ccaa242a203591eb4dd65b
     Instance: {fileID: 1499512087}
-  - Token: ObjectiveTrigger.47800ec962d95354499e9b1de736f6b2
+  - Token: ObjectiveTrigger.adb41165262b596439043308fb728e4c
     Instance: {fileID: 1499512088}
-  - Token: ObjectiveTrigger.a4cc81404fb2cdb4cb12691ef8d0e852
+  - Token: ObjectiveTrigger.249fb46aac2f5ac49aa28f87ad0ed352
     Instance: {fileID: 1499512089}
-  - Token: InteractableItem.bec593a08cdfdd4419fb1e28015c91f6
+  - Token: InteractableItem.b71597f4d043b2346bd90eafb43d68d6
     Instance: {fileID: 1499512095}
-  - Token: InteractableItem.57ce822d10b68714e92f84259b9cf285
+  - Token: InteractableItem.beab79a7b0fe105459c3c12d9e62e990
     Instance: {fileID: 1499512096}
-  - Token: InteractableItem.8d7b8ff7eebaef34398e917b93319a86
+  - Token: InteractableItem.b649b2851b1d59444871fec4640b08aa
     Instance: {fileID: 1499512097}
-  - Token: InteractableItem.720de2bbc6bee4a46858d5c6c4e9a5b1
+  - Token: InteractableItem.7ba54585d07438741a5993ccdd4d3adf
     Instance: {fileID: 1499512098}
-  - Token: InteractableItem.011223e910d70f74db0aecbc369da0c5
+  - Token: InteractableItem.19b697119bf2b38489a0c57c7690468d
     Instance: {fileID: 1499512099}
-  - Token: InteractableItem.769211d7dd8004946b9c257fa896bd29
+  - Token: InteractableItem.01d4a8345cedd5042b64578145f5d0ee
     Instance: {fileID: 1499512100}
-  - Token: InteractableItem.c50eac345f83cf540a1dc036c85870f6
+  - Token: InteractableItem.dd837428150fb9d4f8bb60f6468f632a
     Instance: {fileID: 1499512101}
-  - Token: InteractableItem.b5c159f0728736145a421e0eed89c40e
+  - Token: InteractableItem.8f515a45491d3a049907dad2e3e190b4
     Instance: {fileID: 1499512102}
-  - Token: InteractableItem.a185d4538838de240b5053b0e0895a1b
+  - Token: InteractableItem.59ffe66888867714d9f3e032007d4c0c
     Instance: {fileID: 1499512103}
-  - Token: InteractableItem.f759f46fb5d9df64b8dd1ead81c7a65d
+  - Token: InteractableItem.7ce3b81510f82294abd3b9bbe7a1493e
     Instance: {fileID: 1499512104}
-  - Token: InteractableItem.9fedb6f4123b2e84cab2bdef941c45ac
+  - Token: InteractableItem.6cedb5de678a4d54c8bcc8e4351696b2
     Instance: {fileID: 1499512105}
-  - Token: InteractableItem.6c51a6fdad1bb464796ac49c50462d10
+  - Token: InteractableItem.1ee28de699a29e945a7fd6e824d1a0d3
     Instance: {fileID: 1499512106}
-  - Token: InteractableItem.2b7e98a7c3389f74cafcc33cade595c5
+  - Token: InteractableItem.8b3f2262d744bd448b75c69dc052ed01
     Instance: {fileID: 1499512107}
-  - Token: InteractableItem.0c46e5aece3dc9d49bfe2e22bbf8be41
+  - Token: InteractableItem.e337e908cabcc9543860a761e39d7dcc
     Instance: {fileID: 1499512108}
-  - Token: InteractableItem.dd681e657be7b8248b3117c0924ab5c3
+  - Token: InteractableItem.135c5cd8126eefb4e9a8e178da0242e8
     Instance: {fileID: 1499512109}
-  - Token: KeycardPuzzle.47114d3b665215d42bf9716d59893913
+  - Token: KeycardPuzzle.7df7625ebaadde147afae608fd78633b
     Instance: {fileID: 1499512110}
-  - Token: HintTrigger.657483d517209cd4ba1fe05c91417c03
+  - Token: HintTrigger.1c866f97fd6a5bc4f82205b295288d24
     Instance: {fileID: 1499512111}
-  - Token: DialogueTrigger.0ae74f44159adb3448ac2a888d95d8d7
+  - Token: DialogueTrigger.9331fdae1317be24e8d70fe94f49862a
     Instance: {fileID: 1559506944}
-  - Token: UHFPSAutoSaveTrigger.c71eee15fc6d7d04e84487d2e68ada3f
+  - Token: UHFPSAutoSaveTrigger.587e84676ac45a24b8ca2106d06ffd99
     Instance: {fileID: 1591153783}
-  - Token: DialogueTrigger.ed7e52bce0ab6564887731b81c6166d8
+  - Token: DialogueTrigger.e92f9c835413ffb4f90537088e201bc4
     Instance: {fileID: 1593806269}
-  - Token: DialogueTrigger.7a4562f6b7157174b849eee0a3a0808e
+  - Token: DialogueTrigger.e44bd4b22dfb3754e8af17288fc2eca6
     Instance: {fileID: 1607422341}
-  - Token: DialogueTrigger.864e33072df4c55448c4a5954f192e0f
+  - Token: DialogueTrigger.27ff333393dbd824ebfe94a8fc6ccc3b
     Instance: {fileID: 1719041810}
-  - Token: DialogueTrigger.ffd56de1c7e2d9045b31c019b64576c6
+  - Token: DialogueTrigger.e19fe95f0eedb404291b085d1e821371
     Instance: {fileID: 1888108781}
-  - Token: DialogueTrigger.83d9d61a92a94684eb7dec3b6487b301
+  - Token: DialogueTrigger.615ab8ee2298d004a9efd4aa99863665
     Instance: {fileID: 1897337571}
-  - Token: NPCHealth.426712e3214c2ac49b51fc388d166c84
+  - Token: NPCHealth.cda0b622848e21a42b760e544320c756
     Instance: {fileID: 1937945980}
-  - Token: NPCHealth.248aff68834b47b468d1a83b76674f0f
+  - Token: NPCHealth.34303019a0c80e74c9aee151f71d6de7
     Instance: {fileID: 1937945981}
-  - Token: NPCHealth.67ec50764793c2a4da6b983e0731c856
+  - Token: NPCHealth.6e9ca348e1f05bd478df2bf6938ebd95
     Instance: {fileID: 1937945982}
-  - Token: NPCHealth.dba3d838274100f448827cfc444b88b9
+  - Token: NPCHealth.3b8d3ac93a3304a418269294153559ea
     Instance: {fileID: 1937945983}
-  - Token: NPCHealth.8c28fefbd0394b4428f47ea548d848a2
+  - Token: NPCHealth.1a1a8cdb4e2ad5a4588d6d2dc04305e1
     Instance: {fileID: 1937945984}
-  - Token: NPCHealth.3e4c813fcdaddf34ba9cf8e6b3af247d
+  - Token: NPCHealth.4c704ddeece8d6f439a19ea86860f3ed
     Instance: {fileID: 1937945985}
-  - Token: NPCHealth.700824ca3cef8f74ba89917ec6c3cf8d
+  - Token: NPCHealth.f1cf03ab3d63ff04bb9ee0d9d0614a4e
     Instance: {fileID: 1937945986}
-  - Token: NPCHealth.f1652c34c19d67245a18215b343b2897
+  - Token: NPCHealth.d47e62fa485723649a012d0017919218
     Instance: {fileID: 1937945987}
-  - Token: NPCHealth.cac23c17499cb9e4cb0303f913191e42
+  - Token: NPCHealth.914d22fa16a7b50469c6da6030e8dd9c
     Instance: {fileID: 1937945988}
-  - Token: NPCHealth.bd946e345dba3684288137df2c3d5526
+  - Token: NPCHealth.3e96548e7fff76d4a91ce5b1aa7c9b26
     Instance: {fileID: 1937945989}
-  - Token: NPCHealth.8112d422589b9d84a8b518052f0f3507
+  - Token: NPCHealth.3f381696501b91540a5e2073fceddaf8
     Instance: {fileID: 1937945990}
-  - Token: NPCHealth.94bd2eca2bc5d5b47a1c97fc473a16a7
+  - Token: NPCHealth.645802f37dceba04e8c8f50c5348c3a6
     Instance: {fileID: 1937945991}
-  - Token: NPCHealth.b2ca3834f2e3ef347bfbf7ee75a43c6c
+  - Token: NPCHealth.669e62e489f305b41a948a2c95d722b0
     Instance: {fileID: 1937945992}
-  - Token: NPCHealth.9d368c8432eebcd48b6b7ad1bff0acf5
+  - Token: NPCHealth.032ad37e63b85e446af7f76046ea85c5
     Instance: {fileID: 1937945993}
-  - Token: NPCHealth.15c9c3ea41731b24ab41690b44115c0b
+  - Token: NPCHealth.20a4af859eb6d91449fbdf77a591e060
     Instance: {fileID: 1937945994}
-  - Token: InteractableItem.1967d07b5f320d540bebb5c8587e6879
+  - Token: InteractableItem.f819d9b03fd8fde4e83e9702149a8aa9
     Instance: {fileID: 1937945995}
-  - Token: InteractableItem.1d2ed8adc80c2ea428afee6ee34762db
+  - Token: InteractableItem.0d8a3e3090ad63b40a2d0f30213ae7b9
     Instance: {fileID: 1937945996}
-  - Token: InteractableItem.f798197c658abdd4a9b9abbe00d6e2c0
+  - Token: InteractableItem.377b030b2a8e3dd4ba59ed0aa323d3d5
     Instance: {fileID: 1975752862}
-  - Token: SanityManager.bcfa39a325588a74d9261c039c79f81e
+  - Token: SanityManager.c7d6de706fe9fe4449292821cae07d12
     Instance: {fileID: 1981167678}
-  - Token: SaveableInteractionUnlocker.a0e974ff8798f34419a9345d19a4a9bc
+  - Token: SaveableInteractionUnlocker.252320522c8530a43b34c9f5fbfe1189
     Instance: {fileID: 2053754899}
-  - Token: DialogueTrigger.52e09e76781e1dd4b99ec12be50e6d63
+  - Token: DialogueTrigger.c01f3c839a85bff4f9c50ff476344940
     Instance: {fileID: 2122688800}
-  - Token: DialogueTrigger.6647380362450a94f920a1b6767bd5ea
+  - Token: DialogueTrigger.8e4ad1a665e9afd4bb83b73c600cf118
     Instance: {fileID: 2143044571}
   runtimeSaveables: []
 --- !u!114 &1981167671
