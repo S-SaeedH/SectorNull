@@ -3,7 +3,27 @@ guid: 4421c1adb4c8a2e48ad8ac88ab52fbc8
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_0-Corpse_head_D.jpg
+    second: {fileID: 2100000, guid: 6f314a92c50a53d46ad5f950db5b04fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_1-Corpse_hair_D.jpg
+    second: {fileID: 2100000, guid: b0945cd3df3d1034bbe6997f294c5151, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_2-Corpse_clothing_D.jpg
+    second: {fileID: 2100000, guid: 0d5401435873a3242b0af8f22bc745fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_3-Corpse_skin_D.jpg
+    second: {fileID: 2100000, guid: 24364c66e28c3f2498dabe4f4c1203ac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
