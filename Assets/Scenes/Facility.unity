@@ -7243,7 +7243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerType: 2
-  LevelType: 1
+  LevelType: 0
   NextLevelName: Corridors
   CustomTransform: 1
   TargetTransform: {fileID: 323923442}
@@ -39613,7 +39613,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -77963,29 +77963,29 @@ MonoBehaviour:
   SavingIcon: {fileID: 2268820171287938815}
   Debugging: 1
   worldSaveables:
-  - Token: InteractableItem.3624de192d6799445bcf025262b3230c
+  - Token: InteractableItem.68e7804e90711234385e7b67bf2d8df3
     Instance: {fileID: 25555875}
-  - Token: InteractableItem.c3ed78fbd214d1e4fbe86dba36ed94a2
+  - Token: InteractableItem.6d3a5f94acff1464ead57629331a0196
     Instance: {fileID: 108957374}
-  - Token: ObjectiveTrigger.2ef48a24a4196b04e92cec413dcee3f4
+  - Token: ObjectiveTrigger.144d7c947e3afa64b8073ee53a390b00
     Instance: {fileID: 462758297}
-  - Token: ObjectiveTrigger.b9884071acc314948b2052dd231a2886
+  - Token: ObjectiveTrigger.80017f813e66ea945a2598f5719d9706
     Instance: {fileID: 566108997}
-  - Token: CutsceneTrigger.e963281adfc37514eaa3e041ee526917
+  - Token: CutsceneTrigger.d223abe760ec0af45907c019d4ff37d8
     Instance: {fileID: 566108999}
-  - Token: DialogueTrigger.1206e519d696cd84eb3601f608f06ef6
+  - Token: DialogueTrigger.c19f57f7bcce1bb4c8ca4800847add60
     Instance: {fileID: 684650528}
-  - Token: InteractableItem.b31b1ba90252be249b6df2b566bdfa90
+  - Token: InteractableItem.5ddbbb2346998f9489b208aad4fb7256
     Instance: {fileID: 687492943}
-  - Token: ObjectiveTrigger.5960bbdfffbdd0a408f29ed89c8b897f
+  - Token: ObjectiveTrigger.6adf5cc44265f124fa2258ca623165cf
     Instance: {fileID: 872467369}
-  - Token: InteractableItem.3f0227975417fc349a6a326709643322
+  - Token: InteractableItem.7761933ed5ac106439b476e8fcfd29a4
     Instance: {fileID: 890862877}
-  - Token: InteractableItem.a944dae7f16b7a444ae3c56ff8350dcd
+  - Token: InteractableItem.c348b214d4290194a9854833f1bbd838
     Instance: {fileID: 1498688840}
-  - Token: TimedInteractEvent.0cd66d3ebfac2504a8628803eb8ebd7f
+  - Token: TimedInteractEvent.b76c592a9585023499bf38076500158f
     Instance: {fileID: 1771540503}
-  - Token: ObjectiveTrigger.c797097b23213f847940d73e6f133d41
+  - Token: ObjectiveTrigger.d14b926746e3831478a04a546d0579f7
     Instance: {fileID: 2122582586}
   runtimeSaveables: []
 --- !u!1 &5813543553162854338
@@ -92154,8 +92154,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297021146971794933}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.71472704, z: 0, w: 0.6994035}
-  m_LocalPosition: {x: 0.865, y: 1.7, z: 3.352}
+  m_LocalRotation: {x: -0.008680548, y: 0.6793988, z: -0.0044912496, w: 0.73370415}
+  m_LocalPosition: {x: 1.057, y: 2.095, z: 3.284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

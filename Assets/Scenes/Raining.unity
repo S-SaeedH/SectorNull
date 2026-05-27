@@ -15,16 +15,16 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0.39215687, g: 0.4405968, b: 0.49019608, a: 1}
+  m_FogColor: {r: 0.3671235, g: 0.41731933, b: 0.4716981, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.005
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.01, g: 0.015, b: 0.025, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1.5
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 5b1674e7be0f8db4b8f11291b5d7aed9, type: 2}
   m_HaloStrength: 0.5
@@ -15074,25 +15074,25 @@ MonoBehaviour:
   SavingIcon: {fileID: 5401978728176420620}
   Debugging: 1
   worldSaveables:
-  - Token: DialogueTrigger.c3a9db1aab7dd084aa64d04d4c6ef67d
+  - Token: DialogueTrigger.ac90073937122a745a5f0a8000e339a3
     Instance: {fileID: 632515839}
-  - Token: DialogueTrigger.f329cf8fb48b19348b45b623399c2677
+  - Token: DialogueTrigger.95433e5eaeeb7fc4e944bc2a8cee1124
     Instance: {fileID: 760661950}
-  - Token: RainingSet.056337e20bf1ab445b365955a1351d2c
+  - Token: RainingSet.f843e7fac86a2ac419de7660ae7a4442
     Instance: {fileID: 896729993}
-  - Token: UHFPSAutoSaveTrigger.6f533d52f58f95a4b8209bbb36387a6c
+  - Token: UHFPSAutoSaveTrigger.75b4ceb103d19df4da8577f784e9e442
     Instance: {fileID: 980951183}
-  - Token: TimedInteractEvent.d9d9caf292a323e428b0a288e50b8ec1
+  - Token: TimedInteractEvent.d22c006c1ae048a48b7acbf66e7571cd
     Instance: {fileID: 1007290253}
-  - Token: DialogueTrigger.064f3618d70a8ec449d6374e3e8d599f
+  - Token: DialogueTrigger.56f78c8ce80cc4840a7a258ff22e213e
     Instance: {fileID: 1320935615}
-  - Token: ObjectiveTrigger.543b0fe9a1d8ec54ab194b2d25beb3f8
+  - Token: ObjectiveTrigger.4bd3342a4f931914c9ccfd7726bd6c8a
     Instance: {fileID: 1372242365}
-  - Token: ObjectiveTrigger.790c9d64868b5f84d8b474886b070824
+  - Token: ObjectiveTrigger.3cc084d9f6a272640a0e6f75b2a298c4
     Instance: {fileID: 1380320123}
-  - Token: CutsceneTrigger.7d10f26ccb7f4c642b09eacbc8ddc812
+  - Token: CutsceneTrigger.ce646f3f2a6059d46b23e7a4eef7538b
     Instance: {fileID: 1380320125}
-  - Token: DialogueTrigger.fc4775560e2c8bc42a85e92efd933e1e
+  - Token: DialogueTrigger.02963d714e035a345861edc76a36c0d3
     Instance: {fileID: 1387387687}
   runtimeSaveables: []
 --- !u!1 &370988331409833521
