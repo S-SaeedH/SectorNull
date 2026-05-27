@@ -4249,13 +4249,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980951178}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00719766, y: -0.0462617, z: 0.0075724423, w: 0.9988747}
-  m_LocalPosition: {x: 1.348774, y: 4.0568657, z: 11.5924425}
+  m_LocalRotation: {x: 0.0053087454, y: -0.045803927, z: 0.00034525344, w: 0.9989363}
+  m_LocalPosition: {x: 1.334158, y: 4.0567045, z: 11.595547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 828174342}
-  m_LocalEulerAnglesHint: {x: 2.43, y: 75.68, z: 1.1}
+  m_LocalEulerAnglesHint: {x: 0.61, y: -5.251, z: 0.012}
 --- !u!65 &980951180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15072,10 +15072,26 @@ MonoBehaviour:
   SavingIcon: {fileID: 5401978728176420620}
   Debugging: 1
   worldSaveables:
-  - Token: RainingSet.d61a7e2b02783e54aa4c815599bcbac1
+  - Token: DialogueTrigger.fac66239d336bc34a95b349d3a9b7fe6
+    Instance: {fileID: 632515839}
+  - Token: DialogueTrigger.3129dca713a254847b7686cff0d24dfe
+    Instance: {fileID: 760661950}
+  - Token: RainingSet.c183298f0b81a274fa66a646bc22d274
     Instance: {fileID: 896729993}
-  - Token: TimedInteractEvent.0c497a7105f0eb74b91eeb39b3684349
+  - Token: UHFPSAutoSaveTrigger.f35ba74d07f374c4cae78ce4f661ed3d
+    Instance: {fileID: 980951183}
+  - Token: TimedInteractEvent.54dacd4456b13b8449f0fe1ec0062980
     Instance: {fileID: 1007290253}
+  - Token: DialogueTrigger.8d9d0b63d1dfa9546a4ded4d85ad21dd
+    Instance: {fileID: 1320935615}
+  - Token: ObjectiveTrigger.5d2c97f3bb675ee4887f0bcfb0a02d25
+    Instance: {fileID: 1372242365}
+  - Token: ObjectiveTrigger.00749b6a212127947b99cd1c1828d96a
+    Instance: {fileID: 1380320123}
+  - Token: CutsceneTrigger.2d451b1973d035e499de246d398a08ab
+    Instance: {fileID: 1380320125}
+  - Token: DialogueTrigger.0a2018b8d586f4d4f998f10cc79d2450
+    Instance: {fileID: 1387387687}
   runtimeSaveables: []
 --- !u!1 &370988331409833521
 GameObject:
