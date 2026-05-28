@@ -77946,30 +77946,26 @@ MonoBehaviour:
   SavingIcon: {fileID: 2268820171287938815}
   Debugging: 1
   worldSaveables:
-  - Token: InteractableItem.68e7804e90711234385e7b67bf2d8df3
+  - Token: InteractableItem.a15888666b1afc644b73d4de78a0b6b6
     Instance: {fileID: 25555875}
-  - Token: InteractableItem.6d3a5f94acff1464ead57629331a0196
+  - Token: InteractableItem.c81d8e3539e099b439a90ed3bd61b4c9
     Instance: {fileID: 108957374}
-  - Token: ObjectiveTrigger.144d7c947e3afa64b8073ee53a390b00
-    Instance: {fileID: 0}
-  - Token: ObjectiveTrigger.80017f813e66ea945a2598f5719d9706
+  - Token: ObjectiveTrigger.8e21885c0cf29cb4fa7019fbc4f1551b
     Instance: {fileID: 566108997}
-  - Token: CutsceneTrigger.d223abe760ec0af45907c019d4ff37d8
+  - Token: CutsceneTrigger.f570c415b6505cd41a1cb755cf57f288
     Instance: {fileID: 566108999}
-  - Token: DialogueTrigger.c19f57f7bcce1bb4c8ca4800847add60
+  - Token: DialogueTrigger.3afc6b07dc18b4b4cba6c1a7215d9b4e
     Instance: {fileID: 684650528}
-  - Token: InteractableItem.5ddbbb2346998f9489b208aad4fb7256
+  - Token: InteractableItem.b19008f17bda83549a43e23d3d421fbb
     Instance: {fileID: 687492943}
-  - Token: ObjectiveTrigger.6adf5cc44265f124fa2258ca623165cf
+  - Token: ObjectiveTrigger.a467c595971677e4a8e6d496ec7238da
     Instance: {fileID: 872467369}
-  - Token: InteractableItem.7761933ed5ac106439b476e8fcfd29a4
+  - Token: InteractableItem.0f3e22c761815284ca6d2b74a65e292a
     Instance: {fileID: 890862877}
-  - Token: InteractableItem.c348b214d4290194a9854833f1bbd838
+  - Token: InteractableItem.b40d38365cc3e424cba60787304a4346
     Instance: {fileID: 1498688840}
-  - Token: TimedInteractEvent.b76c592a9585023499bf38076500158f
+  - Token: TimedInteractEvent.60f67f73fc23b6148b06c433ac544fc9
     Instance: {fileID: 1771540503}
-  - Token: ObjectiveTrigger.d14b926746e3831478a04a546d0579f7
-    Instance: {fileID: 0}
   runtimeSaveables: []
 --- !u!1 &5813543553162854338
 GameObject:
