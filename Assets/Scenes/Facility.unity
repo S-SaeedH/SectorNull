@@ -2192,60 +2192,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7536494916997838046, guid: 3b13dd358af81884cbcc9cf020d70133, type: 3}
---- !u!1 &462758296
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 462758298}
-  - component: {fileID: 462758297}
-  m_Layer: 0
-  m_Name: Objective_NoteRead
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &462758297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462758296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bef1a4507177f14ca3a2b2e08bd4e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.ObjectiveTrigger
-  triggerType: 0
-  objectiveType: 2
-  objectiveToAdd:
-    ObjectiveKey: level1
-    SubObjectives:
-    - flashlight
-  objectiveToComplete:
-    ObjectiveKey: level1
-    SubObjectives:
-    - note
---- !u!4 &462758298
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462758296}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.76275, y: -0, z: 4.94257}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &472928382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,7 +3340,7 @@ PrefabInstance:
     - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
       propertyPath: OnExamineEndEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 462758297}
+      objectReference: {fileID: 0}
     - target: {fileID: 4180561289414810315, guid: 2290421a90386fe40b7a4497c38b7323, type: 3}
       propertyPath: OnExamineStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -9299,96 +9245,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2528018916316870403, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
   m_PrefabInstance: {fileID: 1633073597}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2122582584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2122582588}
-  - component: {fileID: 2122582587}
-  - component: {fileID: 2122582586}
-  - component: {fileID: 2122582585}
-  m_Layer: 0
-  m_Name: ObjectiveStartTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2122582585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122582584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9d66d9c47ac7a4995a6f641c07be21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StartObjectiveOnEnter
-  objectiveTrigger: {fileID: 2122582586}
---- !u!114 &2122582586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122582584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bef1a4507177f14ca3a2b2e08bd4e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UHFPS.Runtime.ObjectiveTrigger
-  triggerType: 0
-  objectiveType: 0
-  objectiveToAdd:
-    ObjectiveKey: level1
-    SubObjectives:
-    - note
-  objectiveToComplete:
-    ObjectiveKey: level1
-    SubObjectives:
-    - flashlight
---- !u!65 &2122582587
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122582584}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 10.864716, z: 1}
-  m_Center: {x: 0, y: 4.9323597, z: 0}
---- !u!4 &2122582588
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122582584}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.86, y: -0, z: 3.44}
-  m_LocalScale: {x: 1, y: 1, z: 20}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5194296216712007
 Transform:
   m_ObjectHideFlags: 0
@@ -78095,7 +77951,7 @@ MonoBehaviour:
   - Token: InteractableItem.6d3a5f94acff1464ead57629331a0196
     Instance: {fileID: 108957374}
   - Token: ObjectiveTrigger.144d7c947e3afa64b8073ee53a390b00
-    Instance: {fileID: 462758297}
+    Instance: {fileID: 0}
   - Token: ObjectiveTrigger.80017f813e66ea945a2598f5719d9706
     Instance: {fileID: 566108997}
   - Token: CutsceneTrigger.d223abe760ec0af45907c019d4ff37d8
@@ -78113,7 +77969,7 @@ MonoBehaviour:
   - Token: TimedInteractEvent.b76c592a9585023499bf38076500158f
     Instance: {fileID: 1771540503}
   - Token: ObjectiveTrigger.d14b926746e3831478a04a546d0579f7
-    Instance: {fileID: 2122582586}
+    Instance: {fileID: 0}
   runtimeSaveables: []
 --- !u!1 &5813543553162854338
 GameObject:
@@ -116836,8 +116692,6 @@ SceneRoots:
   - {fileID: 1644828484}
   - {fileID: 977692668}
   - {fileID: 1759747028}
-  - {fileID: 2122582588}
-  - {fileID: 462758298}
   - {fileID: 872467370}
   - {fileID: 61395067}
   - {fileID: 6210745926994812174}
