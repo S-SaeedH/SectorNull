@@ -36,17 +36,15 @@ namespace UHFPS.Runtime
 
         private void Awake()
         {
-            if(isOutputLight)
+            if (isOutputLight)
             {
-                foreach (var light in CircuitLights)
+                foreach (CircuitLight light in CircuitLights)
                 {
                     SetCircuitLight(light, true);
                 }
 
                 if (WireMaterial.IsAssigned)
-                {
                     WireMaterial.ClonedMaterial.EnableKeyword(EmissionKeyword);
-                }
             }
         }
 
@@ -62,49 +60,66 @@ namespace UHFPS.Runtime
 
         public void SetCircuitLight(int powerID, bool state)
         {
-            foreach (var circuitLight in CircuitLights)
+            foreach (CircuitLight circuitLight in CircuitLights)
             {
-                if(circuitLight.PowerID == powerID)
-                {
+                if (circuitLight == null)
+                    continue;
+
+                if (circuitLight.PowerID == powerID)
                     SetCircuitLight(circuitLight, state);
-                }
             }
 
             if (WireMaterial.IsAssigned)
             {
-                if (CircuitLights.Any(x => x.isPowered))
-                {
+                bool anyPowered = CircuitLights.Any(x => x != null && x.isPowered);
+
+                if (anyPowered)
                     WireMaterial.ClonedMaterial.EnableKeyword(EmissionKeyword);
-                }
                 else
-                {
                     WireMaterial.ClonedMaterial.DisableKeyword(EmissionKeyword);
-                }
             }
         }
 
         private void SetCircuitLight(CircuitLight circuitLight, bool state)
         {
-            foreach (var light in circuitLight.Lights)
+            if (circuitLight == null)
+                return;
+
+            if (circuitLight.Lights != null)
             {
-                if (state)
+                foreach (Light light in circuitLight.Lights)
                 {
-                    if(useLightColors) light.color = PoweredOn;
-                    else light.enabled = true;
-                }
-                else
-                {
-                    if (useLightColors) light.color = PoweredOff;
-                    else light.enabled = false;
+                    if (light == null)
+                        continue;
+
+                    if (state)
+                    {
+                        if (useLightColors)
+                            light.color = PoweredOn;
+                        else
+                            light.enabled = true;
+                    }
+                    else
+                    {
+                        if (useLightColors)
+                            light.color = PoweredOff;
+                        else
+                            light.enabled = false;
+                    }
                 }
             }
 
-            if (useEmission)
+            if (useEmission && circuitLight.Renderers != null)
             {
-                foreach (var renderer in circuitLight.Renderers)
+                foreach (RendererMaterial renderer in circuitLight.Renderers)
                 {
-                    if(state) renderer.ClonedMaterial.EnableKeyword(EmissionKeyword);
-                    else renderer.ClonedMaterial.DisableKeyword(EmissionKeyword);
+                    if (!renderer.IsAssigned)
+                        continue;
+
+                    if (state)
+                        renderer.ClonedMaterial.EnableKeyword(EmissionKeyword);
+                    else
+                        renderer.ClonedMaterial.DisableKeyword(EmissionKeyword);
                 }
             }
 

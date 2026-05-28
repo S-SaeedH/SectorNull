@@ -20,6 +20,6 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Whatever is on this tape, they didnt want anyone to see it
+        GlocText: Whatever is on this tape, they didn't want anyone to see it
         NormalText: 
     Subtitles: []

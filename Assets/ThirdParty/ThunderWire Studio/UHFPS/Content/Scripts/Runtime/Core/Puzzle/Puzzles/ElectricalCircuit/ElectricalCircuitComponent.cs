@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UHFPS.Tools;
 using Newtonsoft.Json.Linq;
@@ -23,138 +23,212 @@ namespace UHFPS.Runtime
             public List<int> PowerFlows = new();
         }
 
+        [Header("References")]
         public ElectricalCircuitPuzzle ElectricalCircuit;
 
+        [Header("Visual")]
         public Texture2D ComponentIcon;
         public MeshFilter ComponentMesh;
         public Axis ComponentUp;
 
+        [Header("Grid")]
         public Vector2Int Coords;
+
+        [Header("Rotation")]
         public float Angle;
 
+        [Header("Flow Setup")]
         public List<FlowDirection> FlowDirections = new();
+
+        [Header("Runtime Flow")]
         public PowerFlow[] PowerFlows;
 
         private void Awake()
         {
-            PowerFlows = new PowerFlow[FlowDirections.Count];
-
-            for (int i = 0; i < FlowDirections.Count; i++)
-            {
-                var direction = FlowDirections[i];
-                var flow = PowerFlows[i] = new PowerFlow();
-                flow.FlowDirections = new PartDirection[direction.FlowDirections.Count];
-                flow.FlowRenderer = direction.FlowRenderer;
-
-                for (int j = 0; j < direction.FlowDirections.Count; j++)
-                {
-                    flow.FlowDirections[j] = direction.FlowDirections[j];
-                }
-            }
-
-            if(!SaveGameManager.GameWillLoad)
-                InitializeDirections();
-        }
-
-        public void InitializeDirections()
-        {
-            int angleTimes = (ushort)(Angle / 90);
-            RotateDirections(angleTimes);
+            SnapAngle();
+            SetComponentAngle();
+            RebuildRuntimeFlowsFromAngle();
         }
 
         public void InteractStart()
         {
+            if (ElectricalCircuit == null)
+                return;
+
             if (ElectricalCircuit.DisableWhenConnected && ElectricalCircuit.isConnected)
                 return;
 
-            Angle = (Angle + 90) % 360;
-            SetComponentAngle();
+            Angle += 90f;
+            SnapAngle();
 
-            RotateDirections(1);
+            SetComponentAngle();
+            RebuildRuntimeFlowsFromAngle();
+
             ElectricalCircuit.ReinitializeCircuit();
         }
 
         public void SetComponentAngle()
         {
+            SnapAngle();
+
             Vector3 newRotation = transform.localEulerAngles.SetComponent(ComponentUp, Angle);
             transform.localEulerAngles = newRotation;
         }
 
-        public void RotateDirections(int times)
+        private void SnapAngle()
         {
-            foreach (var flow in PowerFlows)
+            Angle = Mathf.Round(Angle / 90f) * 90f;
+            Angle %= 360f;
+
+            if (Angle < 0f)
+                Angle += 360f;
+        }
+
+        public void RebuildRuntimeFlowsFromAngle()
+        {
+            SnapAngle();
+
+            int rotateTimes = Mathf.RoundToInt(Angle / 90f) % 4;
+
+            if (rotateTimes < 0)
+                rotateTimes += 4;
+
+            PowerFlows = new PowerFlow[FlowDirections.Count];
+
+            for (int i = 0; i < FlowDirections.Count; i++)
             {
-                for (int i = 0; i < flow.FlowDirections.Length; i++)
+                FlowDirection sourceFlow = FlowDirections[i];
+
+                PowerFlow runtimeFlow = new PowerFlow
                 {
-                    flow.FlowDirections[i] = RotatePartDirection(flow.FlowDirections[i], times);
+                    FlowDirections = new PartDirection[sourceFlow.FlowDirections.Count],
+                    FlowRenderer = sourceFlow.FlowRenderer,
+                    PowerFlows = new List<int>()
+                };
+
+                for (int j = 0; j < sourceFlow.FlowDirections.Count; j++)
+                {
+                    runtimeFlow.FlowDirections[j] = RotatePartDirection(sourceFlow.FlowDirections[j], rotateTimes);
                 }
+
+                PowerFlows[i] = runtimeFlow;
+            }
+        }
+
+        public void ClearPower()
+        {
+            if (PowerFlows == null)
+                return;
+
+            foreach (PowerFlow flow in PowerFlows)
+            {
+                if (flow == null)
+                    continue;
+
+                flow.PowerFlows?.Clear();
+                SetFlowState(flow, false);
             }
         }
 
         public void SetPowerFlow(PartDirection fromDirection, int powerID, List<PowerFlow> visited)
         {
-            // get power flow that is connected from direction
-            PowerFlow inputFlow = GetOppositePowerFlow(fromDirection);
-            if (inputFlow == null) return;
+            if (ElectricalCircuit == null)
+                return;
 
-            if(visited == null)
+            PowerFlow inputFlow = GetOppositePowerFlow(fromDirection);
+
+            if (inputFlow == null)
+                return;
+
+            if (visited == null)
                 visited = new List<PowerFlow>();
 
-            if (visited.Contains(inputFlow)) return;
-            else visited.Add(inputFlow);
+            if (visited.Contains(inputFlow))
+                return;
 
-            foreach (var direction in inputFlow.FlowDirections)
-            {
-                if (!ElectricalCircuitPuzzle.IsOppositeDirection(fromDirection, direction))
-                {
-                    if (GetDirectionComponent(direction, out var component))
-                    {
-                        if (component.GetOppositePowerFlow(direction) != null)
-                        {
-                            component.SetPowerFlow(direction, powerID, visited);
-                        }
-                    }
-                }
-            }
+            visited.Add(inputFlow);
 
             if (!inputFlow.PowerFlows.Contains(powerID))
                 inputFlow.PowerFlows.Add(powerID);
 
             SetFlowState(inputFlow, true);
+
+            foreach (PartDirection direction in inputFlow.FlowDirections)
+            {
+                if (ElectricalCircuitPuzzle.IsOppositeDirection(fromDirection, direction))
+                    continue;
+
+                if (!GetDirectionComponent(direction, out ElectricalCircuitComponent nextComponent))
+                    continue;
+
+                if (nextComponent == null)
+                    continue;
+
+                PowerFlow nextInputFlow = nextComponent.GetOppositePowerFlow(direction);
+
+                if (nextInputFlow == null)
+                    continue;
+
+                nextComponent.SetPowerFlow(direction, powerID, visited);
+            }
         }
 
         public void SetFlowState(PowerFlow powerFlow, bool state)
         {
-            foreach (var renderer in powerFlow.FlowRenderer)
+            if (powerFlow == null || powerFlow.FlowRenderer == null)
+                return;
+
+            foreach (RendererMaterial renderer in powerFlow.FlowRenderer)
             {
-                if(state) renderer.ClonedMaterial.EnableKeyword("_EMISSION");
-                else renderer.ClonedMaterial.DisableKeyword("_EMISSION");
+                if (!renderer.IsAssigned)
+                    continue;
+
+                if (state)
+                    renderer.ClonedMaterial.EnableKeyword("_EMISSION");
+                else
+                    renderer.ClonedMaterial.DisableKeyword("_EMISSION");
             }
         }
 
         public bool GetDirectionComponent(PartDirection direction, out ElectricalCircuitComponent component)
         {
+            component = null;
+
+            if (ElectricalCircuit == null)
+                return false;
+
             Vector2Int dirOutput = ElectricalCircuitPuzzle.DirectionToVector(direction);
             Vector2Int newCoords = Coords + dirOutput;
 
-            if (ElectricalCircuit.IsCoordsValid(newCoords))
-            {
-                int compIndex = ElectricalCircuit.CoordsToIndex(newCoords);
-                component = ElectricalCircuit.Components[compIndex];
-                return true;
-            }
+            if (!ElectricalCircuit.IsCoordsValid(newCoords))
+                return false;
 
-            component = null;
-            return false;
+            int compIndex = ElectricalCircuit.CoordsToIndex(newCoords);
+
+            if (ElectricalCircuit.Components == null)
+                return false;
+
+            if (compIndex < 0 || compIndex >= ElectricalCircuit.Components.Count)
+                return false;
+
+            component = ElectricalCircuit.Components[compIndex];
+
+            return component != null;
         }
 
-        public PowerFlow GetOppositePowerFlow(PartDirection oppositeDir)
+        public PowerFlow GetOppositePowerFlow(PartDirection incomingDirection)
         {
-            foreach (var flow in PowerFlows)
+            if (PowerFlows == null)
+                return null;
+
+            foreach (PowerFlow flow in PowerFlows)
             {
-                foreach (var direction in flow.FlowDirections)
+                if (flow == null || flow.FlowDirections == null)
+                    continue;
+
+                foreach (PartDirection direction in flow.FlowDirections)
                 {
-                    if (ElectricalCircuitPuzzle.IsOppositeDirection(direction, oppositeDir))
+                    if (ElectricalCircuitPuzzle.IsOppositeDirection(direction, incomingDirection))
                         return flow;
                 }
             }
@@ -164,65 +238,97 @@ namespace UHFPS.Runtime
 
         private PartDirection RotatePartDirection(PartDirection direction, int times)
         {
-            if (times <= 0) 
-                return direction;
+            times %= 4;
 
-            return RotatePartDirection(direction switch
+            for (int i = 0; i < times; i++)
             {
-                PartDirection.Up => PartDirection.Right,
-                PartDirection.Down => PartDirection.Left,
-                PartDirection.Left => PartDirection.Up,
-                PartDirection.Right => PartDirection.Down,
-                _ => direction
-            }, --times);
+                direction = direction switch
+                {
+                    PartDirection.Up => PartDirection.Right,
+                    PartDirection.Right => PartDirection.Down,
+                    PartDirection.Down => PartDirection.Left,
+                    PartDirection.Left => PartDirection.Up,
+                    _ => direction
+                };
+            }
+
+            return direction;
+        }
+
+        [ContextMenu("Debug Flow Directions")]
+        public void DebugFlowDirections()
+        {
+            Debug.Log($"--- Flow Debug: {name} | Coords: {Coords} | Angle: {Angle} ---", this);
+
+            if (PowerFlows == null)
+            {
+                Debug.LogWarning("PowerFlows is null.", this);
+                return;
+            }
+
+            for (int i = 0; i < PowerFlows.Length; i++)
+            {
+                PowerFlow flow = PowerFlows[i];
+
+                if (flow == null || flow.FlowDirections == null)
+                {
+                    Debug.LogWarning($"Runtime Flow {i} is null.", this);
+                    continue;
+                }
+
+                string dirs = string.Join(", ", flow.FlowDirections);
+                string powers = flow.PowerFlows != null ? string.Join(", ", flow.PowerFlows) : "null";
+
+                Debug.Log($"Runtime Flow {i}: Directions [{dirs}] | PowerIDs [{powers}]", this);
+            }
+        }
+
+        [ContextMenu("Debug Inspector Flow Setup")]
+        public void DebugInspectorFlowSetup()
+        {
+            Debug.Log($"--- Inspector Flow Setup: {name} | Angle: {Angle} ---", this);
+
+            if (FlowDirections == null)
+            {
+                Debug.LogWarning("FlowDirections list is null.", this);
+                return;
+            }
+
+            for (int i = 0; i < FlowDirections.Count; i++)
+            {
+                FlowDirection flow = FlowDirections[i];
+
+                if (flow == null || flow.FlowDirections == null)
+                {
+                    Debug.LogWarning($"Inspector Flow {i} is null.", this);
+                    continue;
+                }
+
+                string dirs = string.Join(", ", flow.FlowDirections);
+                Debug.Log($"Inspector Flow {i}: Base Directions [{dirs}]", this);
+            }
         }
 
         public StorableCollection OnCustomSave()
         {
-            List<string> partDirections = new();
-            foreach (var flow in PowerFlows)
-            {
-                string dirCode = "";
-                for (int i = 0; i < flow.FlowDirections.Length; i++)
-                {
-                    int code = (int)flow.FlowDirections[i];
-                    dirCode += code;
-                }
-
-                partDirections.Add(dirCode);
-            }
+            SnapAngle();
 
             return new StorableCollection()
             {
-                { "angle", Angle },
-                { "partDirections", partDirections }
+                { "angle", Angle }
             };
         }
 
         public void OnCustomLoad(JToken data)
         {
-            Angle = (float)data["angle"];
+            if (data == null)
+                return;
+
+            Angle = data["angle"] != null ? (float)data["angle"] : Angle;
+
+            SnapAngle();
             SetComponentAngle();
-
-            string[] partDirections = data["partDirections"].ToObject<string[]>();
-            if (partDirections.Length == PowerFlows.Length)
-            {
-                for (int i = 0; i < partDirections.Length; i++)
-                {
-                    var flow = PowerFlows[i];
-                    for (int j = 0; j < flow.FlowDirections.Length; j++)
-                    {
-                        int code = int.Parse(partDirections[i][j].ToString());
-                        Debug.Log(code);
-
-                        flow.FlowDirections[j] = (PartDirection)code;
-                    }
-                }
-            }
-            else
-            {
-                Debug.LogError("Saved 'partDirections' length does not match 'PowerFlows' length!");
-            }
+            RebuildRuntimeFlowsFromAngle();
         }
     }
 }

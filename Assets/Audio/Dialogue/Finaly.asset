@@ -20,6 +20,6 @@ MonoBehaviour:
       Narrator: 
       NarratorColor: {r: 1, g: 1, b: 1, a: 1}
       Text:
-        GlocText: Finally... That should do it
+        GlocText: Finally... that should do it
         NormalText: 
     Subtitles: []
